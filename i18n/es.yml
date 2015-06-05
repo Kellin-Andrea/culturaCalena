@@ -80,6 +80,7 @@ dictionary:
     female:                                                                 Femenino
     previous:                                                               Anterior
     next:                                                                   Siguiente
+    whoWeAre:           Quienes Somos
     spanish:                                                                Español
     english:                                                                Ingles
     marker:                                                                 Marcador

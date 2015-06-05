@@ -103,6 +103,7 @@ dictionary:
     spanish:              Spanish
     english:              English
     marker:               Marker
+    whoWeAre:           Who We Are
     cancel:                                                                 cancel
     userData:                                                               User Data
     please_indicate_the_position_of_the_event: Please indicate the position of the event
