@@ -1,0 +1,108 @@
+#mvcMain {
+  display: none;
+}
+
+#mvcIcon {
+  display: block;
+}
+
+.shfDevelopmentBar {
+  background-color: rgb(61,35,0);
+  position: fixed;
+  right: 0px;
+  color: #ffffff;
+  /*width: 500px;*/
+  z-index: 2147483647;
+  padding: 3px 3px 3px 5px;
+  border-radius: 0px 0px 0px 5px;
+  font-size: 0.8em;
+  text-shadow: 1px 1px 2px rgba(20, 20, 20, 1);
+  top: 0px;
+}
+
+.mvcPointer {
+  cursor: pointer;
+}
+/*
+body{
+    background-image: url('../img/papel.jpg') ;
+}*/
+
+
+.panel-body {
+  padding: 0px;
+ 
+}
+
+.container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+  width: 80%;
+}
+
+ 
+
+.panel-primary > .panel-heading {
+  color: #fff;
+  background-image: url('../img/header.png');
+  border-color: #337ab7;
+}
+
+
+.logo {
+    
+    top:-4px;
+    margin: 1px;
+  
+       
+}
+
+.navigation--main {
+
+    background-image: url("../img/header.jpg");  
+}
+
+#menucito
+{
+    margin-right: 27px; 
+    margin-left: -105px;
+    width: 1350px;
+    top: 30px;
+    
+   
+}
+
+#panel {
+ background-image: url("../..//web/css/homepage/images/panel.jpg");
+}
+
+#pane {
+ background-image: url("../..//web/css/homepage/images/panel.jpg");
+ border-right: 2px;
+ 
+}
+
+.nosotros {
+    text-align: center;
+    color: #006666;
+    
+    
+}
+
+.parrafo {
+    color: #006633; font-family: bold; font-size: 20px;
+    text-align: justify;
+        
+}
+
+
+
+
+
+
+
+
+
+

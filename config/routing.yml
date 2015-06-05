@@ -1,0 +1,1597 @@
+homepage:
+  url:    /homepage/index
+  param:  { module: homepage, action: index, format: html }
+  load:
+
+homepage traductor:
+  url:   /homepage/traductor
+  param:  { module: homepage, action: traductor, format: html }
+  load:
+      
+      
+      
+##-------------------------- shfSecurity --------------------------##
+shfSecurity_index:
+  url:    /signin
+  param:  { module: shfSecurity, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+shfSecurity_login:
+  url:    /login
+  param:  { module: shfSecurity, action: login, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+shfSecurity_logout:
+  url:    /logout
+  param:  { module: shfSecurity, action: logout, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+shfSecurity_noPermission:
+  url:    /sin_permisos
+  param:  { module: shfSecurity, action: noPermission, format: html }
+
+shfSecurity_exception:
+  url:    /exception
+  param:  { module: shfSecurity, action: exception, format: html }
+##-------------------------- shfSecurity --------------------------##
+
+
+
+##-------------------------- ACERCA--------------------------##
+acerca_index:
+  url:    /acerca/index
+  param:  { module: acerca, action: index, format: html }
+  load:
+
+
+##--------------------------  BITACORA --------------------------##
+bitacora_index:
+  url:    /bitacora/index
+  param:  { module: bitacora, action: index, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php    
+    
+bitacora_insert:
+  url:    /bitacora/insert
+  param:  { module: bitacora, action: insert, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+bitacora_create:
+  url:    /bitacora/create
+  param:  { module: bitacora, action: create, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+    
+    
+bitacora_editar:
+  url:    /bitacora/edit
+  param:  { module: bitacora, action: edit, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php 
+    
+    
+bitacora_update:
+  url:    /bitacora/update
+  param:  { module: bitacora, action: update, format: html }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+bitacora_delete:
+  url:    /bitacora/delete
+  param:  { module: bitacora, action: delete, format: json }
+  load:
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+bitacora_deleteSelect:
+  url:    /bitacora/deleteSelect
+  param:  { module: bitacora, action: deleteSelect, format: html }
+  load:
+    - model/bitacora/usuarioBaseTableClass.php
+    - model/bitacoraTableClass.php
+    
+bitacora_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: bitacora, action: deleteFilters, format: html }    
+
+bitacora_reporte:
+  url:    /bitacora/reporte
+  param:  { module: bitacora, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+bitacora_traductor:
+  url:   /bitacora/traductor
+  param:  { module: bitacora, action: traductor, format: html }
+  load:
+
+  
+  ##--------------------------CATEGORIA --------------------------##
+categoria_index:
+  url:    /categoria/index
+  param:  { module: categoria, action: index, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_insert:
+  url:    /categoria/insertar
+  param:  { module: categoria, action: insert, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - libs/validator/categoria/createCategoriaValidatorClass.php
+
+
+categoria_create:
+  url:    /categoria/crear
+  param:  { module: categoria, action: create, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - libs/validator/categoria/createCategoriaValidatorClass.php
+
+
+categoria_edit:
+  url:    /categoria/editar
+  param:  { module: categoria, action: edit, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - libs/validator/categoria/editCategoriaValidatorClass.php
+ 
+
+categoria_update:
+  url:    /categoria/actualizar
+  param:  { module: categoria, action: update, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - libs/validator/categoria/editCategoriaValidatorClass.php
+
+
+categoria_delete:
+  url:    /categoria/eliminar
+  param:  { module: categoria, action: delete, format: json }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+categoria_deleteSelect:
+  url:    /categoria/eliminarSeleccion
+  param:  { module: categoria, action: deleteSelect, format: html }
+  load:
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    
+categoria_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: categoria, action: deleteFilters, format: html }   
+
+categoria_reporte:
+  url:    /categoria/reporte
+  param:  { module: categoria, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    
+categoria_traductor:
+  url:   /categoria/traductor
+  param:  { module: categoria, action: traductor, format: html }
+  load:
+
+  ##--------------------------  CREDENCIAL --------------------------##
+credencial_index:
+  url:    /credencial/index
+  param:  { module: credencial, action: index, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_insert:
+  url:    /credencial/insertar
+  param:  { module: credencial, action: insert, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - libs/validator/credencial/createCredencialValidatorClass.php
+
+
+credencial_create:
+  url:    /credencial/crear
+  param:  { module: credencial, action: create, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - libs/validator/credencial/createCredencialValidatorClass.php
+
+credencial_edit:
+  url:    /credencial/editar
+  param:  { module: credencial, action: edit, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - libs/validator/credencial/editCredencialValidatorClass.php
+
+credencial_update:
+  url:    /credencial/actualizar
+  param:  { module: credencial, action: update, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+    - libs/validator/credencial/editCredencialValidatorClass.php
+
+credencial_delete:
+  url:    /credencial/eliminar
+  param:  { module: credencial, action: delete, format: json }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_deleteSelect:
+  url:    /credencial/eliminarSeleccion
+  param:  { module: credencial, action: deleteSelect, format: html }
+  load:
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+credencial_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: credencial, action: deleteFilters, format: html }
+
+credencial_reporte:
+  url:    /credencial/reporte
+  param:  { module: credencial, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+credencial_traductor:
+  url:   /credencial/traductor
+  param:  { module: credencial, action: traductor, format: html }
+  load:
+
+
+ ##-------------------------- DATO USUARIO --------------------------##
+datoUsuario_index:
+  url:    /datoUsuario/index
+  param:  { module: datoUsuario, action: index, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+ 
+
+datoUsuario_insert:
+  url:    /datoUsuario/insertar
+  param:  { module: datoUsuario, action: insert, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    - libs/validator/datoUsuario/createDatoUsuarioValidatorClass.php
+ 
+
+datoUsuario_create:
+  url:    /datoUsuario/crear
+  param:  { module: datoUsuario, action: create, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    - libs/validator/datoUsuario/createDatoUsuarioValidatorClass.php
+ 
+
+datoUsuario_edit:
+  url:    /datoUsuario/editar
+  param:  { module: datoUsuario, action: edit, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    - libs/validator/datoUsuario/editDatoUsuarioValidatorClass.php
+
+
+datoUsuario_update:
+  url:    /datoUsuario/actualizar
+  param:  { module: datoUsuario, action: update, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    - libs/validator/datoUsuario/editDatoUsuarioValidatorClass.php
+   
+
+datoUsuario_delete:
+  url:    /datoUsuario/eliminar
+  param:  { module: datoUsuario, action: delete, format: json }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+datoUsuario_deleteSelect:
+  url:    /datoUsuario/eliminarSeleccion
+  param:  { module: datoUsuario, action: deleteSelect, format: html }
+  load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
+datoUsuario_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: datoUsuario, action: deleteFilters, format: html }   
+
+datoUsuario_reporte:
+  url:    /datoUsuario/reporte
+  param:  { module: datoUsuario, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+datoUsuario_traductor:
+  url:   /datoUsuario/traductor
+  param:  { module: datoUsuario, action: traductor, format: html }
+  load:
+
+
+##-------------------------- Default--------------------------##
+default_index:
+    url:    /default/index
+    param:  { module: default, action: index, format: html }
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      - model/base/datoUsuarioBaseTableClass.php
+      - model/datoUsuarioTableClass.php
+      - model/base/credencialBaseTableClass.php
+      - model/credencialTableClass.php 
+
+default_insert:
+    url:    /usuario/insert
+    param:  { module: default, action: insert, format: html }
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      - model/base/datoUsuarioBaseTableClass.php
+      - model/datoUsuarioTableClass.php
+      - libs/validator/usuario/createUserValidatorClass.php
+      
+
+default_create:
+    url:    /usuario/crear
+    param:  { module: default, action: create, format: html }
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      - model/base/datoUsuarioBaseTableClass.php
+      - model/datoUsuarioTableClass.php
+      - hooks/logHookClass.php
+      - model/base/bitacoraBaseTableClass.php
+      - model/bitacoraTableClass.php
+      - libs/validator/usuario/createUserValidatorClass.php
+
+default_edit:
+    url:    /usuario/edit
+    param:  { module: default, action: edit, format: html }
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      - model/base/datoUsuarioBaseTableClass.php
+      - model/datoUsuarioTableClass.php
+      - libs/validator/usuario/createUserValidatorClass.php
+
+default_update:
+    url:    /usuario/update
+    param:  { module: default, action: update, format: html }
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+      - libs/validator/usuario/createUserValidatorClass.php
+
+default_delete:
+    url:    /usuario/delete
+    param:  { module: default, action: delete, format: json }
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+
+default_deleteSelect:
+    url:    /usuario/deleteSelect
+    param:  { module: default, action: deleteSelect, format: html }
+    load:
+      - model/base/usuarioBaseTableClass.php
+      - model/usuarioTableClass.php
+
+default_reporte:
+    url:    /usuario/reporte
+    param:  { module: default, action: report, format: pdf }
+    load:
+      - libs/fpdf/fpdf.php
+
+default_deleteFilters:
+    url:    /borrar-filtros
+    param:  { module: default, action: deleteFilters, format: html }
+  
+   
+default_grafica:
+     url: /generar-grafica
+     param:  { module: default, action: grafica, format: html }
+     
+default_traductor:
+  url:   /default/traductor
+  param:  { module: default, action: traductor, format: html }
+  load:
+
+    
+
+    
+    ##--------------------------DETALLE PQRSF--------------------------##
+detallePqrs_index:
+  url:    /detallePqrs/index
+  param:  { module: detallePqrs, action: index, format: html }
+  load:
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+detallePqrs_insert:
+  url:    /detallePqrs/insertar
+  param:  { module: detallePqrs, action: insert, format: html }
+  load:
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
+
+detallePqrs_create:
+  url:    /detallePqrs/crear
+  param:  { module: detallePqrs, action: create, format: html }
+  load:
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
+
+detallePqrs_edit:
+  url:    /detallePqrs/editar
+  param:  { module: detallePqrs, action: edit, format: html }
+  load:
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
+
+detallePqrs_update:
+  url:    /detallePqrs/actualizar
+  param:  { module: detallePqrs, action: update, format: html }
+  load:
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
+    
+detallePqrs_delete:
+  url:    /detallePqrs/eliminar
+  param:  { module: detallePqrs, action: delete, format: json }
+  load:
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
+
+detallePqrs_deleteSelect:
+  url:    /detallePqrs/eliminarSeleccion
+  param:  { module: detallePqrs, action: deleteSelect, format: html }
+  load:
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
+    
+detallePqrs_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: detallePqrs, action: deleteFilters, format: html }   
+
+detallePqrs_reporte:
+  url:    /detallePqrs/reporte
+  param:  { module: detallePqrs, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+detallePqrs_traductor:
+  url:   /detallePqrs/traductor
+  param:  { module: detallePqrs, action: traductor, format: html }
+  load:
+    
+ 
+##--------------------------ESTADO PQRS--------------------------##
+estadoPqrs_index:
+  url:    /estadoPqrs/index
+  param:  { module: estadoPqrs, action: index, format: html }
+  load:
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+
+estado_insert:
+  url:    /estadoPqrs/insertar
+  param:  { module: estadoPqrs, action: insert, format: html }
+  load:
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+
+estadoPqrs_create:
+  url:    /estadoPqrs/crear
+  param:  { module: estadoPqrs, action: create, format: html }
+  load:
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+
+estadoPqrs_edit:
+  url:    /estadoPqrs/editar
+  param:  { module: estadoPqrs, action: edit, format: html }
+  load:
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+
+estadoPqrs_update:
+  url:    /estadoPqrs/actualizar
+  param:  { module: estadoPqrs, action: update, format: html }
+  load:
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+
+estadoPqrs_delete:
+  url:    /estadoPqrs/eliminar
+  param:  { module: estadoPqrs, action: delete, format: json}
+  load:
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+
+estadoPqrs_deleteSelect:
+  url:    /estadoPqrs/eliminarSeleccion
+  param:  { module: estadoPqrs, action: deleteSelect, format: html }
+  load:
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+    
+estadoPqrs_search:
+  url:    /estadoPqrs/search
+  param:  { module: estadoPqrs, action: search, format: html }
+  load:
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php    
+
+estadoPqrs_reporte:
+  url:    /estadoPqrs/reporte
+  param:  { module: estadoPqrs, action: reporte, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php   
+
+estadoPqrs_traductor:
+  url:   /estadoPqrs/traductor
+  param:  { module: estadoPqrs, action: traductor, format: html }
+  load:
+    
+
+
+##--------------------------  EVENTO --------------------------##
+
+evento_index:
+  url:    /evento/index
+  param:  { module: evento, action: index, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+
+evento_insert:
+  url:    /evento/insertar
+  param:  { module: evento, action: insert, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+evento_create:
+  url:    /evento/crear
+  param:  { module: evento, action: create, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - libs/validator/evento/createEventoValidatorClass.php
+
+evento_edit:
+  url:    /evento/editar
+  param:  { module: evento, action: edit, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - libs/validator/evento/editEventoValidatorClass.php
+
+
+evento_update:
+  url:    /evento/actualizar
+  param:  { module: evento, action: update, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - libs/validator/evento/editEventoValidatorClass.php
+
+
+evento_delete:
+  url:    /evento/eliminar
+  param:  { module: evento, action: delete, format: json }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+
+evento_deleteSelect:
+  url:    /evento/eliminarSeleccion
+  param:  { module: evento, action: deleteSelect, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+
+evento_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: evento, action: deleteFilters, format: html }
+
+evento_reporte:
+  url:    /evento/reporte
+  param:  { module: evento, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+evento_traductor:
+  url:   /evento/traductor
+  param:  { module: evento, action: traductor, format: html }
+  load:    
+    ##--------------------------EVENTO PATROCINADOR--------------------------##
+eventoPatrocinador_index:
+  url:    /eventoPatrocinador/index
+  param:  { module: eventoPatrocinador, action: index, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_insert:
+  url:    /eventoPatrocinador/insertar
+  param:  { module: eventoPatrocinador, action: insert, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php    
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php   
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+eventoPatrocinador_create:
+  url:    /eventoPatrocinador/crear
+  param:  { module: eventoPatrocinador, action: create, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_edit:
+  url:    /eventoPatrocinador/editar
+  param:  { module: eventoPatrocinador, action: edit, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_update:
+  url:    /eventoPatrocinador/actualizar
+  param:  { module: eventoPatrocinador, action: update, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_delete:
+  url:    /eventoPatrocinador/eliminar
+  param:  { module: eventoPatrocinador, action: delete, format: json }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_deleteSelect:
+  url:    /eventoPatrocinador/eliminarSeleccion
+  param:  { module: eventoPatrocinador, action: deleteSelect, format: html }
+  load:
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+
+eventoPatrocinador_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: eventoPatrocinador, action: deleteFilters, format: html }   
+
+eventoPatrocinador_reporte:
+  url:    /eventoPatrocinador/reporte
+  param:  { module: eventoPatrocinador, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+eventoPatrocinador_traductor:
+  url:   /eventoPatrocinador/traductor
+  param:  { module: eventoPatrocinador, action: traductor, format: html }
+  load:  
+
+##-------------------------- LOCALIDAD --------------------------##
+localidad_index:
+  url:    /localidad/index
+  param:  { module: localidad, action: index, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+
+localidad_insert:
+  url:    /localidad/insertar
+  param:  { module: localidad, action: insert, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - libs/validator/localidad/createLocalidadValidatorClass.php
+
+localidad_create:
+  url:    /localidad/crear
+  param:  { module: localidad, action: create, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - libs/validator/localidad/createLocalidadValidatorClass.php
+
+localidad_edit:
+  url:    /localidad/editar
+  param:  { module: localidad, action: edit, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - libs/validator/localidad/editLocalidadValidatorClass.php
+
+localidad_update:
+  url:    /localidad/actualizar
+  param:  { module: localidad, action: update, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - libs/validator/localidad/editLocalidadValidatorClass.php
+
+localidad_delete:
+  url:    /localidad/eliminar
+  param:  { module: localidad, action: delete, format: json }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+
+localidad_deleteSelect:
+  url:    /localidad/eliminarSeleccion
+  param:  { module: localidad, action: deleteSelect, format: html }
+  load:
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    
+localidad_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: localidad, action: deleteFilters, format: html }   
+
+localidad_reporte:
+  url:    /localidad/reporte
+  param:  { module: localidad, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    
+localidad_traductor:
+  url:   /localidad/traductor
+  param:  { module: localidad, action: traductor, format: html }
+  load:
+    
+##--------------------------ORGANIZACION --------------------------##
+organizacion_index:
+  url:    /organizacion/index
+  param:  { module: organizacion, action: index, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_insert:
+  url:    /organizacion/insertar
+  param:  { module: organizacion, action: insert, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_create:
+  url:    /organizacion/crear
+  param:  { module: organizacion, action: create, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_edit:
+  url:    /organizacion/editar
+  param:  { module: organizacion, action: edit, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_update:
+  url:    /organizacion/actualizar
+  param:  { module: organizacion, action: update, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_delete:
+  url:    /organizacion/eliminar
+  param:  { module: organizacion, action: delete, format: json }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+organizacion_deleteSelect:
+  url:    /organizacion/eliminarSeleccion
+  param:  { module: organizacion, action: deleteSelect, format: html }
+  load:
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
+orgaanizacion_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: organizacion, action: deleteFilters, format: html }     
+
+organizacion_reporte:
+  url:    /organizacion/reporte
+  param:  { module: organizacion, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+organizacion_traductor:
+  url:   /organizacion/traductor
+  param:  { module: organizacion, action: traductor, format: html }
+  load:
+
+    
+ ##--------------------------PATROCINADOR--------------------------##
+patrocinador_index:
+  url:    /patrocinador/index
+  param:  { module: patrocinador, action: index, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_insert:
+  url:    /patrocinador/insertar
+  param:  { module: patrocinador, action: insert, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_create:
+  url:    /patrocinador/crear
+  param:  { module: patrocinador, action: create, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_edit:
+  url:    /patrocinador/editar
+  param:  { module: patrocinador, action: edit, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_update:
+  url:    /patrocinador/actualizar
+  param:  { module: patrocinador, action: update, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_delete:
+  url:    /patrocinador/eliminar
+  param:  { module: patrocinador, action: delete, format: json}
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+
+patrocinador_deleteSelect:
+  url:    /patrocinador/eliminarSeleccion
+  param:  { module: patrocinador, action: deleteSelect, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php
+    
+patrocinador_search:
+  url:    /patrocinador/search
+  param:  { module: patrocinador, action: search, format: html }
+  load:
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php    
+
+patrocinador_reporte:
+  url:    /patrocinador/reporte
+  param:  { module: patrocinador, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+patrocinador_traductor:
+  url:   /patrocinador/traductor
+  param:  { module: patrocinador, action: traductor, format: html }
+  load:
+    
+ ##--------------------------PQRS--------------------------##
+pqrs_index:
+  url:    /pqrs/index
+  param:  { module: pqrs, action: index, format: html }
+  load:
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+
+pqrs_insert:
+  url:    /pqrs/insertar
+  param:  { module: pqrs, action: insert, format: html }
+  load:
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+    - libs/validator/pqrs/createPqrsValidatorClass.php
+
+
+pqrs_create:
+  url:    /pqrs/crear
+  param:  { module: pqrs, action: create, format: html }
+  load:
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+    - libs/validator/pqrs/createPqrsValidatorClass.php 
+
+pqrs_edit:
+  url:    /pqrs/editar
+  param:  { module: pqrs, action: edit, format: html }
+  load:
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+    - libs/validator/pqrs/editPqrsValidatorClass.php 
+    
+
+pqrs_update:
+  url:    /pqrs/actualizar
+  param:  { module: pqrs, action: update, format: html }
+  load:
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+    - libs/validator/pqrs/editPqrsValidatorClass.php 
+    
+
+pqrs_delete:
+  url:    /pqrs/eliminar
+  param:  { module: pqrs, action: delete, format: json }
+  load:
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+
+pqrs_deleteSelect:
+  url:    /pqrs/eliminarSeleccion
+  param:  { module: pqrs, action: deleteSelect, format: html }
+  load:
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+    
+pqrs_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: pqrs, action: deleteFilters, format: html }    
+
+pqrs_reporte:
+  url:    /pqrs/reporte
+  param:  { module: pqrs, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+pqrs_traductor:
+  url:   /pqrs/traductor
+  param:  { module: pqrs, action: traductor, format: html }
+  load:
+
+    
+##-------------------------- Recaudo Economico --------------------------##
+recaudoEconomico_index:
+    url: /recaudoEconomico/index
+    param: { module: recaudoEconomico, action: index, format: html }
+    load:
+        - model/base/recaudoEconomicoBaseTableClass.php
+        - model/recaudoEconomicoTableClass.php
+        
+recaudoEconomico_insert:
+    url: /recaudoEconomico/insert
+    param: { module: recaudoEconomico, action: insert, format: html }
+    load:
+        - model/base/recaudoEconomicoBaseTableClass.php
+        - model/recaudoEconomicoTableClass.php
+        
+recaudoEconomico_create:
+    url: /recaudoEconomico/crear
+    param: { module: recaudoEconomico, action: create, format: html }
+    load:
+        - model/base/recaudoEconomicoBaseTableClass.php
+        - model/recaudoEconomicoTableClass.php
+        
+recaudoEconomico_edit:
+    url: /recaudoEconomico/editar
+    param: { module: recaudoEconomico, action: edit, format: html }
+    load:
+        - model/base/recaudoEconomicoBaseTableClass.php
+        - model/recaudoEconomicoTableClass.php
+        
+recaudoEconomico_update:
+    url: / recaudoEconomico/actualizar
+    param: { module: recaudoEconomico, action: update, format: html }
+    load:
+        - model/base/recaudoEconomicoBaseTableClass.php
+        - model/recaudoEconomicoTableClass.php
+        
+recaudoEconomico_delete:
+    url: /recaudoEconomico/eliminar
+    param: { module: recaudoEconomico, action: delete, format: html }
+    load:
+        - model/base/recaudoEconomicoBaseTableClass.php
+        - model/recaudoEconomicoTableClass.php
+        
+recaudoEconomico_deleteSelect:
+    url: /recaudoEconomico/borrar seleccion
+    param: { module: recaudoEconomico, action: deleteSelect, format: html }
+    load:
+        - model/base/recaudoEconomicoBaseTableClass.php
+        - model/recaudoEconomicoTableClass.php
+        
+recaudoEconomico_traductor:
+  url:   /recaudoEconomico/traductor
+  param:  { module: recaudoEconomico, action: traductor, format: html }
+  load:
+      
+ ##--------------------------RECORDARME--------------------------##
+recordarMe_index:
+  url:    /recordarMe/index
+  param:  { module: recordarMe, action: index, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_insert:
+  url:    /recordarMe/insertar
+  param:  { module: recordarMe, action: insert, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_create:
+  url:    /recordarMe/crear
+  param:  { module: recordarMe, action: create, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_edit:
+  url:    /recordarMe/editar
+  param:  { module: recordarMe, action: edit, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_update:
+  url:    /recordarMe/actualizar
+  param:  { module: recordarMe, action: update, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_delete:
+  url:    /recordarMe/eliminar
+  param:  { module: recordarMe, action: delete, format: json }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+
+recordarMe_deleteSelect:
+  url:    /recordarMe/eliminarSeleccion
+  param:  { module: recordarMe, action: deleteSelect, format: html }
+  load:
+    - model/base/recordarMeBaseTableClass.php
+    - model/recordarMeTableClass.php
+    
+recordarMe_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: recordarMe, action: deleteFilters, format: html }  
+
+recordarMe_reporte:
+  url:    /recordarMe/reporte
+  param:  { module: recordarMe, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+recordarMe_traductor:
+  url:   /recordarMe/traductor
+  param:  { module: recordarMe, action: traductor, format: html }
+  load:
+##-------------------------- Tarifa --------------------------##
+ 
+tarifa_index:
+  url:    /tarifa/index
+  param:  { module: tarifa, action: index, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_insert:
+  url:    /tarifa/insertar
+  param:  { module: tarifa, action: insert, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_create:
+  url:    /tarifa/crear
+  param:  { module: tarifa, action: create, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_edit:
+  url:    /tarifa/editar
+  param:  { module: tarifa, action: edit, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_update:
+  url:    /tarifa/actualizar
+  param:  { module: tarifa, action: update, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_delete:
+  url:    /tarifa/eliminar
+  param:  { module: tarifa, action: delete, format: json}
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+
+tarifa_deleteSelect:
+  url:    /tarifa/eliminarSeleccion
+  param:  { module: tarifa, action: deleteSelect, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php
+    
+tarifa_search:
+  url:    /tarifa/search
+  param:  { module: tarifa, action: search, format: html }
+  load:
+    - model/base/tarifaBaseTableClass.php
+    - model/tarifaTableClass.php    
+
+tarifa_reporte:
+  url:    /tarifa/reporte
+  param:  { module: tarifa, action: reporte, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+tarifa_traductor:
+  url:   /tarifa/traductor
+  param:  { module: tarifa, action: traductor, format: html }
+  load:
+
+
+##-------------------------- TIPO DOCUMENTO --------------------------##
+tipoDocumento_index:
+  url:    /tipoDocumento/index
+  param:  { module: tipoDocumento, action: index, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+
+tipoDocumento_insert:
+  url:    /tipoDocumento/insertar
+  param:  { module: tipoDocumento, action: insert, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - libs/validator/tipoDocumento/createTipoDocumentoValidatorClass.php
+ 
+
+tipoDocumento_create:
+  url:    /tipoDocumento/crear
+  param:  { module: tipoDocumento, action: create, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - libs/validator/tipoDocumento/createTipoDocumentoValidatorClass.php
+    
+    
+tipoDocumento_edit:
+  url:    /tipoDocumento/editar
+  param:  { module: tipoDocumento, action: edit, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - libs/validator/tipoDocumento/editTipoDocumentoValidatorClass.php
+    
+    
+tipoDocumento_update:
+  url:    /tipoDocumento/actualizar
+  param:  { module: tipoDocumento, action: update, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - libs/validator/tipoDocumento/editTipoDocumentoValidatorClass.php
+    
+    
+tipoDocumento_delete:
+  url:    /tipoDocumento/eliminar
+  param:  { module: tipoDocumento, action: delete, format: json }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+
+tipoDocumento_deleteSelect:
+  url:    /tipoDocumento/eliminarSeleccion
+  param:  { module: tipoDocumento, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    
+tipoDocumento_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: tipoDocumento, action: deleteFilters, format: html }   
+
+tipoDocumento_reporte:
+  url:    /tipoDocumento/reporte
+  param:  { module: tipoDocumento, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+tipoDocumento_traductor:
+  url:   /tipoDocumento/traductor
+  param:  { module: tipoDocumento, action: traductor, format: html }
+  load:
+
+##--------------------------TIPO PQRS--------------------------##
+tipoPqrs_index:
+  url:    /tipoPqrs/index
+  param:  { module: tipoPqrs, action: index, format: html }
+  load:
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+
+tipoPqrs_insert:
+  url:    /tipoPqrs/insertar
+  param:  { module: tipoPqrs, action: insert, format: html }
+  load:
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+
+tipoPqrs_create:
+  url:    /tipoPqrs/crear
+  param:  { module: , action: create, format: html }
+  load:
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+
+tipoPqrs_edit:
+  url:    /tipoPqrs/editar
+  param:  { module: tipoPqrs, action: edit, format: html }
+  load:
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+
+tipoPqrs_update:
+  url:    /tipoPqrs/actualizar
+  param:  { module: tipoPqrs, action: update, format: html }
+  load:
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+
+tipoPqrs_delete:
+  url:    /tipoPqrs/eliminar
+  param:  { module: tipoPqrs, action: delete, format: json }
+  load:
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+
+tipoPqrs_deleteSelect:
+  url:    /tipoPqrs/eliminarSeleccion
+  param:  { module: tipoPqrs, action: deleteSelect, format: html }
+  load:
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+    
+tipoPqrs_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: tipoPqrs, action: deleteFilters, format: html }   
+
+tipoPqrs_reporte:
+  url:    /tipoPqrs/reporte
+  param:  { module: tipoPqrs, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+tipoPqrs_traductor:
+  url:   /tipoPqrs/traductor
+  param:  { module: tipoPqrs, action: traductor, format: html }
+  load:
+
+
+##-------------------------- USUARIO --------------------------##
+usuario_index:
+  url:    /usuarios/index
+  param:  { module: usuario, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+usuario_insert:
+  url:    /usuarios/insertar
+  param:  { module: usuario, action: insert, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+usuario_create:
+  url:    /usuarios/crear
+  param:  { module: usuario, action: create, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - hooks/logHookClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+
+usuario_edit:
+  url:    /usuario/editar
+  param:  { module: usuario, action: edit, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+usuario_update:
+  url:    /usuario/actualizar
+  param:  { module: usuario, action: update, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+usuario_delete:
+  url:    /usuario/eliminar
+  param:  { module: usuario, action: delete, format: json }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+
+usuario_deleteSelect:
+  url:    /usuario/eliminarSeleccion
+  param:  { module: usuario, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    
+usuario_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: usuario, action: deleteFilters, format: html }
+  
+usuario_reporte:
+  url:    /usuario/reporte
+  param:  { module: usuario, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+usuario_traductor:
+  url:   /usuario/traductor
+  param:  { module: usuario, action: traductor, format: html }
+  load:
+
+ ##--------------------------USUARIO CREDENCIAL--------------------------##
+usuarioCredencial_index:
+  url:    /usuarioCredencial/index
+  param:  { module: usuarioCredencial, action: index, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php
+
+usuarioCredencial_insert:
+  url:    /usuarioCredencial/insertar
+  param:  { module: usuarioCredencial, action: insert, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+
+usuarioCredencial_create:
+  url:    /usuarioCredencial/crear
+  param:  { module: usuarioCredencial, action: create, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+
+usuarioCredencial_edit:
+  url:    /usuarioCredencial/editar
+  param:  { module: usuarioCredencial, action: edit, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+
+usuarioCredencial_update:
+  url:    /usuarioCredencial/actualizar
+  param:  { module: usuarioCredencial, action: update, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+
+usuarioCredencial_delete:
+  url:    /usuarioCredencial/eliminar
+  param:  { module: usuarioCredencial, action: delete, format: json }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+
+usuarioCredencial_deleteSelect:
+  url:    /usuarioCredencial/eliminarSeleccion
+  param:  { module: usuarioCredencial, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioCredencialBaseTableClass.php
+    - model/usuarioCredencialTableClass.php
+
+usuarioCredencial_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: usuarioCredencial, action: deleteFilters, format: html }   
+    
+    
+
+usuarioCredencial_reporte:
+  url:    /usuarioCredencial/reporte
+  param:  { module: usuarioCredencial, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    
+usuarioCredencial_traductor:
+  url:   /usuarioCredencial/traductor
+  param:  { module: usuarioCredencial, action: traductor, format: html }
+  load:    
+#--------------------------USUARIO GUSTA CATEGORIA--------------------------##
+usuarioGustaCategoria_index:
+  url:    /usuarioGustaCategoria/index
+  param:  { module: usuarioGustaCategoria, action: index, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_insert:
+  url:    /usuarioGustaCategoria/insertar
+  param:  { module: usuarioGustaCategoria, action: insert, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_create:
+  url:    /usuarioGustaCategoria/crear
+  param:  { module: , action: create, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_edit:
+  url:    /usuarioGustaCategoria/editar
+  param:  { module: usuarioGustaCategoria, action: edit, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_update:
+  url:    /usuarioGustaCategoria/actualizar
+  param:  { module: usuarioGustaCategoria, action: update, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_delete:
+  url:    /usuarioGustaCategoria/eliminar
+  param:  { module: usuarioGustaCategoria, action: delete, format: json }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+
+usuarioGustaCategoria_deleteSelect:
+  url:    /usuarioGustaCategoria/eliminarSeleccion
+  param:  { module: usuarioGustaCategoria, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    
+usuarioGustaCategoria_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: usuarioGustaCategoria, action: deleteFilters, format: html }    
+
+usuarioGustaCategoria_reporte:
+  url:    /usuarioGustaCategoria/reporte
+  param:  { module: usuarioGustaCategoria, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+
+usuarioGustaCategoria_traductor:
+  url:   /usuarioGustaCategoria/traductor
+  param:  { module: usuarioGustaCategoria, action: traductor, format: html }
+  load:    
+##-------------------------- admin --------------------------##
+admin_index:
+  url:    /admin/index
+  param:  { module: admin, action: index, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    
+traductor:
+  url:   /admin/traductor
+  param:  { module: admin, action: traductor, format: html }
+  load:
+  

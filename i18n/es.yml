@@ -1,0 +1,452 @@
+# Diccionario de ejemplo
+culture:                                                                   Español                                                                                      Español
+dictionary:                    
+  default:
+     
+    homePage:                                                               Inicio
+    name:                                                                   Nombre
+    pass:                                                                   Contraseña
+    dateCreate:                                                             fecha de creaccion
+    createUser:                                                             Crear usuario
+    editUser:                                                               Editar usuario
+    newPass:                                                                Nueva contraseña
+    new:                                                                    Nuevo 
+    oldPass:                                                                Contraseña Anterior
+    passConfirmation:                                                       Verificacion  de contraseña
+    register:                                                               Registrar
+    selectTables:                                                           Seleccion de tabla
+    actions:                                                                Acciones
+    description:                                                            Descripcion
+    notice:                                                                 Noticias
+    Dance:                                                                  Baile
+    Sport:                                                                  Deporte
+    Music:                                                                  Musica
+    Theater:                                                                Teatro
+    novelty:                                                                Novedad
+    events:                                                                 Eventos
+    contact:                                                                Contactenos
+    login:                                                                  Iniciar Sesion
+    email:                                                                  Correo    
+    image:                                                                  Imagen
+    logout:                                                                 Cerrar Session  
+    about:                                                                  A cerca de cali
+    Contact:                                                                Contacto
+    terms of use:                                                           Terminos de uso
+    briefcase:                                                              Portafolio
+    answer:                                                                 Respuesta
+    feedbackTypeID:                                                         ID de PQRSF
+    place_id:                                                               id de localidad
+    user_name:                                                              Nombre de usuario
+    title:                                                                  Titulo
+    content:                                                                Contenido
+    know more here:                                                         Conoce mas aqui
+    create_credential:                                                      Crear Credencial
+    modify_credential:                                                      Editar credencial
+    are_sure_delete_registers:                                              ¿Desea eliminar los registros seleccionados?
+    are_sure_delete_this_register:                                          ¿Desea eliminar este registro?
+    deleteSelect:                                                           Eliminar Seleccion
+    close:                                                                  Cerrar
+    Save changes:                                                           Guardar cambios
+    confirm:                                                                Confirmar
+    delete_registers:                                                       Borrar registros
+    delete_the_registration_was_successful:                                 La eliminacion del registro fue exitosa
+    the_record_was_successfully_removed:                                    El registro fue eliminado satisfactoriamente
+    your_request_has_been_successfully_registered:                          Su peticion se ha registrado satisfactoriamente
+    congrats,your event has been created:                                   Su evento ha sido creado satisfactoriamente
+    filter:                                                                 Filtro
+    deleteFilter:                                                           Delete filter
+    page:                                                                   Pagina
+    of:                                                                     de
+    user_updated_successfully:                                              Usuario modificado satisfactoriamente
+    welcome:                                                                Bienvenido
+    feedback_answer:                                                        Respuesta un pqrsf
+    answer_send:                                                            Respuesta enviada
+    my_events:                                                              Mis eventos
+    events_like_me:                                                         Mis Gustos Por Categoria
+    events_catalog:                                                         Catalogo de eventos
+    administration:                                                         Administracion
+    socio_cultural_portal_santiago_de_cali_(Administration):                Portal Socio Cultural Santiago de Cali (Administracion)
+    sign out:                                                               Desconectarse
+    profile:                                                                Perfil
+    homePage:                                                               Inicio
+    identification:                                                         Identificacion
+    to_enter:                                                               Entrar
+    remember_me:                                                            Recordar me
+    value:                                                                  Valor
+    reports:                                                                Reportes
+    report_management:                                                      Gestion de reportes
+    male:                                                                   Masculino
+    Links of interest:                                                      Enlace de interes
+    female:                                                                 Femenino
+    previous:                                                               Anterior
+    next:                                                                   Siguiente
+    spanish:                                                                Español
+    english:                                                                Ingles
+    marker:                                                                 Marcador
+    cancel:                                                                 Cancelar
+    userData:                                                               Datos Usuarios
+    please_indicate_the_position_of_the_event:                              Por favor indique la posicion del evento
+    present_position:                                                       Posicion actual
+    we_are_working:                                                         Estamos trabajando
+    sorry_we_are_working_so_you_have_a_better_experience_on_our_site:       Lo sentimos ,estamos trabajando para que tengas una mejor experiencia en nuestro sitio.
+    Organizations_select:                                                   Seleccione Organizacion
+    #---------------------------Usuario----------------------------------------#
+    userManagement:                                                         Gestion de Usuario
+    id:                                                                     ID
+    lastLogin:                                                              Ultima conexión
+    createUser:                                                             Crear usuario
+    new_user:                                                               Nuevo usuario
+    modifyFields:                                                           Modifique los siguientes campos
+    fillFields:                                                             Llenar los siguientes Campos
+    insertNameUser:                                                         Ingrese Nombre de usuario
+    insertPass:                                                             Ingrese Contraseña
+    verifyPass:                                                             Verifique la Contraseña
+    gender:                                                                 Genero
+    gender_select:                                                          Seleccione Genero
+    name_user:                                                              Nombre
+    user:                                                                   Usuario
+    returning_to_user:                                                      Regresar a usuario
+    usermanagement:                                                         Gestion Usuario
+
+    #----------------------------admin--------------------------------------#
+    mainMenu:                                                               Menu Principal
+    cultureCaleña:                                                          Cultura Caleña
+    portalCultural:                                                         Portal Cultural
+    welcome:                                                                Bienvenido
+    administrator:                                                          administrador
+    profile:                                                                Perfil
+    exit:                                                                   Salir
+    language:                                                                Seleccione Idioma
+    tables:                                                                 Tablas
+    calendar:                                                               Calendario
+    gallery:                                                                Galeria
+    managementAdmisnistrator:                                               Gestion Administrator               
+    welcomeTo:                                                              Bienvenido a  
+    siteWhere:                                                              Portal Cultural De Santiago De Cali                
+    application:                                                            Aplicacion                
+     #----------------------------Bitacora--------------------------------------#
+    showLogBook:                                                            Mostrar Bitacora
+    logBook:                                                                Bitacora
+    user_id:                                                                Usuario ID
+    action:                                                                 Acción
+    table:                                                                  Tabla
+    record:                                                                 Registro
+    observation:                                                            Observación
+    date:                                                                   Fecha
+    type_select:                                                            Seleccione Tipo Documento
+    #----------------------------Credencial------------------------------------#
+    credentialManagement:                                                   Gestion de credencial
+    userCredentialManagement:                                               Gestion de usuario credencial
+    newCredencial:                                                          Nueva credencial
+    credential:                                                             Credencial
+    nameUser:                                                               Nombre de usuario
+    creationDate:                                                           Fecha de Creación
+    updateDate:                                                             Fecha de Actualización
+    deleteDate:                                                             Fecha de Borrado
+    lastName:                                                               Apellido
+    name_credential:                                                        Nombre Credencial
+    create_credential:                                                      Crear Credencial
+    returning_to_credential:                                                Regresar a credencial
+    userCredential:                                                         Usuario Credencial
+    #-----------------------------Categoria------------------------------------#
+    categoryManagement:                                                     Gestion de Categorias
+    eventCategory:                                                          Categoria de eventos
+    category:                                                               Categoria
+    categoryID:                                                             Categoria Id
+    createCategory:                                                         Crear categoria
+    name_category:                                                          Nombre Categoria 
+    returning_to_category:                                                  Regresar a categoria
+    category_select:                                                        Seleccione Categoria
+    #------------------------------Evento--------------------------------------#
+    eventManagement:                                                        Gestion de eventos 
+    eventPartnerManagement :                                                Gestion de evento patrocinador
+    description:                                                            descripcion
+    events:                                                                 Eventos
+    eventName:                                                              Nombre del evento
+    start_date:                                                             Fecha de inicio de evento
+    finish_date:                                                            Fecha de finalizacion de evento
+    cost:                                                                   Costo
+    categoryID:                                                             Id de categoria
+    eventId:                                                                Id de evento
+    length:                                                                 Longitud
+    latitude:                                                               Latitud
+    address:                                                                Direccion
+    publicationStartDate:                                                   Inicio  de publicacion
+    publicationFinishDate:                                                  Fecha fin publicacion
+    update:                                                                 Modificar
+    event_updated_successfully:                                             Evento Modificado Satisfactoriamente
+    delete_event:                                                           Borrar evento
+    newEvent:                                                               Registre un nuevo evento
+    editEvent:                                                              Editar Evento
+    returning_to_event:                                                     Regresar a evento
+    EventPartner:                                                           Evento patrocinador
+   #----------------------------Organizaciones---------------------------------#
+    organizationManagement:                                                 Gestion de Organizaciones 
+    organizations:                                                          Organización
+    phone:                                                                  Telefono
+    adress:                                                                 Direccion
+    e-mail:                                                                 Correo
+    webPage:                                                                Pagina Web
+    facsimil:                                                               Fax
+    organization_id:                                                        Id de organizacion
+    birth_day:                                                              Fecha de nacimiento 
+    createOrganization:                                                     Crear organizacion
+    newOrganization:                                                        Nueva organizacion
+    returning_to_organization:                                              Regresar a organizacion
+    #-----------------------------Patrocinador---------------------------------#
+    partner:                                                                Patrocinador
+    partnerManagement:                                                      Gestion de patrocinadores
+    partner_id:                                                             Patrocinador
+    newPartner:                                                             Nuevo patrocinador
+    createPartner:                                                          Crear patrocinador
+    returning_to_partner:                                                   Regresar a patrocinador
+    #-----------------------------Pqrsf----------------------------------------#
+    
+    title:                                                                  Titulo
+    newfeedback:                                                            Nuevo   PQRSF
+    editfeedback:                                                           Editar  PQRSF
+    feedback:                                                               PQRSF
+    feedbackType:                                                           Tipo de PQRSF
+    feedbackManagement:                                                     Gestion de  tipos de PQRSF
+    feedbackSpecs:                                                          Detalle de PQRSF
+    feedbackState:                                                          Estado de PQRSF
+    pqrsf_details:                                                          Gestion Detalle PQRSF
+    created:                                                                Creado
+    in_process:                                                             En proceso 
+    My_feedback:                                                            Mis peticiones
+    
+    #-----------------------------DetallePqrsf---------------------------------#
+    user_select:                                                           Seleccione un usuario
+    feedback_select:                                                       Seleccione una opcion
+    
+    #-----------------------------estadoPqrsf---------------------------------#
+    activate:                                                              Activado
+    pqrsfState:                                                            Estado PQRSF
+    newFeedbackState:                                                      Nuevo estado PQRSF
+    createFeedbackState:                                                   Crear estado PQRSF
+                  
+    #----------------------------Tarifas---------------------------------------#
+    ratesManagement:                                                       Gestion de Tarifas
+    rates:                                                                 Tarifas por Tiempo
+    rateId:                                                                Id de Tarifa
+    partialPayment:                                                        Pago parcial
+    totalPayment:                                                          Pago total
+    createRates:                                                           Crear tarifa
+    newRate:                                                               Nueva tarifa
+    returning_to_rates:                                                    Regresar a tarifas
+    #------------------------Tipo de documento---------------------------------#
+    IdType:                                                                Tipo de Identificacion
+    IdTypeManagement:                                                      Gestion de Tipo de Identificacion
+    document_type:                                                         Tipo documento
+    createDocumentType:                                                    Crear tipo de documento
+    newDocumentType:                                                       Nuevo tipo de documento 
+    editDocumentType:                                                      Editar tipo de documento 
+    #------------------------Recaudo Economico---------------------------------#
+    EconomicManagement:                                                    Recaudo economico
+    EconomicId:                                                            Id Recaudo Economico 
+    EventId:                                                               Evento Id
+    Observation:                                                           Observacion
+    valueParcial:                                                          Valor Parcial
+    valueTotal:                                                            Valor Total
+    newEconomic:                                                           Nuevo Recaudo
+    #------------------------Reports Recaudo Economico-------------------------#
+    Economic_id:                                                           Id
+    msjReport:                                                             Reporte Recaudo Economico
+    #---------------------------RecordarMe-------------------------------------#
+    rememberMeManagement:                                                  Manejo de Cookies
+    rememberMe:                                                            RecordarMe
+    #---------------------------Localidad--------------------------------------#
+    eventlocalitysManagement:                                              Gestion de localidades
+    eventPlace:                                                            Lugar del evento
+    eventPlaceID:                                                          Id de lugar
+    locality:                                                              Localidad
+    newLocality:                                                           Nueva localidad
+    editLocality:                                                          Editar localidad
+    locality_select:                                                       Seleccione Localidad
+    #----------------------------Acciones--------------------------------------#
+    edit:                                                                  Editar
+    delete:                                                                Borrar
+    create:                                                                Crear
+    update:                                                                Actualizar
+    registers:                                                             Registros
+    view:                                                                  Ver
+    deleteSelection:                                                       Borrar seleccion
+    printReportPdf:                                                        Generar reporte PDF
+    filter:                                                                Filtro
+    delete_filter:                                                         Borrar filtro
+#-----------------------------Perfil Usuario-----------------------------------#
+    profileInformation:                                                    Informacion Personal
+
+
+    #-----------------------------Errores--------------------------------------#
+  errors:
+    00001:                                                                 El modulo y la accion solicitada no existe.  
+    00002:                                                                 La direccion que solicita no existe.
+    00003:                                                                 Caracteres %char% no permitidos.
+    00004:                                                                 Correo electronico vinculado a otra cuenta.
+    00005:                                                                 Fechas invalidas.
+    00006:
+    00007:
+    00008:
+    00009:
+    00010:
+
+    #------------------------------Usuario
+    00011:                                                                 Los datos de usuario y contraseña son invalidos.
+    00012:                                                                 El usuario %user% excede los %caracteres% carateres permitidos.
+    00013:                                                                 Las contraseñas no son iguales.
+    00014:                                                                 El campo usuario se encuentra vacio.
+    00015:                                                                 El campo contraseña se encuentra vacio.
+    00016:                                                                 El campo verificacion de contraseña se encuentra vacio.
+    00017:                                                                 El usuario ya se encuentra registrado.
+    00018:         
+    00019:
+    00020:
+    00021:
+    00022:
+    00023:
+    00024:
+    00025:
+
+    #-----------------------------Evento
+    00026:                                                               La url de la imagen se encuentra vacia.
+    00027:                                                               La url de la imagen %img% excede los %caracteres% caracteres permitidos.
+    00028:                                                               El campo nombre se encuentra vacio.
+    00029:                                                               El nombre del evento %eve% excede los %caracteres% caracteres permitidos.
+    00030:                                                               El evento ya se encuentra registrado.
+    00031:                                                               La fecha de inicio se encuentra vacia.
+    00032:                                                               La fecha final se encuentra vacia.
+    00034:                                                               La coordenada "latitud" se encuentra vacia.
+    00035:                                                               La coordenada "longitud" se encuentra vacia.
+    00036:                                                               La direccion del evento se encuentra vacia.
+    00037:                                                               El Id del Usuario se encuentra vacio.
+    00038:                                                               El Id de la Categoria se encuentra vacio.
+    00039:        
+    00040:
+    00041:
+    00042:
+    00043:
+    00044:
+
+    #----------------------------Credencial
+    00045:                                                               El campo nombre se encuentra vacio.
+    00046:                                                               La credencial %cre% excede los caracteres permitidos.
+    00047:                                                               La credencial ya se encuentra registrada.
+    00048:         
+    00049:
+    00050:
+    00051:
+    00052:
+    00054:
+    00055:
+
+    #---------------------------Categoria
+    00056:                                                               El campo nombre se encuentra vacio .
+    00057:                                                               Nombre de la categoria %cat% excede los %caracteres% caracteres permitidos.
+    00058:                                                               La categoria ya se encunetra registrada.
+    00059:           
+    00060:
+    00061:
+    00062:
+    00063:
+    00064:
+    00065:
+
+    #---------------------------Organizacion
+    00066:                                                               El campo nombre se encuentra vacio.
+    00067:                                                               El campo numero telefonico se encuentra vacio.
+    00068:                                                               El numero telefonico %tel% excede los %caracteres% caracteres permitidos.
+    00069:                                                               Favor ingresar numeros.
+    00070:                                                               El campo correo electronico se encuentra vacio.
+    00071:                                                               El correo %email% excede los %caracteres% caracteres permitidos.
+    00072:                                                               El campo direccion se encunetra vacio.
+    00074:                                                               La direccion se encuentra vacia.
+    00075:                                                               La direccion %dir% excede los %caracteres% caracteres permitidos.
+    00076:                                                               Ingrese enlace de pagina web
+    00077:                                                               La pagina web %web% excede los %caracteres% caracteres permitidos. 
+    00078:                                                               La organizacion ya se encuentra registrada.
+    00079:
+    00080:
+    00081:
+    00082:
+    00083:
+    00084:
+    00085:
+    00086:
+
+    #----------------------------Patrocinador
+    00087:                                                               El campo nombre se encuentra vacio.
+    00088:                                                               Nombre de patrocinador vacio.
+    00089:                                                               El patrocinador ya se encuentra registrado.
+    00090:                                                               Nombre de patrocinador %nom% excede los %caracteres% caracteres permitidos.
+    00091:                                                               El campo telefono se encuentra vacio.
+    00092:                                                               El telefono %tel% excede los %caracteres% caracteres permitidos.
+    00093:                                                               Favor ingresar numeros.
+    00094:                                                               El campo correo se encuentra vacio.
+    00095:                                                               El correo %email% excede los %caracteres% caracteres permitidos.
+    00096:                                                               El campo direccion se encuentra vacio.
+    00098:                                                               La direccion %dir% excede los %caracteres% caracteres permitidos.
+    00097:                                                               La direccion se encuentra vacia.
+    00099:                  
+    00100:
+    00101:
+
+    #-----------------------------TipoPqrsf
+    00102:
+    00103:
+    00104:
+    00105:
+    00106:
+    00107:
+    00108:
+    00109:
+
+    #-----------------------------Tarifa
+    00110:                                                               El campo descripcion se encuentra vacio.
+    00111:                                                               La descripcion %des% excede los %caracteres% caracteres permitidos.
+    00112:                                                               El campo valor se encuentra vacio.
+    00113:                                                               El valor %var% excede los %caracteres% caracteres permitidos.
+    00114:                                                               La tarifa ya se encuentra registrada.
+    00115:                  
+    00116:
+    00117:
+
+    #------------------------------TipoDocumento
+    00118:                                                               El campo tipo documento se encuentra vacio.
+    00119:                                                               El documento %doc% excede los %caracteres% caracteres permitidos.
+    00120:                                                               El documento ya se encuentra registrado.
+    00121:
+    00122:
+    00123:
+    00124:
+    00125:
+
+    #-------------------------------RecaudoEconomico
+    00126:                                                               Ingrese el Id de Evento.
+    00127:                                                               Ingrese el Id de Usuario.
+    00128:                                                               Observacion se encuentra vacio.
+    00129:                                                               La observacion %obs% excede lo %caracteres% caracteres permitidos.
+    00130:                                                               Tarifa se encuentra vacio.
+    00131:                                                               Pago parcial se encuentra vacio.
+    00132:                                                               Pago total se encuentra vacio.
+    00133:
+    00134:
+    00135:
+
+    #--------------------------------Localidad
+    00136:                                                               Ingrese un nombre para la Localidad
+    00137:                                                               La localidad %loc% excede los %caracteres% caracteres permitidos.
+    00138:                                                               La localidad ya se encuentra registrada.
+    00139:                                                               Ingrese Id de la localidad.
+    00140:            
+    00141:            
+    00142:
+    00143:
+    00144:
+    00145:
+    00146:
+    00147:
+
+
+
+
