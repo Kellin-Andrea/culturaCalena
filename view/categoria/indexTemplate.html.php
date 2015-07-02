@@ -404,15 +404,17 @@ use mvc\request\requestClass as request ?>
                                                                         <div style="margin-bottom: 10px; margin-top: 30px">
 
 
-                                                                        </div>
-                                                                        <table class="table table-bordered table-hover">
-                                                                            <thead>
-                                                                                <tr>
-                                                                                    <th><input type="checkbox"></th>
-                                                                                    <th><?php echo i18n::__('name') ?></th>
-                                                                                    <th><?php echo i18n::__('actions') ?></th>
-                                                                                </tr>
-                                                                            <tbody>
+                                                            <?php view::includeHandlerMessage() ?>
+
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th><input type="checkbox" id="chkAll"></th>
+                                                                        <th><?php echo i18n::__('name') ?></th>
+                                            
+                                                                        <th><?php echo i18n::__('actions') ?></th>
+                                                                    </tr>
+                                                                <tbody>
 
                                                                                 <?php foreach ($objcategoria as $categoria): ?>
                                                                                     <tr>
@@ -450,7 +452,28 @@ use mvc\request\requestClass as request ?>
                                                                         <input type="hidden" id="idDelete" name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::ID, true) ?>">
 
                                                                         <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'insert') ?>" type="button" class="btn btn-info"><?php echo i18n::__('new');?></a>
-
+                                                                        <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
+                                                                         
+                                                                        
+                                                                         <!-- Eliminar Masivo-->
+                                                            <div class="modal fade" id="myModalDeleteMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                            <h4 class="modal-title" id="myModalLabel">Confirma Eliminar los Elemetos Seleccionados</h4>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            ¿Desea eliminar Los elementos seleccionados ?
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
+                                                                            <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">Confirmar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                                         
                                                                     </form>
                                                                 </div>
                                                             </div>

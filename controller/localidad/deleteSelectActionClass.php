@@ -14,14 +14,19 @@ use mvc\i18n\i18nClass as i18n;
  * Shirley Marcela Rivero <marce250494@hotmail.com>
  * Kelly Andrea Manzano <kellinandrea18@hotmail.com>
  * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
- * @category: Pertenece al controlador modulo evento.
+ * @category: Pertenece al controlador modulo localidad.
  */
 
+/**
+ * Description of ejemploClass
+ *
+ * @author kelly andrea manzano <kellinandrea18@hotmail.com>
+ */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST')) {
+      if (request::getInstance()->isMethod('POST') and request::getInstance()->hasPost('chk')) {
         
         $idsToDelete = request::getInstance()->getPost('chk');
         
@@ -31,6 +36,8 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
           );
           localidadTableClass::delete($ids, true);
         }
+        
+        session::getInstance()->setSuccess('Los Elementos Seleccionados fueron Borrados Exitosamente');
         
         routing::getInstance()->redirect('localidad', 'index');
       } else {

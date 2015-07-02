@@ -404,7 +404,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                                             <table class="table table-bordered table-hover">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th><input type="checkbox"></th>
+                                                                        <th><input type="checkbox" id="chkAll"></th>
                                                                         <th><?php echo i18n::__('name') ?></th>
                                                                         <th><?php echo i18n::__('actions') ?></th>
                                                                     </tr>
@@ -445,6 +445,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                                             <input type="hidden" id="idDelete" name="<?php echo tipoDocumentoTableClass::getNameField(tipoDocumentoTableClass::ID, true) ?>">
 
                                                             <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'insert') ?>" type="button" class="btn btn-info"><?php echo i18n::__('create') ?></a>
+                                                            <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
 
                                                         </form>
                                                     </div>

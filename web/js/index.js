@@ -23,7 +23,7 @@ function eliminar(id, variable, url ){
 
 function eliminarMasivo() {
     
-  $('#myModalDeleteMasivo').modal('toggle');
+$('#myModalDeleteMasivo').modal('toggle');
 }
 
 $(document).ready(function () {

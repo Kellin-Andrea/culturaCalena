@@ -174,7 +174,7 @@ use mvc\request\requestClass as request ?>
 
 
 
-                                                     <li class="">
+                                                    <li class="">
                                                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">
                                                             <i class="menu-icon fa fa-caret-right"></i>
                                                             <?php echo i18n::__('user') ?>
@@ -256,7 +256,7 @@ use mvc\request\requestClass as request ?>
 
                                                 <b class="arrow"></b>
                                             </li>
-                                              
+
                                             <li class="">
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoPqrs', 'index') ?>">
                                                     <i class="menu-icon fa fa-caret-right"></i>
@@ -290,7 +290,7 @@ use mvc\request\requestClass as request ?>
 
                                                 <b class="arrow"></b>
                                             </li>
-                                             <li class="">
+                                            <li class="">
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>">
                                                     <i class="menu-icon fa fa-caret-right"></i>
                                                     <?php echo i18n::__('EconomicManagement') ?>
@@ -394,62 +394,63 @@ use mvc\request\requestClass as request ?>
 
                                                 <div class="row">
                                                     <div class="space-6"></div>
-<div class="container container-fluid">
-    <h1><i class="glyphicon glyphicon-certificate"></i> <?php echo i18n::__('pqrsfState')?> </h1>
-    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'deleteSelect') ?>" method="POST">
-        <div style="margin-bottom: 10px; margin-top: 30px">
-            
-      
-        </div>
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th><?php echo i18n::__('name')?></th>
-                    <th><?php echo i18n::__('actions')?></th>
-                </tr>
-            <tbody>
+                                                    <div class="container container-fluid">
+                                                        <h1><i class="glyphicon glyphicon-certificate"></i> <?php echo i18n::__('pqrsfState') ?> </h1>
+                                                        <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'deleteSelect') ?>" method="POST">
+                                                            <div style="margin-bottom: 10px; margin-top: 30px">
 
-                <?php foreach ($objestado as $estadoPqrs): ?>
-                    <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $estadoPqrs->id ?>"></td>
-                        <td><?php echo $estadoPqrs->nombre ?></td>
-                        <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'edit', array(estadoPqrsTableClass::ID => $estadoPqrs->$id)) ?>" class="btn btn-info btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $estadoPqrs->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
-                        </td>
-                    </tr>
-                    
-            <div class="modal fade" id="myModalDelete<?php echo $estadoPqrs->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
-                            </div>
-                            <div class="modal-body">
-                                ¿Desea Eliminar el registro <?php echo $estadoPqrs->nombre ?> ?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $estadoPqrs->$id ?>, '<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'delete') ?> ')">Confirmar Eliminar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <?php endforeach ?>
-            </tbody>
-        </table>
-    </form>
-    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'delete') ?>" method="POST">
-        <input type="hidden" id="idDelete" name="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, true) ?>">
 
-        <a href="<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'insert') ?>" type="button" class="btn btn-info"><?php echo i18n::__('create')?></a>
-        
-    </form>
-</div>
+                                                            </div>
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th><input type="checkbox" id="chkAll"></th>
+                                                                        <th><?php echo i18n::__('name') ?></th>
+                                                                        <th><?php echo i18n::__('actions') ?></th>
+                                                                    </tr>
+                                                                <tbody>
 
-                                                  
+                                                                    <?php foreach ($objestado as $estadoPqrs): ?>
+                                                                        <tr>
+                                                                            <td><input type="checkbox" name="chk[]" value="<?php echo $estadoPqrs->id ?>"></td>
+                                                                            <td><?php echo $estadoPqrs->nombre ?></td>
+                                                                            <td>
+                                                                                <a href="<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'edit', array(estadoPqrsTableClass::ID => $estadoPqrs->$id)) ?>" class="btn btn-info btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
+                                                                                <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $estadoPqrs->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                                                                            </td>
+                                                                        </tr>
+
+                                                                    <div class="modal fade" id="myModalDelete<?php echo $estadoPqrs->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                    <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    ¿Desea Eliminar el registro <?php echo $estadoPqrs->nombre ?> ?
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                                                                                    <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $estadoPqrs->$id ?>, '<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'delete') ?> ')">Confirmar Eliminar</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                <?php endforeach ?>
+                                                                </tbody>
+                                                            </table>
+                                                        </form>
+                                                        <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'delete') ?>" method="POST">
+                                                            <input type="hidden" id="idDelete" name="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, true) ?>">
+
+                                                            <a href="<?php echo routing::getInstance()->getUrlWeb('estadoPqrs', 'insert') ?>" type="button" class="btn btn-info"><?php echo i18n::__('create') ?></a>
+                                                            <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
+
+                                                        </form>
+                                                    </div>
+
+
                                                 </div>
 
 

@@ -406,7 +406,7 @@ use mvc\request\requestClass as request ?>
                                                             <table class="table table-bordered table-hover">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th><input type="checkbox"></th>
+                                                                        <th><input type="checkbox" id="chkAll"></th>
                                                                         <th> <?php echo i18n::__('credential') ?></th>
 
                                                                     </tr>
@@ -426,6 +426,7 @@ use mvc\request\requestClass as request ?>
                                                             <input type="hidden" id="idDelete" name="<?php echo usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::ID, true) ?>">
 
                                                             <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'insert', array('' => $usuarioId(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::USUARIO_ID, true)))) ?>" type="button" class="btn btn-info"><?php echo i18n::__('create') ?></a>
+                                                            <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
                                                         </form>
                                                     </div>
 

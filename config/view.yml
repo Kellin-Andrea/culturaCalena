@@ -53,6 +53,34 @@ homepage:
       - homepage/js/underscore.js
       
 
+acerca:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - acerca/css/animate.css
+        #<!--prettyPhoto.css -->
+      - acerca/css/prettyPhoto.css
+        #<!--shop css-->
+      - acerca/css/shop.css
+        #<!--style css-->
+      - acerca/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - acerca/js/almond.js
+      - acerca/js/header_carousel.js
+      - acerca/js/imagesloaded.js
+      - acerca/js/isotope.js
+      - acerca/js/jquery.min.js
+      - acerca/js/jquery.prettyPhoto.js
+      - acerca/js/jquery.validate.min.js
+      - acerca/js/main.js
+      - acerca/js/main.min.js
+      - acerca/js/modernizr.custom.24530.js
+      - acerca/js/require.js
+      - acerca/js/simplemap.js
+      - acerca/js/sticky_navbar.js
+      - acerca/js/underscore.js
+
 admin:
   index:  
     title: Cultura Caleña

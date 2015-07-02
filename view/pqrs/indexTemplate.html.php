@@ -453,6 +453,7 @@ use mvc\i18n\i18nClass as i18n ?>
                                                 <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'delete') ?>" method="POST">
                                                     <input type="hidden" id="idDelete" name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>">
                                                     <a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class=" btn btn-info" ><?php echo i18n::__('create') ?></a>
+                                                    <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
 
                                                 </form>
                                             </div>

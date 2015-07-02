@@ -16,25 +16,26 @@ use mvc\i18n\i18nClass as i18n;
  * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
  * @category: Pertenece al controlador modulo categoria .
  */
-
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST')) {
+      if (request::getInstance()->isMethod('POST') and request::getInstance()->hasPost('chk')) {
         
-        $nombresToDelete = request::getInstance()->getPost('chk');
+        $idsToDelete = request::getInstance()->getPost('chk');
         
-        foreach ($nombresToDelete as $nombre) {
+        foreach ($idsToDelete as $id) {
           $ids = array(
-          categoriaTableClass::NOMBRE => $nombre
+              categoriaTableClass::ID => $id
           );
-          categoriaTableClass::delete($nombres, true);
+          categoriaTableClass::delete($ids, true);
         }
         
-        routing::getInstance()->redirect('default', 'index');
+        session::getInstance()->setSuccess('Los Elementos Seleccionados fueron Borrados Exitosamente');
+        
+        routing::getInstance()->redirect('categoria', 'index');
       } else {
-        routing::getInstance()->redirect('default', 'index');
+        routing::getInstance()->redirect('categoria', 'index');
       }
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

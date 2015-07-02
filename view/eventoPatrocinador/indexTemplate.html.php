@@ -172,7 +172,7 @@ use mvc\request\requestClass as request ?>
                                                 <ul class="submenu">
 
 
-  <li class="">
+                                                    <li class="">
                                                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">
                                                             <i class="menu-icon fa fa-caret-right"></i>
                                                             <?php echo i18n::__('user') ?>
@@ -254,7 +254,7 @@ use mvc\request\requestClass as request ?>
 
                                                 <b class="arrow"></b>
                                             </li>
-                                              <li class="">
+                                            <li class="">
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('estadoPqrs', 'index') ?>">
                                                     <i class="menu-icon fa fa-caret-right"></i>
                                                     <?php echo i18n::__('feedbackState') ?>
@@ -278,7 +278,7 @@ use mvc\request\requestClass as request ?>
 
                                                 <b class="arrow"></b>
                                             </li>
-                                            
+
                                             </li>
                                             <li class="">
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('patrocinador', 'index') ?>">
@@ -288,7 +288,7 @@ use mvc\request\requestClass as request ?>
 
                                                 <b class="arrow"></b>
                                             </li>
-                                             <li class="">
+                                            <li class="">
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>">
                                                     <i class="menu-icon fa fa-caret-right"></i>
                                                     <?php echo i18n::__('EconomicManagement') ?>
@@ -392,62 +392,63 @@ use mvc\request\requestClass as request ?>
 
                                                 <div class="row">
                                                     <div class="space-6"></div>
-<div class="container container-fluid">
-    <h1><i class="glyphicon glyphicon-star-empty"></i><?php echo i18n::__('eventPartnerManagement')?> </h1>
-    <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'deleteSelect') ?>" method="POST">
-        <div style="margin-bottom: 10px; margin-top: 30px">
-                  
-        </div>
-        <table class="table table-bordered table-hover">
-            <thead>
-                <tr>
-                    <th><input type="checkbox"></th>
-                    <th><?php echo i18n::__('name')?></th>
-                    <th><?php echo i18n::__('actions')?></th>
-                </tr>
-            <tbody>
+                                                    <div class="container container-fluid">
+                                                        <h1><i class="glyphicon glyphicon-star-empty"></i><?php echo i18n::__('eventPartnerManagement') ?> </h1>
+                                                        <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'deleteSelect') ?>" method="POST">
+                                                            <div style="margin-bottom: 10px; margin-top: 30px">
 
-                <?php foreach ($objeventoPatrocinador as $eventoPatrocinador): ?>
-                    <tr>
-                        <td><input type="checkbox" name="chk[]" value="<?php echo $eventoPatrocinador->$id ?>"></td>
-                        <td><?php echo $eventoPatrocinador->id?></td>
-                        <td>
-                            <a href="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'edit', array(eventoPatrocinadorTableClass::ID => $eventoPatrocinador->$id)) ?>" class="btn btn-info btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
-                            <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoPatrocinador->id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>    </td>
-                    </tr>
-                    
-                     <div class="modal fade" id="myModalDelete<?php echo $eventoPatrocinador->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                    <div class="modal-dialog">
-                        <div class="modal-content">
-                            <div class="modal-header">
-                                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
-                            </div>
-                            <div class="modal-body">
-                                ¿Desea Eliminar el registro <?php echo $eventoPatrocinador->$id ?> ?
-                            </div>
-                            <div class="modal-footer">
-                                <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $eventoPatrocinador->$id ?>, '<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'delete') ?> ')">Confirmar Eliminar</button>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            
-                <?php endforeach ?>
-            </tbody>
-        </table>
-    </form>
-    <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'delete') ?>" method="POST">
-        <input type="hidden" id="idDelete" name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true) ?>">
+                                                            </div>
+                                                            <table class="table table-bordered table-hover">
+                                                                <thead>
+                                                                    <tr>
+                                                                        <th><input type="checkbox" id="chkAll"></th>
+                                                                        <th><?php echo i18n::__('name') ?></th>
+                                                                        <th><?php echo i18n::__('actions') ?></th>
+                                                                    </tr>
+                                                                <tbody>
 
-        <a href="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'insert') ?>" type="button" class="btn btn-info"><?php echo i18n::__('create')?></a>
-        
-    </form>
-</div>
+                                                                    <?php foreach ($objEventoPatrocinador as $eventoPatrocinador): ?>
+                                                                        <tr>
+                                                                            <td><input type="checkbox" name="chk[]" value="<?php echo $eventoPatrocinador->$id ?>"></td>
+                                                                            <td><?php echo $eventoPatrocinador->id ?></td>
+                                                                            <td>
+                                                                                <a href="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'edit', array(eventoPatrocinadorTableClass::ID => $eventoPatrocinador->$id)) ?>" class="btn btn-info btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
+                                                                                <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoPatrocinador->id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>    </td>
+                                                                        </tr>
+
+                                                                    <div class="modal fade" id="myModalDelete<?php echo $eventoPatrocinador->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                        <div class="modal-dialog">
+                                                                            <div class="modal-content">
+                                                                                <div class="modal-header">
+                                                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                                    <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
+                                                                                </div>
+                                                                                <div class="modal-body">
+                                                                                    ¿Desea Eliminar el registro <?php echo $eventoPatrocinador->$id ?> ?
+                                                                                </div>
+                                                                                <div class="modal-footer">
+                                                                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                                                                                    <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $eventoPatrocinador->$id ?>, '<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'delete') ?> ')">Confirmar Eliminar</button>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+
+                                                                <?php endforeach ?>
+                                                                </tbody>
+                                                            </table>
+                                                        </form>
+                                                        <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'delete') ?>" method="POST">
+                                                            <input type="hidden" id="idDelete" name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true) ?>">
+
+                                                            <a href="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'insert') ?>" type="button" class="btn btn-info"><?php echo i18n::__('create') ?></a>
+                                                            <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
+
+                                                        </form>
+                                                    </div>
 
 
-                                                  
+
                                                 </div>
 
 

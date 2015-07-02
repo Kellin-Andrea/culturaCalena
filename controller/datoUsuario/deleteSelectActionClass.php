@@ -18,29 +18,29 @@ use mvc\i18n\i18nClass as i18n;
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST') and request::getInstance()->hasPost('chk')) {
-        
-        $idsToDelete = request::getInstance()->getPost('chk');
-        
-        foreach ($idsToDelete as $id) {
-          $ids = array(
-            usuarioTableClass::ID => $id
-          );
-          usuarioTableClass::delete($ids, true);
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST') and request::getInstance()->hasPost('chk')) {
+
+                $idsToDelete = request::getInstance()->getPost('chk');
+
+                foreach ($idsToDelete as $id) {
+                    $ids = array(
+                        datoUsuarioTableClass::ID => $id
+                    );
+                    datoUsuarioTableClass::delete($ids, true);
+                }
+
+                session::getInstance()->setSuccess('Los Elementos Seleccionados fueron Borrados Exitosamente');
+
+                routing::getInstance()->redirect('datoUsuario', 'index');
+            } else {
+                routing::getInstance()->redirect('datoUsuario', 'index');
+            }
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
         }
-        
-        session::getInstance()->setSuccess('Los Elementos Seleccionados fueron Borrados Exitosamente');
-        
-        routing::getInstance()->redirect('usuario', 'index');
-      } else {
-        routing::getInstance()->redirect('usuario', 'index');
-      }
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
     }
-  }
 
 }

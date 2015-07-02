@@ -53,7 +53,7 @@ body{
 
 .logo {
     
-    top:-4px;
+    top:4px;
     margin: 1px;
   
        
@@ -66,10 +66,11 @@ body{
 
 #menucito
 {
-    margin-right: 27px; 
-    margin-left: -105px;
-    width: 1350px;
+/*    margin-right: 27px; 
+    margin-left: -95px;*/
+    //width: 1300px;
     top: 30px;
+ 
     
    
 }
@@ -80,21 +81,19 @@ body{
 
 #pane {
  background-image: url("../..//web/css/homepage/images/panel.jpg");
- border-right: 2px;
+ 
  
 }
 
-.nosotros {
-    text-align: center;
-    color: #006666;
-    
-    
-}
 
 .parrafo {
     color: #006633; font-family: bold; font-size: 20px;
     text-align: justify;
         
+}
+
+.sub-menu {
+    color: #006633
 }
 
 

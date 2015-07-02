@@ -30,7 +30,7 @@ use mvc\request\requestClass as request ?>
                 <a href="#" class="navbar-brand">
                     <small>
                         <i class="glyphicon glyphicon-leaf"></i>
-<?php echo i18n::__('cultureCaleña') ?>
+                        <?php echo i18n::__('cultureCaleña') ?>
                     </small>
                 </a>
 
@@ -50,7 +50,7 @@ use mvc\request\requestClass as request ?>
                             <img class="nav-user-photo" src="<?php echo \mvc\routing\routingClass::getInstance()->getUrlImg('../img/logo.jpg') ?>" />
                             <span class="user-info">
                                 <small><?php echo i18n::__('welcome') ?></small>
-<?php echo i18n::__('administrator') ?>
+                                <?php echo i18n::__('administrator') ?>
                             </span>
 
                             <i class="ace-icon fa fa-caret-down"></i>
@@ -62,7 +62,7 @@ use mvc\request\requestClass as request ?>
                             <li>
                                 <a href="profile.html">
                                     <i class="ace-icon fa fa-user"></i>
-<?php echo i18n::__('profile') ?>
+                                    <?php echo i18n::__('profile') ?>
                                 </a>
                             </li>
 
@@ -71,7 +71,7 @@ use mvc\request\requestClass as request ?>
                             <li>
                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>">
                                     <i class="ace-icon fa fa-power-off"></i>
-<?php echo i18n::__('exit') ?>
+                                    <?php echo i18n::__('exit') ?>
                                 </a>
                             </li>
                         </ul>
@@ -116,7 +116,7 @@ use mvc\request\requestClass as request ?>
                             <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close">
                                 <li class="dropdown-header">
                                     <i class="ace-icon fa fa-check"></i>
-<?php echo i18n::__('language') ?>
+                                    <?php echo i18n::__('language') ?>
                                 </li>
 
                                 <li class="dropdown-content">
@@ -173,7 +173,7 @@ use mvc\request\requestClass as request ?>
 
 
 
-                                                      <li class="">
+                                                    <li class="">
                                                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">
                                                             <i class="menu-icon fa fa-caret-right"></i>
                                                             <?php echo i18n::__('user') ?>
@@ -255,7 +255,7 @@ use mvc\request\requestClass as request ?>
 
                                                 <b class="arrow"></b>
                                             </li>
-                                              <li class="">
+                                            <li class="">
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('estadoPqrs', 'index') ?>">
                                                     <i class="menu-icon fa fa-caret-right"></i>
                                                     <?php echo i18n::__('feedbackState') ?>
@@ -296,7 +296,7 @@ use mvc\request\requestClass as request ?>
 
                                                 <b class="arrow"></b>
                                             </li>
-                                             
+
                                             <li class="">
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tarifa', 'index') ?>">
                                                     <i class="menu-icon fa fa-caret-right"></i>
@@ -331,7 +331,7 @@ use mvc\request\requestClass as request ?>
                                         <i class="menu-icon fa fa-calendar"></i>
 
                                         <span class="menu-text">
-<?php echo i18n::__('calendar') ?> 
+                                            <?php echo i18n::__('calendar') ?> 
 
                                             <!-- #section:basics/sidebar.layout.badge -->
                                             <span class="badge badge-transparent tooltip-error" title="2 Important Events">
@@ -378,10 +378,10 @@ use mvc\request\requestClass as request ?>
                                         <!-- /section:settings.box -->
                                         <div class="page-header">
                                             <h1>
-                                                    <?php echo i18n::__('mainMenu') ?>
+                                                <?php echo i18n::__('mainMenu') ?>
                                                 <small>
                                                     <i class="ace-icon fa fa-angle-double-right"></i>
-<?php echo i18n::__('managementAdmisnistrator') ?>
+                                                    <?php echo i18n::__('managementAdmisnistrator') ?>
                                                 </small>
                                             </h1>
                                         </div><!-- /.page-header -->
@@ -403,7 +403,7 @@ use mvc\request\requestClass as request ?>
                                                             <table class="table table-bordered table-hover">
                                                                 <thead>
                                                                     <tr>
-                                                                        <th><input type="checkbox"></th>
+                                                                        <th><input type="checkbox" id="chkAll"></th>
                                                                         <th><?php echo i18n::__('events') ?></th>
                                                                         <th><?php echo i18n::__('user') ?></th>
                                                                         <th><?php echo i18n::__('observation') ?></th>
@@ -414,7 +414,7 @@ use mvc\request\requestClass as request ?>
                                                                     </tr>
                                                                 <tbody>
 
-<?php foreach ($objrecaudoEconomico as $recaudoEconomico): ?>
+                                                                    <?php foreach ($objrecaudoEconomico as $recaudoEconomico): ?>
                                                                         <tr>
                                                                             <td><input type="checkbox" name="chk[]" value="<?php echo $recaudoEconomico->$id ?>"></td>
                                                                             <td><?php echo $recaudoEconomico->evento_id ?></td>
@@ -447,7 +447,7 @@ use mvc\request\requestClass as request ?>
                                                                         </div>
                                                                     </div>
 
-<?php endforeach ?>
+                                                                <?php endforeach ?>
                                                                 </tbody>
                                                             </table>
                                                         </form>
@@ -455,6 +455,7 @@ use mvc\request\requestClass as request ?>
                                                             <input type="hidden" id="idDelete" name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::ID, true) ?>">
 
                                                             <a href="<?php echo routing::getInstance()->getUrlWeb('recaudoEconomico', 'insert') ?>" type="button" class="btn btn-info"><?php echo i18n::__('create') ?></a>
+                                                            <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
 
                                                         </form>
                                                     </div>

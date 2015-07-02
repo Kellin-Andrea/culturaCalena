@@ -2,320 +2,327 @@
 culture:                  English                                                                                                         Español
 dictionary:
   default:
-    homePage:             Home page
-    name:                 Name
-    pass:                 Pass
-    dateCreate:                                                             Date Create
-    editUser:             Edit user
-    new:                                                                    New 
-    newPass:              New pass
-    oldPass:              Old pass
-    pass_confirmation:    Pass confirmation
-    register:             Register
-    selectTables:         Selec tables
-    actions:              Actions
-    description:          Description
-    latestNews:           Lates news
-    briefcase:                                                              Briefcase
-    notice:               Notice
-    Dance:                Dance
-    Sport:                Sport
-    Music:                Music
-    Theater:              Theater
-    novelty:              Novelty
-    terms of use:                                                           Terms of use
-    Links of interest:                                                      Links of interest
-    music:                Music
-    theater:              Theater
-    sport:                Sport
-    events:               Events
-    contact:              Contact
-    seeMore:              See more
-    culture:              Culture
-    literature:           Literature
-    dining:               Dinig
-    libraries:            Libraries
-    museums:              Museums
-    conventionCenter:     Conventions center
-    cultureCenter:        Culture center
-    login:                Login
-    email:                Email    
-    image:                Image
-    description:          Description
-    logout:               Logout  
-    about:                About
-    services:             Services
-    Contact:              Contact
-    answer:               Answer
-    feedbackTypeID:       Feed back type Id
-    place_id:             Place Id
-    title:                Title
-    content:              Content
-    modify_credential:    Edit credential
-    are_sure_delete_registers:     Are sure delete registers?
-    are_sure_delete_this_register:  Are sure delete this register?
-    close:                Close
-    Save changes:         Save changes
-    confirm:              Confirm
-    delete_registers:     Delete registers
-    delete_the_registration_was_successful: Delete the registration was seccessful
-    the_record_was_successfully_removed: The record was successfully removed
-    your_request_has_been_successfully_registered: Your request has been seccessfully registered
-    congrats,your event has been created: Congrats your event has been created 
-    filter:               Filter
-    page:                 Page 
-    of:                   Of 
-    know more here:       know more here
-    user_updated_successfully: User update successfully
-    welcome:              Welcome
-    feedback_answer:      Feedback answer
-    answer_send:          Answer send
-    my_events:            My events
-    events_like_me:       Events like me 
-    administration:       Administration
-    socio_cultural_portal_santiago_de_cali_(Administration): Socio Cultural Portal Santiago de Cali (Administration)
-    sign out:             Sign out
-    profile:              Profile
-    homePage:             Home page
-    development_group_(admin):  Development group (admin)
-    development_group:    Development Group
-    culture_cali:         Culture cali
-    culture_center:       CULTURE CENTER
-    theater_jorge_isaac:  THEATER JORGE ISAAC
-    library_public:       LIBRARY PUBLIC
-    cultural_dance:       CULTURAL DANCE
-    art:                  ART
-    cali_terminal:        CALI TERMINAL
-    cali_zoo:             CALI ZOO
-    know_a_little_about_cali:  Know a little about Cali
-    want_to_know_more:    Want to know more?
-    here_you_will_see_information_about_the_latest_event_updates: Here you will see information about the latest event updates ...
-    identification:       Identification
-    to_enter:             To enter
-    remember_me:          Remember me
-    value:                Value
-    reports:              Reports
-    report_management:    Report management
-    male:                 Male
-    female:               Female
-    previous:             Anterior
-    next:                 Next
-    spanish:              Spanish
-    english:              English
-    marker:               Marker
-    whoWeAre:           Who We Are
-    cancel:                                                                 cancel
-    userData:                                                               User Data
-    please_indicate_the_position_of_the_event: Please indicate the position of the event
-    present_position:     Present position
-    we_are_working:       We are working
-    sorry_we_are_working_so_you_have_a_better_experience_on_our_site: Sorry, we are working so you have a better experience on our site.
-    type_select:                                                            Select Type Document
-    Organizations_select:                                                   Select Organizations
+    homePage:                                                          Home page
+    name:                                                              Name
+    pass:                                                              Pass
+    dateCreate:                                                        Date Create
+    eventPartnerManagement:                                            Event Partner Management
+    newEventPartner:                                                   New Event Partner
+    partner_select:                                                    Partner Select
+    event_select:                                                      Event Select
+    editUser:                                                          Edit user
+    EventPartner:                                                      Event Partner
+    editPartner:                                                       Edit Partner
+    editOrganization:                                                  Edit Organization
+    new:                                                               New 
+    newPass:                                                           New pass
+    oldPass:                                                           Old pass
+    pass_confirmation:                                                 Pass confirmation
+    register:                                                          Register
+    selectTables:                                                      Selec tables
+    actions:                                                           Actions
+    description:                                                       Description
+    latestNews:                                                        Lates news
+    briefcase:                                                         Briefcase
+    notice:                                                            Notice
+    novelty:                                                           Novelty
+    terms of use:                                                      Terms of use
+    Privacy and policy:                                                Privacy and policy
+    Links of interest:                                                 Links of interest
+    music:                                                             Music
+    theater:                                                           Theater
+    sport:                                                             Sport
+    events:                                                            Events
+    contact:                                                           Contact
+    seeMore:                                                           See more
+    culture:                                                           Culture
+    literature:                                                        Literature
+    dining:                                                            Dinig
+    libraries:                                                         Libraries
+    museums:                                                           Museums
+    conventionCenter:                                                  Conventions center
+    cultureCenter:                                                     Culture center
+    login:                                                             Login
+    email:                                                             Email    
+    image:                                                             Image
+    description:                                                       Description
+    logout:                                                            Logout  
+    about:                                                             About
+    who we are:                                                        who we are
+    services:                                                          Services
+    Contact:                                                           Contact
+    answer:                                                            Answer
+    feedbackTypeID:                                                    Feed back type Id
+    place_id:                                                          Place Id
+    title:                                                             Title
+    content:                                                           Content
+    modify_credential:                                                 Edit credential
+    are_sure_delete_registers:                                         Are sure delete registers?
+    are_sure_delete_this_register:                                     Are sure delete this register?
+    close:                                                             Close
+    Save changes:                                                      Save changes
+    confirm:                                                           Confirm
+    delete_registers:                                                  Delete registers
+    delete_the_registration_was_successful:                            Delete the registration was seccessful
+    the_record_was_successfully_removed:                               The record was successfully removed
+    your_request_has_been_successfully_registered:                     Your request has been seccessfully registered
+    congrats,your event has been created:                              Congrats your event has been created 
+    filter:                                                            Filter
+    page:                                                              Page 
+    of:                                                                Of 
+    user_updated_successfully:                                         User update successfully
+    welcome:                                                           Welcome
+    feedback_answer:                                                   Feedback answer
+    answer_send:                                                       Answer send
+    my_events:                                                         My events
+    events_like_me:                                                    Events like me 
+    events_like_me_Management:                                         Events Like Me Management
+    new_events_like_me:                                                New Events Like Me
+    edit_events_like_me:                                               Edit Events Like Me  
+    administration:                                                    Administration
+    socio_cultural_portal_santiago_de_cali_(Administration):           Socio Cultural Portal Santiago de Cali (Administration)
+    sign out:                                                          Sign out
+    profile:                                                           Profile
+    homePage:                                                          Home page
+    development_group_(admin):                                         Development group (admin)
+    development_group:                                                 Development Group
+    culture_cali:                                                      Culture cali
+    want_to_know_more:                                                 Want to know more?
+    here_you_will_see_information_about_the_latest_event_updates:      Here you will see information about the latest event updates ...
+    identification:                                                    Identification
+    to_enter:                                                          To enter
+    remember_me:                                                       Remember me
+    value:                                                             Value
+    reports:                                                           Reports
+    report_management:                                                 Report management
+    male:                                                              Male
+    female:                                                            Female
+    previous:                                                          Previous
+    next:                                                              Next
+    spanish:                                                           Spanish
+    english:                                                           English
+    marker:                                                            Marker
+    cancel:                                                            Cancel
+    userData:                                                          User Data
+    please_indicate_the_position_of_the_event:                         Please indicate the position of the event
+    present_position:                                                  Present position
+    we_are_working:                                                    We are working
+    sorry_we_are_working_so_you_have_a_better_experience_on_our_site:  Sorry, we are working so you have a better experience on our site.
+    type_select:                                                       Select Type Document
+    Organizations_select:                                              Select Organizations
+    Music:                                                             Music
+    Sport:                                                             Sport
+    Dance:                                                             Dance
+    Theater:                                                           Theater
+    know more here:                                                    know more here
+    Project:                                                           Project
     #-----------------------------User-----------------------------------------#
-    userManagement:       User management
-    id:                   Id
-    lastLogin:            Last login
-    createUser:           Create user
-    new_user:             New user
-    modifyFields:         Modify fields
-    fillFields:           Fill fields
-    insertNameUser:       Insert name user 
-    insertPass:           Insert Pass 
-    verifyPass:                                                             Verify Password
-    gender:               Gender
-    name_user:            Name user
-    gender_select:        Gender select
-    user:                                                                   User
-    usermanagement:                                                         User Management
-    returning_to_user:    Returning to user
+    userManagement:                                                    User management
+    id:                                                                Id
+    lastLogin:                                                         Last login
+    createUser:                                                        Create user
+    new_user:                                                          New user
+    modifyFields:                                                      Modify fields
+    fillFields:                                                        Fill fields
+    insertNameUser:                                                    Insert name user 
+    insertPass:                                                        Insert Pass 
+    verifyPass:                                                        Verify Password
+    gender:                                                            Gender
+    name_user:                                                         Name user
+    gender_select:                                                     Gender select
+    user:                                                              User
+    usermanagement:                                                    User Management
+    returning_to_user:                                                 Returning to user
     #----------------------------admin--------------------------------------#
-    mainMenu:                                                               Main Menu
-    cultureCaleña:                                                          Culture Caleña
-    portalCultural:                                                         Portal Cultural
-    welcome:                                                                Welcome
-    administrator:                                                          administrator
-    profile:                                                                Profile
-    exit:                                                                   LogOut
-    language:                                                               select language
-    tables:                                                                 Tables
-    calendar:                                                               Calendar
-    gallery:                                                                Gallery
-    managementAdmisnistrator:                                               Management Administrator                
-    welcomeTo:                                                              Welcome to
-    siteWhere:                                                              Portal Cultural Of Santiago Of Cali               
-    application:                                                            Application                
+    mainMenu:                                                          Main Menu
+    cultureCaleña:                                                     Culture Caleña
+    portalCultural:                                                    Portal Cultural
+    welcome:                                                           Welcome
+    administrator:                                                     Administrator
+    profile:                                                           Profile
+    exit:                                                              LogOut
+    language:                                                          select language
+    tables:                                                            Tables
+    calendar:                                                          Calendar
+    gallery:                                                           Gallery
+    managementAdmisnistrator:                                          Management Administrator                
+    welcomeTo:                                                         Welcome to
+    siteWhere:                                                         Portal Cultural Of Santiago Of Cali               
+    application:                                                       Application                
      #----------------------------Log book--------------------------------------#
-    showLogBook:          Show log book
-    logBook:              Log book
-    user_id:              User id
-    action:               Action
-    table:                Table
-    record:               Record
-    observation:          Observation
-    date:                 Date
+    showLogBook:                                                       Show log book
+    logBook:                                                           Log book
+    user_id:                                                           User id
+    action:                                                            Action
+    table:                                                             Table
+    record:                                                            Record
+    observation:                                                       Observation
+    date:                                                              Date
     
     #----------------------------Credential------------------------------------#
-    credentialManagement: Credential management
-    userCredentialManagement: userCredentialManagement
-    create_credential:    Create credential
-    newCredencial:        New credencial
-    credential:           Credential
-    creationDate:         Creation date
-    updateDate:           Update date
-    deleteDate:           Delete date
-    lastName:             Last name 
-    name_credential:                                                        Name Credential
-    credentialId:         Credential Id
-    returning_to_credential: Returning to credential
-    userCredential:          userCredential
+    credentialManagement:                                              Credential management
+    create_credential:                                                 Create credential
+    newCredencial:                                                     New credencial
+    userCredential:                                                    User Credential
+    credential:                                                        Credential
+    creationDate:                                                      Creation date
+    updateDate:                                                        Update date
+    deleteDate:                                                        Delete date
+    lastName:                                                          Last name 
+    name_credential:                                                   Name Credential
+    credentialId:                                                      Credential Id
+    returning_to_credential:                                           Returning to credential
     #-----------------------------Category-------------------------------------#
-    categoryManagement:   Category management 
-    eventCategory:        Event category
-    category:             Category
-    categoryID:           Category Id
-    newCategory:          New category
-    createCategory:       Create category
-    event_category:       Event category
-    category_select:      select Category
-    music:                Music
-    theater:              Theater 
-    dance:                Dance
-    sport:                Sport
-    art_expositions:      Art expositions
-    crafts:               Crafts
-    name_category:                                                          Name Category
-    returning_to_category: Returning to category
+    categoryManagement:                                                Category management 
+    eventCategory:                                                     Event category
+    category:                                                          Category
+    categoryID:                                                        Category Id
+    newCategory:                                                       New category
+    createCategory:                                                    Create category
+    event_category:                                                    Event category
+    category_select:                                                   Select Category
+    music:                                                             Music
+    theater:                                                           Theater 
+    dance:                                                             Dance
+    sport:                                                             Sport
+    art_expositions:                                                   Art expositions
+    crafts:                                                            Crafts
+    name_category:                                                     Name Category
+    returning_to_category:                                             Returning to category
     #------------------------------Event---------------------------------------#
-    eventManagement:       Event management 
-    eventPartnerManagement: EventPartnerManagement 
-    eventCreate:           Event create
-    events:                Events
-    eventName:             Event name
-    start_date:            Start date
-    finish_date:           Finish date
-    cost:                  Cost
-    categoryID:            Category Id
-    eventId:               Event Id
-    length:                                                              Length
-    latitude:              Latitude
-    adress:                Adress
-    publicationStartDate:  Publication start date
-    publicationFinishDate: Publication finish date
-    newEvent:              New event
-    returning_to_event:    Returning to event
-    editEvent:                                                              Edit Event
-    EventPartner:          EventPartner
+    eventManagement:                                                   Event management 
+    eventCreate:                                                       Event create
+    events:                                                            Events
+    eventName:                                                         Event name
+    start_date:                                                        Start date
+    finish_date:                                                       Finish date
+    cost:                                                              Cost
+    categoryID:                                                        Category Id
+    eventId:                                                           Event Id
+    length:                                                            Length
+    latitude:                                                          Latitude
+    adress:                                                            Adress
+    publicationStartDate:                                              Publication start date
+    publicationFinishDate:                                             Publication finish date
+    newEvent:                                                          New event
+    returning_to_event:                                                Returning to event
+    editEvent:                                                         Edit Event
     #----------------------------Organization----------------------------------#
-    organizationManagement: Organization management
-    createOrganization:    Create organization
-    newOrganization:       New organization
-    organizations:         Organizations
-    phone:                 Phone
-    adress:                Adress
-    e-mail:                E-mail
-    webPage:               Web page
-    facsimil:              Fax
-    organization_id:       Organization Id
-    birth_day:             Birth day
-    organization_select:   Organization select
-    returning_to_organization: Returning to organization
+    organizationManagement:                                            Organization management
+    createOrganization:                                                Create organization
+    newOrganization:                                                   New organization
+    organizations:                                                     Organizations
+    phone:                                                             Phone
+    adress:                                                            Adress
+    e-mail:                                                            E-mail
+    webPage:                                                           Web page
+    facsimil:                                                          Fax
+    organization_id:                                                   Organization Id
+    birth_day:                                                         Birth day
+    organization_select:                                               Organization select
+    returning_to_organization:                                         Returning to organization
     #--------------------------------Partner-----------------------------------#
-    partnerManagement:     Partner management
-    partner:               Partner
-    partnerManagement:     Partner management
-    partner_id:            Partner Id
-    newPartner:            New partner
-    createPartner:         Create partner
-    returning_to_partner:  Returning to partner
+    partnerManagement:                                                 Partner management
+    partner:                                                           Partner
+    partnerManagement:                                                 Partner management
+    partner_id:                                                        Partner Id
+    newPartner:                                                        New partner
+    createPartner:                                                     Create partner
+    returning_to_partner:                                              Returning to partner
     #-----------------------------Feedback-------------------------------------#
     
-    title:                 Title 
-    newfeedback:           New  Feedback
-    editfeedback:                                                           Edit  PQRSF
-    feedback:                                                               Feedback
-    newFeedbackType:       New feedback type
-    feedbackType:          Feedback type
-    feedbackManagement:    Feedback management
-    feedbackSpecs:         Feedback specs
-    feedbackState:         Feedback state
-    pqrsf_details:         Feedback details
-    created:               Created
-    in_process:            In process 
+    title:                                                             Title 
+    newfeedback:                                                       New  Feedback
+    editfeedback:                                                      Edit  PQRSF
+    feedback:                                                          Feedback
+    newFeedbackType:                                                   New feedback type
+    feedbackType:                                                      Feedback type
+    editFeedbackType:                                                  Edit  Feedback type
+    feedbackTypeManagement:                                            Feedback Type Management
+    feedbackManagement:                                                Feedback management
+    feedbackSpecs:                                                     Feedback specs
+    feedbackState:                                                     Feedback state
+    pqrsf_details:                                                     Feedback details
+    created:                                                           Created
+    in_process:                                                        In process 
     
     #-----------------------------DetallePqrsf---------------------------------#
-    user_select:           User select 
-    feedback_select:       Feedback select
+    user_select:                                                       User select 
+    feedback_select:                                                   Feedback select
+    newfeedbackDetails:                                                New Feedback Details
+    editfeedbackDetails:                                               Edit Feedback Details
     
     #-----------------------------Feedbcakstate--------------------------------#
-    activate:              Activate
-    pqrsfState:            Feedback state
-    newFeedbackState:      New feedback state
-    createFeedbackState:   Create feedback state
+    activate:                                                          Activate
+    pqrsfState:                                                        Feedback state
+    newFeedbackState:                                                  New feedback state
+    createFeedbackState:                                               Create feedback state
     
     #------------------------------Rates---------------------------------------#
-    ratesManagement:       Rates management
-    rates:                 Rates
-    rateId:                Rate Id
-    partialPayment:        Partial payment
-    totalPayment:          Total payment
-    createRates:           Create rate
-    newRate:               New rate
-    returning_to_rates:    Returning to rates
+    ratesManagement:                                                   Rates management
+    rates:                                                             Rates
+    rateId:                                                            Rate Id
+    partialPayment:                                                    Partial payment
+    totalPayment:                                                      Total payment
+    createRates:                                                       Create rate
+    newRate:                                                           New rate
+    editRate:                                                          Edit Rate
+    returning_to_rates:                                                Returning to rates
     #---------------------------Document type----------------------------------#
-    IdType:                Type Id
-    IdTypeManagement:      Id type management 
-    document_type:         Document type
-    createDocumentType:    Create document type
-    newDocumentType:       New document type
-    document_type_select:  Document type select 
-    editDocumentType:                                                      Edit Document Type
+    IdType:                                                            Type Id
+    IdTypeManagement:                                                  Id type management 
+    document_type:                                                     Document type
+    createDocumentType:                                                Create document type
+    newDocumentType:                                                   New document type
+    document_type_select:                                              Document type select 
+    editDocumentType:                                                  Edit Document Type
      #------------------------Economic management-------------------------------#
-    EconomicManagement:    Economic management
-    EconomicId:            Economic Id 
-    EventId:               Event Id
-    Observation:           Observation
-    valueParcial:          Value parcial
-    valueTotal:            Value Total
-    newEconomic:           New economic
+    EconomicManagement:                                                Economic management
+    EconomicId:                                                        Economic Id 
+    editEconomicManagement:                                            Edit Economic Manegement
+    EventId:                                                           Event Id
+    Observation:                                                       Observation
+    valueParcial:                                                      Value parcial
+    valueTotal:                                                        Value Total
+    newEconomic:                                                       New economic
     #------------------------Economic collection-------------------------------#
-    Economic_id:           Economic Id
-    msjReport:             Mjs report
+    Economic_id:                                                       Economic Id
+    msjReport:                                                         Mjs report
     #---------------------------Rememberme-------------------------------------#
-    rememberMeManagement:  Remenber me management
-    rememberMe:            Remenber me
+    rememberMeManagement:                                              Remenber me management
+    rememberMe:                                                        Remenber me
     
     #------------------------------Locality---------------------------------------#
-    eventlocalitysManagement:  Event Localitys Management
-    eventPlace:            Lugar del evento
-    eventPlaceID:          Id de lugar
-    locality:              Locality
-    newLocality:           Nueva localidad
-    editLocality:          Editar localidad
-    locality_select:       Locality select
+    eventlocalitysManagement:                                          Event Localitys Management
+    eventPlace:                                                        EventPlace
+    eventPlaceID:                                                      Id de lugar
+    locality:                                                          Locality
+    newLocality:                                                       Nueva localidad
+    editLocality:                                                      Editar localidad
+    locality_select:                                                   Locality select
     #----------------------------Actions---------------------------------------#
-    edit:                 Edit 
-    delete:               Delete
-    create:               Create
-    update:               Update
-    registers:            Register
-    view:                 View
-    deleteSelection:      Delete Selection
-    printReportPdf:       Print report PDF
-    filter:               Filter
-    deleteFilter:         Delete filter
+    edit:                                                              Edit 
+    delete:                                                            Delete
+    create:                                                            Create
+    update:                                                            Update
+    registers:                                                         Register
+    view:                                                              View
+    deleteSelection:                                                   Delete Selection
+    printReportPdf:                                                    Print report PDF
+    filter:                                                            Filter
+    deleteFilter:                                                      Delete filter
 
 #- #---------------------------Profile user------------------------------------#
-    profileInformation:   Profile information
+    profileInformation:                                                Profile information
 
 
    #-----------------------------Errors----------------------------------------#
   errors:
-    00001:         The module and the requested action did not exist.  
-    00002:         The address you requested does not exist.
-    00003:         Characters %char% not allowed.
-    00004:         Email associated with another account.
-    00005:         Invalid dates.
+    00001:                                                             The module and the requested action did not exist.  
+    00002:                                                             The address you requested does not exist.
+    00003:                                                             Characters %char% not allowed.
+    00004:                                                             Email associated with another account.
+    00005:                                                             Invalid dates.
     00006:
     00007:
     00008:
@@ -323,13 +330,13 @@ dictionary:
     00010:
 
    #---------------------------------User--------------------------------------#
-    00011:         Data username and password are invalid.
-    00012:         User %user% exceeds the %character% carateres allowed.
-    00013:         Passwords are not equal.
-    00014:         Enter a username.
-    00015:         Enter a password.
-    00016:         Password verification empty.
-    00017:         The user is already registered.
+    00011:                                                             Data username and password are invalid.
+    00012:                                                             User %user% exceeds the %character% carateres allowed.
+    00013:                                                             Passwords are not equal.
+    00014:                                                             Enter a username.
+    00015:                                                             Enter a password.
+    00016:                                                             Password verification empty.
+    00017:                                                             The user is already registered.
     00018:         
     00019:
     00020:
@@ -340,18 +347,18 @@ dictionary:
     00025:
 
     #--------------------------------Event-------------------------------------#
-    00026:           Enter the url of the image.
-    00027:           Url logintud not permiridad.
-    00028:           Enter a "name for the event".
-    00029:           Event name exceeds allowable characters.
-    00030:           The event is already registered .
-    00031:           Indicate start date.
-    00032:           Enter end date.
-    00034:           Indicate coordinate "latitude".
-    00035:           Indicate coordinate "latitude".
-    00036:           Enter the address of the event.
-    00037:           Enter the User ID.
-    00038:           Enter the Category ID 
+    00026:                                                             Enter the url of the image.
+    00027:                                                             Url logintud not permiridad.
+    00028:                                                             Enter a "name for the event".
+    00029:                                                             Event name exceeds allowable characters.
+    00030:                                                             The event is already registered.
+    00031:                                                             Indicate start date.
+    00032:                                                             Enter end date.
+    00034:                                                             Indicate coordinate "latitude".
+    00035:                                                             Indicate coordinate "latitude".
+    00036:                                                             Enter the address of the event.
+    00037:                                                             Enter the User ID.
+    00038:                                                             Enter the Category ID 
     00039:         
     00040:
     00041:
@@ -360,9 +367,9 @@ dictionary:
     00044:
 
     #------------------------------Credential----------------------------------#
-    00045:           Enter the name of the credential.
-    00046:           The credential %cre% exceeds the allowed
-    00047:           The credential is already registered.
+    00045:                                                             Enter the name of the credential.
+    00046:                                                             The credential %cre% exceeds the allowed
+    00047:                                                             The credential is already registered.
     00048:         
     00049:
     00050:
@@ -372,9 +379,9 @@ dictionary:
     00055:
 
     #--------------------------------Category----------------------------------#
-    00056:           Enter the name for the category .
-    00057:           Name of category %cat% exceeds the %caracteres% allowable characters.
-    00058:           The category encunetra already registered.
+    00056:                                                             Enter the name for the category.
+    00057:                                                             Name of category %cat% exceeds the %caracteres% allowable characters.
+    00058:                                                             The category encunetra already registered.
     00059:           
     00060:
     00061:
@@ -384,18 +391,18 @@ dictionary:
     00065:
 
     #--------------------------------Organization------------------------------#
-    00066:           Enter a name for the organization.
-    00067:           Enter phone number.
-    00068:           The phone number %tel% exceeds the %caracteres% allowable characters.
-    00069:           Please enter numbers.
-    00070:           Enter email.
-    00071:           The email %email% exceeds the %caracteres% allowable characters .
-    00072:           Enter street addresses
-    00074:           The address is empty.
-    00075:           The address %dir% exceeds the %caracteres% allowable characters.
-    00076:           Enter link to website
-    00077:           The web page %web% exceeds the %caracteres% allowable characters. 
-    00078:           The organization is already registered.
+    00066:                                                             Enter a name for the organization.
+    00067:                                                             Enter phone number.
+    00068:                                                             The phone number %tel% exceeds the %caracteres% allowable characters.
+    00069:                                                             Please enter numbers.
+    00070:                                                             Enter email.
+    00071:                                                             The email %email% exceeds the %caracteres% allowable characters .
+    00072:                                                             Enter street addresses
+    00074:                                                             The address is empty.
+    00075:                                                             The address %dir% exceeds the %caracteres% allowable characters.
+    00076:                                                             Enter link to website
+    00077:                                                             The web page %web% exceeds the %caracteres% allowable characters. 
+    00078:                                                             The organization is already registered.
     00079:
     00080:
     00081:
@@ -406,18 +413,18 @@ dictionary:
     00086:
 
     #-----------------------------------Partner--------------------------------#
-    00087:            Enter name sponsor.
-    00088:            Sponsor name empty.
-    00089:            El patrocinador ya existe.
-    00090:            Name of sponsor %name% exceeds the %caracteres% allowable characters .
-    00091:            Enter phone number.
-    00092:            The phone number %tel% exceeds the %caracteres% allowable characters .
-    00093:            Please enter numbers.
-    00094:            Enter email.
-    00095:            The email %email% exceeds the %caracteres% allowable characters .
-    00096:            Enter street addresses.
-    00097:            The address is empty.
-    00098:            The address %dir% exceeds the %caracteres% allowable characters .
+    00087:                                                             Enter name sponsor.
+    00088:                                                             Sponsor name empty.
+    00089:                                                             El patrocinador ya existe.
+    00090:                                                             Name of sponsor %name% exceeds the %caracteres% allowable characters .
+    00091:                                                             Enter phone number.
+    00092:                                                             The phone number %tel% exceeds the %caracteres% allowable characters .
+    00093:                                                             Please enter numbers.
+    00094:                                                             Enter email.
+    00095:                                                             The email %email% exceeds the %caracteres% allowable characters .
+    00096:                                                             Enter street addresses.
+    00097:                                                             The address is empty.
+    00098:                                                             The address %dir% exceeds the %caracteres% allowable characters .
     00099:                  
     00100:
     00101:
@@ -433,19 +440,19 @@ dictionary:
     00109:
 
     #-----------------------------------Rates----------------------------------#
-    00110:             Enter a description.
-    00111:             The rate %tar%  exceeds the %carateres% allowable characters.
-    00112:             Enter a value.
-    00113:             The value %var% exceeds the %caracteres% allowable characters.
-    00114:             The rate is already registered.
+    00110:                                                             Enter a description.
+    00111:                                                             The rate %tar%  exceeds the %carateres% allowable characters.
+    00112:                                                             Enter a value.
+    00113:                                                             The value %var% exceeds the %caracteres% allowable characters.
+    00114:                                                             The rate is already registered.
     00115:                  
     00116:
     00117:
 
     #---------------------------------Type Id----------------------------------#
-    00118:             Enter a name for the document.
-    00119:             Document %doc% exceeds the %caracteres% allowable characters.
-    00120:             The document is already registered.
+    00118:                                                             Enter a name for the document.
+    00119:                                                             Document %doc% exceeds the %caracteres% allowable characters.
+    00120:                                                             The document is already registered.
     00121:
     00122:
     00123:
@@ -453,22 +460,22 @@ dictionary:
     00125:
 
     #-------------------------Economic collection------------------------------#
-    00126:             Enter the Event ID.
-    00127:             Enter the User ID.
-    00128:             Observation is empty.
-    00129:             The observation %obs% exceeds the %caracteres% allowable characters.
-    00130:             Rate is empty.
-    00131:             Partial payment is empty.
-    00132:             Full payment is empty.
+    00126:                                                             Enter the Event ID.
+    00127:                                                             Enter the User ID.
+    00128:                                                             Observation is empty.
+    00129:                                                             The observation %obs% exceeds the %caracteres% allowable characters.
+    00130:                                                             Rate is empty.
+    00131:                                                             Partial payment is empty.
+    00132:                                                             Full payment is empty.
     00133:
     00134:
     00135:
 
     #------------------------------------Place---------------------------------#
-    00136:             Enter a name for the Locality.
-    00137:             The town %loc% exceeds the %caracteres% allowable characters.
-    00138:             The destination is already registered.
-    00139:             Enter ID location.
+    00136:                                                             Enter a name for the Locality.
+    00137:                                                             The town %loc% exceeds the %caracteres% allowable characters.
+    00138:                                                             The destination is already registered.
+    00139:                                                             Enter ID location.
     00140:            
     00141:            
     00142:

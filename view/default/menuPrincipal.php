@@ -31,7 +31,3 @@
             </div><!-- /.navbar-container -->
         </div>
     </div>
-
-
-        
- 

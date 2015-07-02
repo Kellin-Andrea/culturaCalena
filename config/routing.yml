@@ -729,6 +729,10 @@ eventoPatrocinador_edit:
   load:
     - model/base/eventoPatrocinadorBaseTableClass.php
     - model/eventoPatrocinadorTableClass.php
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php 
 
 eventoPatrocinador_update:
   url:    /eventoPatrocinador/actualizar

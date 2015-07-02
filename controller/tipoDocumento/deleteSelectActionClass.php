@@ -16,33 +16,29 @@ use mvc\i18n\i18nClass as i18n;
  * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
  * @category: Pertenece al controlador modulo tipoDocumento.
  */
+
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST')) {
+      if (request::getInstance()->isMethod('POST') and request::getInstance()->hasPost('chk')) {
         
         $idsToDelete = request::getInstance()->getPost('chk');
         
         foreach ($idsToDelete as $id) {
           $ids = array(
-          tipoDocumentoTableClass::ID => $id
+              tipoDocumentoTableClass::ID => $id
           );
           tipoDocumentoTableClass::delete($ids, true);
-        
-          $this->arrayAjax = array(
-            'code' => 100,
-            'msg' => 'La eliminacion fue exitosa'
-        ); 
-        
-          $this->defineView('delete', 'credencial', session::getInstance()->getFormatOutput());
         }
-      } else {
-          
-      }
+        
+        session::getInstance()->setSuccess('Los Elementos Seleccionados fueron Borrados Exitosamente');
+        
         routing::getInstance()->redirect('tipoDocumento', 'index');
-         
-       } catch (PDOException $exc) {
+      } else {
+        routing::getInstance()->redirect('tipoDocumento', 'index');
+      }
+    } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }

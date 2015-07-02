@@ -6,9 +6,16 @@ dictionary:
     homePage:                                                               Inicio
     name:                                                                   Nombre
     pass:                                                                   Contraseña
-    dateCreate:                                                             fecha de creaccion
+    dateCreate:                                                             Fecha de creaccion
+    EventPartner:                                                           Evento Patrocinador
+    eventPartnerManagement:                                                 Gestion Evento Patrocinador
+    newEventPartner:                                                        Nuevo Evento Patrocinador
+    editPartner:                                                            Editar Patrocinador
+    partner_select:                                                         Seleccione Patrocinador
+    event_select:                                                           Seleccione Evento
     createUser:                                                             Crear usuario
     editUser:                                                               Editar usuario
+    editOrganization:                                                       Editar Organizacion
     newPass:                                                                Nueva contraseña
     new:                                                                    Nuevo 
     oldPass:                                                                Contraseña Anterior
@@ -18,10 +25,6 @@ dictionary:
     actions:                                                                Acciones
     description:                                                            Descripcion
     notice:                                                                 Noticias
-    Dance:                                                                  Baile
-    Sport:                                                                  Deporte
-    Music:                                                                  Musica
-    Theater:                                                                Teatro
     novelty:                                                                Novedad
     events:                                                                 Eventos
     contact:                                                                Contactenos
@@ -30,8 +33,10 @@ dictionary:
     image:                                                                  Imagen
     logout:                                                                 Cerrar Session  
     about:                                                                  A cerca de cali
+    who we are:                                                             Quienes Somos
     Contact:                                                                Contacto
     terms of use:                                                           Terminos de uso
+    Privacy and policy:                                                     Privacidad y Politica
     briefcase:                                                              Portafolio
     answer:                                                                 Respuesta
     feedbackTypeID:                                                         ID de PQRSF
@@ -39,7 +44,6 @@ dictionary:
     user_name:                                                              Nombre de usuario
     title:                                                                  Titulo
     content:                                                                Contenido
-    know more here:                                                         Conoce mas aqui
     create_credential:                                                      Crear Credencial
     modify_credential:                                                      Editar credencial
     are_sure_delete_registers:                                              ¿Desea eliminar los registros seleccionados?
@@ -62,7 +66,10 @@ dictionary:
     feedback_answer:                                                        Respuesta un pqrsf
     answer_send:                                                            Respuesta enviada
     my_events:                                                              Mis eventos
-    events_like_me:                                                         Mis Gustos Por Categoria
+    events_like_me:                                                         Usuario Gusto Categoria
+    events_like_me_Management:                                              Gestion Usuario Gusto Categoria
+    new_events_like_me:                                                     Nuevo Usuario Gusto Categoria
+    edit_events_like_me:                                                    Editar Usuario Gusto Categoria
     events_catalog:                                                         Catalogo de eventos
     administration:                                                         Administracion
     socio_cultural_portal_santiago_de_cali_(Administration):                Portal Socio Cultural Santiago de Cali (Administracion)
@@ -80,7 +87,6 @@ dictionary:
     female:                                                                 Femenino
     previous:                                                               Anterior
     next:                                                                   Siguiente
-    whoWeAre:           Quienes Somos
     spanish:                                                                Español
     english:                                                                Ingles
     marker:                                                                 Marcador
@@ -91,6 +97,12 @@ dictionary:
     we_are_working:                                                         Estamos trabajando
     sorry_we_are_working_so_you_have_a_better_experience_on_our_site:       Lo sentimos ,estamos trabajando para que tengas una mejor experiencia en nuestro sitio.
     Organizations_select:                                                   Seleccione Organizacion
+    Music:                                                                  Musica
+    Sport:                                                                  Deporte
+    Dance:                                                                  Danza
+    Theater:                                                                Teatro
+    know more here:                                                         Conoce mas aqui
+    project:                                                                Proyecto
     #---------------------------Usuario----------------------------------------#
     userManagement:                                                         Gestion de Usuario
     id:                                                                     ID
@@ -108,7 +120,6 @@ dictionary:
     user:                                                                   Usuario
     returning_to_user:                                                      Regresar a usuario
     usermanagement:                                                         Gestion Usuario
-
     #----------------------------admin--------------------------------------#
     mainMenu:                                                               Menu Principal
     cultureCaleña:                                                          Cultura Caleña
@@ -117,7 +128,7 @@ dictionary:
     administrator:                                                          administrador
     profile:                                                                Perfil
     exit:                                                                   Salir
-    language:                                                                Seleccione Idioma
+    language:                                                               Seleccione Idioma
     tables:                                                                 Tablas
     calendar:                                                               Calendario
     gallery:                                                                Galeria
@@ -136,8 +147,8 @@ dictionary:
     date:                                                                   Fecha
     type_select:                                                            Seleccione Tipo Documento
     #----------------------------Credencial------------------------------------#
+    userCredential:         Usuario Credencial
     credentialManagement:                                                   Gestion de credencial
-    userCredentialManagement:                                               Gestion de usuario credencial
     newCredencial:                                                          Nueva credencial
     credential:                                                             Credencial
     nameUser:                                                               Nombre de usuario
@@ -148,7 +159,6 @@ dictionary:
     name_credential:                                                        Nombre Credencial
     create_credential:                                                      Crear Credencial
     returning_to_credential:                                                Regresar a credencial
-    userCredential:                                                         Usuario Credencial
     #-----------------------------Categoria------------------------------------#
     categoryManagement:                                                     Gestion de Categorias
     eventCategory:                                                          Categoria de eventos
@@ -157,10 +167,9 @@ dictionary:
     createCategory:                                                         Crear categoria
     name_category:                                                          Nombre Categoria 
     returning_to_category:                                                  Regresar a categoria
-    category_select:                                                        Seleccione Categoria
+    category_select:      Seleccione Categoria
     #------------------------------Evento--------------------------------------#
     eventManagement:                                                        Gestion de eventos 
-    eventPartnerManagement :                                                Gestion de evento patrocinador
     description:                                                            descripcion
     events:                                                                 Eventos
     eventName:                                                              Nombre del evento
@@ -180,7 +189,6 @@ dictionary:
     newEvent:                                                               Registre un nuevo evento
     editEvent:                                                              Editar Evento
     returning_to_event:                                                     Regresar a evento
-    EventPartner:                                                           Evento patrocinador
    #----------------------------Organizaciones---------------------------------#
     organizationManagement:                                                 Gestion de Organizaciones 
     organizations:                                                          Organización
@@ -205,17 +213,21 @@ dictionary:
     
     title:                                                                  Titulo
     newfeedback:                                                            Nuevo   PQRSF
+    newfeedbackDetails:                                                     Nuevo Detalle PQRSF
+    editfeedbackDetails:                                                    Editar Detalle PQRSF
     editfeedback:                                                           Editar  PQRSF
-    feedback:                                                               PQRSF
+    feedback:                                                               Pqrs
     feedbackType:                                                           Tipo de PQRSF
-    feedbackManagement:                                                     Gestion de  tipos de PQRSF
+    editFeedbackType:                                                       Editar tipo PQRSF
+    feedbackManagement:                                                     Gestion De PQRSF
+    feedbackTypeManagement:                                                 Gestion de  tipos de PQRSF
     feedbackSpecs:                                                          Detalle de PQRSF
     feedbackState:                                                          Estado de PQRSF
     pqrsf_details:                                                          Gestion Detalle PQRSF
     created:                                                                Creado
     in_process:                                                             En proceso 
     My_feedback:                                                            Mis peticiones
-    
+    newFeedbackType:       Nuevo TypoPQRSF
     #-----------------------------DetallePqrsf---------------------------------#
     user_select:                                                           Seleccione un usuario
     feedback_select:                                                       Seleccione una opcion
@@ -228,12 +240,13 @@ dictionary:
                   
     #----------------------------Tarifas---------------------------------------#
     ratesManagement:                                                       Gestion de Tarifas
-    rates:                                                                 Tarifas por Tiempo
+    rates:                                                                 Tarifa
     rateId:                                                                Id de Tarifa
     partialPayment:                                                        Pago parcial
     totalPayment:                                                          Pago total
     createRates:                                                           Crear tarifa
     newRate:                                                               Nueva tarifa
+    editRate:                                                              Editar Tarifa
     returning_to_rates:                                                    Regresar a tarifas
     #------------------------Tipo de documento---------------------------------#
     IdType:                                                                Tipo de Identificacion
@@ -244,6 +257,7 @@ dictionary:
     editDocumentType:                                                      Editar tipo de documento 
     #------------------------Recaudo Economico---------------------------------#
     EconomicManagement:                                                    Recaudo economico
+    editEconomicManagement:                                                Editar Recaudo Economico
     EconomicId:                                                            Id Recaudo Economico 
     EventId:                                                               Evento Id
     Observation:                                                           Observacion

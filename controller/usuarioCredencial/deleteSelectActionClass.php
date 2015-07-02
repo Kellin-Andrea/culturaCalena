@@ -11,26 +11,28 @@ use mvc\i18n\i18nClass as i18n;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author kelly andrea manzano <kellinandrea18@hotmail.com>
  */
 class deleteSelectActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
     try {
-      if (request::getInstance()->isMethod('POST')) {
+      if (request::getInstance()->isMethod('POST') and request::getInstance()->hasPost('chk')) {
         
         $idsToDelete = request::getInstance()->getPost('chk');
         
         foreach ($idsToDelete as $id) {
           $ids = array(
-            usuarioTableClass::ID => $id
+              usuarioCredencialTableClass::ID => $id
           );
-          usuarioTableClass::delete($ids, true);
+          usuarioCredencialTableClass::delete($ids, true);
         }
         
-        routing::getInstance()->redirect('default', 'index');
+        session::getInstance()->setSuccess('Los Elementos Seleccionados fueron Borrados Exitosamente');
+        
+        routing::getInstance()->redirect('usuarioCredencial', 'index');
       } else {
-        routing::getInstance()->redirect('default', 'index');
+        routing::getInstance()->redirect('usuarioCredencial', 'index');
       }
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
