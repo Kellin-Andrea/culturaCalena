@@ -28,7 +28,7 @@ use mvc\request\requestClass as request ?>
             </a>
         </div>
         <div class="header-widgets  header-widgets-desktop">
-            <div class="widget  widget-icon-box">	
+            <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
                     <a class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
                     
@@ -98,9 +98,8 @@ use mvc\request\requestClass as request ?>
                 <ul id="menu-main-menu" class="navigation--main">
                     <li class="current-menu-item"><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>"><?php echo i18n::__('homePage')?></a></li>
                     <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>"><?php echo i18n::__('who we are')?></a></li>
-                    <li><a href="about.html">PROYECTOS</a></li>
-                    <li><a href="blog.html">EVENTOS</a></li>
-                    <li><a href="contact-us.html">CONTACT</a></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>"><?php echo i18n::__('events')?></a></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('contactenos', 'index') ?>"><?php echo i18n::__('contact')?></a></li>
                 </ul>	
             </div>
         </div>
@@ -116,7 +115,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
             </div>
-            <div class="widget  widget-icon-box">	
+            <div class="widget  widget-icon-box" >	
                 <div class="icon-box">
                     <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
 
@@ -282,7 +281,7 @@ use mvc\request\requestClass as request ?>
 
                     <h5>
                         <span style="color: #006666"><br/><span class="icon-container"><span class="fa fa-check"></span></span></span> 
-                        <span style="color: #0000CC"><a href="#" class="link1"><?php echo i18n::__('Theater') ?> </a></span>
+                        <span style="color: #0000CC"><a href="<?php echo routing::getInstance()->getUrlWeb('teatro', 'index') ?>" class="link1"><?php echo i18n::__('Theater') ?> </a></span>
                     </h5>
                     <p>
                     El teatro forma parte del grupo de las artes escénicas. Su desarrollo está vinculado con actores que representan una historia ante una audiencia. Este arte, por lo tanto, combina diversos elementos, como la gestualidad, el discurso, la música, los sonidos y la escenografía.
@@ -323,17 +322,15 @@ use mvc\request\requestClass as request ?>
                         
                         <ul class="sub-menu">
                             
-                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" class="link1"><?php echo i18n::__('homePage') ?></a></li>
+                            <li id="iconos"><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" class="link1"><?php echo i18n::__('homePage') ?></a></li>
                             
                             <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>" class="link1"><?php echo i18n::__('who we are') ?></a></li>
                             
-                             <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>" class="link1"><?php echo i18n::__('proyecto') ?></a></li>
-                             
-                              <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>" class="link1"><?php echo i18n::__('events') ?></a>
+                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" class="link1"><?php echo i18n::__('events') ?></a>
                             
-<!--                        <li><a href="#" class="link1"><?php echo i18n::__('contact') ?></a></li>
+                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('contactenos', 'index') ?>" class="link1"><?php echo i18n::__('contact') ?></a></li>
                         
-                         <li><a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class="link1"><?php echo i18n::__('feedback') ?></a></li>
+ <!--                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class="link1"><?php echo i18n::__('feedback') ?></a></li>
 
                          <li><a href="#" class="link1"><?php echo i18n::__('notice') ?> </a></li>
 

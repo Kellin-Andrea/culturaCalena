@@ -131,6 +131,35 @@ admin:
       - index.js
       - main.js
  
+contactenos:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - contactenos/css/animate.css
+        #<!--prettyPhoto.css -->
+      - contactenos/css/prettyPhoto.css
+        #<!--shop css-->
+      - contactenos/css/shop.css
+        #<!--style css-->
+      - contactenos/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - contactenos/js/almond.js
+      - contactenos/js/header_carousel.js
+      - contactenos/js/imagesloaded.js
+      - contactenos/js/isotope.js
+      - contactenos/js/jquery.min.js
+      - contactenos/js/jquery.prettyPhoto.js
+      - contactenos/js/jquery.validate.min.js
+      - contactenos/js/main.js
+      - contactenos/js/main.min.js
+      - contactenos/js/modernizr.custom.24530.js
+      - contactenos/js/require.js
+      - contactenos/js/simplemap.js
+      - contactenos/js/sticky_navbar.js
+      - contactenos/js/underscore.js
+
+
 default:
   index:  
     title: Cultura Caleña
@@ -534,6 +563,36 @@ tipoDocumento:
       - index.js
       - main.js
 
+teatro:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - teatro/css/animate.css
+        #<!--prettyPhoto.css -->
+      - teatro/css/prettyPhoto.css
+        #<!--shop css-->
+      - teatro/css/shop.css
+        #<!--style css-->
+      - teatro/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - teatro/js/almond.js
+      - teatro/js/header_carousel.js
+      - teatro/js/imagesloaded.js
+      - teatro/js/isotope.js
+      - teatro/js/jquery.min.js
+      - teatro/js/jquery.prettyPhoto.js
+      - teatro/js/jquery.validate.min.js
+      - teatro/js/main.js
+      - teatro/js/main.min.js
+      - teatro/js/modernizr.custom.24530.js
+      - teatro/js/require.js
+      - teatro/js/simplemap.js
+      - teatro/js/sticky_navbar.js
+      - teatro/js/underscore.js
+      
+
+
 pqrs:
   index:  
     title: Cultura Caleña
@@ -583,6 +642,35 @@ pqrs:
       - jquery-1.11.1.min.js
       - index.js
       - main.js
+      
+proyecto:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - proyecto/css/animate.css
+        #<!--prettyPhoto.css -->
+      - proyecto/css/prettyPhoto.css
+        #<!--shop css-->
+      - proyecto/css/shop.css
+        #<!--style css-->
+      - proyecto/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - proyecto/js/almond.js
+      - proyecto/js/header_carousel.js
+      - proyecto/js/imagesloaded.js
+      - proyecto/js/isotope.js
+      - proyecto/js/jquery.min.js
+      - proyecto/js/jquery.prettyPhoto.js
+      - proyecto/js/jquery.validate.min.js
+      - proyecto/js/main.js
+      - proyecto/js/main.min.js
+      - proyecto/js/modernizr.custom.24530.js
+      - proyecto/js/require.js
+      - proyecto/js/simplemap.js
+      - proyecto/js/sticky_navbar.js
+      - proyecto/js/underscore.js
+      
       
 detallePqrs:
   index:  

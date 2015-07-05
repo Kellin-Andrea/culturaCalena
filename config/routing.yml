@@ -203,6 +203,12 @@ categoria_traductor:
   url:   /categoria/traductor
   param:  { module: categoria, action: traductor, format: html }
   load:
+      
+##-------------------------- CONTATECNOS--------------------------##
+contactenos_index:
+  url:    /contactenos/index
+  param:  { module: contactenos, action: index, format: html }
+  load:      
 
   ##--------------------------  CREDENCIAL --------------------------##
 credencial_index:
@@ -1057,7 +1063,15 @@ pqrs_traductor:
   param:  { module: pqrs, action: traductor, format: html }
   load:
 
+
     
+##-------------------------- PROYECTO--------------------------##
+proyecto_index:
+  url:    /proyecto/index
+  param:  { module: proyecto, action: index, format: html }
+  load:
+      
+      
 ##-------------------------- Recaudo Economico --------------------------##
 recaudoEconomico_index:
     url: /recaudoEconomico/index
@@ -1246,6 +1260,12 @@ tarifa_traductor:
   param:  { module: tarifa, action: traductor, format: html }
   load:
 
+
+##-------------------------- TEATRO--------------------------##
+teatro_index:
+  url:    /teatro/index
+  param:  { module: teatro, action: index, format: html }
+  load:
 
 ##-------------------------- TIPO DOCUMENTO --------------------------##
 tipoDocumento_index:
