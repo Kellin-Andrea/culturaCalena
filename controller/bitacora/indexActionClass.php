@@ -27,6 +27,9 @@ class indexActionClass extends controllerClass implements controllerActionInterf
      */
   public function execute() {
     try {
+        
+        
+      $where = null;
 
       $fields = array(
           bitacoraTableClass::ID,
@@ -40,7 +43,16 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           bitacoraTableClass::ACCION
       );
-      $this->objbitacora = bitacoraTableClass::getAll($fields, false, $orderBy, 'ASC');
+       $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+
+
+      $this->cntPages = bitacoraTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objbitacora = bitacoraTableClass::getAll($fields, false, $orderBy, 'ASC' ,config::getRowGrid(), $page, $where);
       $this->defineView('index', 'bitacora', session::getInstance()->getFormatOutput());
     }//end try
     catch (PDOException $exc) {

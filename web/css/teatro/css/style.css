@@ -1746,7 +1746,7 @@ blockquote { border-color: #f7c51e; }
 
 .icon-box__title { margin: 4px 0 0 0; font-size: 14px; font-weight: bold; color: #dddddd; }
 
-.icon-box__subtitle { color: #999999; }
+.icon-box__subtitle {color: #ffffff; margin-top: 10px; }
 
 .widget_pt_icon_box .icon-box { width: auto; }
 .widget_pt_icon_box .icon-box > .fa { color: #f7c51e; }

@@ -31,13 +31,13 @@ use mvc\request\requestClass as request ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
                     <a class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
-                    
+                    <span class="icon-box__subtitle">Registrarse</span>                    
                 </div>
             </div>
             <div class="widget  widget-icon-box">	
                 <div class="icon-box">
                     <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-
+                    <span class="icon-box__subtitle">Iniciar Sesion</span>
 
                 </div>
             </div>
@@ -47,7 +47,7 @@ use mvc\request\requestClass as request ?>
                 <div class="icon-box">
                     <!-- Button trigger modal -->
                     <div type="icon-box" class="fa fa-globe" data-toggle="modal" data-target="#myModal"></div>
-
+                    <span class="icon-box__subtitle">Idioma</span>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -231,70 +231,82 @@ use mvc\request\requestClass as request ?>
 </div>
 
 
-
+   <div class="form-group" id="googleMapBlock">
+          <label class="col-sm-2 control-label"><i class="fa fa-map-marker fa-fw"></i>Mapa<br><button type="button" id="btnCapturarGoogleMap" class="btn btn-default btn-xs">Capturar posición</button></label>
+          <div class="col-lg-7" style=" height: 500px" id="googleMap"></div>
+        </div>
+        
 
 
 <div class="spacer-big"></div>
 <div class="container">
     <div class="row">
-        
+
         <div class="col-md-6">
-           <div class="panel panel-grid widget widget_text panel-last-child">
-               <h3 class="widget-title"><?php echo i18n::__('contact')?></h3
-           </div>
-            					<form method="post" class="wpcf7-form" novalidate="novalidate">
-							<div class="row">
-								<div class="col-xs-12  col-sm-4">
-									<span class="wpcf7-form-control-wrap your-name">
-										<input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text" placeholder="Your Name"/>
-									</span><br/>
-									<span class="wpcf7-form-control-wrap your-email">
-										<input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="E-mail address"/>
-									</span><br/>
-									<span class="wpcf7-form-control-wrap your-subject">
-										<input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" placeholder="Subject"/>
-									</span>
-								</div>
-								<div class="col-xs-12  col-sm-8">
-									<span class="wpcf7-form-control-wrap your-message">
-										<textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message"></textarea>
-									</span><br/>
-									<input type="submit" value="SEND MESSAGE" class="wpcf7-form-control wpcf7-submit btn btn-primary"/>
-								</div>
-							</div>
-						</form>
-					</div>
-				</div>
-			</div>
-		</div><!-- /container -->
-	</div>
-                 
+            <div class="panel panel-grid widget widget_text panel-last-child">
+                <h3 class="widget-title"><?php echo i18n::__('contact') ?></h3
+            </div>
+            <form method="post" class="wpcf7-form" novalidate="novalidate">
+                <div class="row">
+                    <div class="col-xs-12  col-sm-4">
+                        <span class="wpcf7-form-control-wrap your-name">
+                            <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text" placeholder="Your Name"/>
+                        </span><br/>
+                        <span class="wpcf7-form-control-wrap your-email">
+                            <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="E-mail address"/>
+                        </span><br/>
+                        <span class="wpcf7-form-control-wrap your-subject">
+                            <input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" placeholder="Subject"/>
+                        </span>
+                    </div>
+                    <div class="col-xs-12  col-sm-8">
+                        <span class="wpcf7-form-control-wrap your-message">
+                            <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message"></textarea>
+                        </span><br/>
+                        <input type="submit" value="SEND MESSAGE" class="wpcf7-form-control wpcf7-submit btn btn-primary"/>
+                    </div>
+                </div>
+            </form>
+
+            
+              </div>
+          </div>
+     </div>
+</div>
+
+       
 <div class="panel-grid" id="pg">
     <div class="promobg">
         <div class="container">
             <div class="panel widget row">	
                 <div class="col-md-12">
-                    <div class="banner" id="Menu">
-                        
-                        <ul class="sub-menu">
+                   <div class="banner" id="Menu">
+                       
                             
-                            <li id="iconos"><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" class="link1"><?php echo i18n::__('homePage') ?></a></li>
+                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" class="link1"><?php echo i18n::__('homePage') ?></a></li>
                             
                             <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>" class="link1"><?php echo i18n::__('who we are') ?></a></li>
                             
-                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" class="link1"><?php echo i18n::__('events') ?></a>
-                            
+                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" class="link1"><?php echo i18n::__('events') ?></a></li>
+                     
+                     </div>            
+                    
+                    <div class="banner" id="SecMenu">
+                  
                             <li><a href="<?php echo routing::getInstance()->getUrlWeb('contactenos', 'index') ?>" class="link1"><?php echo i18n::__('contact') ?></a></li>
                         
-<!--                          <li><a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class="link1"><?php echo i18n::__('feedback') ?></a></li>
+                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class="link1"><?php echo i18n::__('feedback') ?></a></li>
 
-                         <li><a href="#" class="link1"><?php echo i18n::__('notice') ?> </a></li>
+                            <li><a href="#" class="link1"><?php echo i18n::__('notice') ?> </a></li>
 
-                         <li><a href="#" class="link1"><?php echo i18n::__('novelty') ?> </a></li>
+                     </div>  
+                    
+                    <div class="banner" id="terMenu">
+                            <li><a href="#" class="link1"><?php echo i18n::__('novelty') ?> </a></li>
 
-                         <li><a href="#" class="link1"><?php echo i18n::__('terms of use') ?> </a></li>
+                            <li><a href="#" class="link1"><?php echo i18n::__('terms of use') ?> </a></li>
                          
-                         <li><a href="#" data-toggle="modal" data-target="#privacidad" class="link1"> <?php echo i18n::__('Privacy and policy') ?> </a></li>-->
+                            <li><a href="#" data-toggle="modal" data-target="#privacidad" class="link1"> <?php echo i18n::__('Privacy and policy') ?> </a></li>
                          
 <div class="modal fade" id="privacidad" role="dialog">
   <div class="modal-dialog">

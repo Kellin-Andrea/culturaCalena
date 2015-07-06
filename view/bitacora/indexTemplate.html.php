@@ -425,11 +425,22 @@ use mvc\request\requestClass as request ?>
                                                                     
                                                                     <?php endforeach ?>
 
-                                                                    </form>
+                                                                </tr>
+                                                                
+                                                        </tbody>
+                                                    </table>
+                                                </form>
 
-                                                                    </div>
+                                                            <div class="text-right">
+                                                                Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('bitacora', 'index') ?>')">
+                                                                    <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                                                                        <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+                                                                    <?php endfor ?>
+                                                                </select> <?php echo $cntPages ?>
+                                                            </div> 
 
-
+                                                                    
+                                                                                    
 
 
                                                                     </div><!-- /.widget-main -->
@@ -444,7 +455,8 @@ use mvc\request\requestClass as request ?>
                                                                     </div><!-- /.page-content -->
                                                                     </div>
                                                                     </div><!-- /.main-content -->
-
+                                                                 
+                                                                    
                                                                     <div class="footer">
                                                                         <div class="footer-inner">
                                                                             <!-- #section:basics/footer -->

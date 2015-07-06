@@ -24,20 +24,20 @@ use mvc\request\requestClass as request ?>
     <div class="container">
         <div class="logo">
             <a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>">
-                <img src="<?php echo routing::getInstance()->getUrlImg('../../web/css/homepage/images/logo1.png') ?>"> 
+                <img src="<?php echo routing::getInstance()->getUrlImg('logo1.png') ?>"> 
             </a>
         </div>
         <div class="header-widgets  header-widgets-desktop">
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
-                    <a class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
-                    
+                    <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
+                     <span class="icon-box__subtitle">Registrarse</span> 
                 </div>
             </div>
             <div class="widget  widget-icon-box">	
                 <div class="icon-box">
-                    <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-
+                   <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                   <span class="icon-box__subtitle">Iniciar Sesion</span>
 
                 </div>
             </div>
@@ -47,7 +47,7 @@ use mvc\request\requestClass as request ?>
                 <div class="icon-box">
                     <!-- Button trigger modal -->
                     <div type="icon-box" class="fa fa-globe" data-toggle="modal" data-target="#myModal"></div>
-
+                     <span class="icon-box__subtitle">Idioma</span>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -109,6 +109,7 @@ use mvc\request\requestClass as request ?>
             <div class="widget  widget-icon-box">	
                 <div class="icon-box">
                     <a class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
+                    <span class="icon-box__subtitle">Registrarse</span>
                     <div class="icon-box__text">
                         <h4 class="icon-box__title"></h4>
                         <span class="icon-box__subtitle"></span>
@@ -118,7 +119,7 @@ use mvc\request\requestClass as request ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box">
                     <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-
+                   <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>
            <div class="widget  widget-icon-box">	
@@ -127,7 +128,7 @@ use mvc\request\requestClass as request ?>
                 <div class="icon-box">
                     <!-- Button trigger modal -->
                     <div type="icon-box" class="fa fa-globe" data-toggle="modal" data-target="#myModal"></div>
-
+                       <span class="icon-box__subtitle">Idioma</span>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -245,7 +246,7 @@ use mvc\request\requestClass as request ?>
                 <h3 class="widget-title"><?php echo i18n::__('know more here')?></h3>
                 <div class="textwidget">
                     <p>
-                        <img src="<?php echo routing::getInstance()->getUrlImg('cali.jpg') ?>"> 
+                        <img src="<?php echo routing::getInstance()->getUrlImg('cultura.png') ?>"> 
                     </p>
                     <h5>
                         <span style="color: #006666"><br/><span class="icon-container"><span class="fa fa-check"></span></span></span> 
@@ -319,27 +320,34 @@ use mvc\request\requestClass as request ?>
             <div class="panel widget row">	
                 <div class="col-md-12">
                     <div class="banner" id="Menu">
-                        
-                        <ul class="sub-menu">
+                       
                             
-                            <li id="iconos"><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" class="link1"><?php echo i18n::__('homePage') ?></a></li>
+                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" class="link1"><?php echo i18n::__('homePage') ?></a></li>
                             
                             <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>" class="link1"><?php echo i18n::__('who we are') ?></a></li>
                             
-                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" class="link1"><?php echo i18n::__('events') ?></a>
-                            
+                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" class="link1"><?php echo i18n::__('events') ?></a></li>
+                     
+                     </div>            
+                    
+                    <div class="banner" id="SecMenu">
+                  
                             <li><a href="<?php echo routing::getInstance()->getUrlWeb('contactenos', 'index') ?>" class="link1"><?php echo i18n::__('contact') ?></a></li>
                         
- <!--                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class="link1"><?php echo i18n::__('feedback') ?></a></li>
+                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class="link1"><?php echo i18n::__('feedback') ?></a></li>
 
-                         <li><a href="#" class="link1"><?php echo i18n::__('notice') ?> </a></li>
+                            <li><a href="#" class="link1"><?php echo i18n::__('notice') ?> </a></li>
 
-                         <li><a href="#" class="link1"><?php echo i18n::__('novelty') ?> </a></li>
+                     </div>  
+                    
+                    <div class="banner" id="terMenu">
+                            <li><a href="#" class="link1"><?php echo i18n::__('novelty') ?> </a></li>
 
-                         <li><a href="#" class="link1"><?php echo i18n::__('terms of use') ?> </a></li>
+                            <li><a href="#" class="link1"><?php echo i18n::__('terms of use') ?> </a></li>
                          
-                         <li><a href="#" data-toggle="modal" data-target="#privacidad" class="link1"> <?php echo i18n::__('Privacy and policy') ?> </a></li>-->
+                            <li><a href="#" data-toggle="modal" data-target="#privacidad" class="link1"> <?php echo i18n::__('Privacy and policy') ?> </a></li>
                          
+                            
 <div class="modal fade" id="privacidad" role="dialog">
   <div class="modal-dialog">
     <div class="modal-content ">
@@ -451,6 +459,7 @@ use mvc\request\requestClass as request ?>
 
         Este documento fue actualizada el 11 de junio 2015</p>
       </div>
+    </div>
       <div class="modal-footer">
         <button type="button" class="btn btn-danger" data-dismiss="modal"><?php echo i18n::__('close') ?></button>
       </div>
