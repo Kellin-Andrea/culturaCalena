@@ -17,6 +17,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
   public function execute() {
     try {
+        
+        $where = null;
 
       $fields = array(
           tipoPqrsTableClass::ID,
@@ -26,7 +28,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           tipoPqrsTableClass::NOMBRE
       );
-      $this->objtipoPqrs = tipoPqrsTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+      $this->cntPages = tipoPqrsTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objtipoPqrs = tipoPqrsTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'tipoPqrs', session::getInstance()->getFormatOutput());
        } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

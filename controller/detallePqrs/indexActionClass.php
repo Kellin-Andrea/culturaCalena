@@ -18,6 +18,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     try {
 
+        $where = null;
+        
       $fields = array(
           detallePqrsTableClass::ID,
           detallePqrsTableClass::RESPUESTA,
@@ -28,7 +30,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           detallePqrsTableClass::ID
       );
-      $this->objdetalle = detallePqrsTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+      $this->cntPages = detallePqrsTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objdetalle = detallePqrsTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'detallePqrs', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

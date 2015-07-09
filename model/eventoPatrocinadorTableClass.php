@@ -13,4 +13,33 @@ use mvc\config\configClass as config;
 */
 class eventoPatrocinadorTableClass extends eventoPatrocinadorBaseTableClass {
   
-}//end class
+        public static function getTotalpages($lines, $where) {
+        try {
+            $sql = 'SELECT count (' . eventoPatrocinadorTableClass::ID . ') AS cantidad ' .
+                    'FROM ' . eventoPatrocinadorTableClass::getNameTable(). ' ' .
+                    ' WHERE '. eventoPatrocinadorTableClass::DELETED_AT . ' IS NULL ';
+     
+             if (is_array($where) === true) {
+                foreach ($where as $fields => $value) {
+                    if (is_array($value)) {
+                        $sql = $sql . '  AND  ' . $fields . '  BETWEEN  ' . ((is_numeric($value[0])) ? $value[0] : " '$value[0]' ") . 'AND' . ((is_numeric($value[1])) ? $value[1] : " '$value[1]' ");
+                    }//end if 
+                    else {
+                        $sql = $sql . '  AND   ' . $fields . '  =  ' . ((is_numeric($value)) ? $value : " '$value' ");
+                    }//end else
+                }//end foreach
+            }//end  if
+
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute();
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return ceil($answer[0]->cantidad / $lines);
+        }//end try
+        catch (PDOException $exc) {
+            throw $exc;
+        }//end catch
+    }
+        } //end class
+
+
+

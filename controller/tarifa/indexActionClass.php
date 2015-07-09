@@ -18,6 +18,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     try {
 
+        $where = null;
+        
       $fields = array(
           tarifaTableClass::ID,
           tarifaTableClass::DESCRIPCION,
@@ -27,7 +29,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           tarifaTableClass::VALOR
       );
-      $this->objtarifa = tarifaTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+      $this->cntPages = tarifaTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objtarifa = tarifaTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'tarifa', session::getInstance()->getFormatOutput());
       } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

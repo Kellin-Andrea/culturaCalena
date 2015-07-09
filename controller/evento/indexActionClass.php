@@ -22,7 +22,9 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     try {
 
-      $fields = array(
+      $where = null;
+        
+        $fields = array(
           eventoTableClass::ID,
           eventoTableClass::IMAGEN,
           eventoTableClass::NOMBRE,
@@ -42,7 +44,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           eventoTableClass::NOMBRE
       );
-      $this->objevento = eventoTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+      $this->cntPages = eventoTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objevento = eventoTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'evento', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

@@ -30,13 +30,13 @@ use mvc\request\requestClass as request ?>
         <div class="header-widgets  header-widgets-desktop">
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
-                    <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
+                     <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
                      <span class="icon-box__subtitle">Registrarse</span> 
                 </div>
             </div>
             <div class="widget  widget-icon-box">	
                 <div class="icon-box">
-                   <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                    <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
                    <span class="icon-box__subtitle">Iniciar Sesion</span>
 
                 </div>

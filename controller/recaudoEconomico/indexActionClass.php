@@ -18,6 +18,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     try {
 
+        $where = null;
+        
       $fields = array(
       recaudoEconomicoTableClass::ID,
       recaudoEconomicoTableClass::USUARIO_ID,
@@ -31,7 +33,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
       recaudoEconomicoTableClass::USUARIO_ID
       );
-      $this->objrecaudoEconomico = recaudoEconomicoTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+      $this->cntPages = recaudoEconomicoTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objrecaudoEconomico = recaudoEconomicoTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'recaudoEconomico', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

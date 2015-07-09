@@ -18,6 +18,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     try {
 
+       $where = null; 
+        
       $fields = array(
           estadoPqrsTableClass::ID,
           estadoPqrsTableClass::NOMBRE,
@@ -26,7 +28,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           estadoPqrsTableClass::NOMBRE
       );
-      $this->objestado = estadoPqrsTableClass::getAll($fields, true, $orderBy, 'ASC');
+       $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+      $this->cntPages = estadoPqrsTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objestado = estadoPqrsTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'estadoPqrs', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

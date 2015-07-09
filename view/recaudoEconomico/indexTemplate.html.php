@@ -458,6 +458,14 @@ use mvc\request\requestClass as request ?>
                                                             <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
 
                                                         </form>
+                                                        
+                                                          <div class="text-right">
+                                                                Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>')">
+                                                                    <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                                                                        <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+                                                                    <?php endfor ?>
+                                                                </select> <?php echo $cntPages ?>
+                                                            </div> 
                                                     </div>
 
 

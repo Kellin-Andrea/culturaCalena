@@ -7,9 +7,7 @@ homepage traductor:
   url:   /homepage/traductor
   param:  { module: homepage, action: traductor, format: html }
   load:
-      
-      
-      
+
 ##-------------------------- shfSecurity --------------------------##
 shfSecurity_index:
   url:    /signin

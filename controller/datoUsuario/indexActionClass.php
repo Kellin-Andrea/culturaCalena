@@ -20,7 +20,10 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
   public function execute() {
     try {
-         
+
+        
+        $where = null;
+        
       $fields = array(
           datoUsuarioTableClass::ID,
           datoUsuarioTableClass::NOMBRE,
@@ -40,8 +43,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
        
       );
 
-     
-      $this->objdatos = datoUsuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
+     $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+      $this->cntPages = datoUsuarioTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objdatos = datoUsuarioTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'datoUsuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

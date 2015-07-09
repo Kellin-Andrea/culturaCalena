@@ -437,6 +437,17 @@ use mvc\i18n\i18nClass as i18n ?>
                                                         </tbody>
                                                     </table>
                                                 </form>
+                                                
+                                                
+                                                
+                                                    <div class="text-right">
+                                                                Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('credencial', 'index') ?>')">
+                                                                    <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                                                                        <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+                                                                    <?php endfor ?>
+                                                                </select> <?php echo $cntPages ?>
+                                                            </div> 
+                                                
                                                 <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('credencial', 'delete') ?>" method="POST">
                                                     <input type="hidden" id="idDelete" name="<?php echo credencialTableClass::getNameField(credencialTableClass::ID, true) ?>">
 

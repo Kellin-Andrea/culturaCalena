@@ -21,9 +21,8 @@ function eliminar(id, variable, url ){
     });
 }
 
-function eliminarMasivo() {
-    
-$('#myModalDeleteMasivo').modal('toggle');
+function eliminarMasivo() {  
+  $('#myModalDeleteMasivo').modal('toggle');
 }
 
 $(document).ready(function () {

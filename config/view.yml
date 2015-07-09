@@ -152,7 +152,7 @@ contactenos:
       - contactenos/js/header_carousel.js
       - contactenos/js/imagesloaded.js
       - contactenos/js/isotope.js
-      - contactenos/js/jquery.min.js
+      #- contactenos/js/jquery.min.js
       - contactenos/js/jquery.prettyPhoto.js
       - contactenos/js/jquery.validate.min.js
       - contactenos/js/main.js
@@ -162,7 +162,7 @@ contactenos:
       - contactenos/js/simplemap.js
       - contactenos/js/sticky_navbar.js
       - contactenos/js/underscore.js
-      #- contactenos/js/capturarGoogleMap.js
+      - contactenos/js/capturarGoogleMap.js
 
 
 default:
@@ -275,6 +275,8 @@ categoria:
       - admin/assets/css/ace.css
       - main.css
     javascript:
+      #- jquery-1.11.1.min.js
+      - index.js
       - admin/assets/js/jquery-ui.custom.js
       - admin/assets/js/jquery.ui.touch-punch.js
       - admin/assets/js/jquery.easypiechart.js
@@ -311,10 +313,8 @@ categoria:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
-      - index.js
       - main.js
-      
+
 evento:
   insert:
     javascript:

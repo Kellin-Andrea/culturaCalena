@@ -18,6 +18,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     public function execute() {
         try {
 
+            $where = null;
+            
             $fields = array(
                 patrocinadorTableClass::ID,
                 patrocinadorTableClass::NOMBRE,
@@ -31,7 +33,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 patrocinadorTableClass::ID,
                    
             );
-            $this->objpatrocinador= patrocinadorTableClass::getAll($fields, true, $orderBy, 'ASC',4);
+            $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+            $this->cntPages = patrocinadorTableClass::getTotalpages(config::getRowGrid(), $where);
+            $this->objpatrocinador= patrocinadorTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
             $this->defineView('index', 'patrocinador', session::getInstance()->getFormatOutput());
       } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

@@ -22,6 +22,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     try {
 
+        $where = null;
+        
       $fields = array(
           localidadTableClass::ID,
           localidadTableClass::NOMBRE
@@ -29,7 +31,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $orderBy = array(
           localidadTableClass::NOMBRE
       );
-      $this->objlocal = localidadTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
+      
+      $this->cntPages = localidadTableClass::getTotalpages(config::getRowGrid(), $where);
+      $this->objlocal = localidadTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'localidad', session::getInstance()->getFormatOutput());
        } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
