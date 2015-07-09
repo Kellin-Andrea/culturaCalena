@@ -211,7 +211,7 @@ default:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
 
@@ -261,7 +261,7 @@ bitacora:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -364,7 +364,7 @@ evento:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
 
@@ -414,7 +414,7 @@ datoUsuario:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -464,7 +464,7 @@ localidad:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -514,7 +514,7 @@ credencial:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -564,7 +564,7 @@ tipoDocumento:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
 
@@ -644,7 +644,7 @@ pqrs:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -723,7 +723,7 @@ detallePqrs:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -773,7 +773,7 @@ estadoPqrs:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js      
 
@@ -823,7 +823,7 @@ eventoPatrocinador:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+     # - jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -873,7 +873,7 @@ organizacion:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -923,7 +923,7 @@ patrocinador:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
      
@@ -973,7 +973,7 @@ recaudoEconomico:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -1024,7 +1024,7 @@ tipoPqrs:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -1074,7 +1074,7 @@ tarifa:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -1124,7 +1124,7 @@ usuarioGustaCategoria:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
       
@@ -1174,6 +1174,6 @@ usuarioCredencial:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
-      - jquery-1.11.1.min.js
+      #- jquery-1.11.1.min.js
       - index.js
       - main.js
