@@ -8,7 +8,6 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
-
 /**
  * Description of ejemploClass
  *
