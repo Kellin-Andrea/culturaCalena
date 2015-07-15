@@ -92,7 +92,7 @@ class usuarioTableClass extends usuarioBaseTableClass {
      * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
      * @return datatype description: Array $usuario, $password,$apellido,$correo,$genero,$fecha_nacimiento,$nombre,$tipo,$orga .
      */
-    public static function verifyDatos($usuario, $password, $apellido, $correo, $genero, $fecha_nacimiento, $nombre, $tipo, $orga) {
+    public static function verifyDatos($usuario, $password, $apellido, $correo, $genero, $fecha_nacimiento, $nombre, $tipo, $orga, $id) {
         try {
             $sql = 'SELECT  ' . usuarioTableClass::getNameField(usuarioTableClass::USER) . ' as usuario,
                        ' . usuarioTableClass::getNameField(usuarioTableClass::PASSWORD) . ' as password,
@@ -121,12 +121,12 @@ class usuarioTableClass extends usuarioBaseTableClass {
                 ':nombre' => $nombre,
                 ':tipo' => $tipo,
                 ':orga' => $orga,
-                ':actived' => ((config::getDbDriver() === 'mysql') ? 1 : 't')
+                ':id' => $id
             );
             $answer = model::getInstance()->prepare($sql);
             $answer->execute($params);
             $answer = $answer->fetchAll(PDO::FETCH_OBJ);
-            return (count($answer) > 0 ) ? $answer : false;
+            return $answer[0]->nombre ;
         }//end try 
         catch (PDOException $exc) {
             throw $exc;

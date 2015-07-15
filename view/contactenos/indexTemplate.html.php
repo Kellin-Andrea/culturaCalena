@@ -235,6 +235,8 @@ use mvc\request\requestClass as request ?>
           <label class="col-sm-2 control-label"><i class="fa fa-map-marker fa-fw"></i>Mapa<br><button type="button" id="btnCapturarGoogleMap" class="btn btn-default btn-xs">Capturar posición</button></label>
           <div class="col-lg-7" style=" height: 500px" id="googleMap"></div>
         </div>
+
+
         
 
 

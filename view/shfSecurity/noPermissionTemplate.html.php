@@ -1,1 +1,1 @@
-usted no tiene permisos para entrar aquí
+Lo sentimos usted no tiene permisos para entrar aquí

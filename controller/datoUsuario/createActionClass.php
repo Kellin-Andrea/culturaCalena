@@ -33,8 +33,10 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $locality = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true));
                 $typeDocument = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true));
                 $organization = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true));
+                $user =  request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
+                $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
 
-
+                if(($objdatos = datoUsuarioTableClass::verifyDate($user, $password, $name, $password, $lastName, $mail, $genre, $dateF, $locality, $typeDocument, $organization, $user)) !== false );
 
                 validator::validateInsert($name, $lastName, $mail, $dateF, $genre, $locality, $typeDocument, $organization);
                 
@@ -47,6 +49,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                     datoUsuarioTableClass::LOCALIDAD_ID => $locality,
                     datoUsuarioTableClass::TIPO_DOCUMENTO_ID => $typeDocument,
                     datoUsuarioTableClass::ORGANIZACION_ID => $organization,
+                    usuarioTableClass::USER => $user,
+                    usuarioTableClass::PASSWORD => $password
                 );
 
                 $id = datoUsuarioTableClass::insert($data);

@@ -29,7 +29,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
 
         $data = array(
         eventoPatrocinadorTableClass::PATROCINADOR_ID => $patrocinador_id,
-            eventoPatrocinadorTableClass::EVENTO_ID=> $evento_id
+        eventoPatrocinadorTableClass::EVENTO_ID=> $evento_id
         );
 
         eventoPatrocinadorTableClass::update($ids, $data);

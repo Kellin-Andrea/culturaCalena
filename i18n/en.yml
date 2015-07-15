@@ -3,6 +3,7 @@ culture:                  English                                               
 dictionary:
   default:
     homePage:                                                          Home page
+    nameUser:                                                          Name User
     name:                                                              Name
     pass:                                                              Pass
     dateCreate:                                                        Date Create

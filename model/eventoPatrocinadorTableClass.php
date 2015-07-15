@@ -4,22 +4,27 @@ use mvc\model\modelClass as model;
 use mvc\config\configClass as config;
 
 /**
-* @description: En esta clase se manejara las consultas que tengar quever con la tabla  
-* @author: 
+ * @description: En esta clase se manejara las consultas que tengar quever con la tabla  
+ * @author: 
  * Shirley Marcela Rivero <marce250494@hotmail.com>
  * Kelly Andrea Manzano <kellinandrea18@hotmail.com>
  * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
-* @category: Pertenece al modelo  es la Table .
-*/
+ * @category: Pertenece al modelo  es la Table .
+ */
 class eventoPatrocinadorTableClass extends eventoPatrocinadorBaseTableClass {
-  
-        public static function getTotalpages($lines, $where) {
+
+     
+
+    
+
+    
+    public static function getTotalpages($lines, $where) {
         try {
             $sql = 'SELECT count (' . eventoPatrocinadorTableClass::ID . ') AS cantidad ' .
-                    'FROM ' . eventoPatrocinadorTableClass::getNameTable(). ' ' .
-                    ' WHERE '. eventoPatrocinadorTableClass::DELETED_AT . ' IS NULL ';
-     
-             if (is_array($where) === true) {
+                    'FROM ' . eventoPatrocinadorTableClass::getNameTable() . ' ' .
+                    ' WHERE ' . eventoPatrocinadorTableClass::DELETED_AT . ' IS NULL ';
+
+            if (is_array($where) === true) {
                 foreach ($where as $fields => $value) {
                     if (is_array($value)) {
                         $sql = $sql . '  AND  ' . $fields . '  BETWEEN  ' . ((is_numeric($value[0])) ? $value[0] : " '$value[0]' ") . 'AND' . ((is_numeric($value[1])) ? $value[1] : " '$value[1]' ");
@@ -29,7 +34,7 @@ class eventoPatrocinadorTableClass extends eventoPatrocinadorBaseTableClass {
                     }//end else
                 }//end foreach
             }//end  if
-
+            
             $answer = model::getInstance()->prepare($sql);
             $answer->execute();
             $answer = $answer->fetchAll(PDO::FETCH_OBJ);
@@ -39,7 +44,12 @@ class eventoPatrocinadorTableClass extends eventoPatrocinadorBaseTableClass {
             throw $exc;
         }//end catch
     }
-        } //end class
+} //end class
+
+
+
+ 
+ 
 
 
 

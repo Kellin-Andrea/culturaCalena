@@ -55,9 +55,9 @@ namespace mvc\validator {
                 session::getInstance()->setFlash('inputmail', true);
                 session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputmail');
             } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim(request::getInstance()->getPost('inputmail')))) {
-                $flag = true;
-                session::getInstance()->setFlash('inputmail', true);
-                session::getInstance()->setError('Por favor digite un corre válido', 'inputmail');
+//                $flag = true;
+//                session::getInstance()->setFlash('inputmail', true);
+//                session::getInstance()->setError('Por favor digite un corre válido', 'inputmail');
             } else if (self::isUnique(\datoUsuarioTableClass::ID, true, array(\datoUsuarioTableClass::CORREO => trim(request::getInstance()->getPost('inputmail'))), \datoUsuarioTableClass::getNameTable())) {
                 $flag = true;
                 session::getInstance()->setFlash('inputmail', true);
@@ -89,10 +89,10 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputGenero', true);
                 session::getInstance()->setError('Debes selecionar un genero', 'inputGenero');
-            } else if (!self::collection(trim(request::getInstance()->getPost('inputGenero')), array('t', 'f'))) {
-                $flag = true;
-                session::getInstance()->setFlash('inputGenero', true);
-                session::getInstance()->setError('La respuesta dada no es correcta', 'inputGenero');
+//            } else if (!self::collection(trim(request::getInstance()->getPost('inputGenero')), array('t', 'f'))) {
+//                $flag = true;
+//                session::getInstance()->setFlash('inputGenero', true);
+//                session::getInstance()->setError('La respuesta dada no es correcta', 'inputGenero');
             }
 
 

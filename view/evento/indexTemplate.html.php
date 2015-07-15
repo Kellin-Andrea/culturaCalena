@@ -416,7 +416,7 @@ use mvc\request\requestClass as request ?>
                                                             </tr>
                                                         <tbody>
 
-                                                            <?php foreach ($objevento as $evento): ?>
+                                                            <?php foreach ($objEvento as $evento): ?>
                                                                 <tr>
                                                                     <td><input type="checkbox" name="chk[]" value="<?php echo $evento->$id ?>"></td>
                                                                     <td><?php echo $evento->imagen ?></td>

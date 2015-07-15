@@ -4,7 +4,8 @@ dictionary:
   default:
      
     homePage:                                                               Inicio
-    name:                                                                   Nombre
+    nameUser:                                                               Nombre Usuario
+    name:                                                                   Nombre Completo
     pass:                                                                   Contraseña
     dateCreate:                                                             Fecha de creaccion
     EventPartner:                                                           Evento Patrocinador

@@ -52,7 +52,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             }
       
       $this->cntPages = eventoTableClass::getTotalpages(config::getRowGrid(), $where);
-      $this->objevento = eventoTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
+      $this->objEvento = eventoTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
       $this->defineView('index', 'evento', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

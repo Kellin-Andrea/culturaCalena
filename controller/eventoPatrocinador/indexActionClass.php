@@ -21,8 +21,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $where = null;
 
             $fields = array(
-                eventoPatrocinadorTableClass::ID,
-//      eventoPatrocinadorTableClass::CREATED_AT
+              eventoPatrocinadorTableClass::ID,
+              //eventoPatrocinadorTableClass::CREATED_AT,
             );
             $orderBy = array(
                 eventoPatrocinadorTableClass::ID
