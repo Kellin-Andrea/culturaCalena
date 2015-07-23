@@ -2,7 +2,7 @@
 
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
-use mvc\config\configClass as config;
+use mvc\config\myConfigClass as config;
 use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
@@ -33,13 +33,14 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $locality = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true));
                 $typeDocument = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true));
                 $organization = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true));
-                $user =  request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
+                $user = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
                 $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
 
-                if(($objdatos = datoUsuarioTableClass::verifyDate($user, $password, $name, $password, $lastName, $mail, $genre, $dateF, $locality, $typeDocument, $organization, $user)) !== false );
+                if (($objdatos = datoUsuarioTableClass::verifyDate($user, $password, $name, $password, $lastName, $mail, $genre, $dateF, $locality, $typeDocument, $organization, $id)) !== false)
+                    ;
 
                 validator::validateInsert($name, $lastName, $mail, $dateF, $genre, $locality, $typeDocument, $organization);
-                
+
                 $data = array(
                     datoUsuarioTableClass::NOMBRE => $name,
                     datoUsuarioTableClass::APELLIDO => $lastName,
@@ -50,11 +51,18 @@ class createActionClass extends controllerClass implements controllerActionInter
                     datoUsuarioTableClass::TIPO_DOCUMENTO_ID => $typeDocument,
                     datoUsuarioTableClass::ORGANIZACION_ID => $organization,
                     usuarioTableClass::USER => $user,
-                    usuarioTableClass::PASSWORD => $password
+                    usuarioTableClass::PASSWORD => $password,
+                    '__sequence' => 'usuario_id_seq'
                 );
 
-                $id = datoUsuarioTableClass::insert($data);
+                $id_usuario = datoUsuarioTableClass::insert($data);
 
+                $data = array(
+                    usuarioCredencialTableClass::USUARIO_ID => $id_usuario,
+                    usuarioCredencialTableClass::CREDENCIAL_ID => config::CREDENCIAL_USUARIO
+                );
+
+                usuarioCredencialTableClass::insert($data);
 
 
 

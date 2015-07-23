@@ -633,6 +633,8 @@ evento_index:
   load:
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
 
 evento_insert:
   url:    /evento/insertar

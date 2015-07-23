@@ -31,17 +31,9 @@ class insertActionClass extends controllerClass implements controllerActionInter
         $ordeBy1 = array(
         patrocinadorTableClass::NOMBRE
         );
-        
-//         $fields2 = array(
-//         eventoPatrocinadorTableClass::ID
-//        );
-//        $ordeBy2 = array(
-//        eventoPatrocinadorTableClass::ID
-//        );
        
       $this->objEvento = eventoTableClass::getAll($fields, true, $ordeBy, 'ASC');  
       $this->objPatrocinador = patrocinadorTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
-      //$this->objEventoPatrocinador = eventoPatrocinadorTableClass::getAll($fields2, true, $ordeBy2, 'ASC');
       $this->defineView('insert', 'eventoPatrocinador', session::getInstance()->getFormatOutput());
      } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

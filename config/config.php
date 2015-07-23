@@ -57,7 +57,7 @@ config::setCookiePath('/' . config::getIndexFile());
 config::setCookieDomain('http://sohoframework.com/');
 config::setCookieTime(3600 * 8); // una hora en segundo 3600 y por 8 serían 8 horas
 
-config::setDefaultModule('default');
+config::setDefaultModule('admin');
 config::setDefaultAction('index');
 
 config::setDefaultModuleSecurity('shfSecurity');

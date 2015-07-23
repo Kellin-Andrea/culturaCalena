@@ -20,50 +20,50 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
-
-            $where = null;
-            if (request::getInstance()->hasPost('filter')) {
-                $filter = request::getInstance()->getPost('filter');
-                //validaciones   
-                if (isset($filter['Usuario']) and $filter['Usuario'] !== null and $filter['Usuario'] !== "") {
-                    $where[usuarioTableClass::USER] = $filter['Usuario'];
-                }
-
-                if (isset($filter['fechaCreacion1']) and $filter['fechaCreacion1'] !== null and $filter['fechaCreacion1'] !== "") {
-                    $where[usuarioTableClass::CREATED_AT] = array(
-                        date(config::getFormatTimestamp(), strtotime($filter['fechaCreacion1'] . ' 00:00:00')),
-                        date(config::getFormatTimestamp(), strtotime($filter['fechaCreacion2'] . ' 23:59:59'))
-                    );
-                }
-
-                session::getInstance()->setAttribute('defaultIndexFilters', $where);
-            } else if (session::getInstance()->hasAttribute('defaultIndexFilters')) {
-                $where = session::getInstance()->getAttribute('defaultIndexFilters');
-            }
-            $fields = array(
-                usuarioTableClass::ID,
-                usuarioTableClass::USER,
-                usuarioTableClass::PASSWORD,
-                usuarioTableClass::CREATED_AT
-            );
-
-            $orderBy = array(
-                usuarioTableClass::ID,
-            );
-
-
-
-            $page = 0;
-            if (request::getInstance()->hasGet('page')) {
-                $this->page = request::getInstance()->getGet('page');
-                $page = request::getInstance()->getGet('page') - 1;
-                $page = $page * config::getRowGrid();
-            }
-
-
-            $this->cntPages = usuarioTableClass::getTotalpages(config::getRowGrid(), $where);
-            $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
-            $this->defineView('index', 'default', session::getInstance()->getFormatOutput());
+            
+//            $where = null;
+//            if (request::getInstance()->hasPost('filter')) {
+//                $filter = request::getInstance()->getPost('filter');
+//                //validaciones   
+//                if (isset($filter['Usuario']) and $filter['Usuario'] !== null and $filter['Usuario'] !== "") {
+//                    $where[usuarioTableClass::USER] = $filter['Usuario'];
+//                }
+//
+//                if (isset($filter['fechaCreacion1']) and $filter['fechaCreacion1'] !== null and $filter['fechaCreacion1'] !== "") {
+//                    $where[usuarioTableClass::CREATED_AT] = array(
+//                        date(config::getFormatTimestamp(), strtotime($filter['fechaCreacion1'] . ' 00:00:00')),
+//                        date(config::getFormatTimestamp(), strtotime($filter['fechaCreacion2'] . ' 23:59:59'))
+//                    );
+//                }
+//
+//                session::getInstance()->setAttribute('defaultIndexFilters', $where);
+//            } else if (session::getInstance()->hasAttribute('defaultIndexFilters')) {
+//                $where = session::getInstance()->getAttribute('defaultIndexFilters');
+//            }
+//            $fields = array(
+//                usuarioTableClass::ID,
+//                usuarioTableClass::USER,
+//                usuarioTableClass::PASSWORD,
+//                usuarioTableClass::CREATED_AT
+//            );
+//
+//            $orderBy = array(
+//                usuarioTableClass::ID,
+//            );
+//
+//
+//
+//            $page = 0;
+//            if (request::getInstance()->hasGet('page')) {
+//                $this->page = request::getInstance()->getGet('page');
+//                $page = request::getInstance()->getGet('page') - 1;
+//                $page = $page * config::getRowGrid();
+//            }
+//
+//
+//            $this->cntPages = usuarioTableClass::getTotalpages(config::getRowGrid(), $where);
+//            $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
+//            $this->defineView('index', 'default', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);
             routing::getInstance()->forward('shfSecurity', 'exception');

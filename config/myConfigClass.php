@@ -10,7 +10,7 @@ namespace mvc\config {
    * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
    */
   class myConfigClass extends configClass {
-    
+    const CREDENCIAL_USUARIO = 2;
   }
 
 }

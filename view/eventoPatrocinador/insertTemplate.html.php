@@ -12,6 +12,6 @@ use mvc\view\viewClass as view ?>
         <div class="panel-heading">
             <h1 class="glyphicon glyphicon-stats"> <?php echo i18n::__('newEventPartner') ?> </h1>
         </div>
-        <?php view::includePartial('eventoPatrocinador/formUser', array('objEvento' => $objEvento, 'objPatrocinador' => $objPatrocinador )) ?>
+        <?php view::includePartial('eventoPatrocinador/formUser', array('objEvento' => $objEvento, 'objPatrocinador' => $objPatrocinador)) ?>
     </div>
 </div>

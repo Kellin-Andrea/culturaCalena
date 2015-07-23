@@ -21,6 +21,28 @@ class datoUsuarioTableClass extends datoUsuarioBaseTableClass {
      * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
      * @return datatype description: Array $usuario, $password, $apellido, $correo, $genero, $fechaNacimiento, $localidad, $tipoDocumento, $organizacion.
      */
+
+    
+     public static function getNombreById($id) {
+      try {
+          $sql = 'SELECT nombre AS nombre ' .
+                    'FROM ' . datoUsuarioTableClass::getNameTable() .
+                    ' WHERE  ' . datoUsuarioTableClass::ID . ' = :id';
+
+            $params = array(
+                ':id' => $id
+            );
+
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute($params);
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return $answer[0]->nombre;
+      } //end try
+      catch (PDOException $exc) {
+          throw $exc;
+      }//end cath
+    }
+
     
     public static function getTotalpages($lines, $where) {
         try {

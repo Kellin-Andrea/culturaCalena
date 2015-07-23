@@ -13,9 +13,26 @@ use mvc\config\configClass as config;
  */
 class eventoPatrocinadorTableClass extends eventoPatrocinadorBaseTableClass {
 
-     
+     public static function getNombreById($id) {
+      try {
+          $sql = 'SELECT nombre AS nombre ' .
+                    'FROM ' . eventoPatrocinadorTableClass::getNameTable() .
+                    ' WHERE  ' . eventoPatrocinadorTableClass::EVENTO_ID . ' = :id';
 
-    
+            $params = array(
+                ':id' => $id
+            );
+
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute($params);
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return $answer[0]->nombre;
+      } //end try
+      catch (PDOException $exc) {
+          throw $exc;
+      }//end cath
+    }
+     
 
     
     public static function getTotalpages($lines, $where) {

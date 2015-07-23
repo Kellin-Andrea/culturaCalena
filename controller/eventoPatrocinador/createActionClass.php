@@ -8,7 +8,6 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
-
 /**
  * Description of ejemploClass
  *
@@ -19,15 +18,13 @@ class createActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       if (request::getInstance()->isMethod('POST')) {
-          //   $eventSponsor = request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true));
-             $event= request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::EVENTO_ID, true));
+             $eventSponsor= request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::EVENTO_ID, true));
              $sponsor = request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true));
              
     
 
         $data = array(
-        //eventoPatrocinadorTableClass::ID => $eventSponsor,
-        eventoPatrocinadorTableClass::EVENTO_ID => $event,
+        eventoPatrocinadorTableClass::EVENTO_ID => $eventSponsor,
         eventoPatrocinadorTableClass::PATROCINADOR_ID => $sponsor 
         );
         eventoPatrocinadorTableClass::insert($data);

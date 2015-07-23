@@ -18,7 +18,7 @@ use mvc\i18n\i18nClass as i18n;
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
-/**
+    /**
      * @author: 
      * Shirley Marcela Rivero <marce250494@hotmail.com>
      * Kelly Andrea Manzano <kellinandrea18@hotmail.com>
@@ -26,10 +26,15 @@ class indexActionClass extends controllerClass implements controllerActionInterf
      * @return datatype retorna vista  .
      */
     public function execute() {
-      
-    
-      $this->defineView('index', 'admin', session::getInstance()->getFormatOutput());
-  }//end function
-  
 
-}//end class
+        if (session::getInstance()->hasCredential('admin')) {
+            $this->defineView('index', 'admin', session::getInstance()->getFormatOutput());
+        } else {
+            routing::getInstance()->redirect('homepage', 'index');
+        }
+    }
+
+//end function
+}
+
+//end class

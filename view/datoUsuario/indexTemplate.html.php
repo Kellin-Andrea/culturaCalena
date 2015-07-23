@@ -13,6 +13,7 @@ use mvc\config\configClass as config ?>
 
 
 
+
 <div class="no-skin">
     <!-- #section:basics/navbar.layout -->
     <div id="navbar" class="navbar navbar-default">
@@ -422,11 +423,11 @@ use mvc\config\configClass as config ?>
                                                                     <td><?php echo $datos->nombre ?></td>
                                                                     <td><?php echo $datos->apellido ?></td>
                                                                     <td><?php echo $datos->correo ?></td>
-                                                                    <td><?php echo $datos->genero ?></td>
+                                                                    <td><?php echo ($datos->genero === true) ? 'femenino' : 'masculino' ?></td>
                                                                     <td><?php echo $datos->fecha_nacimiento ?></td>
-                                                                    <td><?php echo $datos->localidad_id ?></td>
-                                                                    <td><?php echo $datos->tipo_documento_id ?></td>
-                                                                    <td><?php echo $datos->organizacion_id ?></td>
+                                                                    <td><?php echo localidadTableClass::getNombreById($datos->localidad_id) ?></td>
+                                                                    <td><?php echo tipoDocumentoTableClass::getNombreById($datos->tipo_documento_id) ?></td>
+                                                                    <td><?php echo organizacionTableClass::getNombreById($datos->organizacion_id) ?></td>
 
 
                                                                     <td>

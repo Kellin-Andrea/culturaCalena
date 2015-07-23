@@ -9,6 +9,7 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\config\configClass as config ?>
 <?php
 use mvc\request\requestClass as request ?>
+<?php use mvc\session\sessionClass as session ?>
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -34,13 +35,32 @@ use mvc\request\requestClass as request ?>
                      <span class="icon-box__subtitle">Registrarse</span> 
                 </div>
             </div>
-            <div class="widget  widget-icon-box">	
+            
+            <?php
+            
+             session::getInstance()->isUserAuthenticated();
+             session::getInstance()->hasCredential('admin');
+             session::getInstance()->getUserId();
+             session::getInstance()->getUserName();
+            
+            ?>
+            
+            <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
+            <div class="widget widget-icon-box">	
                 <div class="icon-box">
                     <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
                    <span class="icon-box__subtitle">Iniciar Sesion</span>
-
                 </div>
             </div>
+            <?php else: ?>
+            <div class="widget widget-icon-box">	
+                <div class="icon-box">
+                    <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"></a>
+                   <span class="icon-box__subtitle">Cerrar Sesion</span>
+                </div>
+            </div>
+            <?php endif ?>
+            
             <div class="widget  widget-icon-box">	
 
 
