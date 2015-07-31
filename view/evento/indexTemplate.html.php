@@ -11,7 +11,6 @@ use mvc\request\requestClass as request ?>
 
 
 
-
 <div class="no-skin">
     <!-- #section:basics/navbar.layout -->
     <div id="navbar" class="navbar navbar-default">
@@ -172,7 +171,7 @@ use mvc\request\requestClass as request ?>
                                                 <b class="arrow"></b>
 
                                                 <ul class="submenu">
-                                                      <li class="">
+                                                    <li class="">
                                                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">
                                                             <i class="menu-icon fa fa-caret-right"></i>
                                                             <?php echo i18n::__('user') ?>
@@ -197,7 +196,7 @@ use mvc\request\requestClass as request ?>
 
                                                         <b class="arrow"></b>
                                                     </li>
-                                                    
+
                                             </li>
                                             <li class="">
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('datoUsuario', 'index') ?>">
@@ -235,87 +234,6 @@ use mvc\request\requestClass as request ?>
                                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('pqrs', 'index') ?>">
                                                     <i class="menu-icon fa fa-caret-right"></i>
                                                     <?php echo i18n::__('feedback') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                            <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('detallePqrs', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('feedbackSpecs') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                              <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('estadoPqrs', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('feedbackState') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                            <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoPqrs', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('feedbackType') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                            <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('organizacion', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('organizations') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                            <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('eventoPatrocinador', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('EventPartner') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                            </li>
-                                            <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('patrocinador', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('partner') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                             <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('EconomicManagement') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                            <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tarifa', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('rates') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                            <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('userCredential') ?>
-                                                </a>
-
-                                                <b class="arrow"></b>
-                                            </li>
-                                            <li class="">
-                                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioGustaCategoria', 'index') ?>">
-                                                    <i class="menu-icon fa fa-caret-right"></i>
-                                                    <?php echo i18n::__('events_like_me') ?>
                                                 </a>
 
                                                 <b class="arrow"></b>
@@ -416,7 +334,6 @@ use mvc\request\requestClass as request ?>
                                                                 <th><?php echo i18n::__('actions') ?></th>
                                                             </tr>
                                                         <tbody>
-
                                                             <?php foreach ($objEvento as $evento): ?>
                                                                 <tr>
                                                                     <td><input type="checkbox" name="chk[]" value="<?php echo $evento->$id ?>"></td>
@@ -429,7 +346,7 @@ use mvc\request\requestClass as request ?>
                                                                     <td><?php echo $evento->lugar_longitud ?></td>
                                                                     <td><?php echo $evento->direccion ?></td>
                                                                     <td><?php echo $evento->costo ?></td>
-                                                                    <td><?php echo $evento->categoria_id ?></td>
+                                                                    <td><?php echo categoriaTableClass::getNombreById($evento->categoria_id) ?></td>
                                                                     <td><?php echo $evento->fecha_inicial_publicacion ?></td>
                                                                     <td><?php echo $evento->fecha_final_publicacion ?></td>
                                                                     <td>
@@ -503,6 +420,7 @@ use mvc\request\requestClass as request ?>
 
 
                                         </div>
+
 
 
 

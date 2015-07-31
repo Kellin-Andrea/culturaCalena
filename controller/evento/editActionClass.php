@@ -33,6 +33,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         eventoTableClass::FECHA_FINAL_EVENTO,
         eventoTableClass::DIRECCION,
         eventoTableClass::COSTO,
+        eventoTableClass::CATEGORIA_ID,
         eventoTableClass::FECHA_INICIAL_PUBLICACION,
         eventoTableClass::FECHA_FINAL_PUBLICACION,
         eventoTableClass::LUGAR_LATITUD,
@@ -43,6 +44,17 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $where = array(
             eventoTableClass::ID => request::getInstance()->getGet(eventoTableClass::ID)
         );
+        
+         $fields1 = array(
+                    categoriaTableClass::ID,
+                    categoriaTableClass::NOMBRE
+                );
+                $ordeBy1 = array(
+                categoriaTableClass::NOMBRE
+                
+                );  
+                
+        $this->objcategoria = categoriaTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
         $this->objevento = eventoTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'evento', session::getInstance()->getFormatOutput());
       } else {

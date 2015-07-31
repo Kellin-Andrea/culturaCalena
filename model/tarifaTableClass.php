@@ -13,6 +13,28 @@ use mvc\config\configClass as config;
 */
 
 class tarifaTableClass extends tarifaBaseTableClass {
+    
+    
+     public static function getNombreById($id) {
+      try {
+          $sql = 'SELECT descripcion AS descripcion ' .
+                    'FROM ' . tarifaTableClass::getNameTable() .
+                    ' WHERE  ' . tarifaTableClass::ID . ' = :id';
+
+            $params = array(
+                ':id' => $id
+            );
+
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute($params);
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return $answer[0]->descripcion;
+      } //end try
+      catch (PDOException $exc) {
+          throw $exc;
+      }//end cath
+    }
+    
   
       public static function getTotalpages($lines, $where) {
         try {

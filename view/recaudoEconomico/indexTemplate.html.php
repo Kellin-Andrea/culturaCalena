@@ -417,10 +417,10 @@ use mvc\request\requestClass as request ?>
                                                                     <?php foreach ($objrecaudoEconomico as $recaudoEconomico): ?>
                                                                         <tr>
                                                                             <td><input type="checkbox" name="chk[]" value="<?php echo $recaudoEconomico->$id ?>"></td>
-                                                                            <td><?php echo $recaudoEconomico->evento_id ?></td>
-                                                                            <td><?php echo $recaudoEconomico->usuario_id ?></td>
+                                                                            <td><?php echo eventoTableClass::getNombreById($recaudoEconomico->evento_id) ?></td>
+                                                                            <td><?php echo usuarioTableClass::getNombreById($recaudoEconomico->usuario_id) ?></td>
                                                                             <td><?php echo $recaudoEconomico->observacion ?></td>
-                                                                            <td><?php echo $recaudoEconomico->tarifa_id ?></td>
+                                                                            <td><?php echo tarifaTableClass::getNombreById($recaudoEconomico->tarifa_id) ?></td>
                                                                             <td><?php echo $recaudoEconomico->valor_total ?></td>
                                                                             <td><?php echo $recaudoEconomico->valor_parcial ?></td>
                                                                             <td>

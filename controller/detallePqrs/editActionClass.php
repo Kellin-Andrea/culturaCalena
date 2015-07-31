@@ -15,25 +15,35 @@ use mvc\i18n\i18nClass as i18n;
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->hasRequest(usuarioTableClass::ID)) {
-        $fields = array(
-        detallePqrsTableClass::ID,
-        detallePqrsTableClass::RESPUESTA,
-        detallePqrsTableClass::PQRS_ID,
-        detallePqrsTableClass::USUARIO_ID
-        );
-      
-        $where = array(
-            detallePqrsTableClass::ID => request::getInstance()->getRequest(detallePqrsTableClass::ID)
-        );
-       
-        $this->objdetalle = detallePqrsTableClass::getAll($fields, true, null, null. null, null, $where);
-        $this->defineView('edit', 'detallePqrs', session::getInstance()->getFormatOutput());
-      } else {
-        routing::getInstance()->redirect('detallePqrs', 'index');
-      }
+    public function execute() {
+        try {
+            if (request::getInstance()->hasRequest(usuarioTableClass::ID)) {
+                $fields = array(
+                    detallePqrsTableClass::ID,
+                    detallePqrsTableClass::RESPUESTA,
+                    detallePqrsTableClass::PQRS_ID,
+                    detallePqrsTableClass::USUARIO_ID
+                );
+
+                $where = array(
+                    detallePqrsTableClass::ID => request::getInstance()->getRequest(detallePqrsTableClass::ID)
+                );
+
+                $fields1 = array(
+                usuarioTableClass::ID,
+                usuarioTableClass::USER
+                );
+                
+                $ordeBy1 = array(
+                usuarioTableClass::USER
+                );
+
+                $this->objdetalle = detallePqrsTableClass::getAll($fields, true, null, null . null, null, $where);
+                $this->objUsuarios = usuarioTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
+                $this->defineView('edit', 'detallePqrs', session::getInstance()->getFormatOutput());
+            } else {
+                routing::getInstance()->redirect('detallePqrs', 'index');
+            }
 //      if (request::getInstance()->isMethod('POST')) {
 //
 //        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
@@ -52,10 +62,10 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //      } else {
 //        routing::getInstance()->redirect('default', 'index');
 //      }
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

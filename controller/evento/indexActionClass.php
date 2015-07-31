@@ -18,10 +18,8 @@ use mvc\i18n\i18nClass as i18n;
  */
 
 class indexActionClass extends controllerClass implements controllerActionInterface {
-
   public function execute() {
     try {
-
       $where = null;
         
         $fields = array(
@@ -59,5 +57,4 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
-
 }

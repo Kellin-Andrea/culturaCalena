@@ -1,6 +1,7 @@
 <?php use mvc\routing\routingClass as routing ?>
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
+<?php $categoria = categoriaTableClass::ID ?>
 <?php $evento = eventoTableClass::ID?>
 <?php $lugar = eventoTableClass::LUGAR_LATITUD ?>
 <?php $long = eventoTableClass::LUGAR_LONGITUD ?>
@@ -11,7 +12,7 @@
   <div class="panel-heading">
       <h1 class="glyphicon glyphicon-star"><?php echo i18n::__('editEvent')?> <?php echo $objevento[0]->$evento ?></h1>
   </div>
-<?php view::includePartial('evento/formUser', array('objevento' => $objevento, 'evento' => $evento)) ?>
+<?php view::includePartial('evento/formUser', array('objevento' => $objevento, 'evento' => $evento, 'objcategoria' => $objcategoria, 'categoria' => $categoria)) ?>
 </div>
 <script>
   function initialize() {

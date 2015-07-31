@@ -263,6 +263,7 @@ dictionary:
     ratesManagement:                                                   Rates management
     rates:                                                             Rates
     rateId:                                                            Rate Id
+    rateSelect:                                                        rateSelect
     partialPayment:                                                    Partial payment
     totalPayment:                                                      Total payment
     createRates:                                                       Create rate

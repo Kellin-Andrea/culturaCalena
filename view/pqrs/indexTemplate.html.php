@@ -414,8 +414,8 @@ use mvc\i18n\i18nClass as i18n ?>
                                                                     <td><input type="checkbox" name="chk[]" value="<?php echo $pqrs->$id ?>"></td>
                                                                     <td><?php echo $pqrs->titulo ?></td>
                                                                     <td><?php echo $pqrs->contenido ?></td>
-                                                                    <td><?php echo $pqrs->tipo_pqrs_id ?></td>
-                                                                    <td><?php echo $pqrs->estado_pqrs_id ?></td>
+                                                                    <td><?php echo tipoPqrsTableClass::getNombreById($pqrs->tipo_pqrs_id) ?></td>
+                                                                    <td><?php echo estadoPqrsTableClass::getNombreById($pqrs->estado_pqrs_id) ?></td>
 
 
 

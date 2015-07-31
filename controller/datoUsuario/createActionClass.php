@@ -34,14 +34,15 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $typeDocument = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true));
                 $organization = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true));
                 $user = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-                $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
-
-                if (($objdatos = datoUsuarioTableClass::verifyDate($user, $password, $name, $password, $lastName, $mail, $genre, $dateF, $locality, $typeDocument, $organization, $id)) !== false)
-                    ;
-
-                validator::validateInsert($name, $lastName, $mail, $dateF, $genre, $locality, $typeDocument, $organization);
+                $pass1 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1');
+                $pass2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
+                
+                validator::validateInsert($id, $name, $lastName, $mail, $dateF, $genre, $locality, $typeDocument, $organization,$user,$pass1,$pass2);
 
                 $data = array(
+                    
+                    usuarioTableClass::USER => $user,
+                    usuarioTableClass::PASSWORD => md5($pass1),
                     datoUsuarioTableClass::NOMBRE => $name,
                     datoUsuarioTableClass::APELLIDO => $lastName,
                     datoUsuarioTableClass::CORREO => $mail,
@@ -50,19 +51,23 @@ class createActionClass extends controllerClass implements controllerActionInter
                     datoUsuarioTableClass::LOCALIDAD_ID => $locality,
                     datoUsuarioTableClass::TIPO_DOCUMENTO_ID => $typeDocument,
                     datoUsuarioTableClass::ORGANIZACION_ID => $organization,
-                    usuarioTableClass::USER => $user,
-                    usuarioTableClass::PASSWORD => $password,
+                   
                     '__sequence' => 'usuario_id_seq'
                 );
-
-                $id_usuario = datoUsuarioTableClass::insert($data);
+                
+                
+                $id_usuario = usuarioTableClass::insert($id);
+                $id = datoUsuarioTableClass::insert($data);
+               
 
                 $data = array(
-                    usuarioCredencialTableClass::USUARIO_ID => $id_usuario,
-                    usuarioCredencialTableClass::CREDENCIAL_ID => config::CREDENCIAL_USUARIO
+                datoUsuarioTableClass::USUARIO_ID => $id_usuario
+           
+                  
                 );
 
-                usuarioCredencialTableClass::insert($data);
+                usuarioTableClass::insert($data);
+                datoUsuarioTableClass::insert($data);
 
 
 

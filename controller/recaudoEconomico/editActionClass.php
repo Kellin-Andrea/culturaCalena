@@ -15,25 +15,57 @@ use mvc\i18n\i18nClass as i18n;
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->hasRequest(recaudoEconomicoTableClass::ID)) {
-        $fields = array(
-        recaudoEconomicoTableClass::ID,
-        recaudoEconomicoTableClass::USUARIO_ID,
-        recaudoEconomicoTableClass::EVENTO_ID,
-        recaudoEconomicoTableClass::OBSERVACION,
-        recaudoEconomicoTableClass::VALOR_PARCIAL,
-        recaudoEconomicoTableClass::VALOR_TOTAL
-        );
-        $where = array(
-        recaudoEconomicoTableClass::ID => request::getInstance()->getRequest(recaudoEconomicoTableClass::ID)
-        );
-        $this->objrecaudoEconomico = recaudoEconomicoTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'recaudoEconomico', session::getInstance()->getFormatOutput());
-      } else {
-        routing::getInstance()->redirect('recaudoEconomico', 'index');
-      }
+    public function execute() {
+        try {
+            if (request::getInstance()->hasRequest(recaudoEconomicoTableClass::ID)) {
+                $fields = array(
+                    recaudoEconomicoTableClass::ID,
+                    recaudoEconomicoTableClass::USUARIO_ID,
+                    recaudoEconomicoTableClass::EVENTO_ID,
+                    recaudoEconomicoTableClass::OBSERVACION,
+                    recaudoEconomicoTableClass::TARIFA_ID,
+                    recaudoEconomicoTableClass::VALOR_PARCIAL,
+                    recaudoEconomicoTableClass::VALOR_TOTAL
+                );
+
+
+
+                $where = array(
+                    recaudoEconomicoTableClass::ID => request::getInstance()->getRequest(recaudoEconomicoTableClass::ID)
+                );
+
+                $fields1 = array(
+                    eventoTableClass::ID,
+                    eventoTableClass::NOMBRE
+                );
+                $ordeBy1 = array( 
+                eventoTableClass::NOMBRE
+                );
+                
+                 $fields2 = array(
+                     usuarioTableClass::ID,
+                     usuarioTableClass::USER
+                );
+                $ordeBy2 = array( 
+                    usuarioTableClass::USER
+                );
+                
+                 $fields3 = array(
+                     tarifaTableClass::ID,
+                     tarifaTableClass::DESCRIPCION
+                );
+                $ordeBy3 = array( 
+                    tarifaTableClass::DESCRIPCION
+                );
+                
+                $this->objevento = eventoTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
+                $this->objUsuarios = usuarioTableClass::getAll($fields2, true, $ordeBy2, 'ASC');
+                $this->objtarifa = tarifaTableClass::getAll($fields3, true, $ordeBy3, 'ASC');
+                $this->objrecaudoEconomico = recaudoEconomicoTableClass::getAll($fields, true, null, null, null, null, $where);
+                $this->defineView('edit', 'recaudoEconomico', session::getInstance()->getFormatOutput());
+            } else {
+                routing::getInstance()->redirect('recaudoEconomico', 'index');
+            }
 //      if (request::getInstance()->isMethod('POST')) {
 //
 //        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
@@ -52,10 +84,10 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //      } else {
 //        routing::getInstance()->redirect('default', 'index');
 //      }
-       } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

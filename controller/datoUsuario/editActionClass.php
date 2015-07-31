@@ -36,7 +36,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         );
        
         $where1 = array(
-        datoUsuarioTableClass::ID => request::getInstance()->getGet(datoUsuarioTableClass::ID)
+        datoUsuarioTableClass::USUARIO_ID => request::getInstance()->getGet(usuarioTableClass::ID)
         );
        $this->objdatos = datoUsuarioTableClass::getAll($fields1, true, null, null, null, null, $where1);
         $this->defineView('edit', 'datoUsuario', session::getInstance()->getFormatOutput());

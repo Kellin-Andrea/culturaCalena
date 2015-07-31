@@ -43,7 +43,7 @@ use mvc\view\viewClass as view ?>
                     <label value="<?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true)) === true) ? request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true)) : (session::getInstance()->hasFlash('edit') === true) ? $objUsuario[0]->$usuario : ' ' ?>for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" class="col-sm-2 control-label"><?php echo i18n::__('pass') ?></label>
 
                     <div class="col-sm-10">
-                        <?php mvc\view\viewClass::getMessageError('inputPass1') ?>
+                        <?php mvc\view\viewClass::getMessageError('inputPassword') ?>
 
 
                         <input type="password" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" placeholder="<?php echo i18n::__('insertPass') ?>">
@@ -55,7 +55,7 @@ use mvc\view\viewClass as view ?>
                     <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="col-sm-2 control-label"><?php echo i18n::__('verifyPass') ?></label>
 
                     <div class="col-sm-10">
-                        <?php mvc\view\viewClass::getMessageError('inputPass2') ?>
+                        <?php mvc\view\viewClass::getMessageError('inputPassword') ?>
 
 
                         <input type="password" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>"  name=<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?> placeholder="<?php echo i18n::__('verifyPass') ?>"> 

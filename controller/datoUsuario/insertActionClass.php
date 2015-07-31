@@ -49,10 +49,20 @@ class insertActionClass extends controllerClass implements controllerActionInter
         organizacionTableClass::NOMBRE
         );
         
+        $fields4 = array(
+        usuarioTableClass::ID,
+        usuarioTableClass::USER
+        );
+          
+        $orderBy4 = array(
+        usuarioTableClass::USER
+        );
+        
         $this->objlocal = localidadTableClass::getAll($fields1, true, $orderBy1, 'ASC');
         $this->objtipoDocumento = tipoDocumentoTableClass::getAll($fields2, true, $orderBy2, 'ASC');
         $this->objorganizacion = organizacionTableClass::getAll($fields3, true, $orderBy3, 'ASC');
-     
+        $this->objusuarios = usuarioTableClass::getAll($fields4, true, $orderBy4, 'ASC');
+
       $this->defineView('insert', 'datoUsuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

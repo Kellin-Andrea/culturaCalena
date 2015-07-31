@@ -4,7 +4,7 @@
 <div class="container container-fluid">
 
   <form class="form-signin" role="form" action="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'login') ?>" method="POST">
-    <h2 class="form-signin-heading">Identificación</h2>
+      <center><h2 class="form-signin-heading">Identificación</h2></center>
     <label for="inputUser" class="sr-only">Email address</label>
     <input type="text" id="inputUser" name="inputUser" class="form-control" placeholder="Usuario" required autofocus>
     <label for="inputPassword" class="sr-only">Password</label>

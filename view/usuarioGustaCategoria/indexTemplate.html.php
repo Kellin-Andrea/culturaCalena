@@ -415,8 +415,8 @@ use mvc\request\requestClass as request ?>
                                                                     <?php foreach ($objusgusca as $usgusca): ?>
                                                                         <tr>
                                                                             <td><input type="checkbox" name="chk[]" value="<?php echo $usgusca->id ?>"></td>
-                                                                            <td><?php echo $usgusca->usuario_id ?></td>
-                                                                            <td><?php echo $usgusca->categoria_id ?></td>
+                                                                            <td><?php echo usuarioTableClass::getNombreById($usgusca->usuario_id) ?></td>
+                                                                            <td><?php echo categoriaTableClass::getNombreById($usgusca->categoria_id) ?></td>
                                                                             <td>
                                                                                 <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioGustaCategoria', 'edit', array(usuarioGustaCategoriaTableClass::ID => $usgusca->$id)) ?>" class="btn btn-info btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
                                                                                 <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $usgusca->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>

@@ -15,8 +15,37 @@ namespace mvc\validator {
      */
     class createDatoUsuarioValidatorClass extends validatorClass {
 
-        public static function validateInsert($name, $lastName, $mail, $locality, $dateF, $genre, $typeDocument, $organization) {
+        public static function validateInsert($user, $pass1, $pass2, $name, $lastName, $mail, $locality, $dateF, $genre, $typeDocument, $organization) {
             $flag = false;
+
+            if (self::notBlank($user)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputUser', true);
+                session::getInstance()->setError('El nombre de usuario es requerido', 'inputUser');
+            } else if (is_numeric($user)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputUser', true);
+                session::getInstance()->setError('El usuario no puede ser númerico', 'inputUser');
+            } else if (strlen($user) > \usuarioTableClass::USER_LENGTH) {
+                $flag = true;
+                session::getInstance()->setFlash('inputUser', true);
+                session::getInstance()->setError('El usuario digitado es mayor en cantidad de caracteres a lo permitido', 'inputUser');
+            } else if (self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER => request::getInstance()->getPost('inputUser')), \usuarioTableClass::getNameTable())) {
+                $flag = true;
+                session::getInstance()->setFlash('inputUser', true);
+                session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
+            }
+
+            if (self::notBlank($pass1) or self::notBlank($pass2)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputPass', true);
+                session::getInstance()->setError('Las contraseñas son requeridas', 'inputPass');
+            } else if (request::getInstance()->getPost('inputPass1') !== request::getInstance()->getPost('inputPass2')) {
+                $flag = true;
+                session::getInstance()->setFlash('inputPass', true);
+                session::getInstance()->setError('Las contraseñas no coinciden', 'inputPass');
+            }
+
 
             if (self::notBlank($name)) {
                 $flag = true;
@@ -44,24 +73,6 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputLastName', true);
                 session::getInstance()->setError('El apellido excede los caracteres permitidos', 'inputLastName');
-            }
-
-            if (self::notBlank($mail)) {
-                $flag = true;
-                session::getInstance()->setFlash('inputmail', true);
-                session::getInstance()->setError('El correo es obligatorio para el contacto por parte del portal', 'inputmail');
-            } else if (strlen($mail) > \datoUsuarioTableClass::CORREO_LENGTH) {
-                $flag = true;
-                session::getInstance()->setFlash('inputmail', true);
-                session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputmail');
-            } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim(request::getInstance()->getPost('inputmail')))) {
-//                $flag = true;
-//                session::getInstance()->setFlash('inputmail', true);
-//                session::getInstance()->setError('Por favor digite un corre válido', 'inputmail');
-            } else if (self::isUnique(\datoUsuarioTableClass::ID, true, array(\datoUsuarioTableClass::CORREO => trim(request::getInstance()->getPost('inputmail'))), \datoUsuarioTableClass::getNameTable())) {
-                $flag = true;
-                session::getInstance()->setFlash('inputmail', true);
-                session::getInstance()->setError('El correo digitado ya está siendo usado', 'inputmail');
             }
 
             if (self::notBlank($locality)) {
@@ -119,6 +130,7 @@ namespace mvc\validator {
             if ($flag === true) {
                 //request::getInstance()->setMethod('GET');
                 routing::getInstance()->forward('datoUsuario', 'insert');
+                routing::getInstance()->forward('usuario', 'insert');
             }
         }
 

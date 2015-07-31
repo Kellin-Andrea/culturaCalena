@@ -48,22 +48,22 @@ namespace mvc\validator {
       
       
       if (self::notBlank($mail)) {
-        $flag = true;
-        session::getInstance()->setFlash('inputmail', true);
-        session::getInstance()->setError('El correo es obligatorio para el contacto por parte del portal', 'inputmail');
-      } else if (strlen($mail) > \datoUsuarioTableClass::CORREO_LENGTH) {
-        $flag = true;
-        session::getInstance()->setFlash('inputmail', true);
-        session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputmail');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim(request::getInstance()->getPost('inputmail')))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputmail', true);
-        session::getInstance()->setError('Por favor digite un corre válido', 'inputmail');
-      } else if(self::isUnique(\datoUsuarioTableClass::ID, true, array(\datoUsuarioTableClass::CORREO => trim(request::getInstance()->getPost('inputEmail'))), \datoUsuarioTableClass::getNameTable())) {
-        $flag = true;
-        session::getInstance()->setFlash('inputmail', true);
-        session::getInstance()->setError('El correo digitado ya está siendo usado', 'inputmail');
-      }
+                $flag = true;
+                session::getInstance()->setFlash('inputEmail', true);
+                session::getInstance()->setError('El correo es obligatorio para el contacto por parte de la plataforma', 'inputEmail');
+            } else if (strlen(request::getInstance()->getPost('inputEmail')) > \datoUsuarioTableClass::CORREO_LENGTH) {
+                $flag = true;
+                session::getInstance()->setFlash('inputEmail', true);
+                session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputEmail');
+            } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim(request::getInstance()->getPost('inputEmail')))) {
+                $flag = true;
+                session::getInstance()->setFlash('inputEmail', true);
+                session::getInstance()->setError('Por favor digite un corre válido', 'inputEmail');
+            } else if (self::isUnique(\datoUsuarioTableClass::ID, true, array(\datoUsuarioTableClass::CORREO => trim(request::getInstance()->getPost('inputEmail'))), \datoUsuarioTableClass::getNameTable())) {
+                $flag = true;
+                session::getInstance()->setFlash('inputEmail', true);
+                session::getInstance()->setError('El correo digitado ya está siendo usado', 'inputEmail');
+            }
       
 //      if (self::notBlank($locality)) {
 //        $flag = true;

@@ -243,6 +243,7 @@ dictionary:
     ratesManagement:                                                       Gestion de Tarifas
     rates:                                                                 Tarifa
     rateId:                                                                Id de Tarifa
+    rateSelect:                                                            Selecione una tarifa
     partialPayment:                                                        Pago parcial
     totalPayment:                                                          Pago total
     createRates:                                                           Crear tarifa
