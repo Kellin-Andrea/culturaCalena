@@ -18,26 +18,43 @@ use mvc\i18n\i18nClass as i18n;
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->hasGet(pqrsTableClass::ID)) {
-        $fields = array(
-        pqrsTableClass::ID,
-        pqrsTableClass::TITULO,
-        pqrsTableClass::CONTENIDO
-            
-            
-        );
-        $where = array(
-        pqrsTableClass::ID => request::getInstance()->getGet(pqrsTableClass::ID)
-        );
-        session::getInstance()->setFlash('edit',true);
-        
-        $this->objpqrs = pqrsTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'pqrs', session::getInstance()->getFormatOutput());
-      } else {
-        routing::getInstance()->redirect('pqrs', 'index');
-      }
+    public function execute() {
+        try {
+            if (request::getInstance()->hasGet(pqrsTableClass::ID)) {
+                $fields = array(
+                    pqrsTableClass::ID,
+                    pqrsTableClass::TITULO,
+                    pqrsTableClass::CONTENIDO,
+                    pqrsTableClass::TIPO_PQRS,
+                    pqrsTableClass::ESTADO_PQRS
+                );
+                $where = array(
+                    pqrsTableClass::ID => request::getInstance()->getGet(pqrsTableClass::ID)
+                );
+
+                $fields2 = array(
+                    tipoPqrsTableClass::ID,
+                    tipoPqrsTableClass::NOMBRE
+                );
+                $ordeBy = array(
+                tipoPqrsTableClass::NOMBRE
+                );
+                
+                $fields1 = array(
+                    estadoPqrsTableClass::ID,
+                    estadoPqrsTableClass::NOMBRE
+                );
+                $ordeBy1 = array(
+                estadoPqrsTableClass::NOMBRE
+                
+                );
+                $this->objtipoPqrs = tipoPqrsTableClass::getAll($fields2, true, $ordeBy, 'ASC');
+                $this->objestado = estadoPqrsTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
+                $this->objpqrs = pqrsTableClass::getAll($fields, true, null, null, null, null, $where);
+                $this->defineView('edit', 'pqrs', session::getInstance()->getFormatOutput());
+            } else {
+                routing::getInstance()->redirect('pqrs', 'index');
+            }
 //      if (request::getInstance()->isMethod('POST')) {
 //
 //        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
@@ -56,13 +73,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //      } else {
 //        routing::getInstance()->redirect('default', 'index');
 //      }
-    } catch (PDOException $exc) {
-      echo $exc->getMessage();
-      echo '<br>';
-      echo '<pre>';
-      print_r($exc->getTrace());
-      echo '</pre>';
+        } catch (PDOException $exc) {
+            echo $exc->getMessage();
+            echo '<br>';
+            echo '<pre>';
+            print_r($exc->getTrace());
+            echo '</pre>';
+        }
     }
-  }
 
 }

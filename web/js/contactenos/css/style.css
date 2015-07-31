@@ -2306,7 +2306,7 @@ label.error  {background:red; color:#fff; border-radius:4px; padding:4px 6px}
 
 .fa-arrow-up:before { content: ""; }
 
-.fa-arrow-down:before { content: ""; }
+.fa-arrow-down:before { content: ""; color: #fff; }
 
 .fa-mail-forward:before, .fa-share:before { content: ""; }
 
@@ -3342,3 +3342,7 @@ font-family: "Source Sans Pro",Helvetica,Arial,sans-serif;
 text-transform: uppercase;
 }
 .project-link:hover{color:#454545}
+
+.lou{
+    color: black;
+}

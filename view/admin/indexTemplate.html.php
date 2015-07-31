@@ -56,9 +56,11 @@ use mvc\i18n\i18nClass as i18n ?>
                     <li class="light-blue">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
                              <img src="<?php echo routing::getInstance()->getUrlImg('logo.png') ?>"> 
+                             
                             <span class="user-info">
                                 <small><?php echo i18n::__('welcome') ?></small>
                                 <?php echo i18n::__('administrator') ?>
+                                
                             </span>
                             
 
@@ -180,7 +182,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
                                                 <ul class="submenu">
                                                     <li class="">
-                                                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">
+                                                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuario', 'index') ?>">
                                                             <i class="menu-icon fa fa-caret-right"></i>
                                                             <?php echo i18n::__('user') ?>
                                                         </a>

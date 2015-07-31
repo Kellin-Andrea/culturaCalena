@@ -10,6 +10,8 @@ use mvc\config\configClass as config ?>
 <?php
 use mvc\request\requestClass as request ?>
 
+<?php use mvc\session\sessionClass as session ?>
+
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
 <div class="boxed-container">
@@ -24,30 +26,72 @@ use mvc\request\requestClass as request ?>
     <div class="container">
         <div class="logo">
             <a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>">
-                <img src="<?php echo routing::getInstance()->getUrlImg('../../web/css/homepage/images/logo1.png') ?>"> 
+                <img src="<?php echo routing::getInstance()->getUrlImg('logo1.png') ?>"> 
             </a>
         </div>
         <div class="header-widgets  header-widgets-desktop">
+              <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
-                    <a class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
-                    <span class="icon-box__subtitle">Registrarse</span>                    
+                     <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
+                     <span class="icon-box__subtitle">Registrarse</span> 
                 </div>
             </div>
-            <div class="widget  widget-icon-box">	
+            <?php else: ?>
+            
+            <?php endif;?>
+            
+            <?php
+            
+             session::getInstance()->isUserAuthenticated();
+             session::getInstance()->hasCredential('admin');
+             session::getInstance()->getUserId();
+             session::getInstance()->getUserName();
+            
+            ?>
+            
+            
+            
+            <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
+            <div class="widget widget-icon-box">	
                 <div class="icon-box">
-                    <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-                    <span class="icon-box__subtitle">Iniciar Sesion</span>
-
+                    <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                   <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>
-            <div class="widget  widget-icon-box">	
+            <?php else: ?>
+            
+            
+            <div class="icon-box">
+                    <!-- Button trigger modal -->
+                    <div type="icon-box" class="fa fa-arrow-down white " data-toggle="modal" data-target="#myModalPerfil"></div>
+                     <span class="icon-box__subtitle"><?php echo i18n::__('welcome'); echo '<br>';  echo session::getInstance()->getUserName() ;?></span>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModalPerfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('welcome to culturaCaleña')?></h4>
+                                </div>
+                                <div class="modal-body">
+                                     <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('profile', 'index')?>"><i class="fa fa-user"></i> <?php echo i18n::__('profile')?></a>
+                                    <br><a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"><i class="glyphicon glyphicon-log-out"></i> <?php echo i18n::__('logout')?></a>
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
 
-
+                </div>
+        
+            <?php endif ?>
+            
+             <div class="widget  widget-icon-box">	
                 <div class="icon-box">
                     <!-- Button trigger modal -->
                     <div type="icon-box" class="fa fa-globe" data-toggle="modal" data-target="#myModal"></div>
-                    <span class="icon-box__subtitle">Idioma</span>
+                     <span class="icon-box__subtitle">Idioma</span>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -75,6 +119,8 @@ use mvc\request\requestClass as request ?>
 
                 </div>
             </div>
+            
+           
             <div class="widget  widget-social-icons">	
                 <a class="social-icons__link" href="https://www.facebook.com/" target="_blank"><i class="fa  fa-facebook"></i></a>
                 <a class="social-icons__link" href="https://www.twitter.com/" target="_blank"><i class="fa  fa-twitter"></i></a>
@@ -119,7 +165,7 @@ use mvc\request\requestClass as request ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box">
                     <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-                    <span class="icon-box__subtitle">Iniciar Sesion</span>
+                   <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>
            <div class="widget  widget-icon-box">	
@@ -128,7 +174,7 @@ use mvc\request\requestClass as request ?>
                 <div class="icon-box">
                     <!-- Button trigger modal -->
                     <div type="icon-box" class="fa fa-globe" data-toggle="modal" data-target="#myModal"></div>
-                    <span class="icon-box__subtitle">Idioma</span>
+                       <span class="icon-box__subtitle">Idioma</span>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
@@ -165,8 +211,6 @@ use mvc\request\requestClass as request ?>
         </div>
     </div>
 </header>
-
-
 <div class="jumbotron  jumbotron--with-captions">
     <div class="carousel  slide  js-jumbotron-slider" id="headerCarousel" data-interval="5000">
         <!-- Wrapper for slides -->

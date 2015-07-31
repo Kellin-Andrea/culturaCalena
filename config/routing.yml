@@ -2,6 +2,8 @@ homepage:
   url:    /homepage/index
   param:  { module: homepage, action: index, format: html }
   load:
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
 
 homepage traductor:
   url:   /homepage/traductor
@@ -986,6 +988,10 @@ pqrs_index:
   load:
     - model/base/pqrsBaseTableClass.php
     - model/pqrsTableClass.php
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
 
 pqrs_insert:
   url:    /pqrs/insertar
@@ -1031,6 +1037,10 @@ pqrs_update:
   load:
     - model/base/pqrsBaseTableClass.php
     - model/pqrsTableClass.php
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
     - libs/validator/pqrs/editPqrsValidatorClass.php 
     
 
@@ -1079,6 +1089,10 @@ recaudoEconomico_index:
     load:
         - model/base/recaudoEconomicoBaseTableClass.php
         - model/recaudoEconomicoTableClass.php
+        - model/base/eventoBaseTableClass.php
+        - model/eventoTableClass.php
+        - model/base/tarifaBaseTableClass.php
+        - model/tarifaTableClass.php
         
 recaudoEconomico_insert:
     url: /recaudoEconomico/insert
@@ -1086,6 +1100,10 @@ recaudoEconomico_insert:
     load:
         - model/base/recaudoEconomicoBaseTableClass.php
         - model/recaudoEconomicoTableClass.php
+        - model/base/eventoBaseTableClass.php
+        - model/eventoTableClass.php
+        - model/base/tarifaBaseTableClass.php
+        - model/tarifaTableClass.php
         
 recaudoEconomico_create:
     url: /recaudoEconomico/crear
@@ -1093,6 +1111,10 @@ recaudoEconomico_create:
     load:
         - model/base/recaudoEconomicoBaseTableClass.php
         - model/recaudoEconomicoTableClass.php
+        - model/base/eventoBaseTableClass.php
+        - model/eventoTableClass.php
+        - model/base/tarifaBaseTableClass.php
+        - model/tarifaTableClass.php
         
 recaudoEconomico_edit:
     url: /recaudoEconomico/editar
@@ -1100,6 +1122,10 @@ recaudoEconomico_edit:
     load:
         - model/base/recaudoEconomicoBaseTableClass.php
         - model/recaudoEconomicoTableClass.php
+        - model/base/eventoBaseTableClass.php
+        - model/eventoTableClass.php
+        - model/base/tarifaBaseTableClass.php
+        - model/tarifaTableClass.php
         
 recaudoEconomico_update:
     url: / recaudoEconomico/actualizar
@@ -1107,6 +1133,10 @@ recaudoEconomico_update:
     load:
         - model/base/recaudoEconomicoBaseTableClass.php
         - model/recaudoEconomicoTableClass.php
+        - model/base/eventoBaseTableClass.php
+        - model/eventoTableClass.php
+        - model/base/tarifaBaseTableClass.php
+        - model/tarifaTableClass.php
         
 recaudoEconomico_delete:
     url: /recaudoEconomico/eliminar
@@ -1408,21 +1438,21 @@ tipoPqrs_traductor:
 
 ##-------------------------- USUARIO --------------------------##
 usuario_index:
-  url:    /usuarios/index
+  url:    /usuario/index
   param:  { module: usuario, action: index, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
 usuario_insert:
-  url:    /usuarios/insertar
+  url:    /usuario/insertar
   param:  { module: usuario, action: insert, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
 
 usuario_create:
-  url:    /usuarios/crear
+  url:    /usuario/crear
   param:  { module: usuario, action: create, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
@@ -1549,6 +1579,8 @@ usuarioGustaCategoria_index:
   load:
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
 
 usuarioGustaCategoria_insert:
   url:    /usuarioGustaCategoria/insertar
@@ -1570,6 +1602,8 @@ usuarioGustaCategoria_edit:
   load:
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
 
 usuarioGustaCategoria_update:
   url:    /usuarioGustaCategoria/actualizar
@@ -1577,6 +1611,8 @@ usuarioGustaCategoria_update:
   load:
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
 
 usuarioGustaCategoria_delete:
   url:    /usuarioGustaCategoria/eliminar

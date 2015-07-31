@@ -13,6 +13,8 @@
 <?php $ID = datoUsuarioTableClass::ORGANIZACION_ID?>
 <?php $NOMBRE = organizacionTableClass::NOMBRE ?>
 <?php $user = usuarioTableClass::USER ?>
+<?php $pass1 = usuarioTableClass::PASSWORD ?>
+<?php $pass2 = usuarioTableClass::PASSWORD ?>
 
 
 
@@ -32,11 +34,11 @@
 
                     <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('nameUser') ?></label>
 
-                    <div class="col-sm-10">
+                    <div class="col-sm-7">
                         <?php mvc\view\viewClass::getMessageError('inputUser') ?>
 
 
-                        <input type="text" class="form-control" id="//<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" 
+                        <input type="text" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" 
                                value="<?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true)) === true) ? request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true)) : ((( isset($objUsuarios) == true ) ? $objUsuarios[0]->$user : '' )) ?>" placeholder="<?php echo i18n::__('insertNameUser') ?>">
                     </div>
                 </div>
@@ -45,11 +47,11 @@
 
                     <label value="<?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true)) === true) ? request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true)) : (session::getInstance()->hasFlash('edit') === true) ? $objUsuario[0]->$usuario : ' ' ?>for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" class="col-sm-2 control-label"><?php echo i18n::__('pass') ?></label>
 
-                    <div class="col-sm-10">
-                        <?php mvc\view\viewClass::getMessageError('inputPass1') ?>
+                    <div class="col-sm-7">
+                        <?php mvc\view\viewClass::getMessageError('inputPass') ?>
 
 
-                        <input type="password" class="form-control" id="//<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" placeholder="<?php echo i18n::__('insertPass') ?>">
+                        <input type="password" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" placeholder="<?php echo i18n::__('insertPass') ?>">
 
                     </div>
                 </div>
@@ -57,8 +59,8 @@
                 <div class="form-group">
                     <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="col-sm-2 control-label"><?php echo i18n::__('verifyPass') ?></label>
 
-                    <div class="col-sm-10">
-                        <?php mvc\view\viewClass::getMessageError('inputPass2') ?>
+                    <div class="col-sm-7">
+                        <?php mvc\view\viewClass::getMessageError('inputPass') ?>
 
 
                         <input type="password" class="form-control" id="//<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>"  name=<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?> placeholder="<?php echo i18n::__('verifyPass') ?>"> 
@@ -103,7 +105,6 @@
                 <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('e-mail') ?></label>
 
                 <div class="col-sm-7">
-                   <?php mvc\view\viewClass::getMessageError('inputmail') ?>  
                  <input type="text" class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true) ?>" placeholder="<?php echo i18n::__('e-mail') ?>"
                     value="<?php  echo (session::getInstance()->hasFlash(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true)) === true)  ?  request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true)) :  ((( isset($objdatos) == true ) ?  $objdatos[0]->$mail  :  '' ))  ?>" placeholder="mail">
 

@@ -1729,8 +1729,8 @@ blockquote { border-color: #f7c51e; }
 
 /* 05.13. ProteusThemes Custom Widgets */
 /* Icon-box */
-.widget-icon-box { padding: 12px 0; border-bottom: 1px solid rgba(250, 250, 250, 0.12); width: 100%; text-align: center; }
-@media (min-width: 992px) { .widget-icon-box { float: left; padding: 8px 0; width: auto; border-bottom: 0; text-align: left; } }
+.widget-icon-box { padding: 12px 0; border-bottom: 1px solid rgba(250, 250, 250, 0.12); width: 100%; text-align: center; color: #fff; }
+@media (min-width: 992px) { .widget-icon-box { float: left; padding: 8px 0; width: auto; border-bottom: 0; text-align: left;  color: #fff;} }
 .widget-icon-box .icon-box { text-align: left; color: #999999; }
 .widget-icon-box .icon-box:hover { text-decoration: none; }
 .widget-icon-box .icon-box:hover .fa { transition: all 200ms ease-out; color: #dddddd; }

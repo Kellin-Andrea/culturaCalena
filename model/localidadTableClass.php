@@ -58,7 +58,32 @@ class localidadTableClass extends localidadBaseTableClass {
         catch (PDOException $exc) {
             throw $exc;
         }//end catch
+    }//end
+    
+     public static function getLocalidadProfile($id) {
+    try {
+        
+        /*
+         *select localidad.nombre from usuario,  localidad, dato_usuario where 
+         * dato_usuario.localidad_id=localidad.id 
+         *  
+         * and dato_usuario.usuario_id=usuario.id and usuario.id='82'
+         */
+        
+      $sql = 'SELECT ' .localidadTableClass::NOMBRE.
+              ' FROM '.usuarioTableClass::getNameTable().' , '. localidadTableClass::getNameTable().' , '. datoUsuarioTableClass::getNameTable().
+              ' WHERE '.datoUsuarioTableClass::LOCALIDAD_ID.' = '. localidadTableClass::ID.
+              'AND' .
+              ' AND '. usuarioTableClass::getNameTable().'.'.usuarioTableClass::ID.' = '.$id;
+      
+  //echo $sql;
+     // exit();
+       
+       return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+    } catch (PDOException $exc) {
+      throw $exc;
     }
+  }
         } //end class
 
 

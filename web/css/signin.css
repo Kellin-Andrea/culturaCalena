@@ -2,20 +2,20 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
-  background-image: url('../img/papeltapiz.jpg');
+ // background-image: url('../img/papeltapiz.jpg');
 }
 
 .form-signin {
-  max-width: 330px;
-  padding: 15px;
+  max-width: 530px;
+  padding: 85px;
   margin: 0 auto;
-  background-color: #f1f1f1;
+  background-image:url('../img/papeltapiz.jpg');
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgb(51,51,51);
 }
 
 .form-signin .form-signin-heading, .form-signin .checkbox {
-  margin-bottom: 10px;
+  margin-bottom: 30px;
 }
 
 .form-signin .checkbox {

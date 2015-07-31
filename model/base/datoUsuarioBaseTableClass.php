@@ -96,7 +96,7 @@ class datoUsuarioBaseTableClass extends tableBaseClass {
    * instancia de \PDOException en caso de fracaso.
    */
   public static function getAll($fields, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
-    return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
+      return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
   }//end function
 
   /**

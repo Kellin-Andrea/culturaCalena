@@ -20,6 +20,29 @@ class usuarioTableClass extends usuarioBaseTableClass {
      * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
      * @return datatype description: Array $lines, $where .
      */
+    
+    
+    public static function getNombreById($id) {
+      try {
+          $sql = 'SELECT user_name AS user_name ' .
+                    'FROM ' . usuarioTableClass::getNameTable() .
+                    ' WHERE  ' . usuarioTableClass::ID . ' = :id';
+
+            $params = array(
+                ':id' => $id
+            );
+
+            $answer = model::getInstance()->prepare($sql);
+            $answer->execute($params);
+            $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+            return $answer[0]->user_name;
+      } //end try
+      catch (PDOException $exc) {
+          throw $exc;
+      }//end cath
+    }
+    
+    
     public static function getTotalpages($lines, $where) {
         try {
             $sql = 'SELECT count (' . usuarioTableClass::ID . ') AS cantidad ' .

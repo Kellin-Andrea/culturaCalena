@@ -5,8 +5,8 @@
 <?php $id = pqrsTableClass::ID ?>
 <?php $titulo = pqrsTableClass::TITULO ?>
 <?php $contenido = pqrsTableClass::CONTENIDO ?>
-<?php $Id =  pqrsTableClass::TIPO_PQRS ?>
-<?php $nombre = tipoPqrsTableClass::NOMBRE ?>
+<?php $estadoPqrs_id = pqrsTableClass::ESTADO_PQRS ?>
+<?php $tipoPqrs_id = pqrsTableClass::TIPO_PQRS ?>
 
 
 <div class="container container-fluid">
@@ -46,7 +46,7 @@
                     <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>">
                         <option value=""> -----Seleccione una tipo pqrs -----    </option>
                         <?php foreach ($objtipoPqrs as $tipoPqrs): ?>
-                            <option value="<?php echo $tipoPqrs->id ?>"><?php echo $tipoPqrs->$nombre ?></option>
+                        <option value="<?php echo $tipoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($tipoPqrs->id === $objpqrs[0]->$tipoPqrs_id) ? 'selected' : '' : '' ?>><?php echo tipoPqrsTableClass::getNombreById($tipoPqrs->id)?></option>
 
                         <?php endforeach ?>
                     </select>
@@ -61,7 +61,7 @@
                     <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>">
                         <option value=""> -----Seleccione una estado pqrs -----    </option>
                         <?php foreach ($objestado as $estadoPqrs): ?>
-                            <option value="<?php echo $estadoPqrs->id ?>"><?php echo $estadoPqrs->$nombre ?></option>
+                        <option value="<?php echo $estadoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($estadoPqrs->id === $objpqrs[0]->$estadoPqrs_id) ? 'selected' : '' : '' ?>><?php echo estadoPqrsTableClass::getNombreById($estadoPqrs->id) ?></option>
 
                         <?php endforeach ?>
                     </select>

@@ -24,7 +24,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $image = request::getInstance()->getFile(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true));
+        $file = request::getInstance()->getFile(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true));
         $nameEvent = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true));
         $description = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true));
         $date = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true));
@@ -40,10 +40,10 @@ class createActionClass extends controllerClass implements controllerActionInter
 //        if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
 //          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
 
-        validator::validateInsert($image, $nameEvent, $description, $date, $date1, $address, $money, $category, $datePublic, $datePublic1, $place, $long);
+        validator::validateInsert($file, $nameEvent, $description, $date, $date1, $address, $money, $category, $datePublic, $datePublic1, $place, $long);
 
         $data = array(
-            eventoTableClass::IMAGEN => $image,
+            eventoTableClass::IMAGEN => $file,
             eventoTableClass::NOMBRE => $nameEvent,
             eventoTableClass::DESCRIPCION => $description,
             eventoTableClass::FECHA_INICIAL_EVENTO => $date,

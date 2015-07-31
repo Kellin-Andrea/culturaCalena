@@ -105,7 +105,14 @@ body{
     margin-top: -75px;
 }
 
-
+#evento{
+    float: left ;
+   font-style: oblique;
+   font-weight:bold;
+   font-size:2em;
+   
+  font-family:'Book Antiqua','Verdana','Monaco',sans-serif;
+}
 
 
 

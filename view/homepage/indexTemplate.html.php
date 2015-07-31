@@ -9,7 +9,9 @@ use mvc\i18n\i18nClass as i18n ?>
 use mvc\config\configClass as config ?>
 <?php
 use mvc\request\requestClass as request ?>
-<?php use mvc\session\sessionClass as session ?>
+<?php
+use mvc\session\sessionClass as session ?>
+
 
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -31,76 +33,98 @@ use mvc\request\requestClass as request ?>
         <div class="header-widgets  header-widgets-desktop">
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
-                     <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
-                     <span class="icon-box__subtitle">Registrarse</span> 
+
+                    <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
+                    <span class="icon-box__subtitle">Registrarse</span> 
                 </div>
             </div>
-            
+
             <?php
-            
-             session::getInstance()->isUserAuthenticated();
-             session::getInstance()->hasCredential('admin');
-             session::getInstance()->getUserId();
-             session::getInstance()->getUserName();
-            
+            session::getInstance()->isUserAuthenticated();
+            session::getInstance()->hasCredential('admin');
+            session::getInstance()->getUserId();
+            session::getInstance()->getUserName();
             ?>
-            
+
             <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
-            <div class="widget widget-icon-box">	
-                <div class="icon-box">
-                    <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-                   <span class="icon-box__subtitle">Iniciar Sesion</span>
+                <div class="widget widget-icon-box">	
+                    <div class="icon-box">
+                        <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                        <span class="icon-box__subtitle">Iniciar Sesion</span>
+                    </div>
                 </div>
-            </div>
             <?php else: ?>
-            <div class="widget widget-icon-box">	
-                <div class="icon-box">
-                    <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"></a>
-                   <span class="icon-box__subtitle">Cerrar Sesion</span>
+                <div class="widget widget-icon-box">	
+                    <div class="icon-box">
+                        <a  class="fa fa-power-off" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"></a>
+                        <span class="icon-box__subtitle">Cerrar Sesion</span>
+                    </div>
                 </div>
-            </div>
             <?php endif ?>
-            
+
             <div class="widget  widget-icon-box">	
 
 
                 <div class="icon-box">
                     <!-- Button trigger modal -->
                     <div type="icon-box" class="fa fa-globe" data-toggle="modal" data-target="#myModal"></div>
-                     <span class="icon-box__subtitle">Idioma</span>
+                    <span class="icon-box__subtitle">Idioma</span>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('language')?></h4>
+                                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('language') ?></h4>
                                 </div>
                                 <div class="modal-body">
-                                    
-                                   <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('homepage', 'traductor') ?>" method="POST">
 
-                                                    <select name="language" onchange="$('#frmTraductor').submit()" class="col-sm-5">
-                                                        <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es" >Español</option>
-                                                        <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?>  value="en">English</option>
-                                                    </select>
-                                                    <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
-                                                </form>
-                                    
+                                    <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('homepage', 'traductor') ?>" method="POST">
+
+                                        <select name="language" onchange="$('#frmTraductor').submit()" class="col-sm-5">
+                                            <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es" >Español</option>
+                                            <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?>  value="en">English</option>
+                                        </select>
+                                        <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
+                                    </form>
+
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-            <div class="widget  widget-social-icons">	
-                <a class="social-icons__link" href="https://www.facebook.com/" target="_blank"><i class="fa  fa-facebook"></i></a>
-                <a class="social-icons__link" href="https://www.twitter.com/" target="_blank"><i class="fa  fa-twitter"></i></a>
-                <a class="social-icons__link" href="https://www.youtube.com/" target="_blank"><i class="fa  fa-youtube"></i></a>
-            </div>	
-        </div>
+            <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
+                <div class="widget  widget-social-icons">	
+                    <a class="social-icons__link" href="https://www.facebook.com/" target="_blank"><i class="fa  fa-facebook"></i></a>
+                    <a class="social-icons__link" href="https://www.twitter.com/" target="_blank"><i class="fa  fa-twitter"></i></a>
+                    <a class="social-icons__link" href="https://www.youtube.com/" target="_blank"><i class="fa  fa-youtube"></i></a>
+                </div>	
+            </div>
+        <?php else: ?>
+            <span style="color: #ffffff"><a href="#" class="link1" data-toggle="modal" data-target="#myModalPerfil"><?php echo i18n::__('welcome') ?> </a></span>
+
+            <div class="modal fade" id="myModalPerfil" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel"><?php ?></h4>
+                        </div>
+                        <div class="modal-body">
+                                                    </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal">Perfil</button>
+                            <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar Sesion </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        <?php endif ?>
         <!-- Toggle Button for Mobile Navigation -->
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#buildpress-navbar-collapse">
             <span class="navbar-toggle__text">MENU</span>
@@ -116,10 +140,10 @@ use mvc\request\requestClass as request ?>
         <div class="navigation" id="menucito">
             <div class="collapse  navbar-collapse" id="buildpress-navbar-collapse">
                 <ul id="menu-main-menu" class="navigation--main">
-                    <li class="current-menu-item"><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>"><?php echo i18n::__('homePage')?></a></li>
-                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>"><?php echo i18n::__('who we are')?></a></li>
-                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>"><?php echo i18n::__('events')?></a></li>
-                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('contactenos', 'index') ?>"><?php echo i18n::__('contact')?></a></li>
+                    <li class="current-menu-item"><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>"><?php echo i18n::__('homePage') ?></a></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>"><?php echo i18n::__('who we are') ?></a></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>"><?php echo i18n::__('events') ?></a></li>
+                    <li><a href="<?php echo routing::getInstance()->getUrlWeb('contactenos', 'index') ?>"><?php echo i18n::__('contact') ?></a></li>
                 </ul>	
             </div>
         </div>
@@ -139,44 +163,44 @@ use mvc\request\requestClass as request ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box">
                     <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-                   <span class="icon-box__subtitle">Iniciar Sesion</span>
+                    <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>
-           <div class="widget  widget-icon-box">	
+            <div class="widget  widget-icon-box">	
 
 
                 <div class="icon-box">
                     <!-- Button trigger modal -->
                     <div type="icon-box" class="fa fa-globe" data-toggle="modal" data-target="#myModal"></div>
-                       <span class="icon-box__subtitle">Idioma</span>
+                    <span class="icon-box__subtitle">Idioma</span>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('language')?></h4>
+                                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('language') ?></h4>
                                 </div>
                                 <div class="modal-body">
-                                    
-                                   <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('homepage', 'traductor') ?>" method="POST">
 
-                                                    <select name="language" onchange="$('#frmTraductor').submit()" class="col-sm-5">
-                                                        <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es" >Español</option>
-                                                        <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?>  value="en">English</option>
-                                                    </select>
-                                                    <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
-                                                </form>
-                                    
+                                    <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('homepage', 'traductor') ?>" method="POST">
+
+                                        <select name="language" onchange="$('#frmTraductor').submit()" class="col-sm-5">
+                                            <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es" >Español</option>
+                                            <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?>  value="en">English</option>
+                                        </select>
+                                        <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
+                                    </form>
+
                                 </div>
-                               
+
                             </div>
                         </div>
                     </div>
 
                 </div>
             </div>
-           
+
             <div class="widget  widget-social-icons">	
                 <a class="social-icons__link" href="https://www.facebook.com/" target="_blank"><i class="fa fa-facebook"></i></a>
                 <a class="social-icons__link" href="https://www.twitter.com/" target="_blank"><i class="fa fa-twitter"></i></a>
@@ -263,7 +287,7 @@ use mvc\request\requestClass as request ?>
                 <div class="textwidget"></div>
             </div>
             <div class="panel panel-grid widget widget_black-studio-tinymce panel-last-child" id="panel">
-                <h3 class="widget-title"><?php echo i18n::__('know more here')?></h3>
+                <h3 class="widget-title"><?php echo i18n::__('know more here') ?></h3>
                 <div class="textwidget">
                     <p>
                         <img src="<?php echo routing::getInstance()->getUrlImg('cultura.png') ?>"> 
@@ -273,31 +297,31 @@ use mvc\request\requestClass as request ?>
                         <span style="color: #0000CC"><a href="#" class="link1"><?php echo i18n::__('Dance') ?> </a></span>
                     </h5>
                     <p>
-                    La danza es la acción o manera de bailar. Se trata de la ejecución de movimientos al ritmo de la música que permite expresar sentimientos y emociones. Se estima que la danza fue una de las primeras manifestaciones artísticas de la historia de la humanidad.
+                        La danza es la acción o manera de bailar. Se trata de la ejecución de movimientos al ritmo de la música que permite expresar sentimientos y emociones. Se estima que la danza fue una de las primeras manifestaciones artísticas de la historia de la humanidad.
 
 
-                       
+
                     </p>
                     <h5>
                         <span style="color: #006666"><br/><span class="icon-container"><span class="fa fa-check"></span></span></span> 
                         <span style="color: #0000CC"><a href="#" class="link1"><?php echo i18n::__('Sport') ?> </a></span>
                     </h5>
                     <p>
-                    Se denomina deporte a la actividad física pautada conforme a reglas y que se practica con finalidad recreativa, profesional o como medio de mejoramiento de la salud.
-                    El deporte descrito bajo estas circunstancias tiene un amplio historial dentro de la historia humana.
+                        Se denomina deporte a la actividad física pautada conforme a reglas y que se practica con finalidad recreativa, profesional o como medio de mejoramiento de la salud.
+                        El deporte descrito bajo estas circunstancias tiene un amplio historial dentro de la historia humana.
 
-    
+
                     </p>
                     <h5>
                         <span style="color: #006666"><br/><span class="icon-container"><span class="fa fa-check"></span></span></span> 
                         <span style="color: #0000CC"><a href="#" class="link1"><?php echo i18n::__('Music') ?> </a></span>
                     </h5>
                     <p>
-                    Es más fácil sentirla y reproducirla que explicarla o definirla. Todos entendemos qué es la música, pero ¿cuántos pueden poner en palabras cuáles son sus características esenciales o aquello que le da sentido?
-                    Puede decirse que la música es el arte que consiste en dotar a los sonidos y los silencios de una cierta organización. 
+                        Es más fácil sentirla y reproducirla que explicarla o definirla. Todos entendemos qué es la música, pero ¿cuántos pueden poner en palabras cuáles son sus características esenciales o aquello que le da sentido?
+                        Puede decirse que la música es el arte que consiste en dotar a los sonidos y los silencios de una cierta organización. 
 
 
-    
+
                     </p>
 
                     <h5>
@@ -305,9 +329,9 @@ use mvc\request\requestClass as request ?>
                         <span style="color: #0000CC"><a href="<?php echo routing::getInstance()->getUrlWeb('teatro', 'index') ?>" class="link1"><?php echo i18n::__('Theater') ?> </a></span>
                     </h5>
                     <p>
-                    El teatro forma parte del grupo de las artes escénicas. Su desarrollo está vinculado con actores que representan una historia ante una audiencia. Este arte, por lo tanto, combina diversos elementos, como la gestualidad, el discurso, la música, los sonidos y la escenografía.
+                        El teatro forma parte del grupo de las artes escénicas. Su desarrollo está vinculado con actores que representan una historia ante una audiencia. Este arte, por lo tanto, combina diversos elementos, como la gestualidad, el discurso, la música, los sonidos y la escenografía.
 
- 
+
                     </p>
                 </div>
             </div>
@@ -317,7 +341,7 @@ use mvc\request\requestClass as request ?>
                 <div class="textwidget"></div>
             </div>
             <div class="panel panel-grid widget widget_black-studio-tinymce panel-last-child" id="pane">
-                <h3 class="widget-title"><?php echo i18n::__('about')?></h3>
+                <h3 class="widget-title"><?php echo i18n::__('about') ?></h3>
                 <div class="textwidget">
                     <p>
                         <img src="<?php echo routing::getInstance()->getUrlImg('cali.jpg') ?>"> 
@@ -340,159 +364,159 @@ use mvc\request\requestClass as request ?>
             <div class="panel widget row">	
                 <div class="col-md-12">
                     <div class="banner" id="Menu">
-                       
-                            
-                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" class="link1"><?php echo i18n::__('homePage') ?></a></li>
-                            
-                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>" class="link1"><?php echo i18n::__('who we are') ?></a></li>
-                            
-                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" class="link1"><?php echo i18n::__('events') ?></a></li>
-                     
-                     </div>            
-                    
+
+
+                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" class="link1"><?php echo i18n::__('homePage') ?></a></li>
+
+                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('acerca', 'index') ?>" class="link1"><?php echo i18n::__('who we are') ?></a></li>
+
+                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" class="link1"><?php echo i18n::__('events') ?></a></li>
+
+                    </div>            
+
                     <div class="banner" id="SecMenu">
-                  
-                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('contactenos', 'index') ?>" class="link1"><?php echo i18n::__('contact') ?></a></li>
-                        
-                            <li><a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class="link1"><?php echo i18n::__('feedback') ?></a></li>
 
-                            <li><a href="#" class="link1"><?php echo i18n::__('notice') ?> </a></li>
+                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('contactenos', 'index') ?>" class="link1"><?php echo i18n::__('contact') ?></a></li>
 
-                     </div>  
-                    
+                        <li><a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" class="link1"><?php echo i18n::__('feedback') ?></a></li>
+
+                        <li><a href="#" class="link1"><?php echo i18n::__('notice') ?> </a></li>
+
+                    </div>  
+
                     <div class="banner" id="terMenu">
-                            <li><a href="#" class="link1"><?php echo i18n::__('novelty') ?> </a></li>
+                        <li><a href="#" class="link1"><?php echo i18n::__('novelty') ?> </a></li>
 
-                            <li><a href="#" class="link1"><?php echo i18n::__('terms of use') ?> </a></li>
-                         
-                            <li><a href="#" data-toggle="modal" data-target="#privacidad" class="link1"> <?php echo i18n::__('Privacy and policy') ?> </a></li>
-                         
-                            
-<div class="modal fade" id="privacidad" role="dialog">
-  <div class="modal-dialog">
-    <div class="modal-content ">
-      <div class="modal-header">
-        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 class="modal-title">Privacidad & Politica</h4>
-      </div>
-      <div class="modal-body">
-        <p>Esta Política de Privacidad rige la manera en la que recoge Cultura Caleña, 
-          utiliza, mantiene y divulga la información recogida de los usuarios (cada uno, un "Usuario") 
-          de la página web http://calicultural.com ("Sitio").</p><br>
+                        <li><a href="#" class="link1"><?php echo i18n::__('terms of use') ?> </a></li>
 
-        <h4>Información de identificación Personal</h4>
-        <p>
-        Podemos recopilar información de identificación personal de los usuarios en una variedad de maneras, 
-        incluyendo, pero no limitado a, cuando los usuarios visitan nuestro sitio, registrarse en el sitio, 
-        llenar un formulario, y en relación con otras actividades , servicios, funciones o recursos que ponemos a disposición en nuestro Sitio.
-        Los usuarios pueden pedir, según sea apropiado, nombre, dirección de correo electrónico, 
-        dirección postal, número de teléfono. Los usuarios pueden, sin embargo, visitar nuestro sitio de forma anónima. 
-        Vamos a recoger información de identificación personal de los usuarios sólo si voluntariamente presentar 
-        esa información a nosotros. Los usuarios siempre pueden negarse a suministrar información de identificación personal, 
-        excepto que puede evitar que la participación en determinadas actividades relacionadas con el sitio.</p>
+                        <li><a href="#" data-toggle="modal" data-target="#privacidad" class="link1"> <?php echo i18n::__('Privacy and policy') ?> </a></li>
 
-        <h4>Información de identificación no personal</h4>
-        Podemos recopilar información de identificación no personal sobre los usuarios cuando interactúan con nuestro sitio. 
-        Información de identificación no personal puede incluir el nombre del navegador, el tipo de equipo e información 
-        técnica sobre los usuarios mediante la conexión a nuestro sitio, tales como el sistema operativo y los proveedores 
-        de servicios de Internet utilizados y otra información similar.
 
-        <h4>Cookies del navegador Web</h4>
-        Nuestro sitio puede utilizar "cookies" para mejorar la experiencia del usuario. El navegador web del usuario coloca cookies en su disco duro para propósitos de registro y, a veces para rastrear información sobre ellos. El usuario puede optar por configurar su navegador para rechazar las cookies, o para que le avise cuando se envíen cookies. Si lo hacen, tenga en cuenta que algunas partes del sitio pueden no funcionar correctamente.
+                        <div class="modal fade" id="privacidad" role="dialog">
+                            <div class="modal-dialog">
+                                <div class="modal-content ">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title">Privacidad & Politica</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <p>Esta Política de Privacidad rige la manera en la que recoge Cultura Caleña, 
+                                            utiliza, mantiene y divulga la información recogida de los usuarios (cada uno, un "Usuario") 
+                                            de la página web http://calicultural.com ("Sitio").</p><br>
 
-        <h4>Cómo utilizamos la información recopilada</h4>
-        Cultura Caleña puede recopilar y utilizar los usuarios información personal para los siguientes fines:
+                                        <h4>Información de identificación Personal</h4>
+                                        <p>
+                                            Podemos recopilar información de identificación personal de los usuarios en una variedad de maneras, 
+                                            incluyendo, pero no limitado a, cuando los usuarios visitan nuestro sitio, registrarse en el sitio, 
+                                            llenar un formulario, y en relación con otras actividades , servicios, funciones o recursos que ponemos a disposición en nuestro Sitio.
+                                            Los usuarios pueden pedir, según sea apropiado, nombre, dirección de correo electrónico, 
+                                            dirección postal, número de teléfono. Los usuarios pueden, sin embargo, visitar nuestro sitio de forma anónima. 
+                                            Vamos a recoger información de identificación personal de los usuarios sólo si voluntariamente presentar 
+                                            esa información a nosotros. Los usuarios siempre pueden negarse a suministrar información de identificación personal, 
+                                            excepto que puede evitar que la participación en determinadas actividades relacionadas con el sitio.</p>
 
-        <h6>Para ejecutar y operar nuestro Sitio</h6>
-        Es posible que tengamos la información de su contenido de la pantalla en el sitio correctamente.
-        <h6>Para mejorar el servicio al cliente</h6>
-        La información que usted proporcione nos ayuda a responder a sus solicitudes de servicio al cliente 
-        y las necesidades de apoyo de manera más eficiente.
-        <h6>Para personalizar la experiencia del usuario</h6>
-        Podemos utilizar la información en conjunto para comprender cómo nuestros usuarios como grupo, 
-        utilizan los servicios y recursos ofrecidos en nuestro Sitio.
-        <h6>Para mejorar nuestro sitio</h6>
-        Podemos usar información que usted proporciona para mejorar nuestros productos y servicios.
-        <h6>Para enviar correos electrónicos periódicos</h6>
-        Podemos utilizar la dirección de correo electrónico para enviar la información de usuario y 
-        las actualizaciones correspondientes a su orden. También se puede utilizar para responder a 
-        sus consultas, preguntas, y / u otras solicitudes.
-        <h6>¿Cómo protegemos su información?</h6>
-        Adoptamos las prácticas de recopilación de datos adecuado, almacenamiento y procesamiento y 
-        las medidas de seguridad para proteger contra el acceso no autorizado, alteración, divulgación o 
-        destrucción de su información personal, nombre de usuario, contraseña, información de transacciones y 
-        los datos almacenados en nuestro Sitio.
+                                        <h4>Información de identificación no personal</h4>
+                                        Podemos recopilar información de identificación no personal sobre los usuarios cuando interactúan con nuestro sitio. 
+                                        Información de identificación no personal puede incluir el nombre del navegador, el tipo de equipo e información 
+                                        técnica sobre los usuarios mediante la conexión a nuestro sitio, tales como el sistema operativo y los proveedores 
+                                        de servicios de Internet utilizados y otra información similar.
 
-        <h4>Compartir su información personal</h4>
-        Nosotros no vendemos, comerciamos, ni alquilamos la informacion de los usuarios ni identificacion
-        personal a terceros. Podemos compartir información demográfica genérica no vinculada a ninguna 
-        información de identificación personal con respecto a los visitantes y usuarios con nuestros socios 
-        comerciales, afiliados y anunciantes de confianza para los fines antes mencionados.
+                                        <h4>Cookies del navegador Web</h4>
+                                        Nuestro sitio puede utilizar "cookies" para mejorar la experiencia del usuario. El navegador web del usuario coloca cookies en su disco duro para propósitos de registro y, a veces para rastrear información sobre ellos. El usuario puede optar por configurar su navegador para rechazar las cookies, o para que le avise cuando se envíen cookies. Si lo hacen, tenga en cuenta que algunas partes del sitio pueden no funcionar correctamente.
 
-        <h4>Boletines electrónicos</h4>
-        Si el Usuario decide optar en nuestra lista de correo, recibirán correos electrónicos que 
-        pueden incluir noticias de la compañía, actualizaciones, información del producto o servicio 
-        relacionado, etc. Si en algún momento el usuario desea dejar de recibir futuros correos electrónicos, 
-        incluimos detallada instrucciones para darse de baja en la parte inferior de cada correo electrónico o 
-        Usuario puede ponerse en contacto con nosotros a través de nuestro Sitio.
+                                        <h4>Cómo utilizamos la información recopilada</h4>
+                                        Cultura Caleña puede recopilar y utilizar los usuarios información personal para los siguientes fines:
 
-        <h4>Publicidad</h4>
-        Los anuncios que aparecen en nuestro sitio pueden ser entregados a los Usuarios por los 
-        socios de publicidad, que pueden establecer cookies. Estas cookies permiten al servidor 
-        de anuncios para reconocer su equipo cada vez que le envían una publicidad en línea para 
-        recopilar información de identificación personal sobre usted o no otras personas que utilizan 
-        el ordenador. Esta información permite a las redes de anuncios, entre otras cosas, 
-        ofrecer anuncios que ellos creen que será de mayor interés para usted. 
-        Esta política de privacidad no cubre el uso de cookies por parte de anunciantes.
+                                        <h6>Para ejecutar y operar nuestro Sitio</h6>
+                                        Es posible que tengamos la información de su contenido de la pantalla en el sitio correctamente.
+                                        <h6>Para mejorar el servicio al cliente</h6>
+                                        La información que usted proporcione nos ayuda a responder a sus solicitudes de servicio al cliente 
+                                        y las necesidades de apoyo de manera más eficiente.
+                                        <h6>Para personalizar la experiencia del usuario</h6>
+                                        Podemos utilizar la información en conjunto para comprender cómo nuestros usuarios como grupo, 
+                                        utilizan los servicios y recursos ofrecidos en nuestro Sitio.
+                                        <h6>Para mejorar nuestro sitio</h6>
+                                        Podemos usar información que usted proporciona para mejorar nuestros productos y servicios.
+                                        <h6>Para enviar correos electrónicos periódicos</h6>
+                                        Podemos utilizar la dirección de correo electrónico para enviar la información de usuario y 
+                                        las actualizaciones correspondientes a su orden. También se puede utilizar para responder a 
+                                        sus consultas, preguntas, y / u otras solicitudes.
+                                        <h6>¿Cómo protegemos su información?</h6>
+                                        Adoptamos las prácticas de recopilación de datos adecuado, almacenamiento y procesamiento y 
+                                        las medidas de seguridad para proteger contra el acceso no autorizado, alteración, divulgación o 
+                                        destrucción de su información personal, nombre de usuario, contraseña, información de transacciones y 
+                                        los datos almacenados en nuestro Sitio.
 
-        <h4>Google Adsense</h4>
-        Algunos de los anuncios pueden ser servidos por Google. Google utiliza la cookie de DART 
-        le permite servir anuncios a los usuarios basados ​​en su visita a nuestro sitio y otros sitios en Internet. 
-        DART utiliza "información no personal identificable" y NO seguimiento de información personal sobre usted, 
-        como su nombre, dirección de correo electrónico, dirección física, etc Usted puede optar por el 
-        uso de la cookie de DART a través del anuncio de Google y la red de contenido privacidad política 
-        en http://www.google.com/privacy_ads.html
+                                        <h4>Compartir su información personal</h4>
+                                        Nosotros no vendemos, comerciamos, ni alquilamos la informacion de los usuarios ni identificacion
+                                        personal a terceros. Podemos compartir información demográfica genérica no vinculada a ninguna 
+                                        información de identificación personal con respecto a los visitantes y usuarios con nuestros socios 
+                                        comerciales, afiliados y anunciantes de confianza para los fines antes mencionados.
 
-        <h4>Cumplimiento de línea ley de protección de la privacidad de los niños</h4>
-        Proteger la privacidad de los más jóvenes es especialmente importante. Por esa razón, 
-        nunca recogemos ni mantenemos información en nuestro sitio de aquellas personas que sabemos 
-        son menores de 13 años, y ninguna parte de nuestro sitio está estructurado para atraer a menores de 13.
+                                        <h4>Boletines electrónicos</h4>
+                                        Si el Usuario decide optar en nuestra lista de correo, recibirán correos electrónicos que 
+                                        pueden incluir noticias de la compañía, actualizaciones, información del producto o servicio 
+                                        relacionado, etc. Si en algún momento el usuario desea dejar de recibir futuros correos electrónicos, 
+                                        incluimos detallada instrucciones para darse de baja en la parte inferior de cada correo electrónico o 
+                                        Usuario puede ponerse en contacto con nosotros a través de nuestro Sitio.
 
-        <h4>Cambios en esta política de privacidad</h4>
-        Cultura Caleña tiene la facultad de actualizar esta política de privacidad en cualquier momento. 
-        Cuando lo hacemos, vamos a publicar una notificación en la página principal de nuestro sitio, 
-        revisar la fecha de actualización en la parte inferior de esta página. Animamos a los usuarios 
-        a comprobar con frecuencia esta página para cualquier cambio de mantenerse informados acerca de 
-        cómo estamos ayudando a proteger la información personal que recopilamos. Usted reconoce y 
-        acepta que es su responsabilidad revisar esta política de privacidad periódicamente y 
-        tomar conciencia de las modificaciones.
+                                        <h4>Publicidad</h4>
+                                        Los anuncios que aparecen en nuestro sitio pueden ser entregados a los Usuarios por los 
+                                        socios de publicidad, que pueden establecer cookies. Estas cookies permiten al servidor 
+                                        de anuncios para reconocer su equipo cada vez que le envían una publicidad en línea para 
+                                        recopilar información de identificación personal sobre usted o no otras personas que utilizan 
+                                        el ordenador. Esta información permite a las redes de anuncios, entre otras cosas, 
+                                        ofrecer anuncios que ellos creen que será de mayor interés para usted. 
+                                        Esta política de privacidad no cubre el uso de cookies por parte de anunciantes.
 
-        <h4>Su aceptación de estos términos</h4>
-        Al utilizar este sitio, usted expresa su aceptación de esta política. 
-        Si usted no está de acuerdo con esta política, por favor no utilice nuestro Sitio. 
-        Su uso continuado del Sitio tras la publicación de cambios a esta política será considerado 
-        su aceptación de dichos cambios.
+                                        <h4>Google Adsense</h4>
+                                        Algunos de los anuncios pueden ser servidos por Google. Google utiliza la cookie de DART 
+                                        le permite servir anuncios a los usuarios basados ​​en su visita a nuestro sitio y otros sitios en Internet. 
+                                        DART utiliza "información no personal identificable" y NO seguimiento de información personal sobre usted, 
+                                        como su nombre, dirección de correo electrónico, dirección física, etc Usted puede optar por el 
+                                        uso de la cookie de DART a través del anuncio de Google y la red de contenido privacidad política 
+                                        en http://www.google.com/privacy_ads.html
 
-        <h4>Cómo ponerse en contacto con nosotros</h4>
-        Si usted tiene alguna pregunta sobre esta Política de Privacidad, las prácticas de este sitio, 
-        o sus relaciones con este sitio, por favor póngase en contacto con nosotros.
+                                        <h4>Cumplimiento de línea ley de protección de la privacidad de los niños</h4>
+                                        Proteger la privacidad de los más jóvenes es especialmente importante. Por esa razón, 
+                                        nunca recogemos ni mantenemos información en nuestro sitio de aquellas personas que sabemos 
+                                        son menores de 13 años, y ninguna parte de nuestro sitio está estructurado para atraer a menores de 13.
 
-        Este documento fue actualizada el 11 de junio 2015</p>
-      </div>
-    </div>
-      <div class="modal-footer">
-        <button type="button" class="btn btn-danger" data-dismiss="modal"><?php echo i18n::__('close') ?></button>
-      </div>
-    </div><!-- /.modal-content -->
-  </div><!-- /.modal-dialog -->
-</div>
+                                        <h4>Cambios en esta política de privacidad</h4>
+                                        Cultura Caleña tiene la facultad de actualizar esta política de privacidad en cualquier momento. 
+                                        Cuando lo hacemos, vamos a publicar una notificación en la página principal de nuestro sitio, 
+                                        revisar la fecha de actualización en la parte inferior de esta página. Animamos a los usuarios 
+                                        a comprobar con frecuencia esta página para cualquier cambio de mantenerse informados acerca de 
+                                        cómo estamos ayudando a proteger la información personal que recopilamos. Usted reconoce y 
+                                        acepta que es su responsabilidad revisar esta política de privacidad periódicamente y 
+                                        tomar conciencia de las modificaciones.
 
-                        </ul>
+                                        <h4>Su aceptación de estos términos</h4>
+                                        Al utilizar este sitio, usted expresa su aceptación de esta política. 
+                                        Si usted no está de acuerdo con esta política, por favor no utilice nuestro Sitio. 
+                                        Su uso continuado del Sitio tras la publicación de cambios a esta política será considerado 
+                                        su aceptación de dichos cambios.
+
+                                        <h4>Cómo ponerse en contacto con nosotros</h4>
+                                        Si usted tiene alguna pregunta sobre esta Política de Privacidad, las prácticas de este sitio, 
+                                        o sus relaciones con este sitio, por favor póngase en contacto con nosotros.
+
+                                        Este documento fue actualizada el 11 de junio 2015</p>
+                                    </div>
+                                </div>
+                                <div class="modal-footer">
+                                    <button type="button" class="btn btn-danger" data-dismiss="modal"><?php echo i18n::__('close') ?></button>
+                                </div>
+                            </div><!-- /.modal-content -->
+                        </div><!-- /.modal-dialog -->
                     </div>
+
+                    </ul>
                 </div>
             </div>
         </div>
     </div>
+</div>
 </div>
 
 <footer>
@@ -506,5 +530,4 @@ use mvc\request\requestClass as request ?>
         </div>
     </div>
 </footer>
-
 

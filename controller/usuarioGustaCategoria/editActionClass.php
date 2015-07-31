@@ -26,6 +26,27 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $where = array(
             usuarioGustaCategoriaTableClass::ID => request::getInstance()->getRequest(usuarioGustaCategoriaTableClass::ID)
         );
+        
+        $fields1 = array(
+                    categoriaTableClass::ID,
+                    categoriaTableClass::NOMBRE
+                );
+                $ordeBy1 = array(
+                categoriaTableClass::NOMBRE
+                
+                );  
+                $fields2 = array(
+                    usuarioTableClass::ID,
+                    usuarioTableClass::USER
+                );
+                $ordeBy2 = array(
+                    usuarioTableClass::USER
+                
+                );  
+                
+                 
+        $this->objcategoria = categoriaTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
+        $this->objUsuarios = usuarioTableClass::getAll($fields2, true, $ordeBy2, 'ASC');
         $this->objusgusca = usuarioGustaCategoriaTableClass::getAll($fields, false, null, null, null, null, $where);
         $this->defineView('edit', 'usuarioGustaCategoria', session::getInstance()->getFormatOutput());
       } else {
@@ -35,7 +56,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //
 //        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
 //        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
-//
+
+////
 //        if (strlen($usuario) > usuarioTableClass::USUARIO_LENGTH) {
 //          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USUARIO_LENGTH)), 00001);
 //        }

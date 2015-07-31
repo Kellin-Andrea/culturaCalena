@@ -28,7 +28,7 @@
                     <select class="form-control" id="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>"  name="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>">
                         <option value=""> -----<?php echo i18n::__('user_select')?> -----    </option>
                         <?php foreach ($objUsuarios as $usuario): ?>
-                            <option value="<?php echo $usuario->id ?>"><?php echo $usuario->$user ?></option>
+                        <option value="<?php echo $usuario->id ?>"<?php echo (isset($objusgusca)) ? ($usuario->id === $objusgusca[0]->usuario_id) ? 'selected' : '' : '' ?>><?php echo usuarioTableClass::getNombreById($usuario->id) ?></option>
 
                         <?php endforeach ?>
                     </select>
@@ -44,7 +44,7 @@
                             <select class="form-control" id="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::CATEGORIA_ID, true) ?>"  name="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::CATEGORIA_ID, true) ?>">
                                 <option value=""> -----<?php echo i18n::__('category_select')?> -----</option>
                                 <?php foreach ($objcategoria as $categoria): ?>
-                                    <option value="<?php echo $categoria->id ?>"><?php echo $categoria->$nombre ?></option>
+                                    <option value="<?php echo $categoria->id ?>"<?php echo (isset($objusgusca)) ? ($categoria->id === $objusgusca[0]->categoria_id) ? 'selected' : '' : '' ?>><?php echo categoriaTableClass::getNombreById($categoria->id) ?></option>
 
                                 <?php endforeach ?>
                             </select>

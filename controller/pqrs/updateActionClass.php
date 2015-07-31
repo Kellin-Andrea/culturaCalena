@@ -26,7 +26,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $id = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::ID, true));
                 $titulo = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TITULO, true));
                 $contenido = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true));
-
+                $tipo = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true));
+                $estado = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true));
 
                 $ids = array(
                     pqrsTableClass::ID => $id

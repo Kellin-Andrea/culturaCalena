@@ -29,9 +29,9 @@
         <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('events') ?></label>
             <div class="col-sm-7">
                 <select class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>">
-                        <option value=""> -----Seleccione un evento -----    </option>
+                    <option value=""> -----<?php echo i18n::__('event_select')?> -----    </option>
                         <?php  foreach ($objevento as $evento): ?>
-                        <option value="<?php echo $evento->id ?>"><?php echo $evento->$nombre?></option>
+                        <option value="<?php echo $evento->id ?>"<?php echo (isset($objrecaudoEconomico)) ? ($evento->id === $objrecaudoEconomico[0]->evento_id) ? 'selected' : '' : '' ?>><?php echo eventoTableClass::getNombreById($evento->id)?></option>
                  
                          <?php endforeach  ?>
                        </select>
@@ -43,7 +43,7 @@
                       <select class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::USUARIO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::USUARIO_ID, true) ?>">
                           <option value=""> -----<?php echo i18n::__('user_select')?> -----    </option>
                         <?php  foreach ($objUsuarios as $usuario): ?>
-                        <option value="<?php echo $usuario->id ?>"><?php echo $usuario->$user?></option>
+                        <option value="<?php echo $usuario->id ?>"<?php echo (isset($objrecaudoEconomico)) ? ($usuario->id === $objrecaudoEconomico[0]->usuario_id) ? 'selected' : '' : '' ?>><?php echo usuarioTableClass::getNombreById($usuario->id)?></option>
                  
                          <?php endforeach  ?>
                        </select>
@@ -60,12 +60,12 @@
     </div>
     
   <div class="form-group">
-      <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('rateId') ?></label>
+      <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('rates') ?></label>
                   <div class="col-sm-7">
                       <select class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>">
-                          <option value=""> -----<?php echo i18n::__('rate_select')?> -----    </option>
+                          <option value=""> -----<?php echo i18n::__('rateSelect')?> -----    </option>
                         <?php  foreach ($objtarifa as $tarifa): ?>
-                        <option value="<?php echo $tarifa->id ?>"><?php echo $tarifa->$desc?></option>
+                          <option value="<?php echo $tarifa->id ?>"<?php echo (isset($objrecaudoEconomico)) ? ($tarifa->id === $objrecaudoEconomico[0]->tarifa_id) ? 'selected' : '' : '' ?>><?php echo tarifaTableClass::getNombreById($tarifa->id)?></option>
                  
                          <?php endforeach  ?>
                        </select>

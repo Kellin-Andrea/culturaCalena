@@ -107,7 +107,7 @@ use mvc\request\requestClass as request ?>
             <select class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>">
               <option value=""> -----<?php echo i18n::__('category_select') ?> -----    </option>
 <?php foreach ($objcategoria as $categoria): ?>
-                <option value="<?php echo $categoria->id ?>"><?php echo $categoria->$nombre ?></option>
+<option value="<?php echo $categoria->id ?>"<?php echo (isset($objevento)) ? ($categoria->id === $objevento[0]->categoria_id) ? 'selected' : '' : '' ?>><?php echo categoriaTableClass::getNombreById($categoria->id)?></option>
 
 <?php endforeach ?>
             </select>

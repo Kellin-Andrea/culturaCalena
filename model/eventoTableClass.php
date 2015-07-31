@@ -61,6 +61,27 @@ class  eventoTableClass extends eventoBaseTableClass {
             throw $exc;
         }//end catch
     }
+    
+    public static function getEventoProfile($id) {
+    try {
+       
+        
+      $sql = 'SELECT '.eventoTableClass::getNameTable().'.'.eventoTableClass::ID.' ,'. eventoTableClass::getNameTable().'.'. eventoTableClass::NOMBRE.' , '
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::COSTO.' , '
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_INICIAL_EVENTO.' , '
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_FINAL_EVENTO.
+              ' FROM '.eventoTableClass::getNameTable().' , '. usuarioTableClass::getNameTable().
+              ' WHERE '.  eventoTableClass::getNameTable().'.'.  eventoTableClass::USUARIO_ID.' = '
+              .  usuarioTableClass::getNameTable().'.'.  usuarioTableClass::ID.
+              ' AND '. usuarioTableClass::getNameTable().'.'.usuarioTableClass::ID.' = '.$id;
+      
+     
+       return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+  }
+    
         } //end class
 
 
