@@ -32,7 +32,7 @@ use mvc\request\requestClass as request ?>
               <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
-                     <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
+                    <a id="buton" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
                      <span class="icon-box__subtitle">Registrarse</span> 
                 </div>
             </div>
@@ -54,7 +54,7 @@ use mvc\request\requestClass as request ?>
             <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
             <div class="widget widget-icon-box">	
                 <div class="icon-box">
-                    <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                    <a id="buton" class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
                    <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>
@@ -153,7 +153,7 @@ use mvc\request\requestClass as request ?>
         <div class="header-widgets  hidden-md  hidden-lg">
             <div class="widget  widget-icon-box">	
                 <div class="icon-box">
-                    <a class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
+                    <a id="buton" class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
                     <span class="icon-box__subtitle">Registrarse</span>
                     <div class="icon-box__text">
                         <h4 class="icon-box__title"></h4>
@@ -163,7 +163,7 @@ use mvc\request\requestClass as request ?>
             </div>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box">
-                    <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                    <a id="buton" class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
                    <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>

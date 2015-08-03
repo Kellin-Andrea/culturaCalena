@@ -32,7 +32,7 @@ use mvc\request\requestClass as request ?>
               <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
-                     <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
+                    <a id="buton" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
                      <span class="icon-box__subtitle">Registrarse</span> 
                 </div>
             </div>
@@ -54,7 +54,7 @@ use mvc\request\requestClass as request ?>
             <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
             <div class="widget widget-icon-box">	
                 <div class="icon-box">
-                    <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                    <a id="buton" class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
                    <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>
@@ -153,7 +153,7 @@ use mvc\request\requestClass as request ?>
         <div class="header-widgets  hidden-md  hidden-lg">
             <div class="widget  widget-icon-box">	
                 <div class="icon-box">
-                    <a class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
+                    <a id="buton" class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
                     <span class="icon-box__subtitle">Registrarse</span>
                     <div class="icon-box__text">
                         <h4 class="icon-box__title"></h4>
@@ -163,7 +163,7 @@ use mvc\request\requestClass as request ?>
             </div>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box">
-                    <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                    <a id="buton" class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
                    <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>
@@ -210,70 +210,6 @@ use mvc\request\requestClass as request ?>
         </div>
     </div>
 </header>
-
-<div class="jumbotron  jumbotron--with-captions">
-    <div class="carousel  slide  js-jumbotron-slider" id="headerCarousel" data-interval="5000">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img0.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img1.png') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item ">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img2.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img3.png') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img4.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img5.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img6.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img7.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-        </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#headerCarousel" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-        </a>
-        <a class="right carousel-control" href="#headerCarousel" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-        </a>
-    </div>
-</div>
 
 
    <div class="form-group" id="googleMapBlock">

@@ -56,7 +56,7 @@ use mvc\session\sessionClass as session ?>
             <?php else: ?>
                 <div class="widget widget-icon-box">	
                     <div class="icon-box">
-                        <a  class="fa fa-power-off" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"></a>
+                        <a id="buton" class="fa fa-power-off" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"></a>
                         <span class="icon-box__subtitle">Cerrar Sesion</span>
                     </div>
                 </div>
