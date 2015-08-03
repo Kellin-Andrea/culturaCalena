@@ -22,7 +22,7 @@ class createActionClass extends controllerClass implements controllerActionInter
 
     public function execute() {
         try {
-            if (request::getInstance()->isMethod('POST') === true) {
+                  if (request::getInstance()->isMethod('POST') === true) {
 
 
                 $name = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true));
@@ -33,16 +33,12 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $locality = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true));
                 $typeDocument = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true));
                 $organization = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true));
-                $user = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-                $pass1 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1');
-                $pass2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
-                
-                validator::validateInsert($id, $name, $lastName, $mail, $dateF, $genre, $locality, $typeDocument, $organization,$user,$pass1,$pass2);
 
+
+
+                validator::validateInsert($name, $lastName, $mail, $dateF, $genre, $locality, $typeDocument, $organization);
+                
                 $data = array(
-                    
-                    usuarioTableClass::USER => $user,
-                    usuarioTableClass::PASSWORD => md5($pass1),
                     datoUsuarioTableClass::NOMBRE => $name,
                     datoUsuarioTableClass::APELLIDO => $lastName,
                     datoUsuarioTableClass::CORREO => $mail,
@@ -51,23 +47,10 @@ class createActionClass extends controllerClass implements controllerActionInter
                     datoUsuarioTableClass::LOCALIDAD_ID => $locality,
                     datoUsuarioTableClass::TIPO_DOCUMENTO_ID => $typeDocument,
                     datoUsuarioTableClass::ORGANIZACION_ID => $organization,
-                   
-                    '__sequence' => 'usuario_id_seq'
                 );
-                
-                
-                $id_usuario = usuarioTableClass::insert($id);
+
                 $id = datoUsuarioTableClass::insert($data);
-               
 
-                $data = array(
-                datoUsuarioTableClass::USUARIO_ID => $id_usuario
-           
-                  
-                );
-
-                usuarioTableClass::insert($data);
-                datoUsuarioTableClass::insert($data);
 
 
 
@@ -83,6 +66,7 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
 
 }
+
 
 //
 //    private function validate($user, $pass1, $pass2) {

@@ -18,31 +18,63 @@ use mvc\i18n\i18nClass as i18n;
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->hasGet(datoUsuarioTableClass::ID)) {
-       
-        
-        $fields1 =array(
-        datoUsuarioTableClass::ID,
-        datoUsuarioTableClass::NOMBRE,
-        datoUsuarioTableClass::APELLIDO,
-        datoUsuarioTableClass::CORREO,
-        datoUsuarioTableClass::GENERO,
-        datoUsuarioTableClass::FECHA_NACIMIENTO,
-       
-       
-   
-        );
-       
-        $where1 = array(
-        datoUsuarioTableClass::USUARIO_ID => request::getInstance()->getGet(usuarioTableClass::ID)
-        );
-       $this->objdatos = datoUsuarioTableClass::getAll($fields1, true, null, null, null, null, $where1);
-        $this->defineView('edit', 'datoUsuario', session::getInstance()->getFormatOutput());
-      } else {
-        routing::getInstance()->redirect('datoUsuario', 'index');
-      }
+    public function execute() {
+        try {
+            if (request::getInstance()->hasGet(datoUsuarioTableClass::ID)) {
+
+
+                $fields1 = array(
+                    datoUsuarioTableClass::ID,
+                    datoUsuarioTableClass::NOMBRE,
+                    datoUsuarioTableClass::APELLIDO,
+                    datoUsuarioTableClass::CORREO,
+                    datoUsuarioTableClass::GENERO,
+                    datoUsuarioTableClass::FECHA_NACIMIENTO,
+                    datoUsuarioTableClass::TIPO_DOCUMENTO_ID,
+                    datoUsuarioTableClass::LOCALIDAD_ID,
+                    datoUsuarioTableClass::ORGANIZACION_ID
+                );
+
+                $where1 = array(
+                    datoUsuarioTableClass::ID => request::getInstance()->getGet(datoUsuarioTableClass::ID)
+                );
+                
+                $fields2 = array(
+                tipoDocumentoTableClass::ID,
+                tipoDocumentoTableClass::NOMBRE
+                );
+                
+                $ordeBy2 = array(
+                tipoDocumentoTableClass::NOMBRE
+                );
+                
+                $fields3 = array(
+                localidadTableClass::ID,
+                localidadTableClass::NOMBRE
+                );
+                
+                $ordeBy3 = array(
+                localidadTableClass::NOMBRE
+                );
+                
+                $fields4 = array(
+                organizacionTableClass::ID,
+                organizacionTableClass::NOMBRE
+                );
+                
+                $ordeBy4 = array(
+                organizacionTableClass::NOMBRE
+                );
+                
+                
+                $this->objdatos = datoUsuarioTableClass::getAll($fields1, true, null, null, null, null, $where1);
+                $this->objtipoDocumento = tipoDocumentoTableClass::getAll($fields2, true, $ordeBy2, 'ASC');
+                $this->objlocal = localidadTableClass::getAll($fields3, true, $ordeBy3, 'ASC');
+                $this->objorganizacion = organizacionTableClass::getAll($fields4, true, $ordeBy4, 'ASC');
+                $this->defineView('edit', 'datoUsuario', session::getInstance()->getFormatOutput());
+            } else {
+                routing::getInstance()->redirect('datoUsuario', 'index');
+            }
 //      if (request::getInstance()->isMethod('POST')) {
 //
 //        $user= request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
@@ -61,10 +93,10 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //      } else {
 //        routing::getInstance()->redirect('default', 'index');
 //      }
-      } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

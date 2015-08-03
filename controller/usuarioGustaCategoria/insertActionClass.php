@@ -33,11 +33,12 @@ class insertActionClass extends controllerClass implements controllerActionInter
      
         );
         
-        $orderBy1 = array(
+        $ordeBy1 = array(
             usuarioTableClass::USER
         );
-      $this->objUsuarios = usuarioTableClass::getAll($fields1, true, $orderBy1, 'ASC'); 
-      $this->objcategoria = categoriaTableClass::getAll($fields, true, $ordeBy, 'ASC');; 
+        
+      $this->objusuarios = usuarioTableClass::getAll($fields1, true, $ordeBy1, 'ASC'); 
+      $this->objcategoria = categoriaTableClass::getAll($fields, true, $ordeBy, 'ASC'); 
       $this->defineView('insert', 'usuarioGustaCategoria', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
