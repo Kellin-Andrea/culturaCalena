@@ -34,8 +34,8 @@ use mvc\session\sessionClass as session ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
 
-                    <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
-                    <span class="icon-box__subtitle">Registrarse</span> 
+                    <a id="buton" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"> </a>
+                    <span class="icon-box__subtitle" >Registrarse</span> 
                 </div>
             </div>
 
@@ -49,8 +49,8 @@ use mvc\session\sessionClass as session ?>
             <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
                 <div class="widget widget-icon-box">	
                     <div class="icon-box">
-                        <a  class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-                        <span class="icon-box__subtitle">Iniciar Sesion</span>
+                        <a id="buton" class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                        <span class="icon-box__subtitle" class="link1">Iniciar Sesion</span>
                     </div>
                 </div>
             <?php else: ?>
@@ -114,7 +114,7 @@ use mvc\session\sessionClass as session ?>
                             <h4 class="modal-title" id="myModalLabel"><?php ?></h4>
                         </div>
                         <div class="modal-body">
-                                                    </div>
+                        </div>
                         <div class="modal-footer">
                             <button type="button" class="btn btn-primary" data-dismiss="modal">Perfil</button>
                             <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar Sesion </button>
@@ -152,7 +152,7 @@ use mvc\session\sessionClass as session ?>
         <div class="header-widgets  hidden-md  hidden-lg">
             <div class="widget  widget-icon-box">	
                 <div class="icon-box">
-                    <a class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
+                    <a id="buton" class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
                     <span class="icon-box__subtitle">Registrarse</span>
                     <div class="icon-box__text">
                         <h4 class="icon-box__title"></h4>
@@ -162,7 +162,7 @@ use mvc\session\sessionClass as session ?>
             </div>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box">
-                    <a class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
+                    <a  id="buton" class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
                     <span class="icon-box__subtitle">Iniciar Sesion</span>
                 </div>
             </div>
@@ -216,7 +216,7 @@ use mvc\session\sessionClass as session ?>
         <!-- Wrapper for slides -->
         <div class="carousel-inner">
             <div class="item active">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img0.jpg') ?>">
+                <img src="<?php echo routing::getInstance()->getUrlImg('fondo.jpg') ?>">
                 <div class="container">
 
                 </div>

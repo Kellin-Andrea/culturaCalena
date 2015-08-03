@@ -4,10 +4,8 @@
 <?php use mvc\request\requestClass as request ?>
 
 <?php $id = usuarioGustaCategoriaTableClass::ID ?>
-<?php $iD = usuarioGustaCategoriaTableClass::USUARIO_ID?>
-<?php $Id = usuarioGustaCategoriaTableClass::CATEGORIA_ID ?>
-<?php $nombre = categoriaTableClass::NOMBRE ?>
-<?php $user = usuarioTableClass::USER ?>
+
+
 
 <div class="container container-fluid">
     <div class="panel panel-primary">
@@ -27,7 +25,7 @@
                 <div class="col-sm-7">
                     <select class="form-control" id="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>"  name="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>">
                         <option value=""> -----<?php echo i18n::__('user_select')?> -----    </option>
-                        <?php foreach ($objUsuarios as $usuario): ?>
+                        <?php foreach ($objusuarios as $usuario): ?>
                         <option value="<?php echo $usuario->id ?>"<?php echo (isset($objusgusca)) ? ($usuario->id === $objusgusca[0]->usuario_id) ? 'selected' : '' : '' ?>><?php echo usuarioTableClass::getNombreById($usuario->id) ?></option>
 
                         <?php endforeach ?>

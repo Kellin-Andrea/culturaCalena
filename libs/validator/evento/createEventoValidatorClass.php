@@ -116,7 +116,8 @@ namespace mvc\validator {
 
 
 
-
+            if (request::getInstance()->hasFile('inputFile')) {
+            
             $type = array(
                 'image/png',
                 'image/jpeg',
@@ -139,7 +140,8 @@ namespace mvc\validator {
                 session::getInstance()->setFlash('inputFile', true);
                 session::getInstance()->setError('Debido a errores en el formulario, por favor vuelve a cargar la imagen que vas a usar', 'inputFile');
             }
-
+            }
+            
 
             if ($flag === true) {
                 //request::getInstance()->setMethod('GET');

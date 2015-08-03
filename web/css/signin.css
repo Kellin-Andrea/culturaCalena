@@ -2,14 +2,14 @@ body {
   padding-top: 40px;
   padding-bottom: 40px;
   background-color: #eee;
- // background-image: url('../img/papeltapiz.jpg');
+  background-image: url('../img/papel.png');
 }
 
 .form-signin {
   max-width: 530px;
-  padding: 85px;
+  padding: 80px;
   margin: 0 auto;
-  background-image:url('../img/papeltapiz.jpg');
+  background-image:url('../img/login.jpg');
   border-radius: 10px;
   box-shadow: 0px 0px 10px rgb(51,51,51);
 }
