@@ -1581,6 +1581,8 @@ usuarioGustaCategoria_index:
     - model/usuarioGustaCategoriaTableClass.php
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
 
 usuarioGustaCategoria_insert:
   url:    /usuarioGustaCategoria/insertar
@@ -1588,13 +1590,21 @@ usuarioGustaCategoria_insert:
   load:
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
 
 usuarioGustaCategoria_create:
   url:    /usuarioGustaCategoria/crear
-  param:  { module: , action: create, format: html }
+  param:  { module: usuarioGustaCategoria, action: create, format: html }
   load:
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
 
 usuarioGustaCategoria_edit:
   url:    /usuarioGustaCategoria/editar
@@ -1604,6 +1614,8 @@ usuarioGustaCategoria_edit:
     - model/usuarioGustaCategoriaTableClass.php
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
 
 usuarioGustaCategoria_update:
   url:    /usuarioGustaCategoria/actualizar
