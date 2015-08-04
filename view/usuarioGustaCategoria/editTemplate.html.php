@@ -12,7 +12,7 @@
     
      <h1 class="glyphicon glyphicon-tasks"><?php echo i18n::__('edit_events_like_me')?> <?php echo $objusgusca[0]->$usgusca ?></</h1>
   </div>
-<?php view::includePartial('usuarioGustaCategoria/formUser', array('objusgusca' => $objusgusca, 'usgusca' => $usgusca, 'objUsuarios' => $objUsuarios, 'usuario' => $usuario, 'objcategoria' => $objcategoria, 'categoria' => $categoria)) ?>
+<?php view::includePartial('usuarioGustaCategoria/formUser', array('objusgusca' => $objusgusca, 'usgusca' => $usgusca, 'objusuarios' => $objusuarios, 'usuario' => $usuario, 'objcategoria' => $objcategoria, 'categoria' => $categoria)) ?>
 
 </div>
 

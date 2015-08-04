@@ -212,74 +212,6 @@ use mvc\request\requestClass as request ?>
 </header>
 
 
-<div class="jumbotron  jumbotron--with-captions">
-    <div class="carousel  slide  js-jumbotron-slider" id="headerCarousel" data-interval="5000">
-        <!-- Wrapper for slides -->
-        <div class="carousel-inner">
-            <div class="item active">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img0.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img1.png') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item ">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img2.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img3.png') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img4.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img5.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img6.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-            <div class="item">
-                <img src="<?php echo routing::getInstance()->getUrlImg('img7.jpg') ?>">
-                <div class="container">
-
-                </div>
-            </div>
-        </div>
-        <!-- Controls -->
-        <a class="left carousel-control" href="#headerCarousel" role="button" data-slide="prev">
-            <i class="fa fa-angle-left"></i>
-        </a>
-        <a class="right carousel-control" href="#headerCarousel" role="button" data-slide="next">
-            <i class="fa fa-angle-right"></i>
-        </a>
-    </div>
-</div>
-
-
-
-
-
 <div class="spacer-big"></div>
 <div class="container">
     <div class="row">
@@ -292,7 +224,7 @@ use mvc\request\requestClass as request ?>
                 <h3 class="widget-title"><?php echo i18n::__('who we are')?></h3>
                 <div class="textwidget">
                     <p>
-                        <img src="<?php echo routing::getInstance()->getUrlImg('cali.jpg') ?>"> 
+                        <img id="acerca" src="<?php echo routing::getInstance()->getUrlImg('cali.jpg') ?>"> 
                     </p>
                     <p>
                         La capital del valle del cauca aparte de ser uno de los más importantes centros industriales y comerciales del país, es conocida como la ciudad más rumbera del mundo, Si escucha salsa, si las mujeres son hermosas, si el clima lo mantiene con ganas de pasarla bien y la rumba lo contagia…“usted esta en Cali para que vea”. Así le da la bienvenida una de las canciones e himnos de esta importante ciudad, centro de la principal región azucarera y uno de los más importantes centros industriales y comerciales del país.

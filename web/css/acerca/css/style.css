@@ -498,7 +498,7 @@ pre code { padding: 0; font-size: inherit; color: inherit; white-space: pre-wrap
   .col-md-3 { width: 25%; }
   .col-md-4 { width: 33.33333%; }
   .col-md-5 { width: 41.66667%; }
-  .col-md-6 { width: 105%; background-image: url(../images/header.png)}
+  .col-md-6 { width: 105%; background-image: url(../images/header_1.png)}
   .col-md-7 { width: 58.33333%; }
   .col-md-8 { width: 66.66667%; }
   .col-md-9 { width: 75%; }
@@ -1477,7 +1477,7 @@ blockquote { border-color: #f7c51e; }
 @media (min-width: 992px) { .top__right { float: right; } }
 
 /* 05.02. Header Layout (Logo, Data, Social Icons and Main Menu) */
-.header { background-image:url(../images/bg_top_img.jpg);  background-position: center center; }
+.header { background-image:url(../images/header.png);   }
 
 /* Logo */
 .logo { float: left; max-width: 255px; height: 137px; }
