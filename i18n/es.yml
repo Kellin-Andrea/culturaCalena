@@ -4,6 +4,9 @@ dictionary:
   default:
      
     homePage:                                                               Inicio
+    youEvent:                                                               Tus Eventos
+    youCategory:                                                            Tus Categorias
+    youLogin:                                                               Tus Inicio De Session
     nameUser:                                                               Nombre Usuario
     name:                                                                   Nombre Completo
     pass:                                                                   Contraseña
@@ -64,6 +67,7 @@ dictionary:
     of:                                                                     de
     user_updated_successfully:                                              Usuario modificado satisfactoriamente
     welcome:                                                                Bienvenido
+    welcome to culturaCaleña:                                               Bienvenido A Cultura Caleña
     feedback_answer:                                                        Respuesta un pqrsf
     answer_send:                                                            Respuesta enviada
     my_events:                                                              Mis eventos
@@ -243,7 +247,6 @@ dictionary:
     ratesManagement:                                                       Gestion de Tarifas
     rates:                                                                 Tarifa
     rateId:                                                                Id de Tarifa
-    rateSelect:                                                            Selecione una tarifa
     partialPayment:                                                        Pago parcial
     totalPayment:                                                          Pago total
     createRates:                                                           Crear tarifa

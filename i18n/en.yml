@@ -4,6 +4,9 @@ dictionary:
   default:
     homePage:                                                          Home page
     nameUser:                                                          Name User
+    youEvent:                                                          You Event
+    youCategory:                                                       You Category
+    youLogin:                                                          You login
     name:                                                              Name
     pass:                                                              Pass
     dateCreate:                                                        Date Create
@@ -73,6 +76,7 @@ dictionary:
     of:                                                                Of 
     user_updated_successfully:                                         User update successfully
     welcome:                                                           Welcome
+    welcome to culturaCaleña:                                          Welcome To Cultura Caleña
     feedback_answer:                                                   Feedback answer
     answer_send:                                                       Answer send
     my_events:                                                         My events
@@ -263,7 +267,6 @@ dictionary:
     ratesManagement:                                                   Rates management
     rates:                                                             Rates
     rateId:                                                            Rate Id
-    rateSelect:                                                        rateSelect
     partialPayment:                                                    Partial payment
     totalPayment:                                                      Total payment
     createRates:                                                       Create rate

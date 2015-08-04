@@ -122,7 +122,7 @@ use mvc\i18n\i18nClass as i18n ?>
                 <div class="col-xs-12 col-sm-4 text-center">
                     <figure>
                        
-                        <img src="<?php echo (($datoPerfil->genero == TRUE) ? routing::getInstance()->getUrlImg('avatar3.png') : routing::getInstance()->getUrlImg('avatar5.png')) ?>" alt="" class="img-circle img-responsive">
+                        <img src="<?php echo (($datoPerfil->genero == TRUE) ? routing::getInstance()->getUrlImg('mujer.jpeg') : routing::getInstance()->getUrlImg('hombre.jpeg')) ?>" alt="" class="img-circle img-responsive">
                         <?php endforeach ?>
                     </figure>
                 </div>
@@ -159,7 +159,7 @@ use mvc\i18n\i18nClass as i18n ?>
           <th><?php echo i18n::__('cost') ?></th>
           <th><?php echo i18n::__('start_date') ?></th>
           <th><?php echo i18n::__('finish_date') ?></th>
-          <th><?php echo i18n::__('') ?></th>
+          <th><?php echo i18n::__('actions') ?></th>
           
         </tr>
       </thead>
@@ -171,8 +171,17 @@ use mvc\i18n\i18nClass as i18n ?>
             <td><?php echo $eventoProfile->costo ?></td>
             <td><?php echo $eventoProfile->fecha_inicial_evento ?></td>
             <td><?php echo $eventoProfile->fecha_final_evento ?></td>
+<td>
+              <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
+              
+              <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
+      <!--              <a href="#" onclick="confirmarEliminar(<?php //echo $usuario->$id             ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>-->
+      <!--              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo" role="dialog" title="Borrar" data-content="Eliminar usuario"  onclick="eliminar(<?php //echo $usuario->$id             ?>)"class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>-->
+              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo<?php echo $eventoProfile->$id ?>"  title="<?php echo i18n::__('delete') ?>" data-content="<?php echo i18n::__('delete_event') ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>
+            </td>
+          </tr>
 
-
+        
             
       <?php endforeach?>
       </tbody>

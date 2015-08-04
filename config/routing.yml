@@ -1667,3 +1667,16 @@ traductor:
   param:  { module: admin, action: traductor, format: html }
   load:
   
+  
+##----------------------profile-------------------------##
+
+profile:
+  url:    /profile
+  param:  { module: profile, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
