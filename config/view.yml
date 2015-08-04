@@ -1228,3 +1228,32 @@ profile:
       #- jquery-1.11.1.min.js
       - index.js
       - main.js
+      
+deporte:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - deporte/css/animate.css
+        #<!--prettyPhoto.css -->
+      - deporte/css/prettyPhoto.css
+        #<!--shop css-->
+      - deporte/css/shop.css
+        #<!--style css-->
+      - deporte/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - deporte/js/almond.js
+      - deporte/js/header_carousel.js
+      - deporte/js/imagesloaded.js
+      - deporte/js/isotope.js
+      - deporte/js/jquery.min.js
+      - deporte/js/jquery.prettyPhoto.js
+      - deporte/js/jquery.validate.min.js
+      - deporte/js/main.js
+      - deporte/js/main.min.js
+      - deporte/js/modernizr.custom.24530.js
+      - deporte/js/require.js
+      - deporte/js/simplemap.js
+      - deporte/js/sticky_navbar.js
+      - deporte/js/underscore.js
+      

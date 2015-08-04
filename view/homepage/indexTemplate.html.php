@@ -306,7 +306,7 @@ use mvc\request\requestClass as request ?>
                     </p>
                     <h5>
                         <span style="color: #006666"><br/><span class="icon-container"><span class="fa fa-check"></span></span></span> 
-                        <span style="color: #0000CC"><a href="#" class="link1"><?php echo i18n::__('Sport') ?> </a></span>
+                        <span style="color: #0000CC"><a href="<?php echo routing::getInstance()->getUrlWeb('deporte', 'index') ?>" class="link1"><?php echo i18n::__('Sport') ?> </a></span>
                     </h5>
                     <p>
                         Se denomina deporte a la actividad física pautada conforme a reglas y que se practica con finalidad recreativa, profesional o como medio de mejoramiento de la salud.

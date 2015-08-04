@@ -1297,6 +1297,14 @@ teatro_index:
   param:  { module: teatro, action: index, format: html }
   load:
 
+##-------------------------- DEPORTE--------------------------##
+deporte_index:
+  url:    /deporte/index
+  param:  { module: deporte, action: index, format: html }
+  load:
+
+
+
 ##-------------------------- TIPO DOCUMENTO --------------------------##
 tipoDocumento_index:
   url:    /tipoDocumento/index
