@@ -74,8 +74,8 @@ use mvc\request\requestClass as request ?>
                                     <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('welcome to culturaCaleña')?></h4>
                                 </div>
                                 <div class="modal-body">
-                                   <p href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('profile', 'index')?>"><i class="fa fa-user"></i> <?php echo i18n::__('profile')?></p>
-                                   <p href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"><i class="glyphicon glyphicon-log-out"></i> <?php echo i18n::__('logout')?></p>
+                                     <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('profile', 'index')?>"><i class="fa fa-user"></i> <?php echo i18n::__('profile')?></a>
+                                    <br><a href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"><i class="glyphicon glyphicon-log-out"></i> <?php echo i18n::__('logout')?></a>
                                 </div>
                                
                             </div>
