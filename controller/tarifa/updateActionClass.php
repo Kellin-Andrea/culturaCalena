@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validator\editTarifaValidatorClass as validator;
 
 /**
  * Description of ejemploClass
@@ -15,31 +16,34 @@ use mvc\i18n\i18nClass as i18n;
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST')) {
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::ID, true));
-        $description = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true));
-        $cost = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true));
+                $id = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::ID, true));
+                $description = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true));
+                $cost = request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true));
 
-        $ids = array(
-            tarifaTableClass::ID => $id
-        );
 
-        $data = array(
-            tarifaTableClass::DESCRIPCION => $description,
-            tarifaTableClass::VALOR => $cost
-        );
+                validator::validateEdit($description, $cost, $id);
 
-        tarifaTableClass::update($ids, $data);
-      }
+                $ids = array(
+                    tarifaTableClass::ID => $id
+                );
 
-      routing::getInstance()->redirect('tarifa', 'index');
-      } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+                $data = array(
+                    tarifaTableClass::DESCRIPCION => $description,
+                    tarifaTableClass::VALOR => $cost
+                );
+
+                tarifaTableClass::update($ids, $data);
+            }
+
+            routing::getInstance()->redirect('tarifa', 'index');
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

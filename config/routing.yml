@@ -1243,6 +1243,7 @@ tarifa_create:
   load:
     - model/base/tarifaBaseTableClass.php
     - model/tarifaTableClass.php
+    - libs/validator/tarifa/createTarifaValidatorClass.php
 
 tarifa_edit:
   url:    /tarifa/editar
@@ -1250,6 +1251,7 @@ tarifa_edit:
   load:
     - model/base/tarifaBaseTableClass.php
     - model/tarifaTableClass.php
+    - libs/validator/tarifa/editTarifaValidatorClass.php
 
 tarifa_update:
   url:    /tarifa/actualizar
@@ -1257,6 +1259,7 @@ tarifa_update:
   load:
     - model/base/tarifaBaseTableClass.php
     - model/tarifaTableClass.php
+    - libs/validator/tarifa/editTarifaValidatorClass.php
 
 tarifa_delete:
   url:    /tarifa/eliminar
@@ -1688,3 +1691,7 @@ profile:
     - model/datoUsuarioTableClass.php
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php

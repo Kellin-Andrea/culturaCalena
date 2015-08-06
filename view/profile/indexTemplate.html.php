@@ -46,7 +46,7 @@ use mvc\session\sessionClass as session ?>
                 <a href="#" class="navbar-brand">
                     <small>
                         <i class="glyphicon glyphicon-leaf"></i>
-<?php echo i18n::__('cultureCaleña') ?>
+                        <?php echo i18n::__('cultureCaleña') ?>
                     </small>
                 </a>
 
@@ -66,7 +66,7 @@ use mvc\session\sessionClass as session ?>
                             <img class="nav-user-photo" src="<?php echo \mvc\routing\routingClass::getInstance()->getUrlImg('logo.png') ?>" />
                             <span class="user-info">
                                 <small><?php echo i18n::__('welcome') ?></small>
-<?php echo session::getInstance()->getUserName(); ?>
+                                <?php echo session::getInstance()->getUserName(); ?>
                             </span>
 
                             <i class="ace-icon fa fa-caret-down"></i>
@@ -78,7 +78,7 @@ use mvc\session\sessionClass as session ?>
                             <li>
                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('homepage', 'index') ?>">
                                     <i class="ace-icon fa fa-user"></i>
-<?php echo i18n::__('homePage') ?>
+                                    <?php echo i18n::__('homePage') ?>
                                 </a>
                             </li>
 
@@ -87,7 +87,7 @@ use mvc\session\sessionClass as session ?>
                             <li>
                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>">
                                     <i class="ace-icon fa fa-power-off"></i>
-<?php echo i18n::__('exit') ?>
+                                    <?php echo i18n::__('exit') ?>
                                 </a>
                             </li>
                         </ul>
@@ -109,16 +109,18 @@ use mvc\session\sessionClass as session ?>
                     <div class="col-sm-12">
                         <div class="col-xs-12 col-sm-8">
                             <?php foreach ($objDatosProfile as $datoPerfil): ?>
-                                <h2><?php echo $datoPerfil->nombre;
-                                echo ' ';
-                                echo $datoPerfil->apellido; ?></h2>
-    <?php foreach ($objPerfilUser as $perfilUser): ?>
+                                <h2><?php
+                                    echo $datoPerfil->nombre;
+                                    echo ' ';
+                                    echo $datoPerfil->apellido;
+                                    ?></h2>
+                                <?php foreach ($objPerfilUser as $perfilUser): ?>
                                     <p><strong><?php echo i18n::__('nameUser') ?>: </strong> <?php echo $perfilUser->user_name; ?></p>
-    <?php endforeach; ?>
+                                <?php endforeach; ?>
                                 <p><strong><?php echo i18n::__('email') ?>: </strong><?php echo $datoPerfil->correo ?> </p>
 
-                                <p><strong><?php echo i18n::__('locality') ?>: </strong><?php echo $datoPerfil->localidad_id ?>  </p>
-                                <p><strong><?php echo i18n::__('organizations') ?>: </strong> <?php echo $datoPerfil->organizacion_id ?> </p>
+                                <p><strong><?php echo i18n::__('locality') ?>: </strong><?php echo localidadTableClass::getNombreById($datoPerfil->localidad_id) ?>  </p>
+                                <p><strong><?php echo i18n::__('organizations') ?>: </strong> <?php echo organizacionTableClass::getNombreById($datoPerfil->organizacion_id) ?> </p>
 
 
                             </div>            
@@ -126,7 +128,7 @@ use mvc\session\sessionClass as session ?>
                                 <figure>
 
                                     <img src="<?php echo (($datoPerfil->genero == TRUE) ? routing::getInstance()->getUrlImg('mujer.jpeg') : routing::getInstance()->getUrlImg('hombre.jpeg')) ?>" alt="" class="img-circle img-responsive">
-<?php endforeach ?>
+                                <?php endforeach ?>
                             </figure>
                         </div>
                     </div>            
@@ -167,7 +169,7 @@ use mvc\session\sessionClass as session ?>
                         </tr>
                     </thead>
                     <tbody >
-<?php foreach ($objEventoProfile as $eventoProfile): ?>
+                        <?php foreach ($objEventoProfile as $eventoProfile): ?>
                             <tr>
 
                                 <td><?php echo $eventoProfile->nombre ?></td>
@@ -178,8 +180,8 @@ use mvc\session\sessionClass as session ?>
                                     <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
 
                                     <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
-                            <!--              <a href="#" onclick="confirmarEliminar(<?php //echo $usuario->$id              ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>-->
-                            <!--              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo" role="dialog" title="Borrar" data-content="Eliminar usuario"  onclick="eliminar(<?php //echo $usuario->$id              ?>)"class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>-->
+                            <!--              <a href="#" onclick="confirmarEliminar(<?php //echo $usuario->$id                ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>-->
+                            <!--              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo" role="dialog" title="Borrar" data-content="Eliminar usuario"  onclick="eliminar(<?php //echo $usuario->$id                ?>)"class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>-->
                                     <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoProfile->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>
                                 </td>
                             </tr>
@@ -203,7 +205,7 @@ use mvc\session\sessionClass as session ?>
 
 
 
-<?php endforeach ?>
+                    <?php endforeach ?>
                     </tbody>
                 </table>
             </div>

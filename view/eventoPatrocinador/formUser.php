@@ -17,7 +17,7 @@ use mvc\request\requestClass as request ?>
         <div class="panel-body">
             <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', ((isset($objEventoPatrocinador)) ? 'update' : 'create')) ?>">
                 <?php if (isset($objEvento) == true) : ?>
-                    <input name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true) ?>" value="<?php echo $objEventoPatrocinador[0]->$id ?>" type="hidden">
+                    <input name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true) ?>" value="<?php echo (isset($objEventoPatrocinador)) ? $objEventoPatrocinador[0]->$id : '' ?>" type="hidden">
                 <?php endif ?>
                 <div class="form-group">
 

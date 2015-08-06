@@ -15,36 +15,36 @@ namespace mvc\validator {
      */
     class createDatoUsuarioValidatorClass extends validatorClass {
 
-        public static function validateInsert($name, $lastName, $mail, $locality, $dateF, $genre, $typeDocument, $organization) {
+        public static function validateInsert($user, $pass1, $pass2, $name, $lastName, $mail, $locality, $dateF, $genre, $typeDocument, $organization) {
             $flag = false;
 
-//            if (self::notBlank($user)) {
-//                $flag = true;
-//                session::getInstance()->setFlash('inputUser', true);
-//                session::getInstance()->setError('El nombre de usuario es requerido', 'inputUser');
-//            } else if (is_numeric($user)) {
-//                $flag = true;
-//                session::getInstance()->setFlash('inputUser', true);
-//                session::getInstance()->setError('El usuario no puede ser númerico', 'inputUser');
-//            } else if (strlen($user) > \usuarioTableClass::USER_LENGTH) {
-//                $flag = true;
-//                session::getInstance()->setFlash('inputUser', true);
-//                session::getInstance()->setError('El usuario digitado es mayor en cantidad de caracteres a lo permitido', 'inputUser');
-//            } else if (self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER => request::getInstance()->getPost('inputUser')), \usuarioTableClass::getNameTable())) {
-//                $flag = true;
-//                session::getInstance()->setFlash('inputUser', true);
-//                session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
-//            }
-//
-//            if (self::notBlank($pass1) or self::notBlank($pass2)) {
-//                $flag = true;
-//                session::getInstance()->setFlash('inputPass', true);
-//                session::getInstance()->setError('Las contraseñas son requeridas', 'inputPass');
-//            } else if (request::getInstance()->getPost('inputPass1') !== request::getInstance()->getPost('inputPass2')) {
-//                $flag = true;
-//                session::getInstance()->setFlash('inputPass', true);
-//                session::getInstance()->setError('Las contraseñas no coinciden', 'inputPass');
-//            }
+            if (self::notBlank($user)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputUser', true);
+                session::getInstance()->setError('El nombre de usuario es requerido', 'inputUser');
+            } else if (is_numeric($user)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputUser', true);
+                session::getInstance()->setError('El usuario no puede ser númerico', 'inputUser');
+            } else if (strlen($user) > \usuarioTableClass::USER_LENGTH) {
+                $flag = true;
+                session::getInstance()->setFlash('inputUser', true);
+                session::getInstance()->setError('El usuario digitado es mayor en cantidad de caracteres a lo permitido', 'inputUser');
+            } else if (self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER => request::getInstance()->getPost('inputUser')), \usuarioTableClass::getNameTable())) {
+                $flag = true;
+                session::getInstance()->setFlash('inputUser', true);
+                session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
+            }
+
+            if (self::notBlank($pass1) or self::notBlank($pass2)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputPass', true);
+                session::getInstance()->setError('Las contraseñas son requeridas', 'inputPass');
+            } else if (($pass1) !== ($pass2)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputPass', true);
+                session::getInstance()->setError('Las contraseñas no coinciden', 'inputPass');
+            }
 
 
             if (self::notBlank($name)) {
@@ -103,7 +103,7 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputdatef', true);
                 session::getInstance()->setError('la fecha de nacimiento es obligatorio', 'inputdatef');
-            } else if (strtotime($dateF) > strtotime(date(config::getFormatTimestamp()))) {
+            } else if (strtotime($dateF) >= strtotime(date(config::getFormatTimestamp()))) {
                 $flag = true;
                 session::getInstance()->setFlash('inputdatef', true);
                 session::getInstance()->setError('La fecha nacimiento  no puede ser mayor o igual a la fecha ', 'inputdatef');
@@ -136,7 +136,7 @@ namespace mvc\validator {
             if ($flag === true) {
                 //request::getInstance()->setMethod('GET');
                 routing::getInstance()->forward('datoUsuario', 'insert');
-                routing::getInstance()->forward('usuario', 'insert');
+                
             }
         }
 
