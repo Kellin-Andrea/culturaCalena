@@ -25,6 +25,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             if (request::getInstance()->isMethod('POST') === true) {
 
 
+                
                 $name = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true));
                 $lastName = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true));
                 $mail = request::getInstance()->getPost(datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true));
@@ -51,18 +52,6 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $usuario_id = usuarioTableClass::insert($data);
                 
                 
-                $user = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USER, true));
-                $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
-
-
-                validator::validateInsert($name, $lastName, $mail, $dateF, $genre, $locality, $typeDocument, $organization);
-
-                $data = array(
-                    usuarioTableClass::USER => $user,
-                    usuarioTableClass::PASSWORD => md5($password),
-                    '__sequence' => 'usuario_id_seq'
-                );
-                $usuario_id = usuarioTableClass::insert($data);
                 $data = array(
                     datoUsuarioTableClass::NOMBRE => $name,
                     datoUsuarioTableClass::APELLIDO => $lastName,
