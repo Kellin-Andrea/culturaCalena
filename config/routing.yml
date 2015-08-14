@@ -1221,6 +1221,76 @@ recordarMe_traductor:
   url:   /recordarMe/traductor
   param:  { module: recordarMe, action: traductor, format: html }
   load:
+      
+##-------------------------- Reporte --------------------------##      
+      
+reporte_index:
+  url:    /reporte/index
+  param:  { module: reporte, action: index, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php    
+    
+reporte_insert:
+  url:    /reporte/insert
+  param:  { module: reporte, action: insert, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    
+reporte_create:
+  url:    /reporte/create
+  param:  { module: reporte, action: create, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    
+reporte_editar:
+  url:    /reporte/edit
+  param:  { module: reporte, action: edit, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php 
+    
+reporte_update:
+  url:    /reporte/update
+  param:  { module: reporte, action: update, format: html }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+
+reporte_delete:
+  url:    /reporte/delete
+  param:  { module: reporte, action: delete, format: json }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+
+reporte_deleteSelect:
+  url:    /reporte/deleteSelect
+  param:  { module: reporte, action: deleteSelect, format: html }
+  load:
+    - model/bitacora/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    
+reporte_deleteFilters:
+  url:    /Borrar_Filtros
+  param:  { module: reporte, action: deleteFilters, format: html }    
+
+reporte_reporte:
+  url:    /reporte/reporte
+  param:  { module: reporte, action: report, format: pdf }
+  load:
+    - libs/fpdf/fpdf.php
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+
+reporte_traductor:
+  url:   /reporte/traductor
+  param:  { module: reporte, action: traductor, format: html }
+  load:
+      
+      
 ##-------------------------- Tarifa --------------------------##
  
 tarifa_index:
