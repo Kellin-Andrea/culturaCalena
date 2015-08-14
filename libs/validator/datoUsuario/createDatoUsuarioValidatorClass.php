@@ -30,7 +30,7 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputUser', true);
                 session::getInstance()->setError('El usuario digitado es mayor en cantidad de caracteres a lo permitido', 'inputUser');
-            } else if (self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER => request::getInstance()->getPost('inputUser')), \usuarioTableClass::getNameTable())) {
+            } else if (self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER =>  trim($user)), \usuarioTableClass::getNameTable())) {
                 $flag = true;
                 session::getInstance()->setFlash('inputUser', true);
                 session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
