@@ -73,8 +73,9 @@ class  eventoTableClass extends eventoBaseTableClass {
               ' FROM '.eventoTableClass::getNameTable().' , '. usuarioTableClass::getNameTable().
               ' WHERE '.  eventoTableClass::getNameTable().'.'.  eventoTableClass::USUARIO_ID.' = '
               .  usuarioTableClass::getNameTable().'.'.  usuarioTableClass::ID.
-              ' AND '. usuarioTableClass::getNameTable().'.'.usuarioTableClass::ID.' = '.$id;
-      
+              ' AND '. usuarioTableClass::getNameTable().'.'.usuarioTableClass::ID.' = '.$id .
+               ' AND evento.deleted_at IS NULL';
+     
      
        return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
     } catch (PDOException $exc) {

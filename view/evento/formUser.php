@@ -30,7 +30,7 @@ use mvc\request\requestClass as request ?>
     <div class="panel panel-primary">
 
         <div class="panel-body">
-            <form enctype="multiplart/form-data" id="Formulario" class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('evento', ((isset($objevento)) ? 'update' : 'create')) ?>">
+            <form enctype="multipart/form-data" id="Formulario" class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('evento', ((isset($objevento)) ? 'update' : 'create')) ?>">
 
                 <?php if (isset($objevento) == true) : ?>
                     <input name="<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>" value="<?php echo $objevento[0]->$id ?>" type="hidden">

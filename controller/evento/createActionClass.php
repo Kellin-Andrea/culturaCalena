@@ -25,10 +25,7 @@ class createActionClass extends controllerClass implements controllerActionInter
       if (request::getInstance()->isMethod('POST')) {
 
         $files = request::getInstance()->getFile(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true)); 
-        echo '<pre>';
-         print_r($files);
-         echo '</pre>';
-         exit();
+       
         $nameEvent = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true));
         $description = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true));
         $date = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true));
