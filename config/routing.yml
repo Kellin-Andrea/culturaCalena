@@ -1232,7 +1232,9 @@ reporte_index:
   param:  { module: reporte, action: index, format: html }
   load:
     - model/base/reporteBaseTableClass.php
-    - model/reporteTableClass.php    
+    - model/reporteTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php    
     
 reporte_insert:
   url:    /reporte/insert

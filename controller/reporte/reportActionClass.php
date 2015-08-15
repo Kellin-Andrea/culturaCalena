@@ -21,6 +21,11 @@ class reportActionClass extends controllerClass implements controllerActionInter
       $fields = array(
           eventoTableClass::ID,
           eventoTableClass::NOMBRE,
+          eventoTableClass::DESCRIPCION,
+          eventoTableClass::FECHA_INICIAL_EVENTO,
+          eventoTableClass::FECHA_FINAL_EVENTO,
+          eventoTableClass::FECHA_INICIAL_PUBLICACION,
+          eventoTableClass::FECHA_FINAL_PUBLICACION
           );
       $orderBy = array(
           eventoTableClass::NOMBRE

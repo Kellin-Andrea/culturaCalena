@@ -64,7 +64,7 @@ namespace mvc\validator {
             } else if (strtotime($date1) <= strtotime(date(config::getFormatTimestamp()))) {
                 $flag = true;
                 session::getInstance()->setFlash('inputdate1', true);
-                session::getInstance()->setError('La fecha final del evento no puede ser menor o igual a la fecha inicial del evento', 'inputdate1');
+                session::getInstance()->setError('La fecha final del evento no puede ser menor  a la fecha inicial del evento', 'inputdate1');
             }
 
 
@@ -105,7 +105,7 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputdatePublic1', true);
                 session::getInstance()->setError('la fecha final de publicacion del evento es obligatorio', 'inputdatePublic1');
-            } else if (strtotime($date1) <= strtotime(date(config::getFormatTimestamp()))) {
+            } else if (strtotime($date1) >= strtotime(date(config::getFormatTimestamp()))) {
                 $flag = true;
                 session::getInstance()->setFlash('inputdatePublic1', true);
                 session::getInstance()->setError('La fecha final de publicacion del evento no puede ser menor o igual a la fecha inicial del evento', 'inputdatePublic1');

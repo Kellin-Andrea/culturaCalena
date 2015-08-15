@@ -405,51 +405,83 @@ use mvc\request\requestClass as request ?>
 
 
                                                             </div>
-                                                            <table class="table table-bordered table-hover">
-                                                                <thead>
-                                                                    <tr>
-                                                                        <th><input type="checkbox" id="chkAll"></th>
-                                                                        <th><?php echo i18n::__('name') ?></th>
-                                                                        <th><?php echo i18n::__('description') ?></th>
-                                                                        <th><?php echo i18n::__('actions') ?></th>
-                                                                    </tr>
-                                                                <tbody>
+                                                            <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                                                <div class="modal-dialog">
+                                                                    <div class="modal-content">
+                                                                        <div class="modal-header">
+                                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                                                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('events') ?></h4>
+                                                                        </div>
+                                                                        <div class="modal-body">
+                                                                            <form  class="form-horizontal" id="filterForm"  role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'index') ?>">
+                                                                                <div class="form-group">
+                                                                                    <label for="filterEvento" class="col-sm-2 control-label">Categoria</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <?php foreach ($objCategoria2 as $categoria): ?>
+                                                                                            <option value="<?php echo $categoria->id ?>"<?php echo (isset($objevento)) ? ($categoria->id === $objevento[0]->categoria_id) ? 'selected' : '' : '' ?>><?php echo categoriaTableClass::getNombreById($categoria->id) ?></option>
 
-                                                                    <?php foreach ($objreporte as $reporte): ?>
-                                                                        <tr>
-                                                                            <td><input type="checkbox" name="chk[]" value="<?php echo $reporte->id ?>"></td>
-                                                                            <td><?php echo $reporte->nombre ?></td>
-                                                                            <td><?php echo $reporte->descripcion ?></td>
-                                                                            <td>
-                                                                                <a href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'report', array(reporteTableClass::ID => $reporte->$id)) ?>" class="btn btn-warning btn-xs"><i class=" glyphicon glyphicon-eye-open"></i></a>
-                                                                                
-                                                                            </td>
-                                                                        </tr>
-
-                                                                   
-                                                                <?php endforeach ?>
-                                                                </tbody>
-                                                            </table>
+                                                                                        <?php endforeach ?>
+                                                                                    </div>
+                                                                                </div>
+                                                                                <div class="form-group">
+                                                                                    <label class="col-sm-2 control-label">Fecha Publicacion</label>
+                                                                                    <div class="col-sm-10">
+                                                                                        <input type="date" class="form-control" id="filterDate1" name="filter[fechaPublicacion1]">
+                                                                                        <br/>
+                                                                                        <input type="date" class="form-control" id="filterDate2" name="filter[fechaPublicion2]">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </form>
+                                                                        </div>
+                                                                        <div class="modal-footer">
+                                                                            <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                                                                            <button type="button" onclick="$('#filterForm').submit()" class="btn btn-primary">Filtrar</button>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
                                                         </form>
-                                                        
-                                                          <div class="text-right">
-                                                                Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('reporte', 'index') ?>')">
-                                                                    <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-                                                                        <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
-                                                                    <?php endfor ?>
-                                                                </select> <?php echo $cntPages ?>
-                                                            </div> 
                                                     </div>
 
+                                                    <table class="table table-bordered table-hover">
+                                                        <thead>
+                                                            <tr>
+                                                                <th><input type="checkbox" id="chkAll"></th>
+                                                                <th><?php echo i18n::__('name') ?></th>
+                                                                <th><?php echo i18n::__('description') ?></th>
+                                                                <th><?php echo i18n::__('actions') ?></th>
+                                                            </tr>
+                                                        <tbody>
+
+                                                            <?php foreach ($objreporte as $reporte): ?>
+                                                                <tr>
+                                                                    <td><input type="checkbox" name="chk[]" value="<?php echo $reporte->id ?>"></td>
+                                                                    <td><?php echo $reporte->nombre ?></td>
+                                                                    <td><?php echo $reporte->descripcion ?></td>
+                                                                    <td>
+                                                                        <a href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'report', array(reporteTableClass::ID => $reporte->$id)) ?>" class="btn btn-warning btn-xs"><i class=" glyphicon glyphicon-eye-open"></i></a>
+                                                                        <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModalFilters"><i class=" glyphicon glyphicon-eye-open"></i></button>
+                                                                    </td>
+                                                                </tr>
+
+
+                                                            <?php endforeach ?>
+                                                        </tbody>
+                                                    </table>
+                                                    </form>
+
+                                                    
                                                 </div>
 
+                                            </div>
 
 
 
-                                            </div><!-- /.widget-main -->
-                                        </div><!-- /.widget-body -->
-                                    </div><!-- /.widget-box -->
-                                </div><!-- /.col -->
+
+                                        </div><!-- /.widget-main -->
+                                    </div><!-- /.widget-body -->
+                                </div><!-- /.widget-box -->
+                            </div><!-- /.col -->
                             </div><!-- /.row -->
 
                             <!-- PAGE CONTENT ENDS -->

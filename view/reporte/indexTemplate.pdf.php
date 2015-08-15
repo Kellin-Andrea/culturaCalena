@@ -113,7 +113,7 @@ class PDF extends FPDF {
 // Page header
     function Header() {
         // Logo
-        // $this->Image(routing::getInstance()->getUrlImg('logo1.png'), 10, 6, 30);
+         $this->Image(routing::getInstance()->getUrlImg('logo1.png'), 10, 6, 30);
         // Arial bold 15
         $this->SetFont('Arial', 'B', 22);
         // Move to the right
@@ -159,12 +159,11 @@ $pdf->Ln(23);
 $pdf->SetTextColor(60, 10, 248);  // Establece el color del texto (en este caso es blanco) 
 $pdf->SetFillColor(0, 0, 258);
 $pdf->SetFont('Arial', '', 12, 'B', true);
-$pdf->Cell(8, 5, "ID", 1);
 $pdf->Cell(30, 5, "NOMBRE", 1);
 $pdf->Cell(31, 5, "DESCRIPCION", 1);
 $pdf->Cell(32, 5, "FECHA INICIAL", 1);
-$pdf->Cell(29, 5, "FECHA FINAL", 1);
-$pdf->Cell(30, 5, "PUBLICACION", 1);
+$pdf->Cell(31, 5, "FECHA FINAL", 1);
+$pdf->Cell(32, 5, "PUBLICACION", 1);
 $pdf->Cell(45, 5, "FINAL PUBLICACION", 1);
 $pdf->Ln(8);
 //************* DATOS DE LA TABLA
@@ -172,13 +171,13 @@ $pdf->SetFillColor(152, 255, 100);
 $pdf->SetTextColor(85, 107, 47);
 $pdf->SetFont('Arial', '', 9);
 foreach ($objEvento as $evento) {
-    $pdf->Cell(8, 5, $evento->$id, 1);
+  
     $pdf->Cell(30, 5, $evento->$nom, 1);
-//    $pdf->Cell(31, 5, $evento->$desc, 1);
-//    $pdf->Cell(32, 5, $evento->$fechaIni, 1);
-//    $pdf->Cell(29, 5, $evento->$fechaFin, 1);
-//    $pdf->Cell(30, 5, $evento->$fechaPlu, 1);
-//    $pdf->Cell(45, 5, $evento->$fechafinal, 1);
+    $pdf->Cell(31, 5, $evento->$desc, 1);
+    $pdf->Cell(32, 5, $evento->$fechaIni, 1);
+    $pdf->Cell(31, 5, $evento->$fechaFin, 1);
+    $pdf->Cell(32, 5, $evento->$fechaPlu, 1);
+    $pdf->Cell(45, 5, $evento->$fechafinal, 1);
     $pdf->Ln();
 }
 
