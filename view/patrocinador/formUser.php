@@ -22,6 +22,7 @@
     <div class="form-group">
         <label for="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('name') ?></label>
                 <div class="col-sm-7">
+                    <?php mvc\view\viewClass::getMessageError('inputname') ?>
                     <input type="text"  class="form-control" id="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true) ?>" 
                            value="<?php  echo (session::getInstance()->hasFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true)) === true)  ?  request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true)) :  ((( isset($objpatrocinador) == true ) ?  $objpatrocinador[0]->$nombre  :  '' ))  ?>" placeholder="<?php echo i18n::__('name')?>">
                 </div>
@@ -29,11 +30,13 @@
      <div class="form-group">
     <label for="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('phone') ?></label>
                 <div class="col-sm-7">
+                    <?php mvc\view\viewClass::getMessageError('inputphone') ?>
                     <input type="text"  class="form-control" id="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true) ?>" 
                            value="<?php  echo (session::getInstance()->hasFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true)) === true)  ?  request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true)) :  ((( isset($objpatrocinador) == true ) ?  $objpatrocinador[0]->$tele  :  '' ))  ?>" placeholder="<?php echo i18n::__('phone')?>">
                 </div>
             </div>
       <div class="form-group">
+          <?php mvc\view\viewClass::getMessageError('inputmail') ?>
     <label for="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('e-mail') ?></label>
                 <div class="col-sm-7">
                     <input type="text"  class="form-control" id="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true) ?>" 
@@ -43,6 +46,7 @@
      <div class="form-group">
     <label for="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('adress') ?></label>
                 <div class="col-sm-7">
+                    <?php mvc\view\viewClass::getMessageError('inputadress') ?>
                     <input type="text"  class="form-control" id="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true) ?>" 
                            value="<?php  echo (session::getInstance()->hasFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true)) === true)  ?  request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true)) :  ((( isset($objpatrocinador) == true ) ?  $objpatrocinador[0]->$dire  :  '' ))  ?>" placeholder="<?php echo i18n::__('adress')?>">
                 </div>

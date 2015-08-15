@@ -7,11 +7,11 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use mvc\validator\editrecaudoEconomicoValidatorClass as validator;
 /**
  * Description of ejemploClass
  *
- * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
+ * @author DIANA MARCELA <dianamarce0204@hotmail.com>
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
@@ -24,6 +24,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $valor = request::getInstance()->getPost(recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_TOTAL, true));
         $parcial = request::getInstance()->getPost(recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_PARCIAL, true));
 
+        validator::validateEdit($evento_id,$usuario_id, $observaciones, $tarifa, $valor, $parcial,$id);
+        
         $ids = array(
         recaudoEconomicoTableClass::ID => $id
         );

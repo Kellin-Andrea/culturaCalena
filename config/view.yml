@@ -1256,4 +1256,62 @@ deporte:
       - deporte/js/simplemap.js
       - deporte/js/sticky_navbar.js
       - deporte/js/underscore.js
+
       
+danza:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - danza/css/animate.css
+        #<!--prettyPhoto.css -->
+      - danza/css/prettyPhoto.css
+        #<!--shop css-->
+      - danza/css/shop.css
+        #<!--style css-->
+      - danza/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - danza/js/almond.js
+      - danza/js/header_carousel.js
+      - danza/js/imagesloaded.js
+      - danza/js/isotope.js
+      - danza/js/jquery.min.js
+      - danza/js/jquery.prettyPhoto.js
+      - danza/js/jquery.validate.min.js
+      - danza/js/main.js
+      - danza/js/main.min.js
+      - danza/js/modernizr.custom.24530.js
+      - danza/js/require.js
+      - danza/js/simplemap.js
+      - danza/js/sticky_navbar.js
+      - danza/js/underscore.js
+
+
+
+musica:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - musica/css/animate.css
+        #<!--prettyPhoto.css -->
+      - musica/css/prettyPhoto.css
+        #<!--shop css-->
+      - musica/css/shop.css
+        #<!--style css-->
+      - musica/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - musica/js/almond.js
+      - musica/js/header_carousel.js
+      - musica/js/imagesloaded.js
+      - musica/js/isotope.js
+      - musica/js/jquery.min.js
+      - musica/js/jquery.prettyPhoto.js
+      - musica/js/jquery.validate.min.js
+      - musica/js/main.js
+      - musica/js/main.min.js
+      - musica/js/modernizr.custom.24530.js
+      - musica/js/require.js
+      - musica/js/simplemap.js
+      - musica/js/sticky_navbar.js
+      - musica/js/underscore.js

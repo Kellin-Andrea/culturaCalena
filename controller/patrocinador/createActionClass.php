@@ -6,11 +6,12 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validator\createPatrocinadorValidatorClass as validator;
 
 /**
  * Description of ejemploClass
  *
- * @author diana marcela <dianamarce029@hotmail.com>
+ * @author diana marcela <dianamarce0294@hotmail.com>
  */
 class createActionClass extends controllerClass implements controllerActionInterface {
 
@@ -28,6 +29,8 @@ class createActionClass extends controllerClass implements controllerActionInter
       //          if (strlen($organizacion) > organizacionTableClass::USER_LENGTH) {
 //                    throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
           //      }
+                
+                validator::validateInsert($nombre, $telefono, $correo, $direccion);
 
                 $data = array(
                     patrocinadorTableClass::NOMBRE => $nombre,

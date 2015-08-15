@@ -861,6 +861,7 @@ organizacion_insert:
   load:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - libs/validator/organizacion/createOrganizacionValidatorClass.php
 
 organizacion_create:
   url:    /organizacion/crear
@@ -868,21 +869,21 @@ organizacion_create:
   load:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
-
+    - libs/validator/organizacion/createOrganizacionValidatorClass.php
 organizacion_edit:
   url:    /organizacion/editar
   param:  { module: organizacion, action: edit, format: html }
   load:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
-
+    - libs/validator/organizacion/editOrganizacionValidatorClass.php
 organizacion_update:
   url:    /organizacion/actualizar
   param:  { module: organizacion, action: update, format: html }
   load:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
-
+    - libs/validator/organizacion/editOrganizacionValidatorClass.php
 organizacion_delete:
   url:    /organizacion/eliminar
   param:  { module: organizacion, action: delete, format: json }
@@ -920,13 +921,14 @@ patrocinador_index:
   load:
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
-
+    - libs/validator/patrocinador/createPatrocinadorValidatorClass.php
 patrocinador_insert:
   url:    /patrocinador/insertar
   param:  { module: patrocinador, action: insert, format: html }
   load:
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
+    - libs/validator/patrocinador/createPatrocinadorValidatorClass.php
 
 patrocinador_create:
   url:    /patrocinador/crear
@@ -934,21 +936,21 @@ patrocinador_create:
   load:
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
-
+    - libs/validator/patrocinador/createPatrocinadorValidatorClass.php
 patrocinador_edit:
   url:    /patrocinador/editar
   param:  { module: patrocinador, action: edit, format: html }
   load:
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
-
+    - libs/validator/patrocinador/editPatrocinadorValidatorClass.php
 patrocinador_update:
   url:    /patrocinador/actualizar
   param:  { module: patrocinador, action: update, format: html }
   load:
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
-
+    - libs/validator/patrocinador/editPatrocinadorValidatorClass.php
 patrocinador_delete:
   url:    /patrocinador/eliminar
   param:  { module: patrocinador, action: delete, format: json}
@@ -1104,6 +1106,7 @@ recaudoEconomico_insert:
         - model/eventoTableClass.php
         - model/base/tarifaBaseTableClass.php
         - model/tarifaTableClass.php
+        - libs/validator/recaudoEconomico/createrecaudoEconomicoValidatorClass.php
         
 recaudoEconomico_create:
     url: /recaudoEconomico/crear
@@ -1115,7 +1118,7 @@ recaudoEconomico_create:
         - model/eventoTableClass.php
         - model/base/tarifaBaseTableClass.php
         - model/tarifaTableClass.php
-        
+        - libs/validator/recaudoEconomico/createrecaudoEconomicoValidatorClass.php
 recaudoEconomico_edit:
     url: /recaudoEconomico/editar
     param: { module: recaudoEconomico, action: edit, format: html }
@@ -1126,7 +1129,7 @@ recaudoEconomico_edit:
         - model/eventoTableClass.php
         - model/base/tarifaBaseTableClass.php
         - model/tarifaTableClass.php
-        
+        - libs/validator/recaudoEconomico/editrecaudoEconomicoValidatorClass.php
 recaudoEconomico_update:
     url: / recaudoEconomico/actualizar
     param: { module: recaudoEconomico, action: update, format: html }
@@ -1137,7 +1140,7 @@ recaudoEconomico_update:
         - model/eventoTableClass.php
         - model/base/tarifaBaseTableClass.php
         - model/tarifaTableClass.php
-        
+        - libs/validator/recaudoEconomico/editrecaudoEconomicoValidatorClass.php
 recaudoEconomico_delete:
     url: /recaudoEconomico/eliminar
     param: { module: recaudoEconomico, action: delete, format: html }
@@ -1303,7 +1306,17 @@ deporte_index:
   param:  { module: deporte, action: index, format: html }
   load:
 
-
+##-------------------------- DANZA--------------------------##
+danza_index:
+  url:    /danza/index
+  param:  { module: danza, action: index, format: html }
+  load:
+      
+##-------------------------- MUSICA--------------------------##
+musica_index:
+  url:    /musica/index
+  param:  { module: musica, action: index, format: html }
+  load:      
 
 ##-------------------------- TIPO DOCUMENTO --------------------------##
 tipoDocumento_index:

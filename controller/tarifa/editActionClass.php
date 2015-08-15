@@ -17,14 +17,14 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(tarifaTableClass::ID)) {
+      if (request::getInstance()->hasGet(tarifaTableClass::ID)) {
         $fields = array(
             tarifaTableClass::ID,
             tarifaTableClass::DESCRIPCION,
             tarifaTableClass::VALOR
         );
         $where = array(
-            tarifaTableClass::ID => request::getInstance()->getRequest(tarifaTableClass::ID)
+            tarifaTableClass::ID => request::getInstance()->getGet(tarifaTableClass::ID)
         );
         $this->objtarifa = tarifaTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'tarifa', session::getInstance()->getFormatOutput());

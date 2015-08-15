@@ -14,12 +14,14 @@ dictionary:
     EventPartner:                                                           Evento Patrocinador
     eventPartnerManagement:                                                 Gestion Evento Patrocinador
     newEventPartner:                                                        Nuevo Evento Patrocinador
+    dance:                                                                  Danza
     editPartner:                                                            Editar Patrocinador
     partner_select:                                                         Seleccione Patrocinador
     event_select:                                                           Seleccione Evento
     createUser:                                                             Crear usuario
     editUser:                                                               Editar usuario
     editOrganization:                                                       Editar Organizacion
+    music:                                                                  Musica
     newPass:                                                                Nueva contraseña
     new:                                                                    Nuevo 
     oldPass:                                                                Contraseña Anterior
@@ -253,6 +255,9 @@ dictionary:
     newRate:                                                               Nueva tarifa
     editRate:                                                              Editar Tarifa
     returning_to_rates:                                                    Regresar a tarifas
+    rateSelect:                                                            Seleccione una tarifa
+   
+   
     #------------------------Tipo de documento---------------------------------#
     IdType:                                                                Tipo de Identificacion
     IdTypeManagement:                                                      Gestion de Tipo de Identificacion

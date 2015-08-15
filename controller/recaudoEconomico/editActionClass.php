@@ -17,7 +17,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasRequest(recaudoEconomicoTableClass::ID)) {
+            if (request::getInstance()->hasGet(recaudoEconomicoTableClass::ID)) {
                 $fields = array(
                     recaudoEconomicoTableClass::ID,
                     recaudoEconomicoTableClass::USUARIO_ID,
@@ -31,7 +31,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
 
                 $where = array(
-                    recaudoEconomicoTableClass::ID => request::getInstance()->getRequest(recaudoEconomicoTableClass::ID)
+                    recaudoEconomicoTableClass::ID => request::getInstance()->getGet(recaudoEconomicoTableClass::ID)
                 );
 
                 $fields1 = array(

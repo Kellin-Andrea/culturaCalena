@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validator\editOrganizacionValidatorClass as validator;
 
 /**
  * Description of ejemploClass
@@ -27,10 +28,13 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $correo = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::CORREO, true));
                 $pagina_web = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::PAGINA_WEB, true));
 
+                validator::validateEdit($nombre, $direccion, $telefono, $fax, $correo, $pagina_web);
+                
                 $ids = array(
                 organizacionTableClass::ID => $id,
                 );
 
+                
                 $data = array(
                     organizacionTableClass::NOMBRE => $nombre,
                     organizacionTableClass::DIRECCION => $direccion,

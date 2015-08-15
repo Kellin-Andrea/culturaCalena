@@ -7,11 +7,11 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use mvc\validator\createOrganizacionValidatorClass as validator;
 /**
  * Description of ejemploClass
  *
- * @author diana marcela <dianamarce029@hotmail.com>
+ * @author diana marcela <dianamarce0294@hotmail.com>
  */
 class createActionClass extends controllerClass implements controllerActionInterface {
 
@@ -31,6 +31,11 @@ class createActionClass extends controllerClass implements controllerActionInter
 //                    throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
           //      }
 
+                
+                validator::validateInsert($nombre, $direccion, $telefono, $fax, $correo, $paginaWeb);
+
+                
+                
                 $data = array(
                     organizacionTableClass::NOMBRE => $nombre,
                     organizacionTableClass::DIRECCION => $direccion,

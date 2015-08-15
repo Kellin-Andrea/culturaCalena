@@ -296,7 +296,7 @@ use mvc\request\requestClass as request ?>
                     </p>
                     <h5>
                         <span style="color: #006666"><br/><span class="icon-container"><span class="fa fa-check"></span></span></span> 
-                        <span style="color: #0000CC"><a href="#" class="link1"><?php echo i18n::__('Dance') ?> </a></span>
+                        <span style="color: #0000CC"><a href="<?php echo routing::getInstance()->getUrlWeb('danza', 'index') ?>" class="link1"><?php echo i18n::__('Dance') ?> </a></span>
                     </h5>
                     <p>
                         La danza es la acción o manera de bailar. Se trata de la ejecución de movimientos al ritmo de la música que permite expresar sentimientos y emociones. Se estima que la danza fue una de las primeras manifestaciones artísticas de la historia de la humanidad.
@@ -316,7 +316,7 @@ use mvc\request\requestClass as request ?>
                     </p>
                     <h5>
                         <span style="color: #006666"><br/><span class="icon-container"><span class="fa fa-check"></span></span></span> 
-                        <span style="color: #0000CC"><a href="#" class="link1"><?php echo i18n::__('Music') ?> </a></span>
+                        <span style="color: #0000CC"><a href="<?php echo routing::getInstance()->getUrlWeb('musica', 'index') ?>" class="link1"><?php echo i18n::__('Music') ?> </a></span>
                     </h5>
                     <p>
                         Es más fácil sentirla y reproducirla que explicarla o definirla. Todos entendemos qué es la música, pero ¿cuántos pueden poner en palabras cuáles son sus características esenciales o aquello que le da sentido?

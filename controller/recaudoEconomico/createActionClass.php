@@ -7,7 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use mvc\validator\createrecaudoEconomicoValidatorClass as validator;
 /**
  * Description of ejemploClass
  *
@@ -31,7 +31,8 @@ class createActionClass extends controllerClass implements controllerActionInter
       //  if (strlen($recaudoEconimico) > recaudoEconomicoTableClass::OBSERVACION_LENGTH) {
          // throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => recaudoEconomicoTableClass::OBSERVACION_LENGTH)), 00001);
         
-
+      validator::validateInsert($evento_id,$usuario_id, $observaciones, $tarifa, $valor, $parcial);
+          
         $data = array(
         recaudoEconomicoTableClass::USUARIO_ID => $usuario_id,
         recaudoEconomicoTableClass::EVENTO_ID=> $evento_id,

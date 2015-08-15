@@ -7,7 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use mvc\validator\editPatrocinadorValidatorClass as validator;
 /**
  * Description of ejemploClass
  *
@@ -25,11 +25,14 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $telefono = request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true));
                 $correo = request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true));
                 
-
+                validator::validateEdit($nombre, $telefono, $correo, $direccion);
+                
                 $ids = array(
                     patrocinadorTableClass::ID => $id
                 );
-
+                
+                
+                
                 $data = array(
                     patrocinadorTableClass::NOMBRE => $nombre,
                     patrocinadorTableClass::DIRECCION => $direccion,

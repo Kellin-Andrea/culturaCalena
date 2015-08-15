@@ -28,6 +28,7 @@
     <div class="form-group">
         <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('events') ?></label>
             <div class="col-sm-7">
+                <?php mvc\view\viewClass::getMessageError('inputevento') ?>
                 <select class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>">
                     <option value=""> -----<?php echo i18n::__('event_select')?> -----    </option>
                         <?php  foreach ($objevento as $evento): ?>
@@ -40,6 +41,7 @@
     <div class="form-group">
         <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::USUARIO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::USUARIO_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('user') ?></label>
                   <div class="col-sm-7">
+                      <?php mvc\view\viewClass::getMessageError('inputuser') ?>
                       <select class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::USUARIO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::USUARIO_ID, true) ?>">
                           <option value=""> -----<?php echo i18n::__('user_select')?> -----    </option>
                         <?php  foreach ($objUsuarios as $usuario): ?>
@@ -53,6 +55,7 @@
     <div class="form-group">
         <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::OBSERVACION, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::OBSERVACION, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('observation')?></label>
         <div class="col-sm-7">
+            <?php mvc\view\viewClass::getMessageError('inputobservation') ?>
             <input type="text" class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::OBSERVACION, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::OBSERVACION, true) ?>" 
                    value="<?php  echo (session::getInstance()->hasFlash(recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::OBSERVACION, true)) === true)  ?  request::getInstance()->getPost(recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::OBSERVACION, true)) :  ((( isset($objrecaudoEconomico) == true ) ?  $objrecaudoEconomico[0]->$obs  :  '' ))  ?>" placeholder="<?php echo i18n::__('observation')?>">
 
@@ -62,6 +65,7 @@
   <div class="form-group">
       <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('rates') ?></label>
                   <div class="col-sm-7">
+                      <?php mvc\view\viewClass::getMessageError('inputrates') ?>
                       <select class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::TARIFA_ID, true) ?>">
                           <option value=""> -----<?php echo i18n::__('rateSelect')?> -----    </option>
                         <?php  foreach ($objtarifa as $tarifa): ?>
@@ -74,6 +78,7 @@
      <div class="form-group">
          <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_TOTAL, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_TOTAL, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('valueTotal')?></label>
         <div class="col-sm-7">
+            <?php mvc\view\viewClass::getMessageError('inputvalueTotal') ?>
             <input type="number" class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_TOTAL, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_TOTAL, true) ?>" 
                    value="<?php  echo (session::getInstance()->hasFlash(recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_TOTAL, true)) === true)  ?  request::getInstance()->getPost(recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_TOTAL, true)) :  ((( isset($objrecaudoEconomico) == true ) ?  $objrecaudoEconomico[0]->$valor  :  '' ))  ?>" placeholder="<?php echo i18n::__('valueTotal')?>">
 
@@ -83,6 +88,7 @@
      <div class="form-group">
          <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_PARCIAL, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_PARCIAL, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('valueParcial')?></label>
         <div class="col-sm-7">
+            <?php mvc\view\viewClass::getMessageError('inputvalueParcial') ?>
             <input type="number" class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_PARCIAL, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_PARCIAL, true) ?>" 
                    value="<?php  echo (session::getInstance()->hasFlash(recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_PARCIAL, true)) === true)  ?  request::getInstance()->getPost(recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::VALOR_PARCIAL, true)) :  ((( isset($objrecaudoEconomico) == true ) ?  $objrecaudoEconomico[0]->$parci  :  '' ))  ?>" placeholder="<?php echo i18n::__('valueParcial')?>">
         </div>

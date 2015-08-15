@@ -273,6 +273,8 @@ dictionary:
     newRate:                                                           New rate
     editRate:                                                          Edit Rate
     returning_to_rates:                                                Returning to rates
+    rateSelect:                                                        rateSelect
+  
     #---------------------------Document type----------------------------------#
     IdType:                                                            Type Id
     IdTypeManagement:                                                  Id type management 
