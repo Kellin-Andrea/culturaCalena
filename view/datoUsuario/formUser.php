@@ -15,6 +15,7 @@ use mvc\request\requestClass as request ?>
 <?php $Id = datoUsuarioTableClass::LOCALIDAD_ID ?>
 <?php $tipo_id = datoUsuarioTableClass::TIPO_DOCUMENTO_ID ?>
 <?php $organizacion_id= datoUsuarioTableClass::ORGANIZACION_ID ?>
+<?php $user = usuarioTableClass::USER ?>
 
 
 

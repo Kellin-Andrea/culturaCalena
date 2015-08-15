@@ -21,6 +21,7 @@
       <div class="form-group">
           <label for="<?php echo tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true)?>"  name="<?php echo tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true)?><" class="col-sm-2 control-label"> <?php echo i18n::__('description')?></label>
     <div class="col-sm-7">
+        <?php mvc\view\viewClass::getMessageError('inputdescription') ?>
         <input  type="text" class="form-control" id="<?php echo tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true)?>"  name="<?php echo tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true)?>"
                 value="<?php  echo (session::getInstance()->hasFlash(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true)) === true)  ?  request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::DESCRIPCION, true)) :  ((( isset($objtarifa) == true ) ?  $objtarifa[0]->$desc  :  '' ))  ?>" placeholder=<?php echo i18n::__('description')?> >
     </div>
@@ -33,6 +34,7 @@
       <div class="form-group">
           <label for="<?php echo tarifaTableClass::getNameField(tarifaTableClass::VALOR, true)?>"  name="<?php echo tarifaTableClass::getNameField(tarifaTableClass::VALOR, true)?><" class="col-sm-2 control-label"> <?php echo i18n::__('rateId')?></label>
     <div class="col-sm-7">
+        <?php mvc\view\viewClass::getMessageError('inputCost') ?>
         <input  type="text" class="form-control" id="<?php echo tarifaTableClass::getNameField(tarifaTableClass::VALOR, true)?>"  name="<?php echo tarifaTableClass::getNameField(tarifaTableClass::VALOR, true)?>"
                 value="<?php  echo (session::getInstance()->hasFlash(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true)) === true)  ?  request::getInstance()->getPost(tarifaTableClass::getNameField(tarifaTableClass::VALOR, true)) :  ((( isset($objtarifa) == true ) ?  $objtarifa[0]->$valor  :  '' ))  ?>" placeholder=<?php echo i18n::__('rateId')?>>
     </div>

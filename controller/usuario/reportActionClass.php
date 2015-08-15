@@ -33,7 +33,7 @@ class reportActionClass extends controllerClass implements controllerActionInter
       );
 
       $this->objUsuarios = usuarioTableClass::getAll($fields, true, $orderBy, 'ASC');
-      $this->defineView('index', 'default', session::getInstance()->getFormatOutput());
+      $this->defineView('index', 'usuarios', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

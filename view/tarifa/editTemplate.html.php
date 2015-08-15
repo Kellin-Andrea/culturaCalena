@@ -8,7 +8,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     
-   <h1 class="glyphicon glyphicon-usd"> <?php echo i18n::__('editRate')?><?php echo $objtarifa[0]->$tarifa ?></h1>
+   <h1 class="glyphicon glyphicon-usd"> <?php echo i18n::__('editRate')?> <?php echo $objtarifa[0]->$tarifa ?></h1>
   </div>
     
 <?php view::includePartial('tarifa/formUser', array('objtarifa' => $objtarifa, 'tarifa' => $tarifa)) ?>
