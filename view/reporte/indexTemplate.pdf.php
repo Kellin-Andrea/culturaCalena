@@ -139,8 +139,8 @@ class PDF extends FPDF {
 $pdf = new PDF;
 
 // set document information
-$pdf->SetCreator('CultExcel- 2015', TRUE);
-$pdf->SetAuthor('Cult Excel');
+$pdf->SetCreator('CulturaCaleña- 2015', TRUE);
+$pdf->SetAuthor('Cultura Caleña');
 $pdf->SetTitle('Reporte de Eventos');
 $pdf->SetSubject('Reporte General De Eventos Registrados En el Sistema');
 //$pdf->SetKeywords('Reporte, usuario, Eventos, Sistema ');
@@ -153,30 +153,32 @@ $pdf->SetFont('helvetica', '', 18, 'B', true);
 // This method has several options, check the source code documentation for more information.
 $pdf->AddPage();
 $pdf->Cell(70, 10, '', 0);
-$pdf->Cell(40, 10, i18n::__('name'), 2, 0, 'C');
+$pdf->Cell(40, 10, i18n::__('events'), 2, 0, 'C');
 $pdf->Ln(23);
 
-$pdf->SetTextColor(258, 0, 0);  // Establece el color del texto (en este caso es blanco) 
+$pdf->SetTextColor(60, 10, 248);  // Establece el color del texto (en este caso es blanco) 
 $pdf->SetFillColor(0, 0, 258);
 $pdf->SetFont('Arial', '', 12, 'B', true);
-$pdf->Cell(8, 8, "ID", 1);
-$pdf->Cell(25, 8, "NOMBRE", 1);
-$pdf->Cell(45, 8, "REGISTRADO", 1);
-$pdf->Cell(43, 8, "ACTUALIZADO", 1);
-$pdf->Cell(40, 8, "ULTIMO INGRESO", 1);
-$pdf->Cell(30, 8, "ELIMINADO", 1);
+$pdf->Cell(8, 5, "ID", 1);
+$pdf->Cell(30, 5, "NOMBRE", 1);
+$pdf->Cell(31, 5, "DESCRIPCION", 1);
+$pdf->Cell(32, 5, "FECHA INICIAL", 1);
+$pdf->Cell(29, 5, "FECHA FINAL", 1);
+$pdf->Cell(30, 5, "PUBLICACION", 1);
+$pdf->Cell(45, 5, "FINAL PUBLICACION", 1);
 $pdf->Ln(8);
-//************* daTOS DE LA TABLA
+//************* DATOS DE LA TABLA
 $pdf->SetFillColor(152, 255, 100);
 $pdf->SetTextColor(85, 107, 47);
 $pdf->SetFont('Arial', '', 9);
 foreach ($objEvento as $evento) {
-    $pdf->Cell(8, 8, $evento->$id, 1);
-    $pdf->Cell(25, 8, $evento->$nom, 1);
-//    $pdf->Cell(45, 8, $evento->$desc, 1);
-//    $pdf->Cell(43, 8, $evento->$fecha_inicial_publicacion, 1);
-//    $pdf->Cell(40, 8, $evento->$fecha_final_publicacion, 1);
-//    $pdf->Cell(30, 8, $evento->$fecha_inicial_evento, 1);
+    $pdf->Cell(8, 5, $evento->$id, 1);
+    $pdf->Cell(30, 5, $evento->$nom, 1);
+//    $pdf->Cell(31, 5, $evento->$desc, 1);
+//    $pdf->Cell(32, 5, $evento->$fechaIni, 1);
+//    $pdf->Cell(29, 5, $evento->$fechaFin, 1);
+//    $pdf->Cell(30, 5, $evento->$fechaPlu, 1);
+//    $pdf->Cell(45, 5, $evento->$fechafinal, 1);
     $pdf->Ln();
 }
 

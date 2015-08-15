@@ -18,7 +18,7 @@ namespace mvc\validator {
   public static function validateEdit($image, $nameEvent, $description, $date, $date1, $address, $money, $category, $datePublic, $datePublic1, $place, $long) {
             $flag = false;
 
-            if (self::notBlank($nameEvent)) {
+             if (self::notBlank($nameEvent)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputnameEvent', true);
                 session::getInstance()->setError('El nombre del evento es obligatorio', 'inputnameEvent');
@@ -50,15 +50,12 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputdate', true);
                 session::getInstance()->setError('la fecha inicial del evento es obligatoria', 'inputdate');
-            } else if (strtotime($date) < strtotime(date(config::getFormatTimestamp()))) {
-                $flag = true;
-                session::getInstance()->setFlash('inputdate', true);
-                session::getInstance()->setError('La fecha inicial del evento no puede ser menor o igual a la de hoy', 'inputdate');
-//            } else if (strtotime($date) > date(config::getFormatTimestamp(), strtotime($date['inputdate'] . ' 31-12-2015')));
+            } else if (strtotime($date) <= strtotime(date(config::getFormatTimestamp()))) {
 //                $flag = true;
 //                session::getInstance()->setFlash('inputdate', true);
-//                session::getInstance()->setError('el año no puede ser mayor  ', 'inputdate');
-            }
+//                session::getInstance()->setError('el dia inicial del evento no puede ser menor o igual a la de hoy', 'inputdate');
+//            } else if (strtotime($date) <= strtotime(date(config::getFormatTimestamp())));
+           }
 
             if (self::notBlank($date1)) {
                 $flag = true;
@@ -93,7 +90,7 @@ namespace mvc\validator {
                 session::getInstance()->setFlash('inputcategory', true);
                 session::getInstance()->setError('Debes selecionar una categoria', 'inputcategory');
             }
-            
+
             if (self::notBlank($datePublic)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputdatePublic', true);
@@ -103,7 +100,7 @@ namespace mvc\validator {
                 session::getInstance()->setFlash('inputdatePublic', true);
                 session::getInstance()->setError('La fecha inicial de publicacion del evento no puede ser menor o igual a la fecha inicial del evento', 'inputdatePublic');
             }
-            
+
             if (self::notBlank($datePublic1)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputdatePublic1', true);
@@ -116,28 +113,29 @@ namespace mvc\validator {
 
 
 
-
-            $type = array(
-                'image/png',
-                'image/jpeg',
-                'image/jpg',
-                'image/gif'
-            );
-            if ($image['error'] !== 0) {
-                $flag = true;
-                session::getInstance()->setFlash('inputFile', true);
-                session::getInstance()->setError('Ocurrio un error en la carga de la imágen, por favor vuelva a intentarlo', 'inputFile');
-            } else if ((array_search($image['type'], $type) === false)) {
-                $flag = true;
-                session::getInstance()->setFlash('inputFile', true);
-                session::getInstance()->setError('Solo se permiten imágenes del tipo jpg, png o gif', 'inputFile');
-            } else if ($image['size'] > 200000) {
-                $flag = true;
-                session::getInstance()->setFlash('inputFile', true);
-                session::getInstance()->setError('Solo se permiten imágenes con un tamaño máximo de 150kB', 'inputFile');
-            } else if ($flag === true) {
-                session::getInstance()->setFlash('inputFile', true);
-                session::getInstance()->setError('Debido a errores en el formulario, por favor vuelve a cargar la imagen que vas a usar', 'inputFile');
+            if ($image) {
+                $type = array(
+                    'image/png',
+                    'image/jpeg',
+                    'image/jpg',
+                    'image/gif'
+                );
+                if ($image['error'] !== 0) {
+                    $flag = true;
+                    session::getInstance()->setFlash('inputFile', true);
+                    session::getInstance()->setError('Ocurrio un error en la carga de la imágen, por favor vuelva a intentarlo', 'inputFile');
+                } else if ((array_search($image['type'], $type) === false)) {
+                    $flag = true;
+                    session::getInstance()->setFlash('inputFile', true);
+                    session::getInstance()->setError('Solo se permiten imágenes del tipo jpg, png o gif', 'inputFile');
+                } else if ($image['size'] > config::getFileSizeAvatar()) {
+                    $flag = true;
+                    session::getInstance()->setFlash('inputFile', true);
+                    session::getInstance()->setError('Solo se permiten imágenes con un tamaño máximo de 20000kB', 'inputFile');
+                } else if ($flag === true) {
+                    session::getInstance()->setFlash('inputFile', true);
+                    session::getInstance()->setError('Debido a errores en el formulario, por favor vuelve a cargar la imagen que vas a usar', 'inputFile');
+                }
             }
 
 
