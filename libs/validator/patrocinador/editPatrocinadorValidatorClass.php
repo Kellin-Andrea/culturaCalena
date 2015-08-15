@@ -15,7 +15,7 @@ namespace mvc\validator {
      */
     class editPatrocinadorValidatorClass extends validatorClass {
 
-        public static function validateEdit($nombre, $telefono, $correo, $direccion) {
+        public static function validateEdit($nombre, $telefono, $correo, $direccion,$id) {
             $flag = false;
 
             if (self::notBlank($nombre)) {
@@ -50,10 +50,10 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
                 session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputmail');
-            } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($mail))) {
+            } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($correo))) {
                 $flag = true;
-                session::getInstance()->setFlash('inputmail', true);
-                session::getInstance()->setError('Por favor digite un corre válido', 'inputmail');
+                session::getInstance()->setFlash('inputEmail', true);
+                session::getInstance()->setError('Por favor digite un corre válido', 'inputEmail');
            
             }
             if (self::notBlank($direccion)) {
@@ -71,8 +71,8 @@ namespace mvc\validator {
                 
             
             if ($flag === true) {
-                //request::getInstance()->setMethod('GET');
-                //request::getInstance()->addParamGet(array('id' => 12));
+                request::getInstance()->setMethod('GET');
+                request::getInstance()->addParamGet(array('id' => $id));
                 routing::getInstance()->forward('patrocinador', 'edit');
             }
         }

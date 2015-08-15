@@ -82,6 +82,28 @@ class  eventoTableClass extends eventoBaseTableClass {
       throw $exc;
     }
   }
+  
+      public static function getEventoReport($idCate, $fechaIni, $fechaFinal) {
+    try {
+       
+        
+      $sql = 'SELECT '. eventoTableClass::getNameTable().'.'. eventoTableClass::NOMBRE.' , '
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::DESCRIPCION.' , '
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_INICIAL_EVENTO.' , '
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_FINAL_EVENTO. ','
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_INICIAL_PUBLICACION.','
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_FINAL_PUBLICACION.
+              ' FROM '.eventoTableClass::getNameTable().' , '. categoriaTableClass::getNameTable().
+              ' WHERE '.  eventoTableClass::getNameTable().'.'.  eventoTableClass::CATEGORIA_ID.' = '.$idCate.
+              ' AND '. eventoTableClass::getNameTable().'.'.eventoTableClass::FECHA_FINAL_PUBLICACION. 
+              'BETWEEN'. $fechaIni. 'AND'. $fechaFinal ;
+     
+     
+       return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+  }
     
         } //end class
 

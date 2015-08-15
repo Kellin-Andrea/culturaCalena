@@ -25,7 +25,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
                 $telefono = request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true));
                 $correo = request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true));
                 
-                validator::validateEdit($nombre, $telefono, $correo, $direccion);
+                validator::validateEdit($nombre, $telefono, $correo, $direccion,$id);
                 
                 $ids = array(
                     patrocinadorTableClass::ID => $id

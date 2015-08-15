@@ -15,7 +15,7 @@ namespace mvc\validator {
      */
     class createEventoValidatorClass extends validatorClass {
 
-        public static function validateInsert($image, $nameEvent, $description, $date, $date1, $address, $money, $category, $datePublic, $datePublic1, $place, $long) {
+        public static function validateInsert($files, $nameEvent, $description, $date, $date1, $address, $money, $category, $datePublic, $datePublic1, $place, $long) {
             $flag = false;
 
             if (self::notBlank($nameEvent)) {
@@ -113,25 +113,25 @@ namespace mvc\validator {
 
 
 
-            if ($image) {
+            if ($files) {
                 $type = array(
                     'image/png',
                     'image/jpeg',
                     'image/jpg',
                     'image/gif'
                 );
-                if ($image['error'] !== 0) {
+                if ($files['error'] !== 0) {
                     $flag = true;
                     session::getInstance()->setFlash('inputFile', true);
                     session::getInstance()->setError('Ocurrio un error en la carga de la imágen, por favor vuelva a intentarlo', 'inputFile');
-                } else if ((array_search($image['type'], $type) === false)) {
+                } else if ((array_search($files['type'], $type) === false)) {
                     $flag = true;
                     session::getInstance()->setFlash('inputFile', true);
                     session::getInstance()->setError('Solo se permiten imágenes del tipo jpg, png o gif', 'inputFile');
-                } else if ($image['size'] > config::getFileSizeAvatar()) {
+                } else if ($files['size'] > config::getFileSizeAvatar()) {
                     $flag = true;
                     session::getInstance()->setFlash('inputFile', true);
-                    session::getInstance()->setError('Solo se permiten imágenes con un tamaño máximo de 20000kB', 'inputFile');
+                    session::getInstance()->setError('Solo se permiten imágenes con un tamaño máximo de 200000kB', 'inputFile');
                 } else if ($flag === true) {
                     session::getInstance()->setFlash('inputFile', true);
                     session::getInstance()->setError('Debido a errores en el formulario, por favor vuelve a cargar la imagen que vas a usar', 'inputFile');

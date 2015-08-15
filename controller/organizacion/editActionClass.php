@@ -17,7 +17,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(organizacionTableClass::ID)) {
+      if (request::getInstance()->hasGet(organizacionTableClass::ID)) {
         $fields = array(
         organizacionTableClass::ID,
             organizacionTableClass::NOMBRE,
@@ -29,7 +29,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
             
         );
         $where = array(
-        organizacionTableClass::ID => request::getInstance()->getRequest(organizacionTableClass::ID)
+        organizacionTableClass::ID => request::getInstance()->getGet(organizacionTableClass::ID)
         );
         session::getInstance()->setFlash('edit',true);
         

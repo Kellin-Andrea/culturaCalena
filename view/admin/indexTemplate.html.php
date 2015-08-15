@@ -339,31 +339,11 @@ use mvc\i18n\i18nClass as i18n ?>
                                         </ul>
                                 </li>
 
-
-
+                           
                                 <li class="">
-                                    <a href="calendar.html">
-                                        <i class="menu-icon fa fa-calendar"></i>
-
-                                        <span class="menu-text">
-                                            <?php echo i18n::__('calendar') ?> 
-
-                                            <!-- #section:basics/sidebar.layout.badge -->
-                                            <span class="badge badge-transparent tooltip-error" title="2 Important Events">
-                                                <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-                                            </span>
-
-                                            <!-- /section:basics/sidebar.layout.badge -->
-                                        </span>
-                                    </a>
-
-                                    <b class="arrow"></b>
-                                </li>
-
-                                <li class="">
-                                    <a href="gallery.html">
-                                        <i class="menu-icon fa fa-picture-o"></i>
-                                        <span class="menu-text"><?php echo i18n::__('gallery') ?>  </span>
+                                    <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('reporte', 'index') ?>">
+                                        <i class="menu-icon fa fa-file-archive-o"></i>
+                                        <span class="menu-text"><?php echo i18n::__('reports') ?>  </span>
                                     </a>
 
                                     <b class="arrow"></b>

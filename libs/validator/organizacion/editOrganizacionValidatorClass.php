@@ -15,7 +15,7 @@ namespace mvc\validator {
      */
     class editOrganizacionValidatorClass extends validatorClass {
 
-        public static function validateEdit($nombre, $direccion, $telefono, $fax, $correo, $paginaWeb) {
+        public static function validateEdit($nombre, $direccion, $telefono, $fax, $correo, $paginaWeb,$id) {
             $flag = false;
 
             if (self::notBlank($nombre)) {
@@ -65,15 +65,15 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
                 session::getInstance()->setError('El correo es obligatorio para la organizacion', 'inputEmail');
-            } else if (strlen($correo) > \datoUsuarioTableClass::CORREO_LENGTH) {
+            } else if (strlen($correo) > \organizacionTableClass::CORREO_LENGTH) {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
                 session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputEmail');
-            } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($mail))) {
+            } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($correo))) {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
                 session::getInstance()->setError('Por favor digite un corre válido', 'inputEmail');
-            } else if (self::isUnique(\datoUsuarioTableClass::ID, true, array(\datoUsuarioTableClass::CORREO => trim($mail)), \datoUsuarioTableClass::getNameTable())) {
+            } else if (self::isUnique(\organizacionTableClass::ID, true, array(\organizacionTableClass::CORREO => trim($correo)), \organizacionTableClass::getNameTable())) {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
                 session::getInstance()->setError('El correo digitado ya está siendo usado', 'inputEmail');
@@ -90,8 +90,8 @@ namespace mvc\validator {
 
 
             if ($flag === true) {
-                //request::getInstance()->setMethod('GET');
-                //request::getInstance()->addParamGet(array('id' => 12));
+                request::getInstance()->setMethod('GET');
+                request::getInstance()->addParamGet(array('id' => $id));
                 routing::getInstance()->forward('organizacion', 'edit');
             }
         }

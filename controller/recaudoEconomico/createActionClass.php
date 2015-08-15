@@ -7,7 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-use mvc\validator\createrecaudoEconomicoValidatorClass as validator;
+use mvc\validator\createRecaudoEconomicoValidatorClass as validator;
 /**
  * Description of ejemploClass
  *

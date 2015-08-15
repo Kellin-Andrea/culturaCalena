@@ -28,7 +28,7 @@
     <div class="form-group">
         <label for="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('events') ?></label>
             <div class="col-sm-7">
-                <?php mvc\view\viewClass::getMessageError('inputevento') ?>
+                <?php mvc\view\viewClass::getMessageError('inputevent') ?>
                 <select class="form-control" id="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>"  name="<?php echo recaudoEconomicoTableClass::getNameField(recaudoEconomicoTableClass::EVENTO_ID, true) ?>">
                     <option value=""> -----<?php echo i18n::__('event_select')?> -----    </option>
                         <?php  foreach ($objevento as $evento): ?>

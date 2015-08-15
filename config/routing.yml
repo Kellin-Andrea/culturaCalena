@@ -1106,7 +1106,7 @@ recaudoEconomico_insert:
         - model/eventoTableClass.php
         - model/base/tarifaBaseTableClass.php
         - model/tarifaTableClass.php
-        - libs/validator/recaudoEconomico/createrecaudoEconomicoValidatorClass.php
+        - libs/validator/recaudoEconomico/createRecaudoEconomicoValidatorClass.php
         
 recaudoEconomico_create:
     url: /recaudoEconomico/crear
@@ -1118,7 +1118,7 @@ recaudoEconomico_create:
         - model/eventoTableClass.php
         - model/base/tarifaBaseTableClass.php
         - model/tarifaTableClass.php
-        - libs/validator/recaudoEconomico/createrecaudoEconomicoValidatorClass.php
+        - libs/validator/recaudoEconomico/createRecaudoEconomicoValidatorClass.php
 recaudoEconomico_edit:
     url: /recaudoEconomico/editar
     param: { module: recaudoEconomico, action: edit, format: html }
@@ -1129,7 +1129,7 @@ recaudoEconomico_edit:
         - model/eventoTableClass.php
         - model/base/tarifaBaseTableClass.php
         - model/tarifaTableClass.php
-        - libs/validator/recaudoEconomico/editrecaudoEconomicoValidatorClass.php
+        - libs/validator/recaudoEconomico/editRecaudoEconomicoValidatorClass.php
 recaudoEconomico_update:
     url: / recaudoEconomico/actualizar
     param: { module: recaudoEconomico, action: update, format: html }
@@ -1140,7 +1140,7 @@ recaudoEconomico_update:
         - model/eventoTableClass.php
         - model/base/tarifaBaseTableClass.php
         - model/tarifaTableClass.php
-        - libs/validator/recaudoEconomico/editrecaudoEconomicoValidatorClass.php
+        - libs/validator/recaudoEconomico/editRecaudoEconomicoValidatorClass.php
 recaudoEconomico_delete:
     url: /recaudoEconomico/eliminar
     param: { module: recaudoEconomico, action: delete, format: html }

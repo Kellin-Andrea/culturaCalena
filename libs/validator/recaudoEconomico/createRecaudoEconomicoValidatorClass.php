@@ -13,20 +13,20 @@ namespace mvc\validator {
      *
      * @author Diana Marcela <dianamarce0294@hotmail.com>
      */
-    class editrecaudoEconomicoValidatorClass extends validatorClass {
+    class createRecaudoEconomicoValidatorClass extends validatorClass {
 
-        public static function validateEdit($id, $eventos, $usuario, $observacion, $tarifa, $valorTotal, $valorParcial) {
+        public static function validateInsert($evento_id, $usuario_id, $observacion, $tarifa, $valorTotal, $valorParcial) {
             $flag = false;
 
-            if (self::notBlank($eventos)) {
+            if (self::notBlank($evento_id)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputevent', true);
                 session::getInstance()->setError('Debes selecionar un evento', 'inputevent');
             }
-            if (self::notBlank($usuario)) {
+            if (self::notBlank($usuario_id)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputuser', true);
-                session::getInstance()->setError('Debes selecionar un usuario', 'inputusuario');
+                session::getInstance()->setError('Debes selecionar un usuario', 'inputuser');
             }
             if (self::notBlank($observacion)) {
                 $flag = true;
@@ -46,26 +46,19 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputvalueParcial', true);
                 session::getInstance()->setError('El valor parcial de recaudo es  obligatorio', 'inputvalueParcial');
-            } else if (strlen($valorParcial) > \recaudoEconomicoTableClass::VALOR_PARCIAL) {
-                $flag = true;
-                session::getInstance()->setFlash('inputvalueParcial', true);
-                session::getInstance()->setError('El valor parcial   excede los caracteres  permitidos', 'inputvalueParcial');
             }
             if (self::notBlank($valorTotal)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputvalueTotal', true);
                 session::getInstance()->setError('El valor total de recaudo es  obligatorio', 'inputvalueTotal');
-            } else if (strlen($valorTotal) > \recaudoEconomicoTableClass::VALOR_TOTAL) {
-                $flag = true;
-                session::getInstance()->setFlash('inputvalueTotal', true);
-                session::getInstance()->setError('El valor total excede los caracteres  permitidos', 'inputvalueTotal');
+           
             }
             
 
             if ($flag === true) {
-                request::getInstance()->setMethod('GET');
-                request::getInstance()->addParamGet(array('id' => $id));
-                routing::getInstance()->forward('recaudoEconomico', 'edit');
+                //request::getInstance()->setMethod('GET');
+                //request::getInstance()->addParamGet(array('id' => 12));
+                routing::getInstance()->forward('recaudoEconomico', 'insert');
             }
         }
 
