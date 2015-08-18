@@ -20,6 +20,9 @@ class reportActionClass extends controllerClass implements controllerActionInter
 
   public function execute() {
     try {
+     
+      $idCate= 
+        
       $fields = array(
           eventoTableClass::ID,
           eventoTableClass::NOMBRE,
