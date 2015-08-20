@@ -29,8 +29,8 @@ function initialize() {
       });*/
 
       document.getElementById('btnCapturarGoogleMap').addEventListener("click", function () {
-        document.getElementById('googleMapLatitud').value = marker.getPosition().A;
-        document.getElementById('googleMapLongitud').value = marker.getPosition().F;
+        document.getElementById('googleMapLatitud').value = marker.getPosition().lat();
+        document.getElementById('googleMapLongitud').value = marker.getPosition().lng();
         $('#googleMapBlock .fa-map-marker').addClass('fa-check');
         $('#googleMapBlock .fa-map-marker').removeClass('fa-map-marker');
       });
