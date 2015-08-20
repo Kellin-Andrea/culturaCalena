@@ -10,7 +10,7 @@
     
      <h1 class="glyphicon glyphicon-tasks"> <?php echo i18n::__('new_events_like_me')?> </h1>
   </div>
-<?php view::includePartial('usuarioGustaCategoria/formUser', array('objUsuarios', $objUsuarios, 'objcategoria', $objcategoria)) ?>
+<?php view::includePartial('usuarioGustaCategoria/formUser', array('objUsuarios' => $objUsuarios, 'objcategoria' => $objcategoria)) ?>
 
 </div>
 

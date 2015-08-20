@@ -6,8 +6,6 @@
 <?php $id = usuarioGustaCategoriaTableClass::ID ?>
 <?php $user = usuarioTableClass::USER ?>
 
-
-
 <div class="container container-fluid">
     <div class="panel panel-primary">
         

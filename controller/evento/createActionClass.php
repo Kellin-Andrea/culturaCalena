@@ -44,7 +44,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         validator::validateInsert($files, $nameEvent, $description, $date, $date1, $address, $money, $category, $datePublic, $datePublic1, $place, $long);
 
         $data = array(
-            eventoTableClass::IMAGEN => $files,
+            eventoTableClass::IMAGEN => $this->generateImageName($files),
             eventoTableClass::NOMBRE => $nameEvent,
             eventoTableClass::DESCRIPCION => $description,
             eventoTableClass::FECHA_INICIAL_EVENTO => $date,
@@ -69,6 +69,27 @@ class createActionClass extends controllerClass implements controllerActionInter
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
+  }
+  
+  private function generateImageName($file) {
+    $ext = null;
+    switch ($file['type']) {
+      case 'image/png':
+        $ext = '.png';
+        break;
+      case 'image/jpeg':
+        $ext = '.jpg';
+        break;
+      case 'image/jpg':
+        $ext = '.jpg';
+        break;
+      case 'image/gif':
+        $ext = '.gif';
+        break;
+    }
+    $answer = md5($file['name'] . date(config::getFormatTimestamp())) . $ext;
+    move_uploaded_file($file['tmp_name'], config::getPathAbsolute() . 'web/upload/' . $answer);
+    return $answer;
   }
 
 }

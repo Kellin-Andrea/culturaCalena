@@ -65,3 +65,5 @@ config::setDefaultActionSecurity('index');
 
 config::setDefaultModulePermission('shfSecurity');
 config::setDefaultActionPermission('noPermission');
+
+config::setFileSizeAvatar(200000);

@@ -20,9 +20,20 @@ class reportActionClass extends controllerClass implements controllerActionInter
 
   public function execute() {
     try {
-     
-      $idCate= 
-        
+
+      $data = request::getInstance()->getPost('filter');
+      $idCate = $data['categoria'];
+      $fechaInicial = $data['fechaPublicacion1'];
+      $fechaFinal = $data['fechaPublicacion2'];
+      
+      session::getInstance()->setAttribute('idCate', $idCate);
+      session::getInstance()->setAttribute('fechaInicial', $fechaInicial);
+      session::getInstance()->setAttribute('fechaFinal', $fechaFinal);
+      
+//      $idCate = session::getInstance()->getAttribute('idCate');
+//      $fechaInicial = session::getInstance()->getAttribute('fechaInicial');
+//      $fechaFinal = session::getInstance()->getAttribute('fechaFinal');
+
       $fields = array(
           eventoTableClass::ID,
           eventoTableClass::NOMBRE,
@@ -31,12 +42,12 @@ class reportActionClass extends controllerClass implements controllerActionInter
           eventoTableClass::FECHA_FINAL_EVENTO,
           eventoTableClass::FECHA_INICIAL_PUBLICACION,
           eventoTableClass::FECHA_FINAL_PUBLICACION
-          );
+      );
       $orderBy = array(
           eventoTableClass::NOMBRE
       );
 
-      $this->objEvento = eventoTableClass::getAll($fields, true, $orderBy, 'ASC');
+      $this->objEvento = eventoTableClass::getEventoReport($idCate, $fechaInicial, $fechaFinal);
       $this->defineView('reporte', 'reporte', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

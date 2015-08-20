@@ -10,15 +10,18 @@ namespace mvc\config {
    * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
    */
   class myConfigClass extends configClass {
+ 
     const CREDENCIAL_USUARIO = 2;
     
-    public static function getFileSizeAvatar(){
-        return  '200000';
-    }
+    private static $fileSizeAvatar;
     
-//    public static function setFileSizeAvatar($sizeFile){
-//        self:: $sizeFile;
-//    }
+    static public function getFileSizeAvatar() {
+      return self::$fileSizeAvatar;
+    }
+
+    static public function setFileSizeAvatar($fileSizeAvatar) {
+      self::$fileSizeAvatar = $fileSizeAvatar;
+    }
 }
 
 }

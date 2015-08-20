@@ -1315,3 +1315,106 @@ musica:
       - musica/js/simplemap.js
       - musica/js/sticky_navbar.js
       - musica/js/underscore.js
+      
+reporte:
+  index:  
+    title: Cultura Caleña
+    stylesheet:
+      - admin/assets/css/bootstrap.css
+      - admin/assets/css/font-awesome.css
+      - admin/assets/css/ace-fonts.css
+      - admin/assets/css/ace.css
+      - profile/profile.css
+      - main.css
+    javascript:
+      - admin/assets/js/jquery-ui.custom.js
+      - admin/assets/js/jquery.ui.touch-punch.js
+      - admin/assets/js/jquery.easypiechart.js
+      - admin/assets/js/jquery.sparkline.js
+      - admin/assets/js/flot/jquery.flot.js
+      - admin/assets/js/flot/jquery.flot.pie.js
+      - admin/assets/js/flot/jquery.flot.resize.js
+      - admin/assets/js/ace/elements.scroller.js
+      - admin/assets/js/ace/elements.colorpicker.js
+      - admin/assets/js/ace/elements.fileinput.js
+      - admin/assets/js/ace/elements.typeahead.js
+      - admin/assets/js/ace/elements.wysiwyg.js
+      - admin/assets/js/ace/elements.spinner.js
+      - admin/assets/js/ace/elements.treeview.js
+      - admin/assets/js/ace/elements.wizard.js
+      - admin/assets/js/ace/elements.aside.js
+      - admin/assets/js/ace/ace.js
+      - admin/assets/js/ace/ace.ajax-content.js
+      - admin/assets/js/ace/ace.touch-drag.js
+      - admin/assets/js/ace/ace.sidebar.js
+      - admin/assets/js/ace/ace.sidebar-scroll-1.js
+      - admin/assets/js/ace/ace.submenu-hover.js
+      - admin/assets/js/ace/ace.widget-box.js
+      - admin/assets/js/ace/ace.settings.js
+      - admin/assets/js/ace/ace.settings-rtl.js
+      - admin/assets/js/ace/ace.settings-skin.js
+      - admin/assets/js/ace/ace.widget-on-reload.js
+      - admin/assets/js/ace/ace.searchbox-autocomplete.js
+      - admin/assets/js/ace/elements.onpage-help.js
+      - admin/assets/js/ace/ace.onpage-help.js
+      - admin/docs/assets/js/rainbow.js
+      - admin/docs/assets/js/language/generic.js
+      - admin/docs/assets/js/language/html.js
+      - admin/docs/assets/js/language/css.js
+      - admin/docs/assets/js/language/javascript.js
+      - admin/assets/js/ace-extra.js
+      #- jquery-1.11.1.min.js
+      - index.js
+      - main.js
+
+
+usuario:
+  index:  
+    title: Cultura Caleña
+    stylesheet:
+      - admin/assets/css/bootstrap.css
+      - admin/assets/css/font-awesome.css
+      - admin/assets/css/ace-fonts.css
+      - admin/assets/css/ace.css
+      - profile/profile.css
+      - main.css
+    javascript:
+      - admin/assets/js/jquery-ui.custom.js
+      - admin/assets/js/jquery.ui.touch-punch.js
+      - admin/assets/js/jquery.easypiechart.js
+      - admin/assets/js/jquery.sparkline.js
+      - admin/assets/js/flot/jquery.flot.js
+      - admin/assets/js/flot/jquery.flot.pie.js
+      - admin/assets/js/flot/jquery.flot.resize.js
+      - admin/assets/js/ace/elements.scroller.js
+      - admin/assets/js/ace/elements.colorpicker.js
+      - admin/assets/js/ace/elements.fileinput.js
+      - admin/assets/js/ace/elements.typeahead.js
+      - admin/assets/js/ace/elements.wysiwyg.js
+      - admin/assets/js/ace/elements.spinner.js
+      - admin/assets/js/ace/elements.treeview.js
+      - admin/assets/js/ace/elements.wizard.js
+      - admin/assets/js/ace/elements.aside.js
+      - admin/assets/js/ace/ace.js
+      - admin/assets/js/ace/ace.ajax-content.js
+      - admin/assets/js/ace/ace.touch-drag.js
+      - admin/assets/js/ace/ace.sidebar.js
+      - admin/assets/js/ace/ace.sidebar-scroll-1.js
+      - admin/assets/js/ace/ace.submenu-hover.js
+      - admin/assets/js/ace/ace.widget-box.js
+      - admin/assets/js/ace/ace.settings.js
+      - admin/assets/js/ace/ace.settings-rtl.js
+      - admin/assets/js/ace/ace.settings-skin.js
+      - admin/assets/js/ace/ace.widget-on-reload.js
+      - admin/assets/js/ace/ace.searchbox-autocomplete.js
+      - admin/assets/js/ace/elements.onpage-help.js
+      - admin/assets/js/ace/ace.onpage-help.js
+      - admin/docs/assets/js/rainbow.js
+      - admin/docs/assets/js/language/generic.js
+      - admin/docs/assets/js/language/html.js
+      - admin/docs/assets/js/language/css.js
+      - admin/docs/assets/js/language/javascript.js
+      - admin/assets/js/ace-extra.js
+      #- jquery-1.11.1.min.js
+      - index.js
+      - main.js
