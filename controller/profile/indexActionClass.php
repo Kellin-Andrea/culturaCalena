@@ -19,6 +19,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     public function execute() {
         try {
+          
+           $where = null;
 
             $id = session::getInstance()->getUserId();
 
@@ -54,12 +56,18 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             );
 
 
+          $page = 0;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGrid();
+            }
 
-
-           
+            
+            $this->cntPages = eventoTableClass::getTotalpages(config::getRowGrid(), $where);
             $this->objPerfilUser = usuarioTableClass::getAll($fields, FALSE, null, null, null, null, $where);
             $this->objDatosProfile = datoUsuarioTableClass::getAll($fields2, FALSE, null, null, null, null, $where2);
-            $this->objEventoProfile = eventoTableClass::getEventoProfile($id);
+            $this->objEventoProfile = eventoTableClass::getEventoProfile($id, config::getRowGrid(), $page, $where);
 
             $this->defineView('index', 'profile', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

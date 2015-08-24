@@ -202,10 +202,17 @@ use mvc\session\sessionClass as session ?>
                                 </div>
                             </div>
                         </div>
-
+                       
 
 
                     <?php endforeach ?>
                     </tbody>
                 </table>
             </div>
+   <div class="text-right">
+                      Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('evento', 'index') ?>')">
+                        <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                          <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+                        <?php endfor ?>
+                      </select> <?php echo $cntPages ?>
+                    </div> 
