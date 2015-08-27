@@ -78,8 +78,7 @@ namespace mvc\validator {
                 session::getInstance()->setError('la direccion del evento excede los caracteres  permitidos', 'inputaddress');
             }
 
-
-            if (self::notBlank($money)) {
+            if ($money != 0 and self::notBlank($money)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputmoney', true);
                 session::getInstance()->setError('el costo del evento es obligatorio', 'inputmoney');
