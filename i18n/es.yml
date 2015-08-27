@@ -87,7 +87,9 @@ dictionary:
     to_enter:                                                               Entrar
     remember_me:                                                            Recordar me
     value:                                                                  Valor
+    reportEvent:                                                            Reporte Evento
     reports:                                                                Reportes
+    printReport:                                                            Imprimir Reporte
     report_management:                                                      Gestion de reportes
     male:                                                                   Masculino
     Links of interest:                                                      Enlace de interes

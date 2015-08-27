@@ -1236,26 +1236,40 @@ reporte_index:
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php    
     
-reporte_insert:
-  url:    /reporte/insert
-  param:  { module: reporte, action: insert, format: html }
+reporte_evento:
+  url:    /reporte/evento
+  param:  { module: reporte, action: evento, format: html }
   load:
     - model/base/reporteBaseTableClass.php
     - model/reporteTableClass.php
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
     
-reporte_create:
-  url:    /reporte/create
-  param:  { module: reporte, action: create, format: html }
+reporte_eventoReport:
+  url:    /reporte/eventoReport
+  param:  { module: reporte, action: eventoReport, format: html }
   load:
     - model/base/reporteBaseTableClass.php
     - model/reporteTableClass.php
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
     
-reporte_editar:
-  url:    /reporte/edit
-  param:  { module: reporte, action: edit, format: html }
+reporte_eventoReportPdf:
+  url:    /reporte/eventoReportPdf
+  param:  { module: reporte, action: eventoReportPdf, format: pdf }
   load:
     - model/base/reporteBaseTableClass.php
     - model/reporteTableClass.php 
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
+    - libs/fpdf/fpdf.php
+    - libs/fpdf/linegraph.php
     
 reporte_update:
   url:    /reporte/update

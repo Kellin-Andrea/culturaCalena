@@ -1366,8 +1366,22 @@ reporte:
       #- jquery-1.11.1.min.js
       - index.js
       - main.js
-
-
+  evento: 
+    title: Reporte Evento
+    stylesheet:
+      - signin.css
+      
+  eventoReport:
+    title: Reporte Evento
+    stylesheet:
+      - reporte/css/bootstrap.min.css
+      - reporte/css/business-casual.css
+      - reporte/css/bootstrap.css
+    javascript:
+      - reporte/js/jquery.js
+      - reporte/js/bootstrap.min.js
+      - reporte/js/bootstrap.js
+      
 usuario:
   index:  
     title: Cultura Caleña

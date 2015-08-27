@@ -98,7 +98,9 @@ dictionary:
     to_enter:                                                          To enter
     remember_me:                                                       Remember me
     value:                                                             Value
+    reportEvent:                                                       Report Event
     reports:                                                           Reports
+    printReport:                                                       Print Report
     report_management:                                                 Report management
     male:                                                              Male
     female:                                                            Female

@@ -398,53 +398,7 @@ use mvc\request\requestClass as request ?>
                           <div class="space-6"></div>
 
 
-                          <div class="container container-fluid">
-                            <h1><i class="glyphicon glyphicon-usd"></i> <?php echo i18n::__('ratesManagement') ?> </h1>
-                            <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'report') ?>" method="POST">
-                              <div style="margin-bottom: 10px; margin-top: 30px">
-
-
-                              </div>
-                              <div class="modal fade" id="myModalFilters" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
-                                    <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                      <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('events') ?></h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <div class="form-group">
-                                          <label for="filterEvento" class="col-sm-2 control-label">Categoria</label>
-                                          <div class="col-sm-10">
-                                          
-                                            <select name="filter[categoria]">
-                                            <?php foreach ($objCategoria2 as $categoria): ?>
-                                                <option value="<?php echo $categoria->id ?>"<?php echo (isset($objevento)) ? ($categoria->id === $objevento[0]->categoria_id) ? 'selected' : '' : '' ?>><?php echo categoriaTableClass::getNombreById($categoria->id) ?></option>
-
-                                              <?php endforeach ?>
-                                            </select>
-                                            
-                                          </div>
-                                        </div>
-                                        <div class="form-group">
-                                          <label class="col-sm-2 control-label">Fecha Publicacion</label>
-                                          <div class="col-sm-10">
-                                            <input type="date" class="form-control" id="filterDate1" name="filter[fechaPublicacion1]">
-                                            <br/>
-                                            <input type="date" class="form-control" id="filterDate2" name="filter[fechaPublicacion2]">
-                                          </div>
-                                        </div>
-                                      
-                                    </div>
-                                    <div class="modal-footer">
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
-                                      <button type="submit" class="btn btn-primary">Reporte</button>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                            </form>
-                          </div>
+                          
                           
 
                           <table class="table table-bordered table-hover">
@@ -463,8 +417,8 @@ use mvc\request\requestClass as request ?>
                                   <td><?php echo $reporte->nombre ?></td>
                                   <td><?php echo $reporte->descripcion ?></td>
                                   <td>
-                                    <a href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'report', array(reporteTableClass::ID => $reporte->$id)) ?>" class="btn btn-warning btn-xs"><i class=" glyphicon glyphicon-eye-open"></i></a>
-                                    <button type="button" class="btn btn-primary " data-toggle="modal" data-target="#myModalFilters"><i class=" glyphicon glyphicon-eye-open"></i></button>
+                                    <a href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'evento') ?>" class="btn btn-warning btn-xs"><i class=" glyphicon glyphicon-eye-open"></i></a>
+                                    
                                   </td>
                                 </tr>
 

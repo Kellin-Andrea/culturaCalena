@@ -87,21 +87,26 @@ class  eventoTableClass extends eventoBaseTableClass {
     try {
        
         
-      $sql = 'SELECT '. eventoTableClass::getNameTable().'.'. eventoTableClass::NOMBRE.' , '
+      $sql = 'SELECT '. eventoTableClass::getNameTable().'.'. eventoTableClass::NOMBRE.' '. 'AS evento'. ','
               .eventoTableClass::getNameTable().'.'. eventoTableClass::DESCRIPCION.' , '
               .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_INICIAL_EVENTO.' , '
               .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_FINAL_EVENTO. ','
               .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_INICIAL_PUBLICACION.','
-              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_FINAL_PUBLICACION.
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_FINAL_PUBLICACION.','
+              .categoriaTableClass::getNameTable().'.'.categoriaTableClass::NOMBRE.
               ' FROM '.eventoTableClass::getNameTable().' , '. categoriaTableClass::getNameTable().
-              ' WHERE '.  eventoTableClass::getNameTable().'.'.  eventoTableClass::CATEGORIA_ID.' = '.$idCate.
-              ' AND '. eventoTableClass::getNameTable().'.'.eventoTableClass::FECHA_FINAL_PUBLICACION. 
-              'BETWEEN'. $fechaIni. 'AND'. $fechaFinal ;
+              ' WHERE '. eventoTableClass::getNameTable().'.'.eventoTableClass::CATEGORIA_ID.'='.categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' '.
+              'AND'.' '.eventoTableClass::getNameTable().'.'.  eventoTableClass::CATEGORIA_ID.' = '.$idCate.
+              ' AND '. eventoTableClass::getNameTable().'.'.eventoTableClass::FECHA_FINAL_PUBLICACION.' '. 
+              'BETWEEN'.' '. "'$fechaIni'".' '. 'AND'.' '. "'$fechaFinal'" ;
      
+  
      
        return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+       
     } catch (PDOException $exc) {
       throw $exc;
+      
     }
   }
     
