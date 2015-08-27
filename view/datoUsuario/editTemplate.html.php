@@ -14,7 +14,18 @@
       <h1 class="glyphicon glyphicon-log-in"> EDITAR DATOS USUARIO <?php echo $objdatos[0]->$datos ?></h1>
   
   </div>
-<?php view::includePartial('datoUsuario/formUser', array('objdatos' => $objdatos, 'datos' => $datos, 'objtipoDocumento' => $objtipoDocumento, 'tipo' => $tipo, 'objlocal' => $objlocal, 'local' => $local, 'objorganizacion' => $objorganizacion, 'organizacion' => $organizacion)) ?>
+<?php view::includePartial('datoUsuario/formUser', array(
+    'objdatos' => $objdatos,
+    'datos' => $datos,
+    'objtipoDocumento' => $objtipoDocumento,
+    'tipo' => $tipo,
+    'objlocal' => $objlocal,
+    'local' => $local,
+    'objorganizacion' => $objorganizacion,
+    'organizacion' => $organizacion,
+    'objCategorias' => $objCategorias,
+    'objUsuarioGustaCategoria' => $objUsuarioGustaCategoria
+    )) ?>
 </div>
 
 

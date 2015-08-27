@@ -10,6 +10,6 @@
       <h1 class="glyphicon glyphicon-star"> <?php echo i18n::__('newEvent')?>
   </div>
     
-<?php view::includePartial('evento/formUser', array ('objcategoria'=> $objcategoria)) ?>
+<?php view::includePartial('evento/formUser', array ('objcategoria'=> $objcategoria, 'objusuarios'=> $objusuarios)) ?>
 
 </div>

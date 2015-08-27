@@ -19,9 +19,7 @@ use mvc\i18n\i18nClass as i18n;
 class insertActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
-    try {
-          
-     
+    try {     
         $fields1 = array(
         localidadTableClass::ID,
         localidadTableClass::NOMBRE
@@ -58,16 +56,34 @@ class insertActionClass extends controllerClass implements controllerActionInter
         usuarioTableClass::USER
         );
         
+        $fields5 = array (
+        usuarioGustaCategoriaTableClass::CATEGORIA_ID
+        );
+        
+        $orderBy5 = array(
+        usuarioGustaCategoriaTableClass::CATEGORIA_ID
+        );
+        
         $this->objlocal = localidadTableClass::getAll($fields1, true, $orderBy1, 'ASC');
         $this->objtipoDocumento = tipoDocumentoTableClass::getAll($fields2, true, $orderBy2, 'ASC');
         $this->objorganizacion = organizacionTableClass::getAll($fields3, true, $orderBy3, 'ASC');
         $this->objusuarios = usuarioTableClass::getAll($fields4, true, $orderBy4, 'ASC');
+        $this->objCat = usuarioGustaCategoriaTableClass::getAll($fields5, false, $orderBy5, 'ASC');
+        $this->objCategorias = categoriaTableClass::getAll(array(
+          categoriaTableClass::ID,
+          categoriaTableClass::NOMBRE
+        ));
 
+        foreach ($this->objCategorias as $categoria) {
+          $categorias[] = $categoria->id;
+        }
+        session::getInstance()->setAttribute('collectionCategorias', $categorias);
+        
       $this->defineView('insert', 'datoUsuario', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
-
+            
 }

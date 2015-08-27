@@ -22,7 +22,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     try {
       $where = null;
         
-        $fields = array(
+      
+      $fields = array(
           eventoTableClass::ID,
           eventoTableClass::IMAGEN,
           eventoTableClass::NOMBRE,
