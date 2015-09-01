@@ -26,7 +26,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         eventoTableClass::NOMBRE,
         eventoTableClass::DESCRIPCION,
         eventoTableClass::DIRECCION,
-        eventoTableClass::COSTO
+        eventoTableClass::COSTO,
+        eventoTableClass::IMAGEN 
         );
         
        $ordeBy=array(

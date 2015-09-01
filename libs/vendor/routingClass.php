@@ -91,6 +91,11 @@ namespace mvc\routing {
     public function getUrlImg($image) {
       return configClass::getUrlBase() . 'img/' . $image;
     }
+    
+    
+    public function getUrlImgUpload($image) {
+      return configClass::getUrlBase() . 'upload/' . $image;
+    }
 
     public function getUrlJs($javascript) {
       return configClass::getUrlBase() . 'js/' . $javascript;

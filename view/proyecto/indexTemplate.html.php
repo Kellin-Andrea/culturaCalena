@@ -216,18 +216,9 @@
       <h1><?php echo i18n::__('events')?></h1>
     </div>
     <div class="row">
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" data-toggle="modal" data-target="#myModalEvento" title="Image 1"><img src=<?php echo routing::getInstance()->getUrlImg('../../web/upload/f004e58b66c9f0ccf684b5c369201ffc.jpg') ?> class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" data-toggle="modal" data-target="#myModalEvento" title="Image 2"><img src=<?php echo routing::getInstance()->getUrlImg('../../web/upload/408e4046f35696bf5ce88feca18244ae.jpg') ?> class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 3"><img src="//placehold.it/600x350/449955/FFF" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 4"><img src="//placehold.it/600x350/992233" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 5"><img src="//placehold.it/600x350/2255EE" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 6"><img src="//placehold.it/600x350/449955/FFF" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 8"><img src="//placehold.it/600x350/777" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 9"><img src="//placehold.it/600x350/992233" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 10"><img src="//placehold.it/600x350/EEE" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 11"><img src="//placehold.it/600x350/449955/FFF" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 12"><img src="//placehold.it/600x350/DDD" class="thumbnail img-responsive"></a></div>
-      <div class="col-lg-3 col-sm-4 col-6"><a href="#" title="Image 13"><img src="//placehold.it/600x350/992233" class="thumbnail img-responsive"></a></div>
+        <?php foreach ($objProyecto as $dato):?>
+        <div class="col-lg-3" id='sizeImg'><a href="#" data-toggle="modal" data-target="#myModalEvento" title="Image 1"><img src=<?php echo routing::getInstance()->getUrlImgUpload($dato->imagen) ?> class="thumbnail img-responsive"></a></div>
+      <?php endforeach;?>
     </div>
   </div>
 </div>
