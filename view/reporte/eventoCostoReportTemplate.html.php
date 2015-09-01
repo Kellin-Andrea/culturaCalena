@@ -36,7 +36,7 @@ use mvc\session\sessionClass as session ?>
 
 
 
-  <?php echo '["' . $data->nombre . '",' . $data->costo . '],'; ?>
+  <?php echo '["' . $data->nombre . '",' . $data->conteo . '],'; ?>
 
 <?php endforeach; ?>
         ];
