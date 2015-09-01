@@ -5,6 +5,7 @@ dictionary:
      
     homePage:                                                               Inicio
     youEvent:                                                               Tus Eventos
+    eventCreate:                                                            Crear Evento
     youCategory:                                                            Tus Categorias
     youLogin:                                                               Tus Inicio De Session
     nameUser:                                                               Nombre Usuario

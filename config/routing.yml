@@ -308,6 +308,10 @@ datoUsuario_insert:
     - model/tipoDocumentoTableClass.php
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
     - libs/validator/datoUsuario/createDatoUsuarioValidatorClass.php
  
 
@@ -323,6 +327,10 @@ datoUsuario_create:
     - model/tipoDocumentoTableClass.php
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
     - libs/validator/datoUsuario/createDatoUsuarioValidatorClass.php
  
 
@@ -338,6 +346,10 @@ datoUsuario_edit:
     - model/tipoDocumentoTableClass.php
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
     - libs/validator/datoUsuario/editDatoUsuarioValidatorClass.php
 
 
@@ -353,6 +365,10 @@ datoUsuario_update:
     - model/tipoDocumentoTableClass.php
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
     - libs/validator/datoUsuario/editDatoUsuarioValidatorClass.php
    
 
@@ -1082,7 +1098,8 @@ proyecto_index:
   url:    /proyecto/index
   param:  { module: proyecto, action: index, format: html }
   load:
-      
+        - model/base/eventoBaseTableClass.php
+        - model/eventoTableClass.php
       
 ##-------------------------- Recaudo Economico --------------------------##
 recaudoEconomico_index:

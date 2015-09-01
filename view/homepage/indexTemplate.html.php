@@ -86,6 +86,22 @@ use mvc\request\requestClass as request ?>
         
             <?php endif ?>
             
+                 <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
+
+<?php else: ?>
+
+
+       
+                    <!-- Button trigger modal -->
+                    <div class="widget  widget-icon-box" >	
+                        <div class="icon-box" >
+                            <a id="buton" href="<?php  echo routing::getInstance()->getUrlWeb('evento', 'insert') ?>" class="fa fa-play-circle-o"></a>
+                            <span class="icon-box__subtitle"><?php echo i18n::__('eventCreate')?></span> 
+                        </div>
+                    </div>
+       
+<?php endif ?>
+            
              <div class="widget  widget-icon-box">	
                 <div class="icon-box">
                     <!-- Button trigger modal -->
@@ -180,7 +196,7 @@ use mvc\request\requestClass as request ?>
                             <div class="modal-content">
                                 <div class="modal-header">
                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('language')?></h4>
+                                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('language') ?></h4>
                                 </div>
                                 <div class="modal-body">
                                     

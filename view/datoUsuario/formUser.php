@@ -62,7 +62,7 @@ use mvc\request\requestClass as request ?>
           <input name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ID, true) ?>" value="<?php echo $objdatos[0]->$id ?>" type="hidden">
         <?php endif ?>
 
-        <div class="form-group">
+        <div class="form-group  <?php echo (session::getInstance()->hasFlash('inputname')) ? 'has-error has-feedback' : '' ?>">
           <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::NOMBRE, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('name') ?></label>
           <div class="col-sm-7">
             <?php mvc\view\viewClass::getMessageError('inputname') ?>
