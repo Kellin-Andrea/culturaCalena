@@ -1198,7 +1198,7 @@ tbody.collapse.in { display: table-row-group; }
 
 .modal-header .close { margin-top: -2px; }
 
-.modal-title { margin: 0; line-height: 1.5; }
+.modal-title { margin: 0; line-height: 1.5; text-align: center;}
 
 .modal-body { position: relative; padding: 20px; }
 

@@ -23,8 +23,11 @@ class indexActionClass extends controllerClass implements controllerActionInterf
            $where = null;
 
             $id = session::getInstance()->getUserId();
-
-
+            
+            
+         
+           
+   
             $fields = array(
                 usuarioTableClass::ID,
                 usuarioTableClass::USER
@@ -43,19 +46,29 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 datoUsuarioTableClass::ORGANIZACION_ID,
                 datoUsuarioTableClass::GENERO
             );
+           
+           $fields3 = array(
+           usuarioGustaCategoriaTableClass::ID,
+           usuarioGustaCategoriaTableClass::CATEGORIA_ID,
+           usuarioGustaCategoriaTableClass::USUARIO_ID
+           );
 
 
 
-
-            $where = array(
+            $where1 = array(
                 usuarioTableClass::ID => session::getInstance()->getUserId()
             );
 
             $where2 = array(
                 datoUsuarioTableClass::USUARIO_ID => session::getInstance()->getUserId()
             );
+            
+            $where3 = array(
+            usuarioGustaCategoriaTableClass::USUARIO_ID => session::getInstance()->getUserId()
+            );
+            
 
-
+           
           $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');
@@ -65,10 +78,11 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
             
             $this->cntPages = eventoTableClass::getTotalpages(config::getRowGrid(), $where);
-            $this->objPerfilUser = usuarioTableClass::getAll($fields, FALSE, null, null, null, null, $where);
+            $this->objPerfilUser = usuarioTableClass::getAll($fields, FALSE, null, null, null, null, $where1);
             $this->objDatosProfile = datoUsuarioTableClass::getAll($fields2, FALSE, null, null, null, null, $where2);
+            $this->objGustosProfile = usuarioGustaCategoriaTableClass::getAll($fields3, false, null, null, null, null, $where3);
             $this->objEventoProfile = eventoTableClass::getEventoProfile($id, config::getRowGrid(), $page, $where);
-
+            
             $this->defineView('index', 'profile', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

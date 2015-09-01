@@ -16,12 +16,30 @@ use mvc\i18n\i18nClass as i18n;
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
-    
-
-    try {
    
-     
+    
+    try { 
+   
       
+        $fields=array(
+        eventoTableClass::ID,
+        eventoTableClass::NOMBRE,
+        eventoTableClass::DESCRIPCION,
+        eventoTableClass::DIRECCION,
+        eventoTableClass::COSTO
+        );
+        
+       $ordeBy=array(
+        eventoTableClass::NOMBRE
+        );
+
+     
+
+
+    
+       $this->objProyecto = eventoTableClass::getAll($fields, true, $ordeBy, 'ASC');
+     
+       
       $this->defineView('index', 'proyecto', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

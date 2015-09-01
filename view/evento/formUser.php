@@ -36,16 +36,16 @@ use mvc\request\requestClass as request ?>
                     <input name="<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>" value="<?php echo $objevento[0]->$id ?>" type="hidden">
                 <?php endif ?>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputFile')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::IMAGEN, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::IMAGEN, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('image') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputFile') ?>
                         <input type="file" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::IMAGEN, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::IMAGEN, true) ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$files : '' )) ?>">
+                               value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$files : '' )) ?>">
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputnameEvent')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('eventName') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputnameEvent') ?>
@@ -54,7 +54,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputdescription')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('description') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdescription') ?>
@@ -63,7 +63,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputdate')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('start_date') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdate') ?>
@@ -72,7 +72,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputdate1')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('finish_date') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdate1') ?>
@@ -81,7 +81,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputaddress')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::DIRECCION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::DIRECCION, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('adress') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputaddress') ?>
@@ -90,7 +90,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputmoney')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::COSTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::COSTO, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('cost') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputmoney') ?>
@@ -99,7 +99,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputcategory')) ? 'has-error has-feedback' : '' ?>">
 
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('category') ?></label>
                     <div class="col-lg-7">
@@ -113,7 +113,7 @@ use mvc\request\requestClass as request ?>
                         </select>
                     </div>
                 </div>
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputdatePublic')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('publicationStartDate') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdatePublic') ?>
@@ -122,7 +122,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputdatePublic1')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('publicationFinishDate') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdatePublic1') ?>

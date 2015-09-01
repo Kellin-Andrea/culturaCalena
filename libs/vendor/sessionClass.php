@@ -223,6 +223,10 @@ namespace mvc\session {
     public function getUserName() {
       return $this->getAttribute('mvcUserName');
     }
+    
+    public function getCateId() {
+      return $this->getAttribute('mvcCateId');
+    }
 
     public function setUserId($id) {
       $this->setAttribute('mvcUserId', $id);
@@ -230,6 +234,10 @@ namespace mvc\session {
 
     public function setUserName($name_user) {
       $this->setAttribute('mvcUserName', $name_user);
+    }
+    
+    public function setCateId($categoria_id) {
+      $this->setAttribute('mvcCateId', $categoria_id);
     }
 
     public function hasError($key = null) {

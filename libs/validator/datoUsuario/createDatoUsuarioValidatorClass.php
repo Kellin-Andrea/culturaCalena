@@ -20,6 +20,7 @@ namespace mvc\validator {
 
       if ($categoria === null) {
         $flag = true;
+        session::getInstance()->setFlash('chkCategoria', true);
         session::getInstance()->setError('Debe de seleccionar mínimo una categoría', 'chkCategoria');
       } else if (is_array($categoria)) {
         foreach ($categoria as $idCategoria) {

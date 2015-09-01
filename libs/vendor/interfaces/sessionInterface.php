@@ -96,12 +96,16 @@ namespace mvc\interfaces {
     public function setUserId($id);
 
     public function setUserName($name_user);
+    
+    public function setCateId($categoria_id);
 
     public function getUserId();
 
     public function hasUserId();
 
     public function getUserName();
+    
+    public function getCateId();
 
     public function setCache($cache, $value);
 
