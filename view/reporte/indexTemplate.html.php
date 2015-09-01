@@ -417,7 +417,7 @@ use mvc\request\requestClass as request ?>
                                   <td><?php echo $reporte->nombre ?></td>
                                   <td><?php echo $reporte->descripcion ?></td>
                                   <td>
-                                    <a href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'evento') ?>" class="btn btn-warning btn-xs"><i class=" glyphicon glyphicon-eye-open"></i></a>
+                                    <a href="<?php echo routing::getInstance()->getUrlWeb( 'reporte', $reporte->ruta) ?>" class="btn btn-warning btn-xs"><i class=" glyphicon glyphicon-eye-open"></i></a>
                                     
                                   </td>
                                 </tr>

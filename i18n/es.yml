@@ -88,6 +88,8 @@ dictionary:
     remember_me:                                                            Recordar me
     value:                                                                  Valor
     reportEvent:                                                            Reporte Evento
+    reportCategory:                                                         Reporte Categoria
+    NumEvent:                                                               Numero De Eventos
     reports:                                                                Reportes
     printReport:                                                            Imprimir Reporte
     report_management:                                                      Gestion de reportes

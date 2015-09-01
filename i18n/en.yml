@@ -99,6 +99,7 @@ dictionary:
     remember_me:                                                       Remember me
     value:                                                             Value
     reportEvent:                                                       Report Event
+    reportCategory:                                                    Reporte Category
     reports:                                                           Reports
     printReport:                                                       Print Report
     report_management:                                                 Report management

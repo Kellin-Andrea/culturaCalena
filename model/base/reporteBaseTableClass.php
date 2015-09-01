@@ -18,6 +18,8 @@ const NOMBRE = 'nombre';
 const NOMBRE_LENGTH = 45;
 const DESCRIPCION = 'descripcion'; 
 const DESCRIPCION_LENGTH= 1024;
+const RUTA = 'ruta'; 
+const RUTA_LENGTH= 100;
 
 
   /**

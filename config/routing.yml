@@ -1270,45 +1270,43 @@ reporte_eventoReportPdf:
     - model/categoriaTableClass.php 
     - libs/fpdf/fpdf.php
     - libs/fpdf/linegraph.php
-    
-reporte_update:
-  url:    /reporte/update
-  param:  { module: reporte, action: update, format: html }
+
+reporte_eventoCosto:
+  url:    /reporte/eventoCosto
+  param:  { module: reporte, action: eventoCosto, format: html }
   load:
     - model/base/reporteBaseTableClass.php
     - model/reporteTableClass.php
-
-reporte_delete:
-  url:    /reporte/delete
-  param:  { module: reporte, action: delete, format: json }
-  load:
-    - model/base/reporteBaseTableClass.php
-    - model/reporteTableClass.php
-
-reporte_deleteSelect:
-  url:    /reporte/deleteSelect
-  param:  { module: reporte, action: deleteSelect, format: html }
-  load:
-    - model/bitacora/reporteBaseTableClass.php
-    - model/reporteTableClass.php
-    
-reporte_deleteFilters:
-  url:    /Borrar_Filtros
-  param:  { module: reporte, action: deleteFilters, format: html }    
-
-reporte_reporte:
-  url:    /reporte/reporte
-  param:  { module: reporte, action: report, format: pdf }
-  load:
-    - libs/fpdf/fpdf.php
     - model/base/eventoBaseTableClass.php
-    - model/eventoTableClass.php
-
-reporte_traductor:
-  url:   /reporte/traductor
-  param:  { module: reporte, action: traductor, format: html }
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
+    
+reporte_eventoCostoReport:
+  url:    /reporte/eventoCostoReport
+  param:  { module: reporte, action: eventoCostoReport, format: html }
   load:
-      
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
+    
+reporte_eventoCostoReportPdf:
+  url:    /reporte/eventoCostoReportPdf
+  param:  { module: reporte, action: eventoCostoReportPdf, format: pdf }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php 
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
+    - libs/fpdf/fpdf.php
+    - libs/fpdf/linegraph.php
+    
+
       
 ##-------------------------- Tarifa --------------------------##
  

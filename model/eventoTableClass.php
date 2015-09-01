@@ -109,8 +109,46 @@ class  eventoTableClass extends eventoBaseTableClass {
       
     }
   }
+     public static function getEventoReportCosto( $fechaIni2, $fechaFinal2) {
+    try {
+       
+//        //
+//
+//
+//SELECT  count(evento.id) as eventos, SUM(costo)as costo, categoria.nombre 
+//FROM evento, categoria
+//where
+//evento.categoria_id=categoria.id
+//
+//and fecha_Inicial_publicacion between '2015-04-01' and '2015-04-30'
+//GROUP BY categoria.nombre
+
+        
+      $sql = 'SELECT COUNT('.eventoTableClass::getNameTable().'.'.eventoTableClass::ID.') AS CONTEO'.','
+               .' '.'SUM('.eventoTableClass::getNameTable().'.'.eventoTableClass::COSTO.') AS Costo'.','
+               . ' '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::NOMBRE.' '.
+               'FROM'.'  '.eventoTableClass::getNameTable().' , '.categoriaTableClass::getNameTable().' '.
+               'WHERE'.' '.eventoTableClass::getNameTable().'.'.eventoTableClass::CATEGORIA_ID.' = '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' '.
+               ' AND '. eventoTableClass::getNameTable().'.'.eventoTableClass::FECHA_FINAL_PUBLICACION.' '. 
+              'BETWEEN'.' '. "'$fechaIni2'".' '. 'AND'.' '. "'$fechaFinal2'".' '.
+               'GROUP BY'.' '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::NOMBRE;
+              
+
+
+  
+     
+       return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+       
+    } catch (PDOException $exc) {
+      throw $exc;
+      
+    }
+  }
     
         } //end class
 
+        
+        
+        
 
 

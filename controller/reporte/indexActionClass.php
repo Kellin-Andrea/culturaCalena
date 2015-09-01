@@ -50,6 +50,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
           reporteTableClass::ID,
           reporteTableClass::NOMBRE,
           reporteTableClass::DESCRIPCION,
+          reporteTableClass::RUTA
          
       );
       $orderBy = array(

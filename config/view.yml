@@ -1382,6 +1382,29 @@ reporte:
       - reporte/js/bootstrap.min.js
       - reporte/js/bootstrap.js
       
+  eventoCosto: 
+    title: Reporte Categoria
+    stylesheet:
+      - signin.css
+
+  eventoCostoReport:
+    title: Reporte Evento
+    stylesheet:
+      - reporte/css/bootstrap.min.css
+      - reporte/css/business-casual.css
+      - reporte/css/bootstrap.css
+      - jquery.jqplot.css
+    javascript:
+      - reporte/js/jquery.js
+      - reporte/js/bootstrap.min.js
+      - reporte/js/bootstrap.js
+      - excanvas.min.js
+      - jquery.jqplot.js
+      #- jqplot/plugins/jqplot.canvasTextRenderer.min.js
+      #- jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js
+      - jqplot/plugins/jqplot.pieRenderer.min.js
+      - jqplot/plugins/jqplot.donutRenderer.min.js
+      
 usuario:
   index:  
     title: Cultura Caleña
