@@ -27,6 +27,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         eventoTableClass::DESCRIPCION,
         eventoTableClass::DIRECCION,
         eventoTableClass::COSTO,
+        eventoTableClass::FECHA_INICIAL_EVENTO,
+        eventoTableClass::FECHA_FINAL_EVENTO,
         eventoTableClass::IMAGEN 
         );
         
