@@ -21,9 +21,10 @@ use mvc\request\requestClass as request ?>
                     <input name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::ID, true) ?>" value="<?php echo $objdetalle[0]->$id ?>" type="hidden">
                 <?php endif ?>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputrespuesta')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>"  name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?><" class="col-sm-2 control-label"> <?php echo i18n::__('answer') ?></label>
                     <div class="col-sm-7">
+                        <?php mvc\view\viewClass::getMessageError('inputrespuesta') ?>
                         <input  type="text" class="form-control" id="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>"  name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>"
                                 value="<?php echo (session::getInstance()->hasFlash(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true)) === true) ? request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true)) : ((( isset($objdetalle) == true ) ? $objdetalle[0]->$rsp : '' )) ?>" placeholder="<?php echo i18n::__('answer') ?>">
                     </div>

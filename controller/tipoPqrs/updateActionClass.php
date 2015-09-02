@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validator\edittipoPqrsValidatorClass as validator;
 
 /**
  * Description of ejemploClass
@@ -15,30 +16,32 @@ use mvc\i18n\i18nClass as i18n;
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-    try {
-      if (request::getInstance()->isMethod('POST')) {
+    public function execute() {
+        try {
+            if (request::getInstance()->isMethod('POST')) {
 
-        $id = request::getInstance()->getPost(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::ID, true));
-        $nombre = request::getInstance()->getPost(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true));
-      
+                $id = request::getInstance()->getPost(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::ID, true));
+                $nombre = request::getInstance()->getPost(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true));
 
-        $ids = array(
-            tipoPqrsTableClass::ID => $id
-        );
 
-        $data = array(
-            tipoPqrsTableClass::NOMBRE=> $nombre
-        );
+                $ids = array(
+                    tipoPqrsTableClass::ID => $id
+                );
 
-        tipoPqrsTableClass::update($ids, $data);
-      }
+                validator::validateEdit($nombre, $id);
 
-      routing::getInstance()->redirect('tipoPqrs', 'index');
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+                $data = array(
+                    tipoPqrsTableClass::NOMBRE => $nombre
+                );
+
+                tipoPqrsTableClass::update($ids, $data);
+            }
+
+            routing::getInstance()->redirect('tipoPqrs', 'index');
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }

@@ -12,16 +12,16 @@ use mvc\request\requestClass as request ?>
 
 <div class="container container-fluid">
     <div class="panel panel-primary">
-   
+
         <div class="panel-body">
             <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('categoria', ((isset($objcategoria)) ? 'update' : 'create')) ?>">
 
-<?php if (isset($objcategoria) == true) : ?>
+                <?php if (isset($objcategoria) == true) : ?>
                     <input name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::ID, true) ?>" value="<?php echo $objcategoria[0]->$id ?>" type="hidden">
-<?php endif ?>
+                <?php endif ?>
 
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash(inputname)) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"  name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?><"class="col-lg-2 control-label"> <?php echo i18n::__('name_category') ?></label>
                     <div class="col-lg-5">
                         <?php mvc\view\viewClass::getMessageError('inputname') ?>

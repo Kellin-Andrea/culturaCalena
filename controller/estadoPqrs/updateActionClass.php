@@ -7,7 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use mvc\validator\editestadoPqrsValidatorClass as validator;
 /**
  * Description of ejemploClass
  *
@@ -27,6 +27,9 @@ class updateActionClass extends controllerClass implements controllerActionInter
             estadoPqrsTableClass::ID => $id
         );
 
+        
+         validator::validateEdit($nombre, $id);
+        
         $data = array(
             estadoPqrsTableClass::NOMBRE => $nombre,
            

@@ -15,7 +15,7 @@
                     <input name="<?php echo localidadTableClass::getNameField(localidadTableClass::ID, true) ?>" value="<?php echo $objlocal[0]->$id ?>" type="hidden">
                 <?php endif ?>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputname')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo localidadTableClass::getNameField(localidadTableClass::NOMBRE, true) ?>"  name="<?php echo localidadTableClass::getNameField(localidadTableClass::NOMBRE, true) ?><" class="col-sm-2 control-label"> <?php echo i18n::__('locality') ?></label>
                     <div class="col-sm-7">
                         <?php mvc\view\viewClass::getMessageError('inputname') ?>

@@ -521,28 +521,29 @@ detallePqrs_insert:
   load:
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
-
+    - libs/validator/detallePqrs/createdetallePqrsValidatorClass.php
+    
 detallePqrs_create:
   url:    /detallePqrs/crear
   param:  { module: detallePqrs, action: create, format: html }
   load:
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
-
+    - libs/validator/detallePqrs/detallePqrsValidatorClass.php
 detallePqrs_edit:
   url:    /detallePqrs/editar
   param:  { module: detallePqrs, action: edit, format: html }
   load:
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
-
+    - libs/validator/detallePqrs/editdetallePqrsValidatorClass.php
 detallePqrs_update:
   url:    /detallePqrs/actualizar
   param:  { module: detallePqrs, action: update, format: html }
   load:
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
-    
+    - libs/validator/detallePqrs/editdetallePqrsValidatorClass.php
 detallePqrs_delete:
   url:    /detallePqrs/eliminar
   param:  { module: detallePqrs, action: delete, format: json }
@@ -587,28 +588,32 @@ estado_insert:
   load:
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
-
+    - libs/validator/estadoPqrs/createestadoPqrsValidatorClass.php
+    
 estadoPqrs_create:
   url:    /estadoPqrs/crear
   param:  { module: estadoPqrs, action: create, format: html }
   load:
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
-
+    - libs/validator/estadoPqrs/createestadoPqrsValidatorClass.php
+    
 estadoPqrs_edit:
   url:    /estadoPqrs/editar
   param:  { module: estadoPqrs, action: edit, format: html }
   load:
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
-
+    - libs/validator/estadoPqrs/editestadoPqrsValidatorClass.php
+    
 estadoPqrs_update:
   url:    /estadoPqrs/actualizar
   param:  { module: estadoPqrs, action: update, format: html }
   load:
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
-
+    - libs/validator/estadoPqrs/editestadoPqrsValidatorClass.php
+    
 estadoPqrs_delete:
   url:    /estadoPqrs/eliminar
   param:  { module: estadoPqrs, action: delete, format: json}
@@ -1509,28 +1514,31 @@ tipoPqrs_insert:
   load:
     - model/base/tipoPqrsBaseTableClass.php
     - model/tipoPqrsTableClass.php
+    - libs/validator/tipoPqrs/createtipoPqrsValidatorClass.php
 
 tipoPqrs_create:
   url:    /tipoPqrs/crear
-  param:  { module: , action: create, format: html }
+  param:  { module: tipoPqrs, action: create, format: html }
   load:
     - model/base/tipoPqrsBaseTableClass.php
     - model/tipoPqrsTableClass.php
-
+    - libs/validator/tipoPqrs/createtipoPqrsValidatorClass.php
 tipoPqrs_edit:
   url:    /tipoPqrs/editar
   param:  { module: tipoPqrs, action: edit, format: html }
   load:
     - model/base/tipoPqrsBaseTableClass.php
     - model/tipoPqrsTableClass.php
-
+    - libs/validator/tipoPqrs/edittipoPqrsValidatorClass.php
+    
 tipoPqrs_update:
   url:    /tipoPqrs/actualizar
   param:  { module: tipoPqrs, action: update, format: html }
   load:
     - model/base/tipoPqrsBaseTableClass.php
     - model/tipoPqrsTableClass.php
-
+    - libs/validator/tipoPqrs/edittipoPqrsValidatorClass.php
+    
 tipoPqrs_delete:
   url:    /tipoPqrs/eliminar
   param:  { module: tipoPqrs, action: delete, format: json }
@@ -1719,7 +1727,8 @@ usuarioGustaCategoria_insert:
     - model/categoriaTableClass.php
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
-
+    - libs/validator/usuarioGustaCategoria/createusuarioGustaCategoriaValidatorClass.php
+    
 usuarioGustaCategoria_create:
   url:    /usuarioGustaCategoria/crear
   param:  { module: usuarioGustaCategoria, action: create, format: html }
@@ -1730,7 +1739,8 @@ usuarioGustaCategoria_create:
     - model/categoriaTableClass.php
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
-
+    - libs/validator/usuarioGustaCategoria/createusuarioGustaCategoriaValidatorClass.php
+    
 usuarioGustaCategoria_edit:
   url:    /usuarioGustaCategoria/editar
   param:  { module: usuarioGustaCategoria, action: edit, format: html }
@@ -1741,7 +1751,8 @@ usuarioGustaCategoria_edit:
     - model/categoriaTableClass.php
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
-
+    - libs/validator/usuarioGustaCategoria/editusuarioGustaCategoriaValidatorClass.php
+    
 usuarioGustaCategoria_update:
   url:    /usuarioGustaCategoria/actualizar
   param:  { module: usuarioGustaCategoria, action: update, format: html }
@@ -1750,6 +1761,7 @@ usuarioGustaCategoria_update:
     - model/usuarioGustaCategoriaTableClass.php
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
+    - libs/validator/usuarioGustaCategoria/editusuarioGustaCategoriaValidatorClass.php
 
 usuarioGustaCategoria_delete:
   url:    /usuarioGustaCategoria/eliminar

@@ -7,7 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use mvc\validator\createestadoPqrsValidatorClass as validator;
 /**
  * Description of ejemploClass
  *
@@ -27,6 +27,8 @@ class createActionClass extends controllerClass implements controllerActionInter
 //          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
 //        }
 
+        validator::validateInsert($nombre);  
+          
         $data = array(
             estadoPqrsTableClass::NOMBRE => $nombre,
           

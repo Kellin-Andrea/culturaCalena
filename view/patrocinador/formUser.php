@@ -19,7 +19,7 @@
     <input name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::ID, true) ?>" value="<?php  echo $objpatrocinador[0]->$id ?>" type="hidden">
     <?php endif ?>
     
-    <div class="form-group">
+    <div class="form-group <?php echo (session::getInstance()->hasFlash('inputname')) ? 'has-error has-feedback' : '' ?>">
         <label for="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('name') ?></label>
                 <div class="col-sm-7">
                     <?php mvc\view\viewClass::getMessageError('inputname') ?>
@@ -27,7 +27,7 @@
                            value="<?php  echo (session::getInstance()->hasFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true)) === true)  ?  request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::NOMBRE, true)) :  ((( isset($objpatrocinador) == true ) ?  $objpatrocinador[0]->$nombre  :  '' ))  ?>" placeholder="<?php echo i18n::__('name')?>">
                 </div>
             </div>
-     <div class="form-group">
+     <div class="form-group <?php echo (session::getInstance()->hasFlash('inputphone')) ? 'has-error has-feedback' : '' ?>">
     <label for="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('phone') ?></label>
                 <div class="col-sm-7">
                     <?php mvc\view\viewClass::getMessageError('inputphone') ?>
@@ -35,15 +35,15 @@
                            value="<?php  echo (session::getInstance()->hasFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true)) === true)  ?  request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::TELEFONO, true)) :  ((( isset($objpatrocinador) == true ) ?  $objpatrocinador[0]->$tele  :  '' ))  ?>" placeholder="<?php echo i18n::__('phone')?>">
                 </div>
             </div>
-      <div class="form-group">
-          <?php mvc\view\viewClass::getMessageError('inputmail') ?>
+      <div class="form-group <?php echo (session::getInstance()->hasFlash('inputEmail')) ? 'has-error has-feedback' : '' ?>">
+          <?php mvc\view\viewClass::getMessageError('inputEmail') ?>
     <label for="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('e-mail') ?></label>
                 <div class="col-sm-7">
                     <input type="text"  class="form-control" id="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true) ?>" 
                            value="<?php  echo (session::getInstance()->hasFlash(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true)) === true)  ?  request::getInstance()->getPost(patrocinadorTableClass::getNameField(patrocinadorTableClass::CORREO, true)) :  ((( isset($objpatrocinador) == true ) ?  $objpatrocinador[0]->$correo  :  '' ))  ?>" placeholder="<?php echo i18n::__('e-mail')?>">
                 </div>
            </div>    
-     <div class="form-group">
+     <div class="form-group <?php echo (session::getInstance()->hasFlash('inputadress')) ? 'has-error has-feedback' : '' ?>">
     <label for="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true) ?>"  name="<?php echo patrocinadorTableClass::getNameField(patrocinadorTableClass::DIRECCION, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('adress') ?></label>
                 <div class="col-sm-7">
                     <?php mvc\view\viewClass::getMessageError('inputadress') ?>

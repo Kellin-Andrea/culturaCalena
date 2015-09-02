@@ -50,7 +50,7 @@ use mvc\request\requestClass as request ?>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputPass')) ? 'has-error has-feedback' : '' ?>">
           <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="col-sm-2 control-label"><?php echo i18n::__('verifyPass') ?></label>
           <div class="col-sm-7">
             <?php mvc\view\viewClass::getMessageError('inputPass') ?>
@@ -72,7 +72,7 @@ use mvc\request\requestClass as request ?>
         </div>
 
 
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputLastName')) ? 'has-error has-feedback' : '' ?>">
           <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::APELLIDO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('lastName') ?></label>
           <div class="col-sm-7">
             <?php mvc\view\viewClass::getMessageError('inputLastName') ?>
@@ -81,7 +81,7 @@ use mvc\request\requestClass as request ?>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputEmail')) ? 'has-error has-feedback' : '' ?>">
 
           <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::CORREO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('e-mail') ?></label>
 
@@ -93,7 +93,7 @@ use mvc\request\requestClass as request ?>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputLocalidad')) ? 'has-error has-feedback' : '' ?>">
 
           <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::LOCALIDAD_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('locality') ?></label>
 
@@ -110,7 +110,7 @@ use mvc\request\requestClass as request ?>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputdatef')) ? 'has-error has-feedback' : '' ?>">
 
           <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::FECHA_NACIMIENTO, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::FECHA_NACIMIENTO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('birth_day') ?></label>
 
@@ -122,7 +122,7 @@ use mvc\request\requestClass as request ?>
 
           </div>
         </div>
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputchkCategoria')) ? 'has-error has-feedback' : '' ?>">
           <label class="col-sm-2 control-label">Seleccione categoria</label>
           <div class="col-sm-7">
             <?php mvc\view\viewClass::getMessageError('chkCategoria') ?>
@@ -132,7 +132,7 @@ use mvc\request\requestClass as request ?>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputGenero')) ? 'has-error has-feedback' : '' ?>">
 
           <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::GENERO, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::GENERO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('gender') ?></label>
 
@@ -147,7 +147,7 @@ use mvc\request\requestClass as request ?>
         </div>
 
 
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputTipoDocumento')) ? 'has-error has-feedback' : '' ?>">
 
           <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::TIPO_DOCUMENTO_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('document_type') ?></label>
 
@@ -163,7 +163,7 @@ use mvc\request\requestClass as request ?>
           </div>
         </div>
 
-        <div class="form-group">
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputOrganizacion')) ? 'has-error has-feedback' : '' ?>">
 
           <label for="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ORGANIZACION_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('organizations') ?></label>
 

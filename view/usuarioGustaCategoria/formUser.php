@@ -18,10 +18,11 @@
     <?php endif ?>
     
      
-         <div class="form-group">
+         <div class="form-group <?php echo (session::getInstance()->hasFlash('inputusu')) ? 'has-error has-feedback' : '' ?>">
 
              <label for="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>"  name="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('user') ?></label>
                 <div class="col-sm-7">
+                    <?php mvc\view\viewClass::getMessageError('inputusu') ?>
                     <select class="form-control" id="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>"  name="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>">
                         <option value=""> -----<?php echo i18n::__('user_select')?> -----    </option>
                         <?php foreach ($objUsuarios as $usuario): ?>
@@ -33,11 +34,12 @@
             </div>
       
     
-       <div class="form-group">
+       <div class="form-group <?php echo (session::getInstance()->hasFlash('inputcat')) ? 'has-error has-feedback' : '' ?>">
            
            <label for="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::CATEGORIA_ID, true) ?>"  name="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::CATEGORIA_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('category') ?></label>
              
            <div class="col-lg-7">
+               <?php mvc\view\viewClass::getMessageError('inputcat') ?>
                             <select class="form-control" id="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::CATEGORIA_ID, true) ?>"  name="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::CATEGORIA_ID, true) ?>">
                                 <option value=""> -----<?php echo i18n::__('category_select')?> -----</option>
                                 <?php foreach ($objcategoria as $categoria): ?>

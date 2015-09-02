@@ -17,14 +17,14 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(tipoPqrsTableClass::ID)) {
+      if (request::getInstance()->hasGet(tipoPqrsTableClass::ID)) {
         $fields = array(
             tipoPqrsTableClass::ID,
             tipoPqrsTableClass::NOMBRE
         );
         
         $where = array(
-            tipoPqrsTableClass::ID => request::getInstance()->getRequest(tipoPqrsTableClass::ID)
+            tipoPqrsTableClass::ID => request::getInstance()->getGet(tipoPqrsTableClass::ID)
         );
         
         session::getInstance()->setFlash('edit', 'true');

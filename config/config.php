@@ -8,7 +8,7 @@ config::setRowGridProyect(8);
 config::setDbHost('localhost');
 config::setDbDriver('pgsql'); // mysql
 config::setDbName('proyecto');
-config::setDbPort(5432); // 3306
+config::setDbPort(5433); // 3306
 config::setDbUser('postgres');
 config::setDbPassword('postgres');
 // Esto solo es necesario en caso de necesitar un socket para la DB

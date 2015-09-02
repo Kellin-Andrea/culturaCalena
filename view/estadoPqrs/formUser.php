@@ -16,9 +16,10 @@
       <input name="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, true) ?>" value="<?php  echo $objestado[0]->$id?>" type="hidden">
     <?php endif ?>
     
-      <div class="form-group">
+      <div class="form-group <?php echo (session::getInstance()->hasFlash('inputname')) ? 'has-error has-feedback' : '' ?>">
           <label for="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::NOMBRE, true)?>"  name="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::NOMBRE, true)?><" class="col-sm-2 control-label"> <?php echo i18n::__('pqrsfState')?></label>
     <div class="col-sm-7">
+        <?php mvc\view\viewClass::getMessageError('inputname') ?>
         <input  type="text" class="form-control" id="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::NOMBRE, true)?>"  name="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::NOMBRE, true)?>"
                 value="<?php  echo (session::getInstance()->hasFlash(estadoPqrsTableClass::getNameField(estadoPqrsTableClass::NOMBRE, true)) === true)  ?  request::getInstance()->getPost(estadoPqrsTableClass::getNameField(estadoPqrsTableClass::nombre, true)) :  ((( isset($objestado) == true ) ?  $objestado[0]->$est  :  '' ))  ?>" placeholder="<?php echo i18n::__('pqrsfState')?>">
     </div>

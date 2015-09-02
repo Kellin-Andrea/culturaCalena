@@ -16,9 +16,10 @@
       <input name="<?php echo tipoPqrsTableClass::getNameField(tipoPqrsTableClass::ID, true) ?>" value="<?php  echo $objtipoPqrs[0]->$id?>" type="hidden">
     <?php endif ?>
     
-      <div class="form-group">
+      <div class="form-group <?php echo (session::getInstance()->hasFlash('inputname')) ? 'has-error has-feedback' : '' ?>">
           <label for="<?php echo tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)?>"  name="<?php echo tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)?><" class="col-sm-2 control-label"> <?php echo i18n::__('feedbackType')?></label>
     <div class="col-sm-7">
+        <?php mvc\view\viewClass::getMessageError('inputname') ?>
         <input  type="text" class="form-control" id="<?php echo tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)?>"  name="<?php echo tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)?>"
          value="<?php  echo (session::getInstance()->hasFlash(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)) === true)  ?  request::getInstance()->getPost(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)) :  ((( isset($objtipoPqrs) == true ) ?  $objtipoPqrs[0]->$tipoPqrs :  '' ))  ?>"placeholder="<?php echo i18n::__('feedbackType') ?>"
     </div>

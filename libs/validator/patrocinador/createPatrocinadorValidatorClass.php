@@ -45,15 +45,15 @@ namespace mvc\validator {
             if (self::notBlank($correo)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
-                session::getInstance()->setError('El correo es obligatorio para el patrocinador', 'inputmail');
+                session::getInstance()->setError('El correo es obligatorio para el patrocinador', 'inputEmail');
             } else if (strlen($correo) > \patrocinadorTableClass::CORREO_LENGTH) {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
-                session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputmail');
-            } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($mail))) {
+                session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputEmail');
+            } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($correo))) {
                 $flag = true;
                 session::getInstance()->setFlash('inputmail', true);
-                session::getInstance()->setError('Por favor digite un corre válido', 'inputmail');
+                session::getInstance()->setError('Por favor digite un corre válido', 'inputEmail');
            
             }
             if (self::notBlank($direccion)) {

@@ -22,7 +22,7 @@
         <input name="<?php echo organizacionTableClass::getNameField(organizacionTableClass::ID, true) ?>" value="<?php echo $objorganizacion[0]->$id ?>" type="hidden">
     <?php endif ?>
 
-    <div class="form-group">
+    <div class="form-group <?php echo (session::getInstance()->hasFlash('inputname')) ? 'has-error has-feedback' : '' ?>">
         <label for="<?php echo organizacionTableClass::getNameField(organizacionTableClass::NOMBRE, true) ?>"  name="<?php echo organizacionTableClass::getNameField(organizacionTableClass::NOMBRE, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('name') ?></label>
         <div class="col-sm-7">
             <?php mvc\view\viewClass::getMessageError('inputname') ?>
@@ -30,7 +30,7 @@
                    value="<?php echo (session::getInstance()->hasFlash(organizacionTableClass::getNameField(organizacionTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::NOMBRE, true)) : ((( isset($objorganizacion) == true ) ? $objorganizacion[0]->$nombre : '' )) ?>" placeholder="<?php echo i18n::__('name')?>">
         </div>
     </div>
-    <div class="form-group"> 
+    <div class="form-group <?php echo (session::getInstance()->hasFlash('inputadress')) ? 'has-error has-feedback' : '' ?>">
         <label for="<?php echo organizacionTableClass::getNameField(organizacionTableClass::DIRECCION, true) ?>"  name="<?php echo organizacionTableClass::getNameField(organizacionTableClass::DIRECCION, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('adress') ?></label>
         <div class="col-sm-7">
             <?php mvc\view\viewClass::getMessageError('inputadress') ?>
@@ -38,7 +38,7 @@
                    value="<?php echo (session::getInstance()->hasFlash(organizacionTableClass::getNameField(organizacionTableClass::DIRECCION, true)) === true) ? request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::DIRECCION, true)) : ((( isset($objorganizacion) == true ) ? $objorganizacion[0]->$direccion : '' )) ?>" placeholder="<?php echo i18n::__('adress')?>">
         </div>
     </div>
-    <div class="form-group"> 
+    <div class="form-group <?php echo (session::getInstance()->hasFlash('inputphone')) ? 'has-error has-feedback' : '' ?>">
         <label for="<?php echo organizacionTableClass::getNameField(organizacionTableClass::TELEFONO, true) ?>"  name="<?php echo organizacionTableClass::getNameField(organizacionTableClass::TELEFONO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('phone') ?></label>
         <div class="col-sm-7">
             <?php mvc\view\viewClass::getMessageError('inputphone') ?>
@@ -46,7 +46,7 @@
                    value="<?php echo (session::getInstance()->hasFlash(organizacionTableClass::getNameField(organizacionTableClass::TELEFONO, true)) === true) ? request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::TELEFONO, true)) : ((( isset($objorganizacion) == true ) ? $objorganizacion[0]->$tele : '' )) ?>" placeholder=<?php echo i18n::__('phone')?>>
         </div>
     </div>
-        <div class="form-group"> 
+        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputfax')) ? 'has-error has-feedback' : '' ?>">
     <label for="<?php echo organizacionTableClass::getNameField(organizacionTableClass::FAX, true) ?>"  name="<?php echo organizacionTableClass::getNameField(organizacionTableClass::FAX, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('facsimil') ?></label>
     <div class="col-sm-7">
         <?php mvc\view\viewClass::getMessageError('inputfax') ?>
@@ -54,7 +54,7 @@
                value="<?php echo (session::getInstance()->hasFlash(organizacionTableClass::getNameField(organizacionTableClass::FAX, true)) === true) ? request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::FAX, true)) : ((( isset($objorganizacion) == true ) ? $objorganizacion[0]->$fax : '' )) ?>" placeholder="<?php echo i18n::__('facsimil')?>">
     </div>
 </div>
-<div class="form-group"> 
+<div class="form-group <?php echo (session::getInstance()->hasFlash('inputEmail')) ? 'has-error has-feedback' : '' ?>">
     <label for="<?php echo organizacionTableClass::getNameField(organizacionTableClass::CORREO, true) ?>"  name="<?php echo organizacionTableClass::getNameField(organizacionTableClass::CORREO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('e-mail') ?></label>
     <div class="col-sm-7">
          <?php mvc\view\viewClass::getMessageError('inputEmail') ?>
@@ -63,7 +63,7 @@
     </div>
 </div>
 
-<div class="form-group ">
+<div class="form-group  <?php echo (session::getInstance()->hasFlash('inputwebPage')) ? 'has-error has-feedback' : '' ?>">
         <label for="<?php echo organizacionTableClass::getNameField(organizacionTableClass::PAGINA_WEB, true) ?>"  name="<?php echo organizacionTableClass::getNameField(organizacionTableClass::PAGINA_WEB, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('page') ?></label>
         <div class="col-sm-7">
              <?php mvc\view\viewClass::getMessageError('inputwebPage') ?>

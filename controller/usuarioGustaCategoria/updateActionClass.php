@@ -7,7 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use mvc\validator\editusuarioGustaCategoriaValidatorClass as validator;
 /**
  * Description of ejemploClass
  *
@@ -26,7 +26,9 @@ class updateActionClass extends controllerClass implements controllerActionInter
         $ids = array(
             usuarioGustaCategoriaTableClass::ID => $id
         );
-
+        
+         validator::validateEdit($usu, $cat, $id);
+        
         $data = array(
             usuarioGustaCategoriaTableClass::USUARIO_ID => $usu,
             usuarioGustaCategoriaTableClass::CATEGORIA_ID => $cat
