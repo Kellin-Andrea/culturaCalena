@@ -144,6 +144,22 @@ class  eventoTableClass extends eventoBaseTableClass {
       
     }
   }
+   
+  public static function getTotalProyect($lines) {
+    try {
+      $sql = 'SELECT count(' . eventoTableClass::ID . ') AS cantidad '
+              . 'FROM ' . eventoTableClass::getNameTable() .
+              ' WHERE ' . eventoTableClass::DELETED_AT . ' IS NULL' ;
+
+      
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute();
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return ceil($answer[0]->cantidad / $lines);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+  }
     
         } //end class
 

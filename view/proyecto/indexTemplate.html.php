@@ -217,8 +217,12 @@ use mvc\session\sessionClass as session ?>
 
 <div class="col-lg-10">
     
+            
+   
+
+        </div>
     
-</div>
+
 
 <div class="container">
 
@@ -273,10 +277,17 @@ use mvc\session\sessionClass as session ?>
         }
         echo $output;
         ?>
-    
+
 </div>
 
-
+ <div class="text-lefts">
+            <?php  echo i18n::__('page') ?> <select id="sqlPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>')">
+              <?php  for ($x = 1; $x <= $cntPages; $x++): ?>
+                <option <?php  echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php  echo $x ?>"><?php echo $x ?></option>
+              <?php  endfor ?>
+            </select> 
+            <?php echo i18n::__('of') ?> <?php echo $cntPages ?>
+          </div>
 
 <div class="panel-grid" id="pg">
     <div class="promobg">

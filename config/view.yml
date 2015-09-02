@@ -675,6 +675,7 @@ proyecto:
       - proyecto/js/simplemap.js
       - proyecto/js/sticky_navbar.js
       - proyecto/js/underscore.js
+      - index.js
       
       
 detallePqrs:

@@ -40,6 +40,7 @@ namespace mvc\config {
     private static $cookie_domain;
     private static $cookie_time;
     private static $row_grid;
+    private static $row_grid_proyect;
     private static $default_module_permission;
     private static $default_action_permission;
     
@@ -447,6 +448,15 @@ namespace mvc\config {
     public static function setDefaultActionPermission($default_action_permission) {
       self::$default_action_permission = $default_action_permission;
     }
+    
+      public static function setRowGridProyect($row_grid_proyect) {
+      self::$row_grid_proyect = $row_grid_proyect;
+    }
+
+    public static function getRowGridProyect() {
+      return self::$row_grid_proyect;
+    }
+    
   
   }
 

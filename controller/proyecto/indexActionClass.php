@@ -15,39 +15,50 @@ use mvc\i18n\i18nClass as i18n;
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
-  public function execute() {
-   
-    
-    try { 
-   
-      
-        $fields=array(
-        eventoTableClass::ID,
-        eventoTableClass::NOMBRE,
-        eventoTableClass::DESCRIPCION,
-        eventoTableClass::DIRECCION,
-        eventoTableClass::COSTO,
-        eventoTableClass::FECHA_INICIAL_EVENTO,
-        eventoTableClass::FECHA_FINAL_EVENTO,
-        eventoTableClass::IMAGEN 
-        );
-        
-       $ordeBy=array(
-        eventoTableClass::NOMBRE
-        );
-
-     
+    public function execute() {
 
 
-    
-       $this->objProyecto = eventoTableClass::getAll($fields, true, $ordeBy, 'ASC');
-     
-       
-      $this->defineView('index', 'proyecto', session::getInstance()->getFormatOutput());
-    } catch (PDOException $exc) {
-      session::getInstance()->setFlash('exc', $exc);
-      routing::getInstance()->forward('shfSecurity', 'exception');
+        try {
+
+
+            $fields = array(
+                eventoTableClass::ID,
+                eventoTableClass::NOMBRE,
+                eventoTableClass::DESCRIPCION,
+                eventoTableClass::DIRECCION,
+                eventoTableClass::COSTO,
+                eventoTableClass::FECHA_INICIAL_EVENTO,
+                eventoTableClass::FECHA_FINAL_EVENTO,
+                eventoTableClass::IMAGEN
+            );
+
+            $ordeBy = array(
+                eventoTableClass::NOMBRE
+            );
+
+            $page = 0;
+
+
+            if (request::getInstance()->hasGet('page')) {
+                $this->page = request::getInstance()->getGet('page');
+                $page = request::getInstance()->getGet('page') - 1;
+                $page = $page * config::getRowGridProyect();
+            }
+
+
+            $this->cntPages = eventoTableClass::getTotalProyect(config::getRowGridProyect());
+
+
+
+
+            $this->objProyecto = eventoTableClass::getAll($fields, true, $ordeBy, 'ASC', config::getRowGridProyect(), $page);
+
+
+            $this->defineView('index', 'proyecto', session::getInstance()->getFormatOutput());
+        } catch (PDOException $exc) {
+            session::getInstance()->setFlash('exc', $exc);
+            routing::getInstance()->forward('shfSecurity', 'exception');
+        }
     }
-  }
 
 }
