@@ -67,7 +67,7 @@ use mvc\request\requestClass as request ?>
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('start_date') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdate') ?>
-                        <input type="date" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>" placeholder="<?php echo i18n::__('start_date') ?>"
+                      <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>" placeholder="<?php echo i18n::__('start_date') ?>"
                                value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$fecha)) : '' )) ?>">
                     </div>
                 </div>
@@ -76,7 +76,7 @@ use mvc\request\requestClass as request ?>
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('finish_date') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdate1') ?>
-                        <input type="date" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>" placeholder="<?php echo i18n::__('finish_date') ?>"
+                      <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>" placeholder="<?php echo i18n::__('finish_date') ?>"
                                value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$final)) : '' )) ?>">
                     </div>
                 </div>
@@ -117,7 +117,7 @@ use mvc\request\requestClass as request ?>
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('publicationStartDate') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdatePublic') ?>
-                        <input type="date" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>"
+                      <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>"
                                value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$public)) : 'publicationStartDate' )) ?>">
                     </div>
                 </div>
@@ -126,7 +126,7 @@ use mvc\request\requestClass as request ?>
                     <label for="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('publicationFinishDate') ?></label>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdatePublic1') ?>
-                        <input type="date" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>"
+                      <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>"
                                value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$fin)) : '' )) ?>">
                     </div>
                 </div>

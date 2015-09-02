@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validator\createEventoCostoValidatorClass as validator;
 
 /**
  * Description of ejemploClass
@@ -24,7 +25,7 @@ class eventoCostoReportActionClass extends controllerClass implements controller
                 $fechaFinal2 = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true));
 
                
-                
+                 
                 
                 $this->objCateEvento = eventoTableClass::getEventoReportCosto($fechaIni2, $fechaFinal2);
                       

@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validator\createEventoPatrocinadorValidatorClass as validator;
 
 /**
  * Description of ejemploClass
@@ -21,7 +22,7 @@ class createActionClass extends controllerClass implements controllerActionInter
              $eventSponsor= request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::EVENTO_ID, true));
              $sponsor = request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true));
              
-    
+    validator::validateInsert($eventSponsor, $sponsor);
 
         $data = array(
         eventoPatrocinadorTableClass::EVENTO_ID => $eventSponsor,

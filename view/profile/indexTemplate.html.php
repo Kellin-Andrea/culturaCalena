@@ -133,104 +133,103 @@ use mvc\session\sessionClass as session ?>
             </div>
           </div>            
 
-                  <div class="col-xs-12 divider text-center">
-                    <div class="col-xs-12 col-sm-4 emphasis">
-                      <h2><strong> # </strong></h2>                    
-                      <p><small><?php echo i18n::__('youEvent') ?></small></p>
+          <div class="col-xs-12 divider text-center">
+            <div class="col-xs-12 col-sm-4 emphasis">
+              <h2><strong> # </strong></h2>                    
+              <p><small><?php echo i18n::__('youEvent') ?></small></p>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-4 emphasis">
-                      <h2><strong>#</strong></h2>                    
-                      <p><small><?php echo i18n::__('youCategory') ?></small></p>
+            </div>
+            <div class="col-xs-12 col-sm-4 emphasis">
+              <h2><strong>#</strong></h2>                    
+              <p><small><?php echo i18n::__('youCategory') ?></small></p>
 
-                    </div>
-                    <div class="col-xs-12 col-sm-4 emphasis">
-                      <h2><strong>#</strong></h2>                    
-                      <p><small><?php echo i18n::__('youLogin') ?></small></p>
+            </div>
+            <div class="col-xs-12 col-sm-4 emphasis">
+              <h2><strong>#</strong></h2>                    
+              <p><small><?php echo i18n::__('youLogin') ?></small></p>
 
-                    </div>
-                  </div>
-                </div>                 
-              </div>
-      
-       <div class="well profile">
-          <div class="col-sm-12">
-            <div class="col-xs-12 col-sm-8">
-              <?php foreach ($objGustosProfile as $GustosProfile): ?>
-                <h2><?php
-                   echo categoriaTableClass::getNombreById($GustosProfile->categoria_id);
-                  
-                
-                  ?></h2>
-               <?php endforeach;?>
+            </div>
+          </div>
+        </div>                 
+      </div>
 
-              </div>            
-  
+      <div class="well profile">
+        <div class="col-sm-12">
+          <div class="col-xs-12 col-sm-8">
+            <?php foreach ($objGustosProfile as $GustosProfile): ?>
+              <h2><?php
+                echo categoriaTableClass::getNombreById($GustosProfile->categoria_id);
+                ?></h2>
+            <?php endforeach; ?>
+
           </div>            
-                  </div>
-                </div>     
-      
-              <nav id="evento"> <h1><?php echo i18n::__('my_events') ?></h1></nav>
 
-              <div class="container">
+        </div>            
+      </div>
+    </div>     
 
-                <table class="table table-bordered table-striped">
-                  <thead>
-                    <tr>
+    <nav id="evento"> <h1><?php echo i18n::__('my_events') ?></h1></nav>
 
-                      <th><?php echo i18n::__('eventName') ?></th>
-                      <th><?php echo i18n::__('cost') ?></th>
-                      <th><?php echo i18n::__('start_date') ?></th>
-                      <th><?php echo i18n::__('finish_date') ?></th>
-                      <th><?php echo i18n::__('actions') ?></th>
+    <div class="container">
 
-                    </tr>
-                  </thead>
-                  <tbody >
-                    <?php foreach ($objEventoProfile as $eventoProfile): ?>
-                      <tr>
+      <table class="table table-bordered table-striped">
+        <thead>
+          <tr>
 
-                        <td><?php echo $eventoProfile->nombre ?></td>
-                        <td><?php echo $eventoProfile->costo ?></td>
-                        <td><?php echo $eventoProfile->fecha_inicial_evento ?></td>
-                        <td><?php echo $eventoProfile->fecha_final_evento ?></td>
-                        <td>
-                          <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
+            <th><?php echo i18n::__('eventName') ?></th>
+            <th><?php echo i18n::__('cost') ?></th>
+            <th><?php echo i18n::__('start_date') ?></th>
+            <th><?php echo i18n::__('finish_date') ?></th>
+            <th><?php echo i18n::__('actions') ?></th>
 
-                          <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
-                  <!--              <a href="#" onclick="confirmarEliminar(<?php //echo $usuario->$id                 ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>-->
-                  <!--              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo" role="dialog" title="Borrar" data-content="Eliminar usuario"  onclick="eliminar(<?php //echo $usuario->$id                 ?>)"class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>-->
-                          <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoProfile->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>
-                        </td>
-                      </tr>
-                    <div class="modal fade" id="myModalDelete<?php echo $eventoProfile->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                      <div class="modal-dialog">
-                        <div class="modal-content">
-                          <div class="modal-header">
-                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
-                          </div>
-                          <div class="modal-body">
-                            ¿Desea Eliminar el registro <?php echo $eventoProfile->nombre ?> ?
-                          </div>
-                          <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                            <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $eventoProfile->$id ?>, '<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?> ')">Confirmar Eliminar</button>
-                          </div>
-                        </div>
-                      </div>
-                    </div>
+          </tr>
+        </thead>
+        <tbody >
+          <?php foreach ($objEventoProfile as $eventoProfile): ?>
+            <tr>
 
+              <td><?php echo $eventoProfile->nombre ?></td>
+              <td><?php echo $eventoProfile->costo ?></td>
+              <td><?php echo $eventoProfile->fecha_inicial_evento ?></td>
+              <td><?php echo $eventoProfile->fecha_final_evento ?></td>
+              <td>
+                <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
 
-
-                  <?php endforeach ?>
-                  </tbody>
-                </table>
+                <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
+        <!--              <a href="#" onclick="confirmarEliminar(<?php //echo $usuario->$id                   ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>-->
+        <!--              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo" role="dialog" title="Borrar" data-content="Eliminar usuario"  onclick="eliminar(<?php //echo $usuario->$id                   ?>)"class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>-->
+                <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoProfile->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>
+              </td>
+            </tr>
+          <div class="modal fade" id="myModalDelete<?php echo $eventoProfile->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+            <div class="modal-dialog">
+              <div class="modal-content">
+                <div class="modal-header">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
+                </div>
+                <div class="modal-body">
+                  ¿Desea Eliminar el registro <?php echo $eventoProfile->nombre ?> ?
+                </div>
+                <div class="modal-footer">
+                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                  <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $eventoProfile->$id ?>, '<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?> ')">Confirmar Eliminar</button>
+                </div>
               </div>
-              <div class="text-right">
-                Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('evento', 'index') ?>')">
-                  <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-                    <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
-                  <?php endfor ?>
-                </select> <?php echo $cntPages ?>
-              </div> 
+            </div>
+          </div>
+
+
+
+        <?php endforeach ?>
+        </tbody>
+      </table>
+    </div>
+    <div class="text-right">
+      <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
+        <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+          <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+        <?php endfor ?>
+      </select> 
+      <?php echo i18n::__('of') ?> <?php echo $cntPages ?>
+    </div>

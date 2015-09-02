@@ -457,7 +457,7 @@ namespace mvc\config {
       return self::$row_grid_proyect;
     }
     
-  
-  }
 
+  }
+    
 }

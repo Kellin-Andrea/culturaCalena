@@ -39,7 +39,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         $pass2 = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2');
         $categoria = (request::getInstance()->hasPost('categoria')) ? request::getInstance()->getPost('categoria') : null;
 
-        validator::validateInsert($user, $pass1, $pass2, $name, $lastName, $mail, $dateF, $genre, $locality, $typeDocument, $organization, $categoria);
+        validator::validateInsert($user, $pass1, $pass2, $name, $lastName, $mail, $locality, $dateF, $genre,  $typeDocument, $organization, $categoria);
 
         $data = array(
             usuarioTableClass::USER => $user,
@@ -59,8 +59,7 @@ class createActionClass extends controllerClass implements controllerActionInter
             datoUsuarioTableClass::TIPO_DOCUMENTO_ID => $typeDocument,
             datoUsuarioTableClass::ORGANIZACION_ID => $organization,
             datoUsuarioTableClass::USUARIO_ID => $usuario_id,
-                //usuarioGustaCategoriaTableClass::CATEGORIA_ID => session::getInstance()->getUserId()
-        );
+                       );
 
         datoUsuarioTableClass::insert($data);
 

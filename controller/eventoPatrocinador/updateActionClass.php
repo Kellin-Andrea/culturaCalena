@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use mvc\validator\editEventoPatrocinadorValidatorClass as validator;
 
 /**
  * Description of ejemploClass
@@ -20,23 +21,25 @@ class updateActionClass extends controllerClass implements controllerActionInter
       if (request::getInstance()->isMethod('POST')) {
 
         $id = request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true));
-        $patrocinador_id = request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true));
-        $evento_id = request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::EVENTO_ID, true));
+        $sponsor = request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true));
+        $eventSponsor = request::getInstance()->getPost(eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::EVENTO_ID, true));
 
         $ids = array(
-        eventoPatrocinadorTableClass::ID => $id
+            eventoPatrocinadorTableClass::ID => $id
         );
+        
+        validator::validateEdit($eventSponsor, $sponsor,$id);
 
         $data = array(
-        eventoPatrocinadorTableClass::PATROCINADOR_ID => $patrocinador_id,
-            eventoPatrocinadorTableClass::EVENTO_ID=> $evento_id
+            eventoPatrocinadorTableClass::PATROCINADOR_ID => $sponsor,
+            eventoPatrocinadorTableClass::EVENTO_ID => $eventSponsor
         );
 
         eventoPatrocinadorTableClass::update($ids, $data);
       }
 
       routing::getInstance()->redirect('eventoPatrocinador', 'index');
-      } catch (PDOException $exc) {
+    } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }

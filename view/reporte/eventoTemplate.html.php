@@ -21,8 +21,9 @@ use mvc\session\sessionClass as session ?>
       <center><h2 class="form-signin-heading"></h2><h1><?php echo i18n::__('reportEvent')?></h1></center>
       
        <div class="form-group">
+         
               <label> <?php echo i18n::__('category') ?></label>
-              <select class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" name="<?php  echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" >
+              <select required class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" name="<?php  echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" >
                <option value=""><?php echo i18n::__('category_select') ?></option>
                 <?php foreach ($objCategoria2  as $dato): ?> -->
                   <option value="<?php  echo $dato->id ?>"><?php  echo $dato->nombre ?></option>

@@ -118,7 +118,7 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputdatef', true);
         session::getInstance()->setError('la fecha de nacimiento es obligatorio', 'inputdatef');
-      } else if (strtotime($dateF) >= strtotime(date(config::getFormatTimestamp()))) {
+      } else if (strtotime(date(config::getFormatTimestamp(), strtotime($dateF))) >= strtotime(date(config::getFormatTimestamp()))) {
         $flag = true;
         session::getInstance()->setFlash('inputdatef', true);
         session::getInstance()->setError('La fecha nacimiento  no puede ser mayor o igual a la fecha ', 'inputdatef');
