@@ -122,12 +122,12 @@ use mvc\request\requestClass as request ?>
 
           </div>
         </div>
-        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputchkCategoria')) ? 'has-error has-feedback' : '' ?>">
+        <div class="form-group">
           <label class="col-sm-2 control-label">Seleccione categoria</label>
           <div class="col-sm-7">
             <?php mvc\view\viewClass::getMessageError('chkCategoria') ?>
             <?php foreach ($objCategorias as $categoria): ?>
-            <label for="categoria[<?php echo $categoria->id ?>]"><?php echo $categoria->nombre ?></label> <input <?php echo (isset($objUsuarioGustaCategoria) === true and array_search($categoria->id, $objUsuarioGustaCategoria) === false) ? '' : 'checked' ?> type="checkbox" value="<?php echo $categoria->id ?>" id="categoria[<?php echo $categoria->id ?>]" name="categoria[<?php echo $categoria->id ?>]"> - 
+              <label for="categoria[<?php echo $categoria->id ?>]"><?php echo $categoria->nombre ?></label> <input <?php echo (isset($objUsuarioGustaCategoria) === true and array_search($categoria->id, $objUsuarioGustaCategoria) === false) ? '' : (isset($objUsuarioGustaCategoria) === true) ? 'checked' : '' ?> type="checkbox" value="<?php echo $categoria->id ?>" id="categoria[<?php echo $categoria->id ?>]" name="categoria[<?php echo $categoria->id ?>]"> -
             <?php endforeach ?>
           </div>
         </div>

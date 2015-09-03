@@ -12,7 +12,7 @@ use mvc\request\requestClass as request ?>
 
 <div class="container container-fluid">
     <div class="panel panel-primary">
-
+      
         <div class="panel-body">
             <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('categoria', ((isset($objcategoria)) ? 'update' : 'create')) ?>">
 
