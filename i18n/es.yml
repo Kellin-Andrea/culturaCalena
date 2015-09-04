@@ -308,9 +308,9 @@ dictionary:
     profileInformation:                                                    Informacion Personal
 
 
-    #-----------------------------Errores--------------------------------------#
+    #-----------------------------VALIDADORES--------------------------------------#
   errors:
-    00001:                                                                 El modulo y la accion solicitada no existe.  
+    The name of the category is mandatory:                                 El nombre de la categoría es obligatoria.  
     00002:                                                                 La direccion que solicita no existe.
     00003:                                                                 Caracteres %char% no permitidos.
     00004:                                                                 Correo electronico vinculado a otra cuenta.

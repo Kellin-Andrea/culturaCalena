@@ -23,7 +23,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $direccion = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::DIRECCION, true));
                 $telefono = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::TELEFONO, true));
                 $fax = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::FAX, true));
-                $correo = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::CORREO, true));
+                $mail = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::CORREO, true));
                 $paginaWeb = request::getInstance()->getPost(organizacionTableClass::getNameField(organizacionTableClass::PAGINA_WEB, true));
 
 
@@ -32,7 +32,7 @@ class createActionClass extends controllerClass implements controllerActionInter
           //      }
 
                 
-                validator::validateInsert($nombre, $direccion, $telefono, $fax, $correo, $paginaWeb);
+                validator::validateInsert($nombre, $direccion, $telefono, $fax, $mail, $paginaWeb);
 
                 
                 
@@ -41,7 +41,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                     organizacionTableClass::DIRECCION => $direccion,
                     organizacionTableClass::TELEFONO => $telefono,
                     organizacionTableClass::FAX => $fax,
-                    organizacionTableClass::CORREO => $correo,
+                    organizacionTableClass::CORREO => $mail,
                     organizacionTableClass::PAGINA_WEB => $paginaWeb,
                 );
                 organizacionTableClass::insert($data);

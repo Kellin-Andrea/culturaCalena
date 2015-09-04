@@ -15,7 +15,7 @@ namespace mvc\validator {
      */
     class createOrganizacionValidatorClass extends validatorClass {
 
-        public static function validateInsert($nombre, $direccion, $telefono, $fax, $correo, $paginaWeb) {
+        public static function validateInsert($nombre, $direccion, $telefono, $fax, $mail, $paginaWeb) {
             $flag = false;
 
             if (self::notBlank($nombre)) {
@@ -61,11 +61,11 @@ namespace mvc\validator {
                 session::getInstance()->setFlash('inputfax', true);
                 session::getInstance()->setError('El fax de la organizacion excede los caracteres  permitidos', 'inputfax');
             }
-            if (self::notBlank($correo)) {
+            if (self::notBlank($mail)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
                 session::getInstance()->setError('El correo es obligatorio para la organizacion', 'inputEmail');
-            } else if (strlen($correo) > \datoUsuarioTableClass::CORREO_LENGTH) {
+            } else if (strlen($mail) > \datoUsuarioTableClass::CORREO_LENGTH) {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
                 session::getInstance()->setError('El correo no puede exceder el máximo de caracteres permitidos', 'inputEmail');

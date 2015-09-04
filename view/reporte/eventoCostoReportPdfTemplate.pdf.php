@@ -30,7 +30,7 @@ $this->Ln(15);
     // Título
     $this->Cell(50,1,'Reporte  De Categoria Mas Popular',40,0,'C');
     // Salto de línea
-    $this->Ln(30);
+    $this->Ln(35);
 }
 
 
@@ -55,15 +55,14 @@ $pdf->AddPage();
 
 $pdf->SetFont('Times','B',16);
 
-$pdf->Cell(50,5);
+$pdf->Cell(50,9);
 
 
-$pdf->Cell(100,5,'Numero De Eventos',1,0);
-//$pdf->Ln();
+$pdf->Cell(100,9,'Numero De Eventos',1,0,'C');
 
-$pdf->Cell(40,5, 'Costo',1,0);
+$pdf->Cell(40,9, 'Costo',1,0,'C');
 
-$pdf->Cell(55,5, 'Categorias',1,0);
+$pdf->Cell(55,9, 'Categorias',1,0,'C');
 
 
 
@@ -73,15 +72,15 @@ $pdf->Cell(55,5, 'Categorias',1,0);
 $pdf->Ln(8);
 foreach ($objCateEvento as $data){
 
-$pdf->SetTextColor(0,0,0);
+$pdf->SetTextColor(77, 78, 78);
 
-$pdf->Cell(50,5);
+$pdf->Cell(50,9);
 
-$pdf->Cell(100,5,  utf8_decode($data->conteo),1,0,'C');
+$pdf->Cell(100,9,  utf8_decode($data->conteo),1,0,'L');
 
-$pdf->Cell(40,5,  utf8_decode($data->costo),1,0,'C');
+$pdf->Cell(40,9,  utf8_decode($data->costo),1,0,'C');
 
-$pdf->Cell(55,5,  utf8_decode($data->nombre),1,0,'C');
+$pdf->Cell(55,9,  utf8_decode($data->nombre),1,0,'C');
 
 
 
@@ -105,7 +104,7 @@ $pdf->SetFont('Times','',12);
 $pdf->Cell(30,5);
 $txt="Este reporte es para saber cuantos eventos son creados por categoria con el cual se podra dar cuenta el administrador cual es la categoria mas popular ";
 
-$pdf->MultiCell(0,5,$txt,20,'J');
+$pdf->MultiCell(0,5,$txt,20,'C');
 
 
 

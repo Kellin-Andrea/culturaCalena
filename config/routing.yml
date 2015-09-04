@@ -882,6 +882,8 @@ organizacion_insert:
   load:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
     - libs/validator/organizacion/createOrganizacionValidatorClass.php
 
 organizacion_create:
@@ -890,6 +892,8 @@ organizacion_create:
   load:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
     - libs/validator/organizacion/createOrganizacionValidatorClass.php
 organizacion_edit:
   url:    /organizacion/editar

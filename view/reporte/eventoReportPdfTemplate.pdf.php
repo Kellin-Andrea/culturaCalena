@@ -57,32 +57,32 @@ $pdf->SetFont('Times','B',16);
 
 
 
-$pdf->Cell(100,5,'Nombre',1,0);
+$pdf->Cell(100,9,'Nombre',1,0,'C');
 //$pdf->Ln();
 
-$pdf->Cell(40,5, 'Categoria',1,0);
+$pdf->Cell(40,9, 'Categoria',1,0,'C');
 
-$pdf->Cell(55,5, 'Fecha Inicial Evento',1,0);
+$pdf->Cell(55,9, 'Fecha Inicial Evento',1,0,'C');
 
 
 
-$pdf->Cell(65,5, 'Fecha Inicial Publicacion',1,0);
+$pdf->Cell(65,9, 'Fecha Inicial Publicacion',1,0,'C');
 
 
 
 $pdf->Ln(8);
 foreach ($objEventoCate as $data){
 
-$pdf->SetTextColor(0,0,0);
+$pdf->SetTextColor(94, 94, 94);
 
-$pdf->Cell(100,5,  utf8_decode($data->evento),1,0,'C');
+$pdf->Cell(100,9,  utf8_decode($data->evento),1,0,'L');
 
-$pdf->Cell(40,5,  utf8_decode($data->nombre),1,0,'C');
+$pdf->Cell(40,9,  utf8_decode($data->nombre),1,0,'C');
 
-$pdf->Cell(55,5,  utf8_decode($data->fecha_inicial_evento),1,0,'C');
+$pdf->Cell(55,9,  utf8_decode($data->fecha_inicial_evento),1,0,'C');
 
 
-$pdf->Cell(65, 5,  utf8_decode($data->fecha_inicial_publicacion),1,0,'C');
+$pdf->Cell(65, 9,  utf8_decode($data->fecha_inicial_publicacion),1,0,'C');
 
 
 
@@ -102,7 +102,7 @@ $pdf->Ln();
 $pdf->SetFont('Times','',12);
 $txt="Este reporte  se encuentran todos los eventos creados filtrados por categorias y entre las fechas de publicacion deseadas ";
 
-$pdf->MultiCell(0,5,$txt,20,'J');
+$pdf->MultiCell(0,5,$txt,20,'C');
 
 
 
