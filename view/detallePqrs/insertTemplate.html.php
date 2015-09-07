@@ -9,7 +9,7 @@
       <h1 class="glyphicon glyphicon-book"><?php echo i18n::__('newfeedbackDetails')?> </h1>
   </div>
     
-<?php view::includePartial('detallePqrs/formUser' ,array('objUsuarios' => $objUsuarios)) ?>
+<?php view::includePartial('detallePqrs/formUser' ,array()) ?>
 
 </div>
 

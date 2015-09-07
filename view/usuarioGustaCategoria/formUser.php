@@ -25,7 +25,7 @@
                     <?php mvc\view\viewClass::getMessageError('inputusu') ?>
                     <select class="form-control" id="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>"  name="<?php echo usuarioGustaCategoriaTableClass::getNameField(usuarioGustaCategoriaTableClass::USUARIO_ID, true) ?>">
                         <option value=""> -----<?php echo i18n::__('user_select')?> -----    </option>
-                        <?php foreach ($objUsuarios as $usuario): ?>
+                        <?php foreach ($objusuarios as $usuario): ?>
                         <option value="<?php echo $usuario->id ?>"<?php echo (isset($objusgusca)) ? ($usuario->id === $objusgusca[0]->usuario_id) ? 'selected' : '' : '' ?>><?php echo usuarioTableClass::getNombreById($usuario->id) ?></option>
 
                         <?php endforeach ?>
@@ -52,7 +52,7 @@
       
       <div class="form-group">
     <div class="col-sm-offset-5 col-sm-7">
-      
+        <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioGustaCategoria', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
         <button type="submit" class="btn btn-primary"><?php echo i18n::__('register')?></button>
     </div>
   </div>

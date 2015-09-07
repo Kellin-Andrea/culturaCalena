@@ -13,7 +13,7 @@ namespace mvc\validator {
      *
      * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
      */
-    class createDetellePqrsValidatorClass extends validatorClass {
+    class createDetallePqrsValidatorClass extends validatorClass {
 
         public static function validateInsert($respuesta) {
             $flag = false;

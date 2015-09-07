@@ -7,6 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
+use\mvc\validator\editDetallePqrsValidatorClass as validator;
 
 /**
  * Description of ejemploClass
@@ -17,29 +18,19 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
     public function execute() {
         try {
-            if (request::getInstance()->hasGet(usuarioTableClass::ID)) {
+            if (request::getInstance()->hasGet(detallePqrsTableClass::ID)) {
                 $fields = array(
                     detallePqrsTableClass::ID,
                     detallePqrsTableClass::RESPUESTA,
-                    detallePqrsTableClass::PQRS_ID,
-                    detallePqrsTableClass::USUARIO_ID
+                    
                 );
 
                 $where = array(
                     detallePqrsTableClass::ID => request::getInstance()->getGet(detallePqrsTableClass::ID)
                 );
 
-                $fields1 = array(
-                usuarioTableClass::ID,
-                usuarioTableClass::USER
-                );
                 
-                $ordeBy1 = array(
-                usuarioTableClass::USER
-                );
-
                 $this->objdetalle = detallePqrsTableClass::getAll($fields, true, null, null . null, null, $where);
-                $this->objUsuarios = usuarioTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
                 $this->defineView('edit', 'detallePqrs', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('detallePqrs', 'index');

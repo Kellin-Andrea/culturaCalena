@@ -439,9 +439,10 @@ use mvc\i18n\i18nClass as i18n ?>
                                                 </form>
                                                 <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('localidad', 'delete') ?>" method="POST">
                                                     <input type="hidden" id="idDelete" name="<?php echo localidadTableClass::getNameField(localidadTableClass::ID, true) ?>">
-
-                                                    <a href="<?php echo routing::getInstance()->getUrlWeb('localidad', 'insert') ?>" type="button" class="btn btn-info"><?php echo i18n::__('create') ?></a>
-                                                    <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
+                                                    
+                                                    <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
+                                                    <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('localidad', 'insert') ?>" type="button" class="btn btn-info"><i class="fa fa-map-marker"></i></a>
+                                                    <a id="boton" href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><i class="fa fa-eraser"></i></a>
 
 
                                                             <!-- Eliminar Masivo-->

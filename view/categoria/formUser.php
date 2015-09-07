@@ -21,7 +21,7 @@ use mvc\request\requestClass as request ?>
                 <?php endif ?>
 
 
-                <div class="form-group <?php echo (session::getInstance()->hasFlash(inputname)) ? 'has-error has-feedback' : '' ?>">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputname')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"  name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?><"class="col-lg-2 control-label"> <?php echo i18n::__('name_category') ?></label>
                     <div class="col-lg-5">
                         <?php mvc\view\viewClass::getMessageError('inputname') ?>
@@ -31,8 +31,9 @@ use mvc\request\requestClass as request ?>
                 </div>
                 <div class="form-group">
                     <div class="col-sm-offset-4 col-sm-6">
-
+                        <a href="<?php echo routing::getInstance()->getUrlWeb('categoria', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
                         <button type="submit" class="btn btn-primary"><?php echo i18n::__('register') ?></button>
+                        
                     </div>
                 </div>
             </form>

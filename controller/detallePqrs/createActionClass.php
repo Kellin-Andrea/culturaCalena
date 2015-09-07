@@ -7,7 +7,8 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-use mvc\validator\createdetallePqrsValidatorClass as validator;
+ use\mvc\validator\createDetallePqrsValidatorClass as validator;
+
 /**
  * Description of ejemploClass
  *
@@ -18,29 +19,21 @@ class createActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       if (request::getInstance()->isMethod('POST')) {
-          
-          $respuesta = request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true));
-          //$user= request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::USUARIO_ID, true));
 
-//$pqrs = request::getInstance()->hasPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::PQRS_ID, true));
+        $respuesta = request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true));
 
-//        if (strlen($usuario) > usuarioTableClass::USER_LENGTH) {
-//          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
-//        }
 
-          validator::validateInsert($respuesta);
-          
+        validator::validateInsert($respuesta);
+
         $data = array(
-            detallePqrsTableClass::ID => session::getInstance()->getUserId(),
             detallePqrsTableClass::RESPUESTA => $respuesta,
-            //detallePqrsTableClass::PQRS_ID => $pqrs
         );
         detallePqrsTableClass::insert($data);
         routing::getInstance()->redirect('detallePqrs', 'index');
       } else {
         routing::getInstance()->redirect('detallePqrs', 'index');
       }
-     } catch (PDOException $exc) {
+    } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }

@@ -13,17 +13,12 @@ namespace mvc\validator {
      *
      * @author Julian Lasso <ingeniero.julianlasso@gmail.com>
      */
-    class createdetellePqrsValidatorClass extends validatorClass {
+    class editDetallePqrsValidatorClass extends validatorClass {
 
-        public static function validateInsert($user,$respuesta) {
+        public static function validateEdit($respuesta,$id) {
             $flag = false;
 
-            if (self::notBlank($user)) {
-                $flag = true;
-                session::getInstance()->setFlash('inputuser', true);
-                session::getInstance()->setError('Debes selecionar un usuario', 'inputuser');
-            }
-
+           
             if (self::notBlank($respuesta)) {
                 $flag = true;
                 session::getInstance()->setFlash('inputrespuesta', true);
@@ -41,9 +36,9 @@ namespace mvc\validator {
 
 
             if ($flag === true) {
-                //request::getInstance()->setMethod('GET');
-                //request::getInstance()->addParamGet(array('id' => 12));
-                routing::getInstance()->forward('detallePqrs', 'insert');
+                request::getInstance()->setMethod('GET');
+                request::getInstance()->addParamGet(array('id' => $id));
+                routing::getInstance()->forward('detallePqrs', 'edit');
             }
         }
 

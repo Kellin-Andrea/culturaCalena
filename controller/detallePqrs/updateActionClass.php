@@ -7,7 +7,7 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
+use\mvc\validator\editDetallePqrsValidatorClass as validator;
 /**
  * Description of ejemploClass
  *
@@ -19,15 +19,21 @@ class updateActionClass extends controllerClass implements controllerActionInter
     try {
       if (request::getInstance()->isMethod('POST')) {
 
-        $id= request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::ID, true));
-     
-
+        $id = request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::ID, true));
+        $respuesta = request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true));    
+        
+        validator::validateEdit($respuesta,$id);
+        
         $ids = array(
             detallePqrsTableClass::ID => $id
         );
 
+        
         $data = array(
-            detallePqrsTableClass::RESPUESTA => $id,
+            
+            detallePqrsTableClass::ID => $id,
+            detallePqrsTableClass::RESPUESTA => $respuesta
+          
           
         );
 

@@ -26,7 +26,7 @@
   </div>
       <div class="form-group">
     <div class="col-sm-offset-5 col-sm-10">
-      
+        <a href="<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
         <button type="submit" class="btn btn-primary"><?php echo i18n::__('register')?></button>
     </div>
   </div>

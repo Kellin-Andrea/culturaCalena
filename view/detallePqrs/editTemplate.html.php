@@ -2,7 +2,7 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <?php $detalle = detallePqrsTableClass::RESPUESTA?>
-<?php $usuario = usuarioTableClass::ID ?>
+
 <?php view::includePartial('detallePqrs/menuPrincipal')?>
 
 <div class="container container-fluid">
@@ -11,6 +11,6 @@
     
       <h1 class="glyphicon glyphicon-user"> <?php echo i18n::__('editfeedbackDetails')?> <?php echo $objdetalle[0]->$detalle ?></h1>
   </div>
-<?php view::includePartial('detallePqrs/formUser', array('objdetalle' => $objdetalle, 'detalle' => $detalle, 'objUsuarios' => $objUsuarios, 'usuario' => $usuario)) ?>
+<?php view::includePartial('detallePqrs/formUser', array('objdetalle' => $objdetalle, 'detalle' => $detalle)) ?>
 
 </div>

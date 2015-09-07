@@ -13,6 +13,32 @@ use mvc\config\configClass as config;
  */
 class usuarioGustaCategoriaTableClass extends usuarioGustaCategoriaBaseTableClass {
 
+  public static function getTotalpages($lines, $where) {
+    try {
+      $sql = 'SELECT count (' . usuarioGustaCategoriaTableClass::ID . ') AS cantidad ' .
+              'FROM ' . usuarioGustaCategoriaTableClass::getNameTable();
+
+      if (is_array($where) === true) {
+        foreach ($where as $fields => $value) {
+          if (is_array($value)) {
+            $sql = $sql . '  AND  ' . $fields . '  BETWEEN  ' . ((is_numeric($value[0])) ? $value[0] : " '$value[0]' ") . 'AND' . ((is_numeric($value[1])) ? $value[1] : " '$value[1]' ");
+          }//end if 
+          else {
+            $sql = $sql . '  AND   ' . $fields . '  =  ' . ((is_numeric($value)) ? $value : " '$value' ");
+          }//end else
+        }//end foreach
+      }//end  if
+
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute();
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return ceil($answer[0]->cantidad / $lines);
+    }//end try
+    catch (PDOException $exc) {
+      throw $exc;
+    }//end catch
+  }
+
   public static function getNombreById($id) {
     try {
       $sql = 'SELECT nombre AS nombre ' .
@@ -32,30 +58,6 @@ class usuarioGustaCategoriaTableClass extends usuarioGustaCategoriaBaseTableClas
       throw $exc;
     }//end cath
   }
-
-//  public static function getGustosProfile($idCate) {
-//    try {
-//
-//
-//      $sql = ' SELECT ' . datoUsuarioTableClass::getNameTable() . '.' . datoUsuarioTableClass::NOMBRE . ' ' . 'AS dato' . ','
-//              . datoUsuarioTableClass::getNameTable() . '.' . datoUsuarioTableClass::APELLIDO . ' , '
-//              . categoriaTableClass::getNameTable() . '.' . categoriaTableClass::NOMBRE .
-//              ' FROM ' . datoUsuarioTableClass::getNameTable() . ' , ' . categoriaTableClass::getNameTable().' , ' 
-//              . usuarioGustaCategoriaTableClass::getNameTable(). ' , ' . usuarioTableClass::getNameTable().
-//              ' WHERE ' . categoriaTableClass::getNameTable() . '.' . categoriaTableClass::ID . '=' . usuarioGustaCategoriaTableClass::getNameTable() . '.' . usuarioGustaCategoriaTableClass::CATEGORIA_ID.
-//              ' AND ' . ' ' . usuarioTableClass::getNameTable() . '.' . usuarioTableClass::ID . ' = ' . datoUsuarioTableClass::getNameTable() . '.' . datoUsuarioTableClass::USUARIO_ID. 
-//              ' AND ' . usuarioTableClass::getNameTable() . '.' . usuarioTableClass::ID . ' = ' . usuarioGustaCategoriaTableClass::getNameTable(). '.' . usuarioGustaCategoriaTableClass::USUARIO_ID. 
-//              ' AND ' . usuarioGustaCategoriaTableClass::getNameTable(). '.'. usuarioGustaCategoriaTableClass::CATEGORIA_ID. ' = '.$idCate;
-//
-//
-//
-//       return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
-//       
-//    } catch (PDOException $exc) {
-//      throw $exc;
-//      
-//    }
-//  }
 
 }
 

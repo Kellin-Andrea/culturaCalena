@@ -521,7 +521,7 @@ detallePqrs_insert:
   load:
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
-    - libs/validator/detallePqrs/createdetallePqrsValidatorClass.php
+    - libs/validator/detallePqrs/createDetallePqrsValidatorClass.php
     
 detallePqrs_create:
   url:    /detallePqrs/crear
@@ -529,21 +529,21 @@ detallePqrs_create:
   load:
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
-    - libs/validator/detallePqrs/detallePqrsValidatorClass.php
+    - libs/validator/detallePqrs/createDetallePqrsValidatorClass.php
 detallePqrs_edit:
   url:    /detallePqrs/editar
   param:  { module: detallePqrs, action: edit, format: html }
   load:
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
-    - libs/validator/detallePqrs/editdetallePqrsValidatorClass.php
+    - libs/validator/detallePqrs/editDetallePqrsValidatorClass.php
 detallePqrs_update:
   url:    /detallePqrs/actualizar
   param:  { module: detallePqrs, action: update, format: html }
   load:
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
-    - libs/validator/detallePqrs/editdetallePqrsValidatorClass.php
+    - libs/validator/detallePqrs/editDetallePqrsValidatorClass.php
 detallePqrs_delete:
   url:    /detallePqrs/eliminar
   param:  { module: detallePqrs, action: delete, format: json }
@@ -1827,3 +1827,5 @@ profile:
     - model/organizacionTableClass.php
     - model/base/usuarioGustaCategoriaBaseTableClass.php
     - model/usuarioGustaCategoriaTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
