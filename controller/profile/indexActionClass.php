@@ -80,7 +80,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $this->cntPages = eventoTableClass::getTotalpages(config::getRowGrid(), $where);
             $this->objPerfilUser = usuarioTableClass::getAll($fields, FALSE, null, null, null, null, $where1);
             $this->objDatosProfile = datoUsuarioTableClass::getAll($fields2, FALSE, null, null, null, null, $where2);
-            $this->objGustosProfile = usuarioGustaCategoriaTableClass::getAll($fields3, false, null, null, null, null, $where3);
+            $this->objGustosProfile = usuarioTableClass::getCategoria($id);
             $this->objEventoProfile = eventoTableClass::getEventoProfile($id, config::getRowGrid(), $page, $where);
             
             $this->defineView('index', 'profile', session::getInstance()->getFormatOutput());

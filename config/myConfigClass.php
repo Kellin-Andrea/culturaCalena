@@ -11,7 +11,7 @@ namespace mvc\config {
    */
   class myConfigClass extends configClass {
  
-    const CREDENCIAL_USUARIO = 2;
+    const CREDENCIAL_ADMIN = 1;
     
     private static $fileSizeAvatar;
     

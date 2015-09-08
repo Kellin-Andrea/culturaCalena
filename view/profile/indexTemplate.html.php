@@ -4,6 +4,8 @@ use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\config\configClass as config ?>
 <?php
+use mvc\config\myConfigClass as myConfig ?>
+<?php
 use mvc\request\requestClass as request ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
@@ -153,25 +155,53 @@ use mvc\session\sessionClass as session ?>
         </div>                 
       </div>
 
-      <div class="well profile">
-        <div class="col-sm-12">
-          <div class="col-xs-12 col-sm-8">
-            <?php foreach ($objGustosProfile as $GustosProfile): ?>
-              <h2><?php
-                echo categoriaTableClass::getNombreById($GustosProfile->categoria_id);
-                ?></h2>
-            <?php endforeach; ?>
+ 
 
           </div>            
 
-        </div>            
-      </div>
-    </div>     
+<div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+    <nav id="evento"> <h1><?php echo i18n::__('youCategory') ?></h1></nav>
+  <!-- Indicators -->
+  <ol class="carousel-indicators">
+    <?php foreach ($objGustosProfile as $key => $dato) : ?>
+    <li data-target="#carousel-example-generic" data-slide-to="<?php echo $key ?>"></li>
+    <?php endforeach ?>
+  </ol>
 
-    <nav id="evento"> <h1><?php echo i18n::__('my_events') ?></h1></nav>
+  <!-- Wrapper for slides -->
+  <div class="carousel-inner" role="listbox">
+      
+    <?php foreach ($objGustosProfile as $key => $dato) : ?>
+    <div class="item <?php echo $key === 0 ? 'active' : '' ?>">
+        <img src="<?php echo routing::getInstance()->getUrlImgUpload($dato->imagen) ?>" style="height: 300px" class="img-responsive">
+      <div class="carousel-caption">
+          <h2 id="colorLetra"><?php echo $dato->nombre ?></h2>
+          <h4 id="colorLetra">Valor Evento: $<?php echo $dato->costo?></h4>
+        <p id="colorLetra"><?php echo $dato->descripcion ?></p>
+      </div>            
+    </div>
+ <?php endforeach ?>
+  </div>
+
+  <!-- Controls -->
+  <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+    <span class="sr-only">Previous</span>
+  </a>
+  <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+    <span class="sr-only">Next</span>
+  </a>
+</div>
+      
+      
+      
+      
+      
+      
 
     <div class="container">
-
+ <nav id="evento"> <h1><?php echo i18n::__('my_events') ?></h1></nav>
       <table class="table table-bordered table-striped">
         <thead>
           <tr>
@@ -226,10 +256,9 @@ use mvc\session\sessionClass as session ?>
       </table>
     </div>
     <div class="text-right">
-      <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
-        <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-          <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
-        <?php endfor ?>
-      </select> 
-      <?php echo i18n::__('of') ?> <?php echo $cntPages ?>
+                   Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo (session::getInstance()->isUserAuthenticated() and session::getInstance()->hasCredential(myConfig::CREDENCIAL_ADMIN)) ? routing::getInstance()->getUrlWeb('evento', 'index') : routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
+                  <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                    <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+                  <?php endfor ?>
+                </select> <?php echo $cntPages ?>
     </div>

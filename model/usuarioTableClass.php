@@ -72,6 +72,37 @@ class usuarioTableClass extends usuarioBaseTableClass {
         }//end catch
     }
 
+    public static function getCategoria($id) {
+ 
+      
+      try {
+          
+          $sql = 'SELECT ' .eventoTableClass::getNameTable().'.'.eventoTableClass::ID .' , '
+                  .eventoTableClass::getNameTable().'.'.eventoTableClass::IMAGEN .' , '
+                  . eventoTableClass::getNameTable().'.'.eventoTableClass::NOMBRE.' , '
+                  . eventoTableClass::getNameTable().'.'.eventoTableClass::DESCRIPCION .' , '.
+               eventoTableClass::getNameTable().'.'. eventoTableClass::COSTO.' , '
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_INICIAL_EVENTO.' , '
+               .eventoTableClass::getNameTable().'.'. eventoTableClass::DIRECCION.' , '
+               .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_FINAL_EVENTO.
+                ' FROM ' . eventoTableClass::getNameTable().' JOIN '.categoriaTableClass::getNameTable().' ON ' .eventoTableClass::getNameTable().'.'.eventoTableClass::CATEGORIA_ID.' = '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' , '.usuarioGustaCategoriaTableClass::getNameTable().
+                  ' WHERE ' .usuarioGustaCategoriaTableClass::getNameTable().'.'.usuarioGustaCategoriaTableClass::CATEGORIA_ID.'='.categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' '.' '
+                  .'AND'.' '.  eventoTableClass::getNameTable().'.' . eventoTableClass::DELETED_AT . '  IS  NULL '
+                  . 'AND'.' '.usuarioGustaCategoriaTableClass::getNameTable().'.'.usuarioGustaCategoriaTableClass::USUARIO_ID.'='.$id;
+          
+     
+          
+       
+          
+       
+        
+        return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+      } catch (\PDOException $exc) {
+        throw $exc;
+      }
+     }
+    
+    
 //end function
 
     /**
