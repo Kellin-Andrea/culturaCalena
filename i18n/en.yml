@@ -33,6 +33,7 @@ dictionary:
     registeredFedback:                                                 Registered Fedback
     editPartner:                                                       Edit Partner
     editOrganization:                                                  Edit Organization
+    NumEvent:                                                          Num Event
     new:                                                               New 
     newPass:                                                           New pass
     oldPass:                                                           Old pass
@@ -139,6 +140,7 @@ dictionary:
     Theater:                                                           Theater
     know more here:                                                    know more here
     Project:                                                           Project
+    adminPanel:                                                        Admin Panel
     #-----------------------------User-----------------------------------------#
     userManagement:                                                    User management
     id:                                                                Id

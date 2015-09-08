@@ -25,7 +25,7 @@ use mvc\request\requestClass as request ?>
     <div class="container">
         <div class="logo">
             <a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>">
-                <img src="<?php echo routing::getInstance()->getUrlImg('logo1.png') ?>"> 
+                <img src="<?php echo routing::getInstance()->getUrlImg('logo.png') ?>"> 
             </a>
         </div>
         <div class="header-widgets  header-widgets-desktop">
