@@ -22,6 +22,15 @@ dictionary:
     registeredSponsor:                                                 Registered Sponsor
     registeredCategory:                                                Registered Category
     registeredBitacora:                                                Registered Bitacora
+    registeredTypeDocument:                                            Registered TypeDocument
+    registeredCredential:                                              Registered Credential
+    registeredLocality:                                                Registered Locality
+    registeredUserLike:                                                Registered UserLike
+    registeredStatusFedback:                                           Registered StatusFedback
+    registeredDetailFedback:                                           Registered DetailFedback
+    registeredTypeFedback:                                             Registered TypeFedback
+    registeredEvents:                                                  Registered Events
+    registeredFedback:                                                 Registered Fedback
     editPartner:                                                       Edit Partner
     editOrganization:                                                  Edit Organization
     new:                                                               New 

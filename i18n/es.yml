@@ -19,6 +19,15 @@ dictionary:
     registeredSponsor:                                                      Patrocinadores Registrados
     registeredCategory:                                                     Categorias Registrados
     registeredBitacora:                                                     Bitacoras Registrados
+    registeredTypeDocument:                                                 Tipo Documentos Registrados
+    registeredCredential:                                                   Credenciales Registradas
+    registeredLocality:                                                     Localidades Registradas
+    registeredStatusFedback:                                                Estado Pqrs registrados
+    registeredUserLike:                                                     Gustos Categorias Registradas
+    registeredDetailFedback:                                                Detalles Pqrs Resgistrados
+    registeredTypeFedback:                                                  tipo Pqrs Registrados
+    registeredEvents:                                                       Evento Patrocinadores Registrados
+    registeredFedback:                                                      Pqrs Registrados
     eventPartnerManagement:                                                 Gestion Evento Patrocinador
     newEventPartner:                                                        Nuevo Evento Patrocinador
     dance:                                                                  Danza

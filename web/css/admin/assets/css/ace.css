@@ -11917,6 +11917,7 @@ td .lbl:only-child {
 .infobox .infobox-content {
   color: #555;
   max-width: 140px;
+  margin-top: -9px;
 }
 .infobox .infobox-content:first-child {
   font-weight: bold;
@@ -11939,6 +11940,8 @@ td .lbl:only-child {
   margin: 2px 0 4px;
   position: relative;
   text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.15);
+  margin-left: 100px;
+  margin-top: -4px;
 }
 .infobox > .infobox-data > .infobox-text {
   display: block;

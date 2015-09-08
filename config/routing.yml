@@ -1811,7 +1811,26 @@ admin_index:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
     - model/base/patrocinadorBaseTableClass.php
-    - model/patrocinadorTableClass.php    
+    - model/patrocinadorTableClass.php 
+    - model/base/tipoDocumentoBaseTableClass.php
+    - model/tipoDocumentoTableClass.php
+    - model/base/credencialBaseTableClass.php
+    - model/credencialTableClass.php 
+    - model/base/localidadBaseTableClass.php
+    - model/localidadTableClass.php 
+    - model/base/usuarioGustaCategoriaBaseTableClass.php
+    - model/usuarioGustaCategoriaTableClass.php
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+    - model/base/eventoPatrocinadorBaseTableClass.php
+    - model/eventoPatrocinadorTableClass.php
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+    
 traductor:
   url:   /admin/traductor
   param:  { module: admin, action: traductor, format: html }

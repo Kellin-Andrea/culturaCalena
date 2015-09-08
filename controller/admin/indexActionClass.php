@@ -18,15 +18,13 @@ use mvc\i18n\i18nClass as i18n;
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
-    /**
-     * @author: 
-     * Shirley Marcela Rivero <marce250494@hotmail.com>
-     * Kelly Andrea Manzano <kellinandrea18@hotmail.com>
-     * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
-     * @return datatype retorna vista  .
-     */
-    
-    
+  /**
+   * @author: 
+   * Shirley Marcela Rivero <marce250494@hotmail.com>
+   * Kelly Andrea Manzano <kellinandrea18@hotmail.com>
+   * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
+   * @return datatype retorna vista  .
+   */
   public function execute() {
     try {
 
@@ -36,46 +34,53 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $totalBitacora = array(bitacoraTableClass::ID);
 
       $totalCategorias = array(categoriaTableClass::ID);
-      $totalEventos= array(eventoTableClass::ID);
+      $totalEventos = array(eventoTableClass::ID);
       $totalOrganizacion = array(organizacionTableClass::ID);
       $totalPatrocinadores = array(patrocinadorTableClass::ID);
+      $totalTipoDocumento = array(tipoDocumentoTableClass::ID);
+      $totalCredenciales = array(credencialTableClass::ID);
+      $totalLocalidades = array(localidadTableClass::ID);
+      $totalGustosCategoria = array(usuarioGustaCategoriaTableClass::ID);
+      $totalPqrs = array(pqrsTableClass::ID);
+      $totalEventoPatrocinador = array(eventoPatrocinadorTableClass::ID);
+      $totalTipoPqrs = array(tipoPqrsTableClass::ID);
+      $totalDetallePqrs = array(detallePqrsTableClass::ID);
+      $totalEstadoPqrs = array(estadoPqrsTableClass::ID);
 
-      
-  
 
-      $this->objUsuario = usuarioTableClass::getAll($totalUsuario, false);
+
+
+      $this->objUsuario = usuarioTableClass::getAll($totalUsuario, true);
 
       $this->objBitacora = bitacoraTableClass::getAll($totalBitacora, FALSE);
 
-      $this->objCategoria = categoriaTableClass::getAll($totalCategorias, FALSE);
-      $this->objEvento = eventoTableClass::getAll($totalEventos, FALSE);
-     $this->objOrganizacion = organizacionTableClass::getAll($totalOrganizacion, FALSE);
-       $this->objPatrocinadores = patrocinadorTableClass::getAll($totalPatrocinadores, FALSE);
+      $this->objCategoria = categoriaTableClass::getAll($totalCategorias, true);
+      $this->objEvento = eventoTableClass::getAll($totalEventos, true);
+      $this->objOrganizacion = organizacionTableClass::getAll($totalOrganizacion, true);
+      $this->objPatrocinadores = patrocinadorTableClass::getAll($totalPatrocinadores, true);
+      $this->objtipoDocumento = tipoDocumentoTableClass::getAll($totalTipoDocumento,true);
+      $this ->objCredenciales = credencialTableClass::getAll($totalCredenciales, true);
+      $this->objlocal = localidadTableClass::getAll($totalLocalidades, true);
+      $this->objUsuarioGustaCategoria = usuarioGustaCategoriaTableClass::getAll($totalGustosCategoria,false);
+      $this->objpqrs = pqrsTableClass::getAll($totalPqrs, true);
+      $this->objeventoPatrocinador = eventoPatrocinadorTableClass::getAll($totalEventoPatrocinador, true);
+      $this->objtipoPqrs = tipoPqrsTableClass::getAll($totalTipoPqrs, true);
+      $this->objdetalle = detallePqrsTableClass::getAll($totalDetallePqrs, true);
+      $this->objestado = estadoPqrsTableClass::getAll($totalEstadoPqrs, true);
 
-     
-      
 
-     
-      
-        if (session::getInstance()->hasCredential('admin')) {
-            $this->defineView('index', 'admin', session::getInstance()->getFormatOutput());
-        } else {
-            routing::getInstance()->redirect('homepage', 'index');
-        }
-      
-    }catch (PDOException $exc) {
+
+
+      if (session::getInstance()->hasCredential('admin')) {
+        $this->defineView('index', 'admin', session::getInstance()->getFormatOutput());
+      } else {
+        routing::getInstance()->redirect('homepage', 'index');
+      }
+    } catch (PDOException $exc) {
       echo $exc->getMessage();
       echo '<br>';
       echo $exc->getTraceAsString();
     }
   }
-    
-    
 
-        
-        
-
-      
-    }
-
-
+}
