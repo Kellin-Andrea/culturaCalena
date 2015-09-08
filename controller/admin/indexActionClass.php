@@ -25,16 +25,57 @@ class indexActionClass extends controllerClass implements controllerActionInterf
      * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
      * @return datatype retorna vista  .
      */
-    public function execute() {
+    
+    
+  public function execute() {
+    try {
 
+
+      $totalUsuario = array(usuarioTableClass::ID);
+
+      $totalBitacora = array(bitacoraTableClass::ID);
+
+      $totalCategorias = array(categoriaTableClass::ID);
+      $totalEventos= array(eventoTableClass::ID);
+      $totalOrganizacion = array(organizacionTableClass::ID);
+      $totalPatrocinadores = array(patrocinadorTableClass::ID);
+
+      
+  
+
+      $this->objUsuario = usuarioTableClass::getAll($totalUsuario, false);
+
+      $this->objBitacora = bitacoraTableClass::getAll($totalBitacora, FALSE);
+
+      $this->objCategoria = categoriaTableClass::getAll($totalCategorias, FALSE);
+      $this->objEvento = eventoTableClass::getAll($totalEventos, FALSE);
+     $this->objOrganizacion = organizacionTableClass::getAll($totalOrganizacion, FALSE);
+       $this->objPatrocinadores = patrocinadorTableClass::getAll($totalPatrocinadores, FALSE);
+
+     
+      
+
+     
+      
         if (session::getInstance()->hasCredential('admin')) {
             $this->defineView('index', 'admin', session::getInstance()->getFormatOutput());
         } else {
             routing::getInstance()->redirect('homepage', 'index');
         }
+      
+    }catch (PDOException $exc) {
+      echo $exc->getMessage();
+      echo '<br>';
+      echo $exc->getTraceAsString();
+    }
+  }
+    
+    
+
+        
+        
+
+      
     }
 
-//end function
-}
 
-//end class

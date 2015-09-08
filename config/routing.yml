@@ -1802,7 +1802,16 @@ admin_index:
   load:
     - model/base/eventoBaseTableClass.php
     - model/eventoTableClass.php
-    
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    - model/base/patrocinadorBaseTableClass.php
+    - model/patrocinadorTableClass.php    
 traductor:
   url:   /admin/traductor
   param:  { module: admin, action: traductor, format: html }
@@ -1829,3 +1838,5 @@ profile:
     - model/usuarioGustaCategoriaTableClass.php
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php

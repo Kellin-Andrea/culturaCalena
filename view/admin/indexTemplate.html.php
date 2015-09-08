@@ -1,3 +1,12 @@
+<?php $totalUsuarios = count($objUsuario) ?>
+
+<?php $totalBitacora = count($objBitacora) ?>
+
+<?php $totalCategoria= count($objCategoria) ?>
+<?php $totalEvento = count($objEvento) ?>
+<?php  $totalOrganizacion = count($objOrganizacion) ?>
+<?php  $totalPatrocinador= count($objPatrocinadores) ?>
+
 <?php
 
 use mvc\routing\routingClass as routing ?>
@@ -401,101 +410,88 @@ use mvc\i18n\i18nClass as i18n ?>
                                                 <div class="row">
                                                     <div class="space-6"></div>
 
-                                                    <div class="col-sm-7 infobox-container">
+                                                    <div class="col-sm-12 infobox-container">
                                                         <!-- #section:pages/dashboard.infobox -->
                                                         <div class="infobox infobox-green">
                                                             <div class="infobox-icon">
-                                                                <i class="ace-icon fa fa-comments"></i>
+                                                                <i class="ace-icon fa fa-group"></i>
                                                             </div>
 
                                                             <div class="infobox-data">
-                                                                <span class="infobox-data-number">32</span>
-                                                                <div class="infobox-content">comments + 2 reviews</div>
+                                                                <span class="infobox-data-number"><?php echo $totalUsuarios?></span>
+                                                                <div class="infobox-content"><?php echo i18n::__('registeredUser')?></div>
                                                             </div>
 
-                                                            <!-- #section:pages/dashboard.infobox.stat -->
-                                                            <div class="stat stat-success">8%</div>
+                                                            
 
                                                             <!-- /section:pages/dashboard.infobox.stat -->
                                                         </div>
 
                                                         <div class="infobox infobox-blue">
                                                             <div class="infobox-icon">
-                                                                <i class="ace-icon fa fa-twitter"></i>
+                                                                <i class="ace-icon fa fa-play-circle"></i>
                                                             </div>
 
                                                             <div class="infobox-data">
-                                                                <span class="infobox-data-number">11</span>
-                                                                <div class="infobox-content">new followers</div>
+                                                                  <span class="infobox-data-number"><?php echo $totalEvento?></span>
+                                                                <div class="infobox-content"><?php echo i18n::__('registeredEvent')?></div>
                                                             </div>
 
-                                                            <div class="badge badge-success">
-                                                                +32%
-                                                                <i class="ace-icon fa fa-arrow-up"></i>
-                                                            </div>
+                                                            
                                                         </div>
 
                                                         <div class="infobox infobox-pink">
                                                             <div class="infobox-icon">
-                                                                <i class="ace-icon fa fa-shopping-cart"></i>
+                                                                <i class="ace-icon fa fa-file-archive-o"></i>
                                                             </div>
 
                                                             <div class="infobox-data">
-                                                                <span class="infobox-data-number">8</span>
-                                                                <div class="infobox-content">new orders</div>
+                                                               <span class="infobox-data-number"><?php echo $totalBitacora?></span>
+                                                                <div class="infobox-content"><?php echo i18n::__('registeredBitacora')?></div>
                                                             </div>
-                                                            <div class="stat stat-important">4%</div>
+                                                           
                                                         </div>
 
                                                         <div class="infobox infobox-red">
                                                             <div class="infobox-icon">
-                                                                <i class="ace-icon fa fa-flask"></i>
+                                                                <i class="ace-icon fa fa-star"></i>
                                                             </div>
 
                                                             <div class="infobox-data">
-                                                                <span class="infobox-data-number">7</span>
-                                                                <div class="infobox-content">experiments</div>
+                                                                 <span class="infobox-data-number"><?php echo $totalCategoria?></span>
+                                                                <div class="infobox-content"><?php echo i18n::__('registeredCategory')?></div>
                                                             </div>
                                                         </div>
 
                                                         <div class="infobox infobox-orange2">
                                                             <!-- #section:pages/dashboard.infobox.sparkline -->
-                                                            <div class="infobox-chart">
-                                                                <span class="sparkline" data-values="196,128,202,177,154,94,100,170,224"></span>
+                                                            <div class="infobox-icon">
+                                                                <i class="ace-icon fa fa-user"></i>
                                                             </div>
 
                                                             <!-- /section:pages/dashboard.infobox.sparkline -->
                                                             <div class="infobox-data">
-                                                                <span class="infobox-data-number">6,251</span>
-                                                                <div class="infobox-content">pageviews</div>
+                                                                 <span class="infobox-data-number"><?php echo $totalPatrocinador?></span>
+                                                                <div class="infobox-content"><?php echo i18n::__('registeredSponsor')?></div>
                                                             </div>
 
-                                                            <div class="badge badge-success">
-                                                                7.2%
-                                                                <i class="ace-icon fa fa-arrow-up"></i>
-                                                            </div>
+                                                            
                                                         </div>
 
-                                                        <div class="infobox infobox-blue2">
-                                                            <div class="infobox-progress">
-                                                                <!-- #section:pages/dashboard.infobox.easypiechart -->
-                                                                <div class="easy-pie-chart percentage" data-percent="42" data-size="46">
-                                                                    <span class="percent">42</span>%
-                                                                </div>
-
-                                                                <!-- /section:pages/dashboard.infobox.easypiechart -->
+                                                         <div class="infobox infobox-blue2">
+                                                            <!-- #section:pages/dashboard.infobox.sparkline -->
+                                                            <div class="infobox-icon">
+                                                                <i class="ace-icon fa fa-star-half-empty"></i>
                                                             </div>
 
+                                                            <!-- /section:pages/dashboard.infobox.sparkline -->
                                                             <div class="infobox-data">
-                                                                <span class="infobox-text">traffic used</span>
-
-                                                                <div class="infobox-content">
-                                                                    <span class="bigger-110">~</span>
-                                                                    58GB remaining
-                                                                </div>
+                                                                 <span class="infobox-data-number"><?php echo $totalOrganizacion?></span>
+                                                                <div class="infobox-content"><?php echo i18n::__('registeredOrganization')?></div>
                                                             </div>
-                                                        </div>
 
+                                                            
+                                                        </div>
 
 
 

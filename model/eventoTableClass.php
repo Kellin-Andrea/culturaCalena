@@ -155,7 +155,27 @@ class eventoTableClass extends eventoBaseTableClass {
       throw $exc;
     }
   }
+  
+  public static function getEventTotal($id) {
+    try {
 
+
+
+      $sql = 'SELECT COUNT(' . eventoTableClass::getNameTable() . '.' . eventoTableClass::ID . ') AS CONTEO' .' '.
+              'FROM' . '  ' . eventoTableClass::getNameTable() . ' , ' . usuarioTableClass::getNameTable() . ' ' .
+              'WHERE' . ' ' .usuarioTableClass::getNameTable().'.'.usuarioTableClass::ID.' = '.eventoTableClass::getNameTable().'.'.eventoTableClass::USUARIO_ID.' '.
+              'AND'. ' '.usuarioTableClass::getNameTable().'.'.usuarioGustaCategoriaTableClass::ID. ' = '.$id;
+      
+ 
+      
+      
+      return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+
+ 
+  }
 
 }     
         

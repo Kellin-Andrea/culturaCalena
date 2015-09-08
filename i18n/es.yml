@@ -13,6 +13,12 @@ dictionary:
     pass:                                                                   Contraseña
     dateCreate:                                                             Fecha de creaccion
     EventPartner:                                                           Evento Patrocinador
+    registeredUser:                                                         Usuarios Registrados
+    registeredEvent:                                                        Eventos Registrados
+    registeredOrganization:                                                 Organizaciones Registrados
+    registeredSponsor:                                                      Patrocinadores Registrados
+    registeredCategory:                                                     Categorias Registrados
+    registeredBitacora:                                                     Bitacoras Registrados
     eventPartnerManagement:                                                 Gestion Evento Patrocinador
     newEventPartner:                                                        Nuevo Evento Patrocinador
     dance:                                                                  Danza

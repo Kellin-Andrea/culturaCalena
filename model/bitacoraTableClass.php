@@ -39,5 +39,27 @@ class bitacoraTableClass extends bitacoraBaseTableClass {
             throw $exc;
         }//end catch
     }
+    
+    public static function getBitacoraTotal($id) {
+    try {
+
+
+
+      $sql = 'SELECT COUNT(' . bitacoraTableClass::getNameTable() . '.' . bitacoraTableClass::ID . ') AS CONTEO2' .' '.
+              'FROM' . '  ' . bitacoraTableClass::getNameTable() . ' , ' . usuarioTableClass::getNameTable() . ' ' .
+              'WHERE' . ' ' .usuarioTableClass::getNameTable().'.'.usuarioTableClass::ID.' = '.bitacoraTableClass::getNameTable().'.'.bitacoraTableClass::USUARIO_ID.' '.
+              'AND'. ' '.bitacoraTableClass::getNameTable().'.'.bitacoraTableClass::ACCION.' = '."'identificación'".' '.
+              'AND'. ' '.usuarioTableClass::getNameTable().'.'.usuarioGustaCategoriaTableClass::ID. ' = '.$id;
+      
+ 
+      
+      
+      return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+
+ 
+  }
         } //end class
 

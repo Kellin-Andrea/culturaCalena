@@ -16,6 +16,12 @@ dictionary:
     event_select:                                                      Event Select
     editUser:                                                          Edit user
     EventPartner:                                                      Event Partner
+    registeredUser:                                                    Registered User
+    registeredEvent:                                                   Registered Events   
+    registeredOrganization:                                            Registered Organizatios
+    registeredSponsor:                                                 Registered Sponsor
+    registeredCategory:                                                Registered Category
+    registeredBitacora:                                                Registered Bitacora
     editPartner:                                                       Edit Partner
     editOrganization:                                                  Edit Organization
     new:                                                               New 
