@@ -92,7 +92,7 @@ use mvc\session\sessionClass as session ?>
                             </tbody>
                            
                           </table>
-                       <p><a class="btn btn-success btn-lg" href="<?php   echo routing::getInstance()->getUrlWeb('reporte', 'eventoCostoReportPdf'); ?>" role="button"> <?php  echo i18n::__('printReport') ?></a></p>
+                     <p><a class="btn btn-success btn-lg" target="popup" href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'eventoCostoReportPdf'); ?>" role="button"> <?php  echo i18n::__('printReport') ?></a></p>
       
                 </div>
                 <div class="clearfix"></div>

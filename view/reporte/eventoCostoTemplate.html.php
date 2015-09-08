@@ -45,7 +45,7 @@ use mvc\session\sessionClass as session ?>
       
 
       <button class="btn btn-lg btn-success btn-block" type="submit">Reporte</button>
-      <button class="btn btn-lg btn-primary btn-block" type="submit"><a href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'index') ?>">Inicio</button>
+      <button class="btn btn-lg btn-primary btn-block" type="submit" href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'index') ?>">Inicio</button>
     <?php if (session::getInstance()->hasError() or session::getInstance()->hasInformation() or session::getInstance()->hasSuccess() or session::getInstance()->hasWarning()): ?>
     <?php view::includeHandlerMessage() ?>
     <?php endif ?>

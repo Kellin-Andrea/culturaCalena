@@ -18,7 +18,7 @@ class eventoReportPdfActionClass extends controllerClass implements controllerAc
     public function execute() {
         try {
             $this->objEventoCate = unserialize(session::getInstance()->getAttribute('objEvento'));
-            session::getInstance()->deleteAttribute('objEvento');
+//            session::getInstance()->deleteAttribute('objEvento');
 
             $this->defineView('eventoReportPdf', 'reporte', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
