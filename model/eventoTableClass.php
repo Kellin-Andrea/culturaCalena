@@ -49,7 +49,7 @@ class eventoTableClass extends eventoBaseTableClass {
           }//end else
         }//end foreach
       }//end  if
-
+  
       $answer = model::getInstance()->prepare($sql);
       $answer->execute();
       $answer = $answer->fetchAll(PDO::FETCH_OBJ);

@@ -11882,6 +11882,8 @@ td .lbl:only-child {
   vertical-align: middle;
   text-align: left;
   position: relative;
+  margin-left: 22px;
+  height: 84px;
 }
 .infobox > .infobox-icon {
   display: inline-block;

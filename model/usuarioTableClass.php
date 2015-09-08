@@ -90,8 +90,7 @@ class usuarioTableClass extends usuarioBaseTableClass {
                   .'AND'.' '.  eventoTableClass::getNameTable().'.' . eventoTableClass::DELETED_AT . '  IS  NULL '
                   . 'AND'.' '.usuarioGustaCategoriaTableClass::getNameTable().'.'.usuarioGustaCategoriaTableClass::USUARIO_ID.'='.$id;
           
-     
-          
+        
        
           
        
