@@ -1590,7 +1590,7 @@ pre code {
         width: 50%;
     }
     .col-sm-5 {
-        width: 41.666%;
+        width: 100%;
     }
     .col-sm-4 {
         width: 33.333%;
@@ -5507,6 +5507,8 @@ button.close {
     margin: 0;
     line-height: 1.42857143;
     color: #000;
+    width: 220%;
+    margin-top: -2px;
 }
 .modal-body {
     position: relative;

@@ -4459,6 +4459,7 @@ body.mob-safari .sidebar.sidebar-fixed {
   border-radius: 0;
   -webkit-box-shadow: none;
   box-shadow: none;
+  height: 130px;
 }
 .modal-footer {
   padding-top: 12px;

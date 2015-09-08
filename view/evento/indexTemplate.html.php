@@ -319,13 +319,11 @@ use mvc\request\requestClass as request ?>
                             <thead>
                               <tr>
                                 <th><input type="checkbox" id="chkAll"></th>
-                                <th><?php echo i18n::__('image') ?></th>
+                                
                                 <th><?php echo i18n::__('name') ?></th>
                                 <th><?php echo i18n::__('description') ?></th>
                                 <th><?php echo i18n::__('start_date') ?></th>
                                 <th><?php echo i18n::__('finish_date') ?></th>
-                                <th><?php echo i18n::__('length') ?></th>
-                                <th><?php echo i18n::__('latitude') ?></th>
                                 <th><?php echo i18n::__('adress') ?></th>
                                 <th><?php echo i18n::__('cost') ?></th>
                                 <th><?php echo i18n::__('category') ?></th>
@@ -337,13 +335,10 @@ use mvc\request\requestClass as request ?>
                               <?php foreach ($objEvento as $evento): ?>
                                 <tr>
                                   <td><input type="checkbox" name="chk[]" value="<?php echo $evento->$id ?>"></td>
-                                  <td><?php echo $evento->imagen ?></td>
                                   <td><?php echo $evento->nombre ?></td>
                                   <td><?php echo $evento->descripcion ?></td>
                                   <td><?php echo $evento->fecha_inicial_evento ?></td>
                                   <td><?php echo $evento->fecha_final_evento ?></td>
-                                  <td><?php echo $evento->lugar_latitud ?></td>
-                                  <td><?php echo $evento->lugar_longitud ?></td>
                                   <td><?php echo $evento->direccion ?></td>
                                   <td><?php echo $evento->costo ?></td>
                                   <td><?php echo categoriaTableClass::getNombreById($evento->categoria_id) ?></td>
