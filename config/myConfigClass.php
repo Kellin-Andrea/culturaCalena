@@ -13,6 +13,8 @@ namespace mvc\config {
  
     const CREDENCIAL_ADMIN = 1;
     
+
+
     private static $fileSizeAvatar;
     
     static public function getFileSizeAvatar() {

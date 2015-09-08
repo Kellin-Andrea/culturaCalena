@@ -64,14 +64,11 @@ use mvc\i18n\i18nClass as i18n ?>
                     <!-- #section:basics/navbar.user_menu -->
                     <li class="light-blue">
                         <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-                             <img src="<?php echo routing::getInstance()->getUrlImg('logo.png') ?>"> 
-                             
-                            <span class="user-info">
-                                <small><?php echo i18n::__('welcome') ?></small>
-                                <?php echo i18n::__('administrator') ?>
-                                
-                            </span>
-                            
+                            <img class="nav-user-photo" src="<?php echo \mvc\routing\routingClass::getInstance()->getUrlImg('logo.png') ?>" />
+              <span class="user-info">
+                <small><?php echo i18n::__('welcome') ?></small>
+                <?php echo i18n::__('administrator') ?>
+              </span>
 
                             <i class="ace-icon fa fa-caret-down"></i>
                         </a>
@@ -129,35 +126,37 @@ use mvc\i18n\i18nClass as i18n ?>
                     <ul class="nav ace-nav">
                         <li class=" light-blue">
                             <a data-toggle="dropdown" class="dropdown-toggle" >
-                                <i class="ace-icon fa fa-globe  bigger-150"></i>
+                                <i class="ace-icon fa fa-globe  bigger-150"  data-toggle="modal" data-target="#myModal"></i>
+                                 <span class="icon-box__subtitle"><?php echo i18n::__('language1')?></span>
+                    <!-- Modal -->
+                    <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                        <div class="modal-dialog">
+                            <div class="modal-content">
+                                <div class="modal-header">
+                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                    <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('language')?></h4>
+                                </div>
+                                <div class="modal-body">
+                                    
+                                   <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('admin', 'traductor') ?>" method="POST">
 
-                            </a>
-
-                            <ul class="dropdown-menu-right dropdown-navbar dropdown-menu dropdown-caret dropdown-close" id="cuadro">
-                                <li class="dropdown-header">
-                                    <i class="ace-icon fa fa-check"></i>
-                                    <?php echo i18n::__('language') ?>
-                                </li>
-
-                                <li class="dropdown-content">
-                                    <ul class="dropdown-menu dropdown-navbar">
-                                        <li>
-                                            <a >
-                                                <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('admin', 'traductor') ?>" method="POST">
-
-                                                    <select name="language" onchange="$('#frmTraductor').submit()" class="col-sm-7">
+                                                    <select name="language" onchange="$('#frmTraductor').submit()" class="col-sm-5">
                                                         <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es" >Español</option>
                                                         <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?>  value="en">English</option>
                                                     </select>
                                                     <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
                                                 </form>
+                                    
+                                </div>
+                               
+                            </div>
+                        </div>
+                    </div>
 
-
-                                            </a>  
-                                        </li>
-
-
-
+                            </a>
+                        </li>
+                            
+                    </ul>
                                         </div>
 
                                         <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">

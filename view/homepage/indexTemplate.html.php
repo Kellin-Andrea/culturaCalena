@@ -29,16 +29,31 @@ use mvc\request\requestClass as request ?>
             </a>
         </div>
         <div class="header-widgets  header-widgets-desktop">
-              <?php if (session::getInstance()->isUserAuthenticated() === false): ?>
+              <?php if (session::getInstance()->isUserAuthenticated() === false ): ?>
             <div class="widget  widget-icon-box" >	
                 <div class="icon-box" >
                     <a id="buton" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>" class="fa fa-user-plus"></a>
-                     <span class="icon-box__subtitle">Registrarse</span> 
+                    <span class="icon-box__subtitle"><?php echo i18n::__('register')?></span> 
                 </div>
             </div>
             <?php else: ?>
             
             <?php endif;?>
+            
+            
+              <?php if (session::getInstance()->isUserAuthenticated() === true and session::getInstance()->hasCredential('admin')): ?>
+            <div class="widget  widget-icon-box" >	
+                <div class="icon-box" >
+                    <a id="buton" href="<?php echo routing::getInstance()->getUrlWeb('admin', 'index') ?>" class="fa fa-tasks"></a>
+                    <span class="icon-box__subtitle"><?php echo i18n::__('adminPanel')?></span> 
+                </div>
+            </div>
+            <?php else: ?>
+            
+            <?php endif;?>
+            
+            
+            
             
             <?php
             
@@ -55,7 +70,7 @@ use mvc\request\requestClass as request ?>
             <div class="widget widget-icon-box">	
                 <div class="icon-box">
                     <a id="buton" class="fa fa-user" href="<?php echo routing::getInstance()->getUrlWeb('shfSecurity', 'index') ?>"></a>
-                   <span class="icon-box__subtitle">Iniciar Sesion</span>
+                    <span class="icon-box__subtitle"><?php echo i18n::__('login')?></span>
                 </div>
             </div>
             <?php else: ?>
@@ -106,7 +121,7 @@ use mvc\request\requestClass as request ?>
                 <div class="icon-box">
                     <!-- Button trigger modal -->
                     <div type="icon-box" class="fa fa-globe" data-toggle="modal" data-target="#myModal"></div>
-                     <span class="icon-box__subtitle">Idioma</span>
+                    <span class="icon-box__subtitle"><?php echo i18n::__('language1')?></span>
                     <!-- Modal -->
                     <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
                         <div class="modal-dialog">

@@ -34,6 +34,7 @@ dictionary:
     oldPass:                                                                Contraseña Anterior
     passConfirmation:                                                       Verificacion  de contraseña
     register:                                                               Registrar
+    adminPanel:                                                             Panel De Administrador
     selectTables:                                                           Seleccion de tabla
     actions:                                                                Acciones
     description:                                                            Descripcion
@@ -147,6 +148,7 @@ dictionary:
     profile:                                                                Perfil
     exit:                                                                   Salir
     language:                                                               Seleccione Idioma
+    language1:                                                              Idioma
     tables:                                                                 Tablas
     calendar:                                                               Calendario
     gallery:                                                                Galeria

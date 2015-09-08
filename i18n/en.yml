@@ -156,6 +156,7 @@ dictionary:
     profile:                                                           Profile
     exit:                                                              LogOut
     language:                                                          select language
+    language1:                                                         Language
     tables:                                                            Tables
     calendar:                                                          Calendar
     gallery:                                                           Gallery
