@@ -21,7 +21,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     try {
    
      
-      
+    $this->objDanza= eventoTableClass::getCategoriaDanza();
       $this->defineView('index', 'danza', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

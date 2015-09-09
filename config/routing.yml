@@ -1424,7 +1424,11 @@ danza_index:
   url:    /danza/index
   param:  { module: danza, action: index, format: html }
   load:
-      
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
 ##-------------------------- MUSICA--------------------------##
 musica_index:
   url:    /musica/index
