@@ -20,8 +20,9 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
     try {
    
-          
-      $this->objTeatro = eventoTableClass::getCategoriaTeatro();
+     
+        $this->objTeatro=  eventoTableClass::getCategoriaTheatre();
+      
       $this->defineView('index', 'teatro', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

@@ -1423,7 +1423,10 @@ deporte_index:
   url:    /deporte/index
   param:  { module: deporte, action: index, format: html }
   load:
-
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
 ##-------------------------- DANZA--------------------------##
 danza_index:
   url:    /danza/index
@@ -1439,7 +1442,10 @@ musica_index:
   url:    /musica/index
   param:  { module: musica, action: index, format: html }
   load:      
-
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
 ##-------------------------- TIPO DOCUMENTO --------------------------##
 tipoDocumento_index:
   url:    /tipoDocumento/index
