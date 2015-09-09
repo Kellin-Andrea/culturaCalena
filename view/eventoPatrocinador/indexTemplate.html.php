@@ -170,10 +170,8 @@ use mvc\request\requestClass as request ?>
                         <b class="arrow"></b>
 
                         <ul class="submenu">
-
-
                           <li class="">
-                            <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">
+                            <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuario', 'index') ?>">
                               <i class="menu-icon fa fa-caret-right"></i>
                               <?php echo i18n::__('user') ?>
                             </a>
@@ -278,7 +276,14 @@ use mvc\request\requestClass as request ?>
 
                         <b class="arrow"></b>
                       </li>
+                      <li class="">
+                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('eventoPatrocinador', 'index') ?>">
+                          <i class="menu-icon fa fa-caret-right"></i>
+                          <?php echo i18n::__('EventPartner') ?>
+                        </a>
 
+                        <b class="arrow"></b>
+                      </li>
                       </li>
                       <li class="">
                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('patrocinador', 'index') ?>">
@@ -288,22 +293,7 @@ use mvc\request\requestClass as request ?>
 
                         <b class="arrow"></b>
                       </li>
-                      <li class="">
-                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>">
-                          <i class="menu-icon fa fa-caret-right"></i>
-                          <?php echo i18n::__('EconomicManagement') ?>
-                        </a>
 
-                        <b class="arrow"></b>
-                      </li>
-                      <li class="">
-                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tarifa', 'index') ?>">
-                          <i class="menu-icon fa fa-caret-right"></i>
-                          <?php echo i18n::__('rates') ?>
-                        </a>
-
-                        <b class="arrow"></b>
-                      </li>
                       <li class="">
                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>">
                           <i class="menu-icon fa fa-caret-right"></i>
@@ -440,7 +430,7 @@ use mvc\request\requestClass as request ?>
                             </form>
                             <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'delete') ?>" method="POST">
                               <input type="hidden" id="idDelete" name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true) ?>">
-                            
+
                               <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
                               <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'insert') ?>" type="button" class="btn btn-info" class="btn btn-danger btn-xs"> <i class="glyphicon glyphicon-star-empty"></i></a>
                               <a id="boton" href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo" class="btn btn-danger btn-xs"><i class="fa fa-eraser"></i></a>

@@ -173,7 +173,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
                         <ul class="submenu">
                           <li class="">
-                            <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">
+                            <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuario', 'index') ?>">
                               <i class="menu-icon fa fa-caret-right"></i>
                               <?php echo i18n::__('user') ?>
                             </a>
@@ -214,7 +214,14 @@ use mvc\i18n\i18nClass as i18n ?>
 
                         <b class="arrow"></b>
                       </li>
+                      <li class="">
+                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoDocumento', 'index') ?>">
+                          <i class="menu-icon fa fa-caret-right"></i>
+                          <?php echo i18n::__('document_type') ?>
+                        </a>
 
+                        <b class="arrow"></b>
+                      </li>
                       <li class="">
                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('credencial', 'index') ?>">
                           <i class="menu-icon fa fa-caret-right"></i>
@@ -288,22 +295,7 @@ use mvc\i18n\i18nClass as i18n ?>
 
                         <b class="arrow"></b>
                       </li>
-                      <li class="">
-                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>">
-                          <i class="menu-icon fa fa-caret-right"></i>
-                          <?php echo i18n::__('EconomicManagement') ?>
-                        </a>
 
-                        <b class="arrow"></b>
-                      </li>
-                      <li class="">
-                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tarifa', 'index') ?>">
-                          <i class="menu-icon fa fa-caret-right"></i>
-                          <?php echo i18n::__('rates') ?>
-                        </a>
-
-                        <b class="arrow"></b>
-                      </li>
                       <li class="">
                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>">
                           <i class="menu-icon fa fa-caret-right"></i>
@@ -320,9 +312,9 @@ use mvc\i18n\i18nClass as i18n ?>
 
                         <b class="arrow"></b>
                       </li>
-
                     </ul>
                 </li>
+
 
 
 

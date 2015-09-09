@@ -12,7 +12,7 @@ use mvc\request\requestClass as request ?>
 <?php $credencial = usuarioCredencialTableClass::USUARIO_ID ?>
 <?php $usu = usuarioTableClass::USER ?>
 <?php $id = usuarioTableClass::ID ?>
-<?php //  \mvc\view\viewClass::includePartial('default/menu')     ?>
+<?php //  \mvc\view\viewClass::includePartial('default/menu')      ?>
 
 <div class="no-skin">
   <!-- #section:basics/navbar.layout -->
@@ -174,7 +174,14 @@ use mvc\request\requestClass as request ?>
                         <b class="arrow"></b>
 
                         <ul class="submenu">
+                          <li class="">
+                            <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuario', 'index') ?>">
+                              <i class="menu-icon fa fa-caret-right"></i>
+                              <?php echo i18n::__('user') ?>
+                            </a>
 
+                            <b class="arrow"></b>
+                          </li>
 
                           <li class="">
                             <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('bitacora', 'index') ?>">
@@ -290,22 +297,7 @@ use mvc\request\requestClass as request ?>
 
                         <b class="arrow"></b>
                       </li>
-                      <li class="">
-                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>">
-                          <i class="menu-icon fa fa-caret-right"></i>
-                          <?php echo i18n::__('EconomicManagement') ?>
-                        </a>
 
-                        <b class="arrow"></b>
-                      </li>
-                      <li class="">
-                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tarifa', 'index') ?>">
-                          <i class="menu-icon fa fa-caret-right"></i>
-                          <?php echo i18n::__('rates') ?>
-                        </a>
-
-                        <b class="arrow"></b>
-                      </li>
                       <li class="">
                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>">
                           <i class="menu-icon fa fa-caret-right"></i>
@@ -322,11 +314,8 @@ use mvc\request\requestClass as request ?>
 
                         <b class="arrow"></b>
                       </li>
-
-
                     </ul>
                 </li>
-
 
 
                 <li class="">

@@ -172,11 +172,8 @@ use mvc\request\requestClass as request ?>
                         <b class="arrow"></b>
 
                         <ul class="submenu">
-
-
-
                           <li class="">
-                            <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('default', 'index') ?>">
+                            <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuario', 'index') ?>">
                               <i class="menu-icon fa fa-caret-right"></i>
                               <?php echo i18n::__('user') ?>
                             </a>
@@ -298,22 +295,7 @@ use mvc\request\requestClass as request ?>
 
                         <b class="arrow"></b>
                       </li>
-                      <li class="">
-                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('recaudoEconomico', 'index') ?>">
-                          <i class="menu-icon fa fa-caret-right"></i>
-                          <?php echo i18n::__('EconomicManagement') ?>
-                        </a>
 
-                        <b class="arrow"></b>
-                      </li>
-                      <li class="">
-                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tarifa', 'index') ?>">
-                          <i class="menu-icon fa fa-caret-right"></i>
-                          <?php echo i18n::__('rates') ?>
-                        </a>
-
-                        <b class="arrow"></b>
-                      </li>
                       <li class="">
                         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>">
                           <i class="menu-icon fa fa-caret-right"></i>
@@ -322,7 +304,14 @@ use mvc\request\requestClass as request ?>
 
                         <b class="arrow"></b>
                       </li>
+                      <li class="">
+                        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioGustaCategoria', 'index') ?>">
+                          <i class="menu-icon fa fa-caret-right"></i>
+                          <?php echo i18n::__('events_like_me') ?>
+                        </a>
 
+                        <b class="arrow"></b>
+                      </li>
                     </ul>
                 </li>
 
