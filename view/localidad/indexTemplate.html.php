@@ -49,8 +49,7 @@ use mvc\i18n\i18nClass as i18n ?>
           <!-- #section:basics/navbar.user_menu -->
           <li class="light-blue">
             <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-              <img class="nav-user-photo" src="<?php echo \mvc\routing\routingClass::getInstance()->getUrlImg('../img/logo.jpg') ?>" />
-              <span class="user-info">
+             <img class="nav-user-photo" src="<?php echo \mvc\routing\routingClass::getInstance()->getUrlImg('logo.png') ?>" />              <span class="user-info">
                 <small><?php echo i18n::__('welcome') ?></small>
                 <?php echo i18n::__('administrator') ?>
               </span>
