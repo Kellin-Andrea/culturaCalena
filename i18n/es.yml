@@ -30,7 +30,7 @@ dictionary:
     registeredFedback:                                                      Pqrs Registrados
     eventPartnerManagement:                                                 Gestion Evento Patrocinador
     newEventPartner:                                                        Nuevo Evento Patrocinador
-    dance:                                                                  Danza
+    dance:                                                                  Baile
     editPartner:                                                            Editar Patrocinador
     partner_select:                                                         Seleccione Patrocinador
     event_select:                                                           Seleccione Evento
@@ -128,7 +128,7 @@ dictionary:
     Music:                                                                  Musica
     Sport:                                                                  Deporte
     Dance:                                                                  Danza
-    Theater:                                                                Teatro
+    Theater:                                                                Artes
     know more here:                                                         Conoce mas aqui
     project:                                                                Proyecto
     #---------------------------Usuario----------------------------------------#

@@ -1412,6 +1412,11 @@ teatro_index:
   url:    /teatro/index
   param:  { module: teatro, action: index, format: html }
   load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    
 
 ##-------------------------- DEPORTE--------------------------##
 deporte_index:

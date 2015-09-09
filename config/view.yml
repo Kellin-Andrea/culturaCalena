@@ -89,6 +89,7 @@ admin:
       - admin/assets/css/font-awesome.css
       - admin/assets/css/ace-fonts.css
       - admin/assets/css/ace.css
+      - jquery.jqplot.css
       - main.css
     javascript:
       - admin/assets/js/jquery-ui.custom.js
@@ -127,6 +128,12 @@ admin:
       - admin/docs/assets/js/language/css.js
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
+      - jquery.jqplot.js
+      #- jqplot/plugins/jqplot.canvasTextRenderer.min.js
+      #- jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js
+      - jqplot/plugins/jqplot.pieRenderer.min.js
+      - jqplot/plugins/jqplot.donutRenderer.min.js
+      - jqplot/plugins/jqplot.json2.js
       - jquery-1.11.1.min.js
       - index.js
       - main.js

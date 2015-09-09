@@ -11880,7 +11880,7 @@ td .lbl:only-child {
   border: 1px dotted;
   border-color: #D8D8D8 !important;
   vertical-align: middle;
-  text-align: left;
+  text-align: center;
   position: relative;
   margin-left: 22px;
   height: 84px;

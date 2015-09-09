@@ -657,7 +657,18 @@ use mvc\i18n\i18nClass as i18n ?>
             </div><!-- /.widget-box -->
           </div><!-- /.col -->
         </div><!-- /.row -->
+{ñlkjhgf
+        
+        <script>  
+         var plot1 = $.jqplot('chart1',[],{
+      title: 'Sine Data Renderer',
+      dataRenderer: sineRenderer
+  });
+});
 
+      </script>
+      
+      <div id="chart1" ></div>
         <!-- PAGE CONTENT ENDS -->
       </div><!-- /.col -->
     </div><!-- /.row -->
