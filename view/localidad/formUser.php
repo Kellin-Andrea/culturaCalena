@@ -20,7 +20,7 @@
                     <div class="col-sm-7">
                         <?php mvc\view\viewClass::getMessageError('inputname') ?>
                         <input  type="text" class="form-control" id="<?php echo localidadTableClass::getNameField(localidadTableClass::NOMBRE, true) ?>"  name="<?php echo localidadTableClass::getNameField(localidadTableClass::NOMBRE, true) ?>"
-                                value="<?php echo (session::getInstance()->hasFlash(localidadTableClass::getNameField(localidadTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(localidadTableClass::getNameField(localidadTableClass::NOMBRE, true)) : ((( isset($objlocal) == true ) ? $objlocal[0]->$local : '' )) ?>" placeholder=<?php echo i18n::__('locality') ?>>
+                                value="<?php echo (request::getInstance()->hasPost(localidadTableClass::getNameField(localidadTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(localidadTableClass::getNameField(localidadTableClass::NOMBRE, true)) : ((( isset($objlocal) == true ) ? $objlocal[0]->$local : '' )) ?>" placeholder=<?php echo i18n::__('locality') ?>>
                     </div>
                 </div>
                 <div class="form-group">

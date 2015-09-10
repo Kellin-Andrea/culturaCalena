@@ -37,16 +37,18 @@ namespace mvc\validator {
                 session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
             }
 
-            if (self::notBlank('inputPass1') or self::notBlank('inputPass2')) {
-                $flag = true;
-                session::getInstance()->setFlash('inputPass', true);
-                session::getInstance()->setError('La contraseña es requerida', 'inputPass');
-            } else if (request::getInstance()->getPost('inputPass1') !== request::getInstance()->getPost('inputPass2')) {
-                $flag = true;
-                session::getInstance()->setFlash('inputPass', true);
-                session::getInstance()->setError('Las contraseñas no coinciden', 'inputPass');
-            }
+            if (self::notBlank($pass1) or self::notBlank($pass2)) {
+        $flag = true;
+        session::getInstance()->setFlash('inputPass', true);
+        session::getInstance()->setError('Las contraseñas son requeridas', 'inputPass');
+      } else if (($pass1) !== ($pass2)) {
+        $flag = true;
+        session::getInstance()->setFlash('inputPass', true);
+        session::getInstance()->setError('Las contraseñas no coinciden', 'inputPass');
+      }
 
+
+      
             if ($flag === true) {
                 //request::getInstance()->setMethod('GET');
                 routing::getInstance()->forward('usuario', 'insert');

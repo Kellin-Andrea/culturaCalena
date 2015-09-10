@@ -30,7 +30,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-sm-7">
                         <?php mvc\view\viewClass::getMessageError('inputTitulo') ?>       
                         <input type="text"  class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TITULO, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TITULO, true) ?>" 
-                               value="<?php echo (session::getInstance()->hasFlash(pqrsTableClass::getNameField(pqrsTableClass::TITULO, true)) === true) ? request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TITULO, true)) : ((( isset($objpqrs) == true ) ? $objpqrs[0]->$titulo : '' )) ?>" Placeholder="<?php echo i18n::__('title') ?>">
+                               value="<?php echo (request::getInstance()->hasPost(pqrsTableClass::getNameField(pqrsTableClass::TITULO, true)) === true) ? request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TITULO, true)) : ((( isset($objpqrs) == true ) ? $objpqrs[0]->$titulo : '' )) ?>" Placeholder="<?php echo i18n::__('title') ?>">
                     </div>
                 </div>
 

@@ -21,12 +21,12 @@
     <div class="col-sm-7">
         <?php mvc\view\viewClass::getMessageError('inputname') ?>
         <input  type="text" class="form-control" id="<?php echo tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)?>"  name="<?php echo tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)?>"
-         value="<?php  echo (session::getInstance()->hasFlash(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)) === true)  ?  request::getInstance()->getPost(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)) :  ((( isset($objtipoPqrs) == true ) ?  $objtipoPqrs[0]->$tipoPqrs :  '' ))  ?>"placeholder="<?php echo i18n::__('feedbackType') ?>"
+                value="<?php  echo (request::getInstance()->hasPost(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)) === true)  ?  request::getInstance()->getPost(tipoPqrsTableClass::getNameField(tipoPqrsTableClass::NOMBRE, true)) :  ((( isset($objtipoPqrs) == true ) ?  $objtipoPqrs[0]->$tipoPqrs :  '' ))  ?>"placeholder="<?php echo i18n::__('feedbackType') ?>"
     </div>
   </div>
       <div class="form-group">
     <div class="col-sm-offset-5 col-sm-10">
-      
+        <a  href="<?php echo routing::getInstance()->getUrlWeb('tipoPqrs', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
         <button type="submit" class="btn btn-primary"><?php echo i18n::__('register')?></button>
     </div>
   </div>

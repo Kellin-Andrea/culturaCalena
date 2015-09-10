@@ -26,7 +26,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-5">
                         <?php mvc\view\viewClass::getMessageError('inputname') ?>
                         <input  type="text" class="form-control" id="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"  name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"
-                                value="<?php echo (session::getInstance()->hasFlash(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true)) : ((( isset($objcategoria) == true ) ? $objcategoria[0]->$categoria : '' )) ?>" placeholder="<?php echo i18n::__('name_category') ?>">
+                                value="<?php echo (request::getInstance()->hasPost(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true)) : ((( isset($objcategoria) == true ) ? $objcategoria[0]->$categoria : '' )) ?>" placeholder="<?php echo i18n::__('name_category') ?>">
                     </div>
                 </div>
                 <div class="form-group">

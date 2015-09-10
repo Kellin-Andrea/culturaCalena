@@ -38,8 +38,8 @@ class createActionClass extends controllerClass implements controllerActionInter
         $long = request::getInstance()->getPost('googleMapLongitud');
 
         validator::validateInsert($files, $nameEvent, $description, $date, $date1, $address, $money, $category, $datePublic, $datePublic1, $place, $long);
-
-
+      
+      
 
         $data = array(
             eventoTableClass::IMAGEN => $this->generateImageName($files),

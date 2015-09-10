@@ -1602,6 +1602,8 @@ usuario_insert:
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
 
 usuario_create:
   url:    /usuario/crear
@@ -1612,6 +1614,8 @@ usuario_create:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
 
 usuario_edit:
   url:    /usuario/editar

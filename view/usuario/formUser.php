@@ -25,12 +25,12 @@ use mvc\view\viewClass as view ?>
 
 
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputUser')) ? 'has-error has-feedback' : '' ?>">
 
                     <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('name') ?></label>
-
+                       <?php mvc\view\viewClass::getMessageError('inputUser') ?>
                     <div class="col-sm-10">
-                        <?php mvc\view\viewClass::getMessageError('inputUser') ?>
+                        
 
 
                         <input type="text" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" 
@@ -38,12 +38,12 @@ use mvc\view\viewClass as view ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputPass1')) ? 'has-error has-feedback' : '' ?>">
 
                     <label value="<?php echo (session::getInstance()->hasFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true)) === true) ? request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true)) : (session::getInstance()->hasFlash('edit') === true) ? $objUsuario[0]->$usuario : ' ' ?>for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" class="col-sm-2 control-label"><?php echo i18n::__('pass') ?></label>
-
+                    <?php mvc\view\viewClass::getMessageError('inputPass1') ?>
                     <div class="col-sm-10">
-                        <?php mvc\view\viewClass::getMessageError('inputPass1') ?>
+                        
 
 
                         <input type="password" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_1' ?>" placeholder="<?php echo i18n::__('insertPass') ?>">
@@ -53,9 +53,9 @@ use mvc\view\viewClass as view ?>
 
                 <div class="form-group">
                     <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>" class="col-sm-2 control-label"><?php echo i18n::__('verifyPass') ?></label>
-
+                   <?php mvc\view\viewClass::getMessageError('inputPass2') ?>
                     <div class="col-sm-10">
-                        <?php mvc\view\viewClass::getMessageError('inputPass2') ?>
+                        
 
 
                         <input type="password" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?>"  name=<?php echo usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true) . '_2' ?> placeholder="<?php echo i18n::__('verifyPass') ?>"> 

@@ -26,11 +26,11 @@ use mvc\request\requestClass as request ?>
                     <div class="col-sm-7">
                         <?php mvc\view\viewClass::getMessageError('inputrespuesta') ?>
                         <input  type="text" class="form-control" id="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>"  name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>"
-                                value="<?php echo (session::getInstance()->hasFlash(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true)) === true) ? request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true)) : ((( isset($objdetalle) == true ) ? $objdetalle[0]->$rsp : '' )) ?>" placeholder="<?php echo i18n::__('answer') ?>">
+                                value="<?php echo (request::getInstance()->hasPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true)) === true) ? request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true)) : ((( isset($objdetalle) == true ) ? $objdetalle[0]->$rsp : '' )) ?>" placeholder="<?php echo i18n::__('answer') ?>">
                     </div>
                 </div>
              
-                <div class="form-group">
+                <div class="form-group ">
                     <div class="col-sm-offset-5 col-sm-10">
                         <a href="<?php echo routing::getInstance()->getUrlWeb('detallePqrs', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
                         <button type="submit" class="btn btn-primary"><?php echo i18n::__('register') ?></button>

@@ -19,7 +19,7 @@ use mvc\request\requestClass as request ?>
                 <?php if (isset($objEvento) == true) : ?>
                     <input name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::ID, true) ?>" value="<?php echo (isset($objEventoPatrocinador)) ? $objEventoPatrocinador[0]->$id : '' ?>" type="hidden">
                 <?php endif ?>
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputeventSponsor')) ? 'has-error has-feedback' : '' ?>">
 
                     <label for="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::EVENTO_ID, true) ?>"  name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::EVENTO_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('events') ?></label>
                     <div class="col-sm-7">
@@ -33,7 +33,7 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group">
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputname')) ? 'has-error has-feedback' : '' ?>">
 
                     <label for="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true) ?>"  name="<?php echo eventoPatrocinadorTableClass::getNameField(eventoPatrocinadorTableClass::PATROCINADOR_ID, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('partner_id') ?></label>
                     <div class="col-sm-7">

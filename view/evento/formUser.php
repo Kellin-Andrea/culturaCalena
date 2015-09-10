@@ -50,7 +50,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputnameEvent') ?>
                         <input type="text" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::NOMBRE, true) ?>" placeholder="<?php echo i18n::__('eventName') ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$nom : '' )) ?>">
+                               value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$nom : '' )) ?>">
                     </div>
                 </div>
 
@@ -59,7 +59,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdescription') ?>
                         <input type="text" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true) ?>" placeholder="<?php echo i18n::__('description') ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$desc : '' )) ?>">
+                               value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$desc : '' )) ?>">
                     </div>
                 </div>
 
@@ -68,7 +68,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdate') ?>
                       <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>" placeholder="<?php echo i18n::__('start_date') ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$fecha)) : '' )) ?>">
+                             value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$fecha)) : '' )) ?>">
                     </div>
                 </div>
 
@@ -77,7 +77,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdate1') ?>
                       <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true) ?>" placeholder="<?php echo i18n::__('finish_date') ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$final)) : '' )) ?>">
+                             value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_EVENTO, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$final)) : '' )) ?>">
                     </div>
                 </div>
 
@@ -86,7 +86,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputaddress') ?>
                         <input type="text" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::DIRECCION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::DIRECCION, true) ?>" placeholder="<?php echo i18n::__('adress') ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::DIRECCION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DIRECCION, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$dire : '' )) ?>">
+                               value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::DIRECCION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DIRECCION, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$dire : '' )) ?>">
                     </div>
                 </div>
 
@@ -95,7 +95,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputmoney') ?>
                         <input type="number" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::COSTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::COSTO, true) ?>" placeholder="<?php echo i18n::__('cost') ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::COSTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::COSTO, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$costo : '' )) ?>">
+                               value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::COSTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::COSTO, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$costo : '' )) ?>">
                     </div>
                 </div>
 
@@ -107,7 +107,7 @@ use mvc\request\requestClass as request ?>
                         <select class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>">
                             <option value=""> -----<?php echo i18n::__('category_select') ?> -----    </option>
                             <?php foreach ($objcategoria as $categoria): ?>
-                                <option value="<?php echo $categoria->id ?>"<?php echo (isset($objevento)) ? ($categoria->id === $objevento[0]->categoria_id) ? 'selected' : '' : '' ?>><?php echo categoriaTableClass::getNombreById($categoria->id) ?></option>
+                            <option value="<?php echo $categoria->id ?>"<?php echo (isset($objevento)) ? ($categoria->id === $objevento[0]->categoria_id) ? 'selected' : '' : '' ?>><?php echo categoriaTableClass::getNombreById($categoria->id) ?></option>
 
                             <?php endforeach ?>
                         </select>
@@ -118,7 +118,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdatePublic') ?>
                       <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$public)) : 'publicationStartDate' )) ?>">
+                               value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$public)) : 'publicationStartDate' )) ?>">
                     </div>
                 </div>
 
@@ -127,7 +127,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdatePublic1') ?>
                       <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>"
-                               value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$fin)) : '' )) ?>">
+                               value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$fin)) : '' )) ?>">
                     </div>
                 </div>
 
@@ -137,10 +137,10 @@ use mvc\request\requestClass as request ?>
                 </div>
 
                 <input required type="hidden" class="form-control" id="googleMapLatitud"  name="googleMapLatitud" 
-                       value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::LUGAR_LATITUD, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::LUGAR_LATITUD, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$lugar : '' )) ?>">
+                       value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::LUGAR_LATITUD, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::LUGAR_LATITUD, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$lugar : '' )) ?>">
 
                 <input required type="hidden" class="form-control" id="googleMapLongitud"  name="googleMapLongitud"
-                       value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::LUGAR_LONGITUD, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::LUGAR_LONGITUD, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$long : '' )) ?>">
+                       value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::LUGAR_LONGITUD, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::LUGAR_LONGITUD, true)) : ((( isset($objevento) == true ) ? $objevento[0]->$long : '' )) ?>">
 
                 <div class="form-group">
                     <div class="text-center">
