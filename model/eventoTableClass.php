@@ -254,5 +254,32 @@ class eventoTableClass extends eventoBaseTableClass {
         throw $exc;
       }
      }
+     
+     public static function getCategoriaDanza() {
+ 
+      
+      try {
+          
+          $sql = 'SELECT ' .eventoTableClass::getNameTable().'.'.eventoTableClass::ID .' , '
+                  .eventoTableClass::getNameTable().'.'.eventoTableClass::IMAGEN .' , '
+                  . eventoTableClass::getNameTable().'.'.eventoTableClass::NOMBRE.' , '
+                  . eventoTableClass::getNameTable().'.'.eventoTableClass::DESCRIPCION .' , '
+               .eventoTableClass::getNameTable().'.'. eventoTableClass::COSTO.' , '
+              .eventoTableClass::getNameTable().'.'. eventoTableClass::FECHA_INICIAL_EVENTO.' , '
+               .eventoTableClass::getNameTable().'.'. eventoTableClass::DIRECCION.' , '
+               .eventoTableClass::getNameTable().'.'.eventoTableClass::FECHA_FINAL_EVENTO.' , '
+                  .categoriaTableClass::getNameTable().' . '.categoriaTableClass::NOMBRE.' '.
+                ' FROM ' . eventoTableClass::getNameTable().' , '.categoriaTableClass::getNameTable().' '.
+                  ' WHERE ' .eventoTableClass::getNameTable().'.'.eventoTableClass::CATEGORIA_ID.' = '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' '.
+                  ' AND '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::NOMBRE.' = '."'Musica'".
+                  ' AND '.eventoTableClass::getNameTable().'.'.eventoTableClass::DELETED_AT.' IS NULL ';
+         
+     
+        return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+      } catch (\PDOException $exc) {
+        throw $exc;
+      }
+     }
+     
   
 }     

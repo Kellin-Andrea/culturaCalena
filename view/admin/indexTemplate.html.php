@@ -13,19 +13,21 @@
 
 <?php $totalLocalidades = count($objlocal) ?>
 
-<?php $totalGustosCategoria = count($objUsuarioGustaCategoria)?>
+<?php $totalGustosCategoria = count($objUsuarioGustaCategoria) ?>
 
-<?php $totalPqrs = count($objpqrs)?>
+<?php $totalPqrs = count($objpqrs) ?>
 
-<?php $totalEventoPatrocinador =count($objeventoPatrocinador) ?>
+<?php $totalEventoPatrocinador = count($objeventoPatrocinador) ?>
 
 <?php $totalTipoPqrs = count($objtipoPqrs) ?>
 
 <?php $totalDetallePqrs = count($objdetalle) ?>
 
-<?php $totalEstadoPqrs = count($objestado)?>
+<?php $totalEstadoPqrs = count($objestado) ?>
 
-<?php use mvc\routing\routingClass as routing ?>
+<?php
+
+use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\config\configClass as config ?>
 <?php
@@ -63,7 +65,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <a href="#" class="navbar-brand">
           <small>
             <i class="glyphicon glyphicon-leaf"></i>
-            <?php echo i18n::__('cultureCaleña') ?>
+<?php echo i18n::__('cultureCaleña') ?>
           </small>
         </a>
 
@@ -83,7 +85,7 @@ use mvc\i18n\i18nClass as i18n ?>
               <img class="nav-user-photo" src="<?php echo \mvc\routing\routingClass::getInstance()->getUrlImg('logo.png') ?>" />
               <span class="user-info">
                 <small><?php echo i18n::__('welcome') ?></small>
-                <?php echo i18n::__('administrator') ?>
+<?php echo i18n::__('administrator') ?>
               </span>
 
               <i class="ace-icon fa fa-caret-down"></i>
@@ -95,7 +97,7 @@ use mvc\i18n\i18nClass as i18n ?>
               <li>
                 <a href="profile.html">
                   <i class="ace-icon fa fa-user"></i>
-                  <?php echo i18n::__('profile') ?>
+<?php echo i18n::__('profile') ?>
                 </a>
               </li>
 
@@ -104,7 +106,7 @@ use mvc\i18n\i18nClass as i18n ?>
               <li>
                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>">
                   <i class="ace-icon fa fa-power-off"></i>
-                  <?php echo i18n::__('exit') ?>
+<?php echo i18n::__('exit') ?>
                 </a>
               </li>
             </ul>
@@ -208,7 +210,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <li class="">
               <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuario', 'index') ?>">
                 <i class="menu-icon fa fa-caret-right"></i>
-                <?php echo i18n::__('user') ?>
+<?php echo i18n::__('user') ?>
               </a>
 
               <b class="arrow"></b>
@@ -217,7 +219,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <li class="">
               <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('bitacora', 'index') ?>">
                 <i class="menu-icon fa fa-caret-right"></i>
-                <?php echo i18n::__('logBook') ?>
+<?php echo i18n::__('logBook') ?>
               </a>
 
               <b class="arrow"></b>
@@ -225,7 +227,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <li class="">
               <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('categoria', 'index') ?>">
                 <i class="menu-icon fa fa-caret-right"></i>
-                <?php echo i18n::__('category') ?>
+<?php echo i18n::__('category') ?>
               </a>
 
               <b class="arrow"></b>
@@ -233,7 +235,7 @@ use mvc\i18n\i18nClass as i18n ?>
             <li class="">
               <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('evento', 'index') ?>">
                 <i class="menu-icon fa fa-caret-right"></i>
-                <?php echo i18n::__('events') ?>
+<?php echo i18n::__('events') ?>
               </a>
 
               <b class="arrow"></b>
@@ -242,7 +244,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('datoUsuario', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('userData') ?>
+<?php echo i18n::__('userData') ?>
           </a>
 
           <b class="arrow"></b>
@@ -250,7 +252,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoDocumento', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('document_type') ?>
+<?php echo i18n::__('document_type') ?>
           </a>
 
           <b class="arrow"></b>
@@ -258,7 +260,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('credencial', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('credential') ?>
+<?php echo i18n::__('credential') ?>
           </a>
 
           <b class="arrow"></b>
@@ -266,7 +268,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('localidad', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('locality') ?>
+<?php echo i18n::__('locality') ?>
           </a>
 
           <b class="arrow"></b>
@@ -274,7 +276,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('pqrs', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('feedback') ?>
+<?php echo i18n::__('feedback') ?>
           </a>
 
           <b class="arrow"></b>
@@ -282,7 +284,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('detallePqrs', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('feedbackSpecs') ?>
+<?php echo i18n::__('feedbackSpecs') ?>
           </a>
 
           <b class="arrow"></b>
@@ -290,7 +292,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('estadoPqrs', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('feedbackState') ?>
+<?php echo i18n::__('feedbackState') ?>
           </a>
 
           <b class="arrow"></b>
@@ -298,7 +300,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoPqrs', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('feedbackType') ?>
+<?php echo i18n::__('feedbackType') ?>
           </a>
 
           <b class="arrow"></b>
@@ -306,7 +308,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('organizacion', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('organizations') ?>
+<?php echo i18n::__('organizations') ?>
           </a>
 
           <b class="arrow"></b>
@@ -314,7 +316,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('eventoPatrocinador', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('EventPartner') ?>
+<?php echo i18n::__('EventPartner') ?>
           </a>
 
           <b class="arrow"></b>
@@ -323,16 +325,16 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('patrocinador', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('partner') ?>
+<?php echo i18n::__('partner') ?>
           </a>
 
           <b class="arrow"></b>
         </li>
-      
+
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('userCredential') ?>
+<?php echo i18n::__('userCredential') ?>
           </a>
 
           <b class="arrow"></b>
@@ -340,7 +342,7 @@ use mvc\i18n\i18nClass as i18n ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioGustaCategoria', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('events_like_me') ?>
+<?php echo i18n::__('events_like_me') ?>
           </a>
 
           <b class="arrow"></b>
@@ -382,10 +384,10 @@ use mvc\i18n\i18nClass as i18n ?>
           <!-- /section:settings.box -->
           <div class="page-header">
             <h1>
-              <?php echo i18n::__('mainMenu') ?>
+                <?php echo i18n::__('mainMenu') ?>
               <small>
                 <i class="ace-icon fa fa-angle-double-right"></i>
-                <?php echo i18n::__('managementAdmisnistrator') ?>
+<?php echo i18n::__('managementAdmisnistrator') ?>
               </small>
             </h1>
           </div><!-- /.page-header -->
@@ -400,11 +402,11 @@ use mvc\i18n\i18nClass as i18n ?>
 
                 <i class="ace-icon fa fa-check green"></i>
 
-                <?php echo i18n::__('welcomeTo') ?>
+                  <?php echo i18n::__('welcomeTo') ?>
                 <strong class="green">
-                  <?php echo i18n::__('cultureCaleña') ?>
+                <?php echo i18n::__('cultureCaleña') ?>
                 </strong>,
-                <?php echo i18n::__('siteWhere') ?> 
+<?php echo i18n::__('siteWhere') ?> 
               </div>
 
               <div class="row">
@@ -554,8 +556,8 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
                   </div>
-                  
-                   <div class="infobox infobox-pink">
+
+                  <div class="infobox infobox-pink">
                     <!-- #section:pages/dashboard.infobox.sparkline -->
                     <div class="infobox-icon">
                       <i class="ace-icon fa fa-comment-o"></i>
@@ -570,8 +572,8 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
                   </div>
-                  
-                   <div class="infobox infobox-green">
+
+                  <div class="infobox infobox-green">
                     <!-- #section:pages/dashboard.infobox.sparkline -->
                     <div class="infobox-icon">
                       <i class="ace-icon fa fa-cog"></i>
@@ -586,8 +588,8 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
                   </div>
-                  
-                   <div class="infobox infobox-red">
+
+                  <div class="infobox infobox-red">
                     <!-- #section:pages/dashboard.infobox.sparkline -->
                     <div class="infobox-icon">
                       <i class="ace-icon fa fa-tasks"></i>
@@ -602,8 +604,8 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
                   </div>
-                  
-                   <div class="infobox infobox-brown">
+
+                  <div class="infobox infobox-brown">
                     <!-- #section:pages/dashboard.infobox.sparkline -->
                     <div class="infobox-icon">
                       <i class="ace-icon fa fa-reorder"></i>
@@ -618,8 +620,8 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
                   </div>
-                  
-                   <div class="infobox infobox-black">
+
+                  <div class="infobox infobox-black">
                     <!-- #section:pages/dashboard.infobox.sparkline -->
                     <div class="infobox-icon">
                       <i class="ace-icon fa fa-dashboard"></i>
@@ -639,21 +641,48 @@ use mvc\i18n\i18nClass as i18n ?>
 
                 </div><!-- /.widget-main -->
               </div><!-- /.widget-body -->
-            </div><!-- /.widget-box -->
+            </div><!-- /.wi'<dget-box -->
           </div><!-- /.col -->
         </div><!-- /.row -->
-{ñlkjhgf
-        
-        <script>  
-         var plot1 = $.jqplot('chart1',[],{
-      title: 'Sine Data Renderer',
-      dataRenderer: sineRenderer
-  });
-});
 
-      </script>
-      
-      <div id="chart1" ></div>
+        <script>
+          $(document).ready(function () {
+            $.jqplot.config.enablePlugins = true;
+            var s1 = ['<?php echo $totalEstadoPqrs?>', '<?php echo $totalDetallePqrs?>', '<?php echo $totalTipoPqrs ?>','<?php echo $totalEvento ?>', '<?php echo $totalPqrs ?>', 
+            '<?php echo $totalLocalidades ?>', '<?php echo $totalCredenciales ?>', '<?php echo $totalTipoDocumento?>', '<?php echo $totalOrganizacion ?>', '<?php echo $totalPatrocinador?>', '<?php echo $totalCategoria ?>', 
+          '<?php echo $totalGustosCategoria?>', '<?php echo $totalUsuarios?>'];
+            var ticks = ['<?php echo i18n::__('feedbackState') ?>', '<?php echo i18n::__('feedbackSpecs') ?>',
+              '<?php echo i18n::__('feedbackType') ?>', '<?php echo i18n::__('events') ?>', '<?php echo i18n::__('feedback') ?>',
+              '<?php echo i18n::__('locality') ?>',
+               '<?php echo i18n::__('credential') ?>', '<?php echo i18n::__('document_type') ?>',
+              '<?php echo i18n::__('organizations') ?>', '<?php echo i18n::__('partner') ?>', '<?php echo i18n::__('category') ?>',
+              '<?php  echo i18n::__('events_like_me') ?>', '<?php echo i18n::__('user') ?>'];
+
+            plot1 = $.jqplot('chart1', [s1], {
+              // Only animate if we're not using excanvas (not in IE 7 or IE 8)..
+              animate: !$.jqplot.use_excanvas,
+              seriesDefaults: {
+                renderer: $.jqplot.BarRenderer,
+                pointLabels: {show: true}
+              },
+              axes: {
+                xaxis: {
+                  renderer: $.jqplot.CategoryAxisRenderer,
+                  ticks: ticks
+                }
+              },
+              highlighter: {show: false}
+            });
+
+            $('#chart1').bind('jqplotDataClick',
+                    function (ev, seriesIndex, pointIndex, data) {
+                      $('#info1').html('series: ' + seriesIndex + ', point: ' + pointIndex + ', data: ' + data);
+                    }
+            );
+          });
+        </script>
+
+        <div id="chart1" ></div>
         <!-- PAGE CONTENT ENDS -->
       </div><!-- /.col -->
     </div><!-- /.row -->

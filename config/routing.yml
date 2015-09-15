@@ -1110,6 +1110,14 @@ proyecto_index:
         - model/base/eventoBaseTableClass.php
         - model/eventoTableClass.php
       
+      
+##-------------------------- PRIVACIDAD--------------------------##      
+      
+privacidad_index:
+  url:    /privacidad/index
+  param:  { module: privacidad, action: index, format: html }
+  load:
+           
 ##-------------------------- Recaudo Economico --------------------------##
 recaudoEconomico_index:
     url: /recaudoEconomico/index

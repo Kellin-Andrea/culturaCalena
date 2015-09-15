@@ -129,12 +129,10 @@ admin:
       - admin/docs/assets/js/language/javascript.js
       - admin/assets/js/ace-extra.js
       - jquery.jqplot.js
-      #- jqplot/plugins/jqplot.canvasTextRenderer.min.js
-      #- jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js
-      - jqplot/plugins/jqplot.pieRenderer.min.js
-      - jqplot/plugins/jqplot.donutRenderer.min.js
-      - jqplot/plugins/jqplot.json2.js
-      - jquery-1.11.1.min.js
+      - jqplot/plugins/jqplot.barRenderer.js
+      - jqplot/plugins/jqplot.pieRenderer.js
+      - jqplot/plugins/jqplot.categoryAxisRenderer.min.js
+      - jqplot/plugins/jqplot.pointLabels.js
       - index.js
       - main.js
  
@@ -603,6 +601,35 @@ teatro:
       - teatro/js/sticky_navbar.js
       - teatro/js/underscore.js
       
+
+privacidad:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - privacidad/css/animate.css
+        #<!--prettyPhoto.css -->
+      - privacidad/css/prettyPhoto.css
+        #<!--shop css-->
+      - privacidad/css/shop.css
+        #<!--style css-->
+      - privacidad/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - privacidad/js/almond.js
+      - privacidad/js/header_carousel.js
+      - privacidad/js/imagesloaded.js
+      - privacidad/js/isotope.js
+      - privacidad/js/jquery.min.js
+      - privacidad/js/jquery.prettyPhoto.js
+      - privacidad/js/jquery.validate.min.js
+      - privacidad/js/main.js
+      - privacidad/js/main.min.js
+      - privacidad/js/modernizr.custom.24530.js
+      - privacidad/js/require.js
+      - privacidad/js/simplemap.js
+      - privacidad/js/sticky_navbar.js
+      - privacidad/js/underscore.js
+
 
 
 pqrs:
