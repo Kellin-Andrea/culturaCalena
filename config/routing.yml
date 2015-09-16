@@ -744,6 +744,7 @@ eventoPatrocinador_insert:
     - model/eventoTableClass.php   
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php
+    - libs/validator/eventoPatrocinador/createEventoPatrocinadorValidatorClass.php
 
 eventoPatrocinador_create:
   url:    /eventoPatrocinador/crear
@@ -751,6 +752,8 @@ eventoPatrocinador_create:
   load:
     - model/base/eventoPatrocinadorBaseTableClass.php
     - model/eventoPatrocinadorTableClass.php
+    - libs/validator/eventoPatrocinador/createEventoPatrocinadorValidatorClass.php
+    
 
 eventoPatrocinador_edit:
   url:    /eventoPatrocinador/editar
@@ -762,6 +765,7 @@ eventoPatrocinador_edit:
     - model/eventoTableClass.php
     - model/base/patrocinadorBaseTableClass.php
     - model/patrocinadorTableClass.php 
+    - libs/validator/eventoPatrocinador/editEventoPatrocinadorValidatorClass.php
 
 eventoPatrocinador_update:
   url:    /eventoPatrocinador/actualizar
@@ -769,6 +773,7 @@ eventoPatrocinador_update:
   load:
     - model/base/eventoPatrocinadorBaseTableClass.php
     - model/eventoPatrocinadorTableClass.php
+    - libs/validator/eventoPatrocinador/editEventoPatrocinadorValidatorClass.php
 
 eventoPatrocinador_delete:
   url:    /eventoPatrocinador/eliminar

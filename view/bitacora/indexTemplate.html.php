@@ -26,6 +26,15 @@ use mvc\request\requestClass as request ?>
 
     <div class="navbar-container" id="navbar-container">
       <!-- #section:basics/sidebar.mobile.toggle -->
+      <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
+        <span class="sr-only">Toggle sidebar</span>
+
+        <span class="icon-bar"></span>
+
+        <span class="icon-bar"></span>
+
+        <span class="icon-bar"></span>
+      </button>
 
 
       <!-- /section:basics/sidebar.mobile.toggle -->
@@ -34,7 +43,7 @@ use mvc\request\requestClass as request ?>
         <a href="#" class="navbar-brand">
           <small>
             <i class="glyphicon glyphicon-leaf"></i>
-            <?php echo i18n::__('cultureCaleña') ?>
+<?php echo i18n::__('cultureCaleña') ?>
           </small>
         </a>
 
@@ -54,7 +63,7 @@ use mvc\request\requestClass as request ?>
               <img class="nav-user-photo" src="<?php echo \mvc\routing\routingClass::getInstance()->getUrlImg('logo.png') ?>" />
               <span class="user-info">
                 <small><?php echo i18n::__('welcome') ?></small>
-                <?php echo i18n::__('administrator') ?>
+<?php echo i18n::__('administrator') ?>
               </span>
 
               <i class="ace-icon fa fa-caret-down"></i>
@@ -64,20 +73,31 @@ use mvc\request\requestClass as request ?>
 
 
               <li>
-                <a href="profile.html">
+                  <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('profile', 'index')?>">
                   <i class="ace-icon fa fa-user"></i>
-                  <?php echo i18n::__('profile') ?>
+<?php echo i18n::__('profile') ?>
+                </a>
+              </li>
+              
+               <li class="divider"></li>
+
+              <li>
+                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('homepage', 'index') ?>">
+                  <i class="ace-icon fa fa-home"></i>
+<?php echo i18n::__('homePage') ?>
                 </a>
               </li>
 
               <li class="divider"></li>
 
               <li>
-                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>"">
+                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>">
                   <i class="ace-icon fa fa-power-off"></i>
-                  <?php echo i18n::__('exit') ?>
+<?php echo i18n::__('exit') ?>
                 </a>
               </li>
+              
+              
             </ul>
           </li>
 
@@ -88,6 +108,7 @@ use mvc\request\requestClass as request ?>
       <!-- /section:basics/navbar.dropdown -->
     </div><!-- /.navbar-container -->
   </div>
+
 
   <!-- /section:basics/navbar.layout -->
   <div class="main-container" id="main-container">
@@ -148,7 +169,7 @@ use mvc\request\requestClass as request ?>
         </div>
 
 
-        <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
+         <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
 
 
           <span class="btn btn-info"></span>
@@ -181,7 +202,7 @@ use mvc\request\requestClass as request ?>
             <li class="">
               <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuario', 'index') ?>">
                 <i class="menu-icon fa fa-caret-right"></i>
-                <?php echo i18n::__('user') ?>
+<?php echo i18n::__('user') ?>
               </a>
 
               <b class="arrow"></b>
@@ -190,7 +211,7 @@ use mvc\request\requestClass as request ?>
             <li class="">
               <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('bitacora', 'index') ?>">
                 <i class="menu-icon fa fa-caret-right"></i>
-                <?php echo i18n::__('logBook') ?>
+<?php echo i18n::__('logBook') ?>
               </a>
 
               <b class="arrow"></b>
@@ -198,7 +219,7 @@ use mvc\request\requestClass as request ?>
             <li class="">
               <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('categoria', 'index') ?>">
                 <i class="menu-icon fa fa-caret-right"></i>
-                <?php echo i18n::__('category') ?>
+<?php echo i18n::__('category') ?>
               </a>
 
               <b class="arrow"></b>
@@ -206,7 +227,7 @@ use mvc\request\requestClass as request ?>
             <li class="">
               <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('evento', 'index') ?>">
                 <i class="menu-icon fa fa-caret-right"></i>
-                <?php echo i18n::__('events') ?>
+<?php echo i18n::__('events') ?>
               </a>
 
               <b class="arrow"></b>
@@ -215,7 +236,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('datoUsuario', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('userData') ?>
+<?php echo i18n::__('userData') ?>
           </a>
 
           <b class="arrow"></b>
@@ -223,7 +244,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoDocumento', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('document_type') ?>
+<?php echo i18n::__('document_type') ?>
           </a>
 
           <b class="arrow"></b>
@@ -231,7 +252,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('credencial', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('credential') ?>
+<?php echo i18n::__('credential') ?>
           </a>
 
           <b class="arrow"></b>
@@ -239,7 +260,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('localidad', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('locality') ?>
+<?php echo i18n::__('locality') ?>
           </a>
 
           <b class="arrow"></b>
@@ -247,7 +268,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('pqrs', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('feedback') ?>
+<?php echo i18n::__('feedback') ?>
           </a>
 
           <b class="arrow"></b>
@@ -255,7 +276,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('detallePqrs', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('feedbackSpecs') ?>
+<?php echo i18n::__('feedbackSpecs') ?>
           </a>
 
           <b class="arrow"></b>
@@ -263,7 +284,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('estadoPqrs', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('feedbackState') ?>
+<?php echo i18n::__('feedbackState') ?>
           </a>
 
           <b class="arrow"></b>
@@ -271,7 +292,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoPqrs', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('feedbackType') ?>
+<?php echo i18n::__('feedbackType') ?>
           </a>
 
           <b class="arrow"></b>
@@ -279,7 +300,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('organizacion', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('organizations') ?>
+<?php echo i18n::__('organizations') ?>
           </a>
 
           <b class="arrow"></b>
@@ -287,7 +308,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('eventoPatrocinador', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('EventPartner') ?>
+<?php echo i18n::__('EventPartner') ?>
           </a>
 
           <b class="arrow"></b>
@@ -296,7 +317,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('patrocinador', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('partner') ?>
+<?php echo i18n::__('partner') ?>
           </a>
 
           <b class="arrow"></b>
@@ -305,7 +326,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('userCredential') ?>
+<?php echo i18n::__('userCredential') ?>
           </a>
 
           <b class="arrow"></b>
@@ -313,7 +334,7 @@ use mvc\request\requestClass as request ?>
         <li class="">
           <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioGustaCategoria', 'index') ?>">
             <i class="menu-icon fa fa-caret-right"></i>
-            <?php echo i18n::__('events_like_me') ?>
+<?php echo i18n::__('events_like_me') ?>
           </a>
 
           <b class="arrow"></b>
@@ -322,31 +343,10 @@ use mvc\request\requestClass as request ?>
       </li>
 
 
-
-
       <li class="">
-        <a href="calendar.html">
-          <i class="menu-icon fa fa-calendar"></i>
-
-          <span class="menu-text">
-            <?php echo i18n::__('calendar') ?> 
-
-            <!-- #section:basics/sidebar.layout.badge -->
-            <span class="badge badge-transparent tooltip-error" title="2 Important Events">
-              <i class="ace-icon fa fa-exclamation-triangle red bigger-130"></i>
-            </span>
-
-            <!-- /section:basics/sidebar.layout.badge -->
-          </span>
-        </a>
-
-        <b class="arrow"></b>
-      </li>
-
-      <li class="">
-        <a href="gallery.html">
-          <i class="menu-icon fa fa-picture-o"></i>
-          <span class="menu-text"><?php echo i18n::__('gallery') ?>  </span>
+        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('reporte', 'index') ?>">
+          <i class="menu-icon fa fa-file-archive-o"></i>
+          <span class="menu-text"><?php echo i18n::__('reports') ?>  </span>
         </a>
 
         <b class="arrow"></b>

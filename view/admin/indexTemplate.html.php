@@ -95,9 +95,18 @@ use mvc\i18n\i18nClass as i18n ?>
 
 
               <li>
-                <a href="profile.html">
+                  <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('profile', 'index')?>">
                   <i class="ace-icon fa fa-user"></i>
 <?php echo i18n::__('profile') ?>
+                </a>
+              </li>
+              
+               <li class="divider"></li>
+
+              <li>
+                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('homepage', 'index') ?>">
+                  <i class="ace-icon fa fa-home"></i>
+<?php echo i18n::__('homePage') ?>
                 </a>
               </li>
 
@@ -109,6 +118,8 @@ use mvc\i18n\i18nClass as i18n ?>
 <?php echo i18n::__('exit') ?>
                 </a>
               </li>
+              
+              
             </ul>
           </li>
 

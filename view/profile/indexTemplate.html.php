@@ -84,7 +84,22 @@ use mvc\session\sessionClass as session ?>
                                 </a>
                             </li>
 
+                            
+                            <?php if (session::getInstance()->isUserAuthenticated() === true and session::getInstance()->hasCredential('admin')): ?>
                             <li class="divider"></li>
+
+                            <li>
+                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('admin', 'index') ?>">
+                                    <i class="ace-icon fa fa-tasks"></i>
+                                    <?php echo i18n::__('adminPanel') ?>
+                                </a>
+                            </li>
+                            
+                            <?php else:?>
+                            
+                            <?php endif?>
+                            
+                             <li class="divider"></li>
 
                             <li>
                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>">
@@ -92,6 +107,10 @@ use mvc\session\sessionClass as session ?>
                                     <?php echo i18n::__('exit') ?>
                                 </a>
                             </li>
+                            
+                            
+                            
+                            
                         </ul>
                     </li>
 
@@ -304,7 +323,7 @@ use mvc\session\sessionClass as session ?>
 
 
         <h1 id="titulosPerfil" ><?php echo i18n::__('My_feedback') ?></h1>
-        <?php if (empty($objpqrs)): ?>
+        <?php if (empty($ObjPqrs)): ?>
 
 
             <div class="alert alert-success" role="alert"> 
