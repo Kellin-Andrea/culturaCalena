@@ -71,10 +71,10 @@ class createActionClass extends controllerClass implements controllerActionInter
           usuarioGustaCategoriaTableClass::insert($data);
         }
 
-        routing::getInstance()->redirect('datoUsuario', 'index');
+         session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('datoUsuario', 'index'):routing::getInstance()->redirect('shfSecurity', 'index');
         session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
       } else {
-        routing::getInstance()->redirect('default', 'insert');
+      session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('datoUsuario', 'index'):routing::getInstance()->redirect('shfSecurity', 'index');
       }
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

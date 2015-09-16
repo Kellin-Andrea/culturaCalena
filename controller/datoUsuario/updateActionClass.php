@@ -83,7 +83,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         }
       }
 
-      routing::getInstance()->redirect('datoUsuario', 'index');
+    session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('datoUsuario', 'index'):routing::getInstance()->redirect('shfSecurity', 'index');
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');

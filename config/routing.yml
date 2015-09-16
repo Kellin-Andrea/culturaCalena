@@ -1886,3 +1886,9 @@ profile:
     - model/categoriaTableClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    - model/base/pqrsBaseTableClass.php
+    - model/pqrsTableClass.php
+    - model/base/estadoPqrsBaseTableClass.php
+    - model/estadoPqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php

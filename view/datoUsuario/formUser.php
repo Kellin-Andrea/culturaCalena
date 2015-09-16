@@ -180,7 +180,7 @@ use mvc\request\requestClass as request ?>
         </div>
         <div class="form-group">
           <div class="col-sm-offset-5 col-xs-5">
-             <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xlg"> <i class="fa fa-home"></i></a>
+             <a href="<?php echo session::getInstance()->hasCredential('admin')? routing::getInstance()->getUrlWeb('evento', 'index'): routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xlg"> <i class="fa fa-home"></i></a>
             <button type="submit" class="btn-lg btn-primary"><?php echo i18n::__('register') ?></button>
 
 
