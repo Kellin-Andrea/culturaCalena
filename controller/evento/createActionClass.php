@@ -59,9 +59,9 @@ class createActionClass extends controllerClass implements controllerActionInter
 
         eventoTableClass::insert($data);
 
-        routing::getInstance()->redirect('evento', 'index');
+        session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('evento', 'index'):routing::getInstance()->redirect('proyecto', 'index');
       } else {
-        routing::getInstance()->redirect('evento', 'index');
+        session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('evento', 'index'):routing::getInstance()->redirect('proyecto', 'index');
       }
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

@@ -278,3 +278,44 @@ use mvc\session\sessionClass as session ?>
                 <?php endfor ?>
             </select> <?php echo $cntPages ?>
         </div>
+        
+        
+        
+         <h1 id="titulosPerfil" ><?php echo i18n::__('My_feedback') ?></h1>
+  <br>
+  <div class="container">
+    <table class="table table-bordered table-striped">
+      <thead>
+        <tr>
+          <th><?php echo i18n::__('answer') ?></th>
+          <th><?php echo i18n::__('title') ?></th>
+          <th><?php echo i18n::__('name') ?></th>
+          <th><?php echo i18n::__('actions') ?></th>
+        </tr>
+      </thead>
+      <tbody >
+        <?php foreach ($ObjPqrs as $pqrs): ?>
+          <tr>
+            <td><?php echo $pqrs->respuesta ?></td>
+            <td><?php echo $pqrs->titulo ?></td>
+            <td><?php echo $pqrs->nombre ?></td>
+            <td>
+              <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de usuario"></i></a>
+            </td>
+          </tr>
+        <?php endforeach ?>
+
+      </tbody>
+    </table>
+
+    <div class="text-right">
+      <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="paginador(this, '<?php echo (session::getInstance()->isUserAuthenticated() and session::getInstance()->hasCredential(myConfig::CREDENCIAL_ADMIN)) ? routing::getInstance()->getUrlWeb('evento', 'index') : routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
+        <?php for ($x = 1; $x <= $cntPagesPqrs; $x++): ?>
+          <option <?php echo (isset($page1) and $page1 == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+        <?php endfor ?>
+      </select> 
+      <?php echo i18n::__('of') ?> <?php echo $cntPagesPqrs ?>
+    </div>
+
+    <?php //view::includePartial('homePage/footer') ?>
+  </div>

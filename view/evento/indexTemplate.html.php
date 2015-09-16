@@ -70,7 +70,7 @@ use mvc\request\requestClass as request ?>
 
               <li>
                 <a href=<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>">
-                   <i class="ace-icon fa fa-power-off"></i>
+                   <i class= "ace-icon fa fa-power-off"></i>
                      <?php echo i18n::__('exit') ?>
                 </a>
               </li>

@@ -14,20 +14,19 @@ use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
 
-
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
     public function execute() {
         try {
-          
-           $where = null;
+
+            $where = null;
 
             $id = session::getInstance()->getUserId();
-            
-            
-         
-           
-   
+
+
+
+
+
             $fields = array(
                 usuarioTableClass::ID,
                 usuarioTableClass::USER
@@ -46,12 +45,12 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 datoUsuarioTableClass::ORGANIZACION_ID,
                 datoUsuarioTableClass::GENERO
             );
-           
-           $fields3 = array(
-           usuarioGustaCategoriaTableClass::ID,
-           usuarioGustaCategoriaTableClass::CATEGORIA_ID,
-           usuarioGustaCategoriaTableClass::USUARIO_ID
-           );
+
+            $fields3 = array(
+                usuarioGustaCategoriaTableClass::ID,
+                usuarioGustaCategoriaTableClass::CATEGORIA_ID,
+                usuarioGustaCategoriaTableClass::USUARIO_ID
+            );
 
 
 
@@ -62,30 +61,41 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $where2 = array(
                 datoUsuarioTableClass::USUARIO_ID => session::getInstance()->getUserId()
             );
-            
-            $where3 = array(
-            usuarioGustaCategoriaTableClass::USUARIO_ID => session::getInstance()->getUserId()
-            );
-            
 
-           
-          $page = 0;
+            $where3 = array(
+                usuarioGustaCategoriaTableClass::USUARIO_ID => session::getInstance()->getUserId()
+            );
+
+
+
+            $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');
                 $page = request::getInstance()->getGet('page') - 1;
                 $page = $page * config::getRowGrid();
             }
 
-            
+
+            $page1 = 0;
+            if (request::getInstance()->hasGet('page1')) {
+                $this->page1 = request::getInstance()->getGet('page1');
+                $page1 = request::getInstance()->getGet('page1') - 1;
+                $page1 = $page1 * config::getRowGridEvent();
+            }
+
+
+
             $this->cntPages = eventoTableClass::getTotalpages(config::getRowGrid(), $where);
             $this->objPerfilUser = usuarioTableClass::getAll($fields, FALSE, null, null, null, null, $where1);
+            $this->cntPagesPqrs = pqrsTableClass::getTotalPagesPqrs(config::getRowGridProyect());
+            $this->ObjPqrs = pqrsTableClass::getPqrs($id, config::getRowGridProyect(), $page1);
             $this->objDatosProfile = datoUsuarioTableClass::getAll($fields2, FALSE, null, null, null, null, $where2);
             $this->objGustosProfile = usuarioTableClass::getCategoria($id);
             $this->objCount = eventoTableClass::getEventTotal($id);
             $this->objCount1 = usuarioGustaCategoriaTableClass::getCateTotal($id);
             $this->objCount2 = bitacoraTableClass::getBitacoraTotal($id);
             $this->objEventoProfile = eventoTableClass::getEventoProfile($id, config::getRowGrid(), $page, $where);
-            
+
             $this->defineView('index', 'profile', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             session::getInstance()->setFlash('exc', $exc);

@@ -57,6 +57,7 @@ use mvc\request\requestClass as request ?>
                         </select>
                     </div>
                 </div>
+  <?php if (session::getInstance()->hasCredential('admin')): ?>
 
                 <div class="form-group <?php echo (session::getInstance()->hasFlash('inputEstado')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('pqrsfState') ?></label>
@@ -72,6 +73,10 @@ use mvc\request\requestClass as request ?>
                         </select>
                     </div>
                 </div>
+                    
+                    
+                        <?php endif; ?>
+
                 <div class="form-group">
                     <div class="col-sm-offset-5 col-sm-">
                         <a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>

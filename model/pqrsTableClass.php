@@ -2,6 +2,7 @@
 
 use mvc\model\modelClass as model;
 use mvc\config\configClass as config;
+use mvc\session\sessionClass as session;    
 
 /**
 * @description: En esta clase se manejara las consultas que tengar quever con la tabla  
@@ -61,6 +62,57 @@ class pqrsTableClass extends pqrsBaseTableClass {
             throw $exc;
         }//end catch
     }
+ 
+    
+    public static function getTotalPagesPqrs($lines) {
+    try {
+      $sql = 'SELECT count(' . pqrsTableClass::ID . ') AS cantidad '
+              . 'FROM ' . pqrsTableClass::getNameTable() .
+              ' WHERE ' . pqrsTableClass::DELETED_AT . ' IS NULL' . ' AND ' . pqrsTableClass::USUARIO_ID . ' = ' . session::getInstance()->getUserId();
+
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute();
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return ceil($answer[0]->cantidad / $lines);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+  }
+
+ 
+  public static function getPqrs($id, $limit, $offset) {
+
+    try {
+
+      $sql = 'SELECT ' . pqrsTableClass::getNameTable() . '.' . pqrsTableClass::ID . ' , ' .
+              detallePqrsTableClass::getNameTable() . '.' . detallePqrsTableClass::RESPUESTA . ' , ' .
+              pqrsTableClass::getNameTable() . '.' . pqrsTableClass::TITULO . ' , ' .
+              estadoPqrsTableClass::getNameTable() . '.' . estadoPqrsTableClass::NOMBRE . ' , ' .
+              usuarioTableClass::getNameTable() . '.' . usuarioTableClass::ID .
+              ' FROM ' . detallePqrsTableClass::getNameTable() . ' , ' . pqrsTableClass::getNameTable() . ' , ' . estadoPqrsTableClass::getNameTable() .
+              ' ,' . usuarioTableClass::getNameTable() .
+              ' WHERE ' . detallePqrsTableClass::getNameTable() . '.' . detallePqrsTableClass::PQRS_ID . '=' .
+              pqrsTableClass::getNameTable() . '.' . pqrsTableClass::ID .
+              ' AND ' . pqrsTableClass::getNameTable() . '.' . pqrsTableClass::ESTADO_PQRS. '=' . estadoPqrsTableClass::getNameTable() . '.' .
+              estadoPqrsTableClass::ID . ' AND ' . pqrsTableClass::getNameTable() . '.' . pqrsTableClass::USUARIO_ID . ' = ' .
+              usuarioTableClass::getNameTable() . '.' . usuarioTableClass::ID . ' AND ' .
+              usuarioTableClass::getNameTable() . '.' . usuarioTableClass::ID . ' = ' . $id;
+     
+
+      if ($limit !== null and $offset === null) {
+        $sql = $sql . ' LIMIT ' . $limit;
+      }
+
+      if ($limit !== null and $offset !== null) {
+        $sql = $sql . ' LIMIT ' . $limit . ' OFFSET ' . $offset;
+      }
+
+      return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+    } catch (\PDOException $exc) {
+      throw $exc;
+    }
+  }
+    
         } //end class
 
 
