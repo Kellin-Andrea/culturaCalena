@@ -163,7 +163,16 @@ use mvc\session\sessionClass as session ?>
 
 
 
-        </div>            
+        </div>      
+        
+         <?php if (empty($objGustosProfile)): ?>  
+            
+             <div class="alert alert-warning" role="alert"> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                En El Momento No Tiene Categorias Para Mostrar</div>
+
+
+        <?php else : ?>
 
         <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
             <nav id="evento"> <h1><?php echo i18n::__('youCategory') ?></h1></nav>
@@ -174,7 +183,7 @@ use mvc\session\sessionClass as session ?>
                No Hay Categorias Para Mostrar
 
             </span>-->
-            
+
             <?php // else; ?>
             <!-- Indicators -->
             <ol class="carousel-indicators">
@@ -209,15 +218,28 @@ use mvc\session\sessionClass as session ?>
                 <span class="sr-only">Next</span>
             </a>
         </div>
+<?php endif?>
 
 
 
 
 
 
+        
+            <h1><?php echo i18n::__('my_events') ?></h1>
+            
+            
+            <div class="container">
+   <?php if (empty($objEventoProfile)): ?>  
+            
+             <div class="alert alert-info" role="alert"> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                En El Momento No Tiene Eventos Para Mostrar</div>
 
-        <div class="container">
-            <nav id="evento"> <h1><?php echo i18n::__('my_events') ?></h1></nav>
+
+        <?php else : ?>
+
+
             <table class="table table-bordered table-striped">
                 <thead>
                     <tr>
@@ -242,8 +264,8 @@ use mvc\session\sessionClass as session ?>
                                 <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
 
                                 <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
-                        <!--              <a href="#" onclick="confirmarEliminar(<?php //echo $usuario->$id                    ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>-->
-                        <!--              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo" role="dialog" title="Borrar" data-content="Eliminar usuario"  onclick="eliminar(<?php //echo $usuario->$id                    ?>)"class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>-->
+                        <!--              <a href="#" onclick="confirmarEliminar(<?php //echo $usuario->$id                     ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>-->
+                        <!--              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo" role="dialog" title="Borrar" data-content="Eliminar usuario"  onclick="eliminar(<?php //echo $usuario->$id                     ?>)"class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>-->
                                 <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoProfile->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>
                             </td>
                         </tr>
@@ -278,44 +300,58 @@ use mvc\session\sessionClass as session ?>
                 <?php endfor ?>
             </select> <?php echo $cntPages ?>
         </div>
-        
-        
-        
-         <h1 id="titulosPerfil" ><?php echo i18n::__('My_feedback') ?></h1>
-  <br>
-  <div class="container">
-    <table class="table table-bordered table-striped">
-      <thead>
-        <tr>
-          <th><?php echo i18n::__('answer') ?></th>
-          <th><?php echo i18n::__('title') ?></th>
-          <th><?php echo i18n::__('name') ?></th>
-          <th><?php echo i18n::__('actions') ?></th>
-        </tr>
-      </thead>
-      <tbody >
-        <?php foreach ($ObjPqrs as $pqrs): ?>
-          <tr>
-            <td><?php echo $pqrs->respuesta ?></td>
-            <td><?php echo $pqrs->titulo ?></td>
-            <td><?php echo $pqrs->nombre ?></td>
-            <td>
-              <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de usuario"></i></a>
-            </td>
-          </tr>
-        <?php endforeach ?>
+<?php endif?>
 
-      </tbody>
-    </table>
 
-    <div class="text-right">
-      <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="paginador(this, '<?php echo (session::getInstance()->isUserAuthenticated() and session::getInstance()->hasCredential(myConfig::CREDENCIAL_ADMIN)) ? routing::getInstance()->getUrlWeb('evento', 'index') : routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
-        <?php for ($x = 1; $x <= $cntPagesPqrs; $x++): ?>
-          <option <?php echo (isset($page1) and $page1 == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
-        <?php endfor ?>
-      </select> 
-      <?php echo i18n::__('of') ?> <?php echo $cntPagesPqrs ?>
-    </div>
+        <h1 id="titulosPerfil" ><?php echo i18n::__('My_feedback') ?></h1>
+        <?php if (empty($objpqrs)): ?>
 
-    <?php //view::includePartial('homePage/footer') ?>
-  </div>
+
+            <div class="alert alert-success" role="alert"> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                En El Momento No Tiene Peticiones Pendientes</div>
+
+
+        <?php else : ?>
+
+
+
+
+
+            <br>
+            <div class="container">
+                <table class="table table-bordered table-striped">
+                    <thead>
+                        <tr>
+                            <th><?php echo i18n::__('answer') ?></th>
+                            <th><?php echo i18n::__('title') ?></th>
+                            <th><?php echo i18n::__('name') ?></th>
+                            <th><?php echo i18n::__('actions') ?></th>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <?php foreach ($ObjPqrs as $pqrs): ?>
+                            <tr>
+                                <td><?php echo $pqrs->respuesta ?></td>
+                                <td><?php echo $pqrs->titulo ?></td>
+                                <td><?php echo $pqrs->nombre ?></td>
+                                <td>
+                                    <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de usuario"></i></a>
+                                </td>
+                            </tr>
+                        <?php endforeach ?>
+
+                    </tbody>
+                </table>
+
+                <div class="text-right">
+                    <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="paginador(this, '<?php echo (session::getInstance()->isUserAuthenticated() and session::getInstance()->hasCredential(myConfig::CREDENCIAL_ADMIN)) ? routing::getInstance()->getUrlWeb('evento', 'index') : routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
+                        <?php for ($x = 1; $x <= $cntPagesPqrs; $x++): ?>
+                            <option <?php echo (isset($page1) and $page1 == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+                        <?php endfor ?>
+                    </select> 
+                    <?php echo i18n::__('of') ?> <?php echo $cntPagesPqrs ?>
+                </div>
+            <?php endif ?>
+            <?php //view::includePartial('homePage/footer') ?>
+        </div>
