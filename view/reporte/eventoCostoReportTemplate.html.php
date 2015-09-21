@@ -22,7 +22,8 @@ use mvc\session\sessionClass as session ?>
         
     </div>
     <div class="container">
-       
+    
+      
         <div class="row">
             <div class="box">
                
@@ -62,7 +63,14 @@ use mvc\session\sessionClass as session ?>
                     <img id="images" src="<?php echo routing::getInstance()->getUrlImg('logo.png') ?>">
                     
                     <h1 id="titulo"> Reporte Evento Categoria</h1>
-                    
+                       <?php if (empty($objCateEvento)): ?>  
+            
+             <div class="alert alert-info" role="alert"> 
+                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                <?php echo i18n::__('errorReport')?></div>
+
+
+        <?php else : ?>
                      <div id="chart1" ></div>
                     
                      <table class="table table-bordered table-hover">
@@ -87,12 +95,17 @@ use mvc\session\sessionClass as session ?>
                                  
                                 </tr>
 
-
+                              
                               <?php endforeach ?>
                             </tbody>
-                           
+                           <?php endif?>
                           </table>
-                     <p><a class="btn btn-success btn-lg" target="popup" href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'eventoCostoReportPdf'); ?>" role="button"> <?php  echo i18n::__('printReport') ?></a></p>
+                      <?php if (empty($objCateEvento)): ?>  
+                     
+                     <?php else:?>
+                     <a class="btn btn-success btn-lg" target="popup" href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'eventoCostoReportPdf'); ?>" role="button"> <?php  echo i18n::__('printReport') ?></a>
+                     <?php endif?>
+                     <a class="btn btn-default btn-lg"  href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'index'); ?>" role="button"> <?php  echo i18n::__('homePage') ?></a>
       
                 </div>
                 <div class="clearfix"></div>

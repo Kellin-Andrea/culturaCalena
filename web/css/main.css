@@ -138,3 +138,10 @@ body{
     margin-top: 32px;
     margin-left: -287px;
 }
+
+#colorLetra{
+  
+  color: #000000 ;
+  font: oblique bold 150% cursive; 
+  
+}

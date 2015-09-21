@@ -164,7 +164,9 @@ dictionary:
     managementAdmisnistrator:                                               Gestion Administrator               
     welcomeTo:                                                              Bienvenido a  
     siteWhere:                                                              Portal Cultural De Santiago De Cali                
-    application:                                                            Aplicacion                
+    application:                                                            Aplicacion    
+    errorReport:                                                            En Las Fechas Elegidas No Hay Datos Para Mostrar
+
      #----------------------------Bitacora--------------------------------------#
     showLogBook:                                                            Mostrar Bitacora
     logBook:                                                                Bitacora
@@ -176,7 +178,7 @@ dictionary:
     date:                                                                   Fecha
     type_select:                                                            Seleccione Tipo Documento
     #----------------------------Credencial------------------------------------#
-    userCredential:         Usuario Credencial
+    userCredential:                                                         Usuario Credencial
     credentialManagement:                                                   Gestion de credencial
     newCredencial:                                                          Nueva credencial
     credential:                                                             Credencial
@@ -196,7 +198,7 @@ dictionary:
     createCategory:                                                         Crear categoria
     name_category:                                                          Nombre Categoria 
     returning_to_category:                                                  Regresar a categoria
-    category_select:      Seleccione Categoria
+    category_select:                                                        Seleccione Categoria
     #------------------------------Evento--------------------------------------#
     eventManagement:                                                        Gestion de eventos 
     description:                                                            descripcion
@@ -256,7 +258,7 @@ dictionary:
     created:                                                                Creado
     in_process:                                                             En proceso 
     My_feedback:                                                            Mis peticiones
-    newFeedbackType:       Nuevo TypoPQRSF
+    newFeedbackType:                                                        Nuevo TypoPQRSF
     #-----------------------------DetallePqrsf---------------------------------#
     user_select:                                                           Seleccione un usuario
     feedback_select:                                                       Seleccione una opcion
@@ -391,7 +393,6 @@ dictionary:
     00056:                                                               El campo nombre se encuentra vacio .
     00057:                                                               Nombre de la categoria %cat% excede los %caracteres% caracteres permitidos.
     00058:                                                               La categoria ya se encunetra registrada.
-    00059:           
     00060:
     00061:
     00062:
