@@ -145,3 +145,9 @@ body{
   font: oblique bold 150% cursive; 
   
 }
+
+#mostrarMapa{
+    
+    width: 200px;
+    height: 300px ;
+}

@@ -226,6 +226,7 @@ use mvc\session\sessionClass as session ?>
     
 
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
+
 </header>
 <script>
 
