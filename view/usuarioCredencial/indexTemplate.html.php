@@ -417,7 +417,7 @@ use mvc\request\requestClass as request ?>
                             <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'delete') ?>" method="POST">
                               <input type="hidden" id="idDelete" name="<?php echo usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::ID, true) ?>">
 
-                              <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'insert', array('' => $usuarioId(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::USUARIO_ID, true)))) ?>" type="button" class="btn btn-info"><?php echo i18n::__('create') ?></a>
+                              <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'insert', array(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::USUARIO_ID, true)=>$usuario->$id)) ?>" type="button" class="btn btn-info"><?php echo i18n::__('create') ?></a>
 
                               <a href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><?php echo i18n::__('deleteSelection') ?></a>
 
