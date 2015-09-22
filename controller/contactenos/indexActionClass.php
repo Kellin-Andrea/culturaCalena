@@ -18,8 +18,12 @@ class indexActionClass extends controllerClass implements controllerActionInterf
   public function execute() {
     
 
-    try {
-   
+      
+      
+       try {
+           
+           
+              
      
       
       $this->defineView('index', 'contactenos', session::getInstance()->getFormatOutput());

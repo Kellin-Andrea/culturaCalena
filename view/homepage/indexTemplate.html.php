@@ -185,7 +185,7 @@ use mvc\session\sessionClass as session ?>
     <div class="header-widgets  hidden-md  hidden-lg">
       <div class="widget  widget-icon-box">	
         <div class="icon-box">
-          <a id="buton" class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
+            <a id="buton" class="fa fa-user-plus" href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'insert') ?>"></a>
           <span class="icon-box__subtitle">Registrarse</span>
           <div class="icon-box__text">
             <h4 class="icon-box__title"></h4>

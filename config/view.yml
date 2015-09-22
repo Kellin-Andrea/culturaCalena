@@ -137,10 +137,10 @@ admin:
       - main.js
  
 contactenos:
-  insert:
+  index:
     javascript:
       - capturarGoogleMap.js
-      
+    
   index:
     stylesheet:
         #<!-- animate.css -->    

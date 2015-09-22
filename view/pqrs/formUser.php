@@ -24,6 +24,37 @@ use mvc\request\requestClass as request ?>
                 <?php if (isset($objpqrs) == true) : ?>
                     <input name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>" value="<?php echo $objpqrs[0]->$id ?>" type="hidden">
                 <?php endif ?>
+                    
+                            <div class="form-group <?php echo (session::getInstance()->hasFlash('inputTipo')) ? 'has-error has-feedback' : '' ?>">
+
+                    <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo tipoPqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('feedbackType') ?></label>
+                    <div class="col-sm-7">
+                        <?php mvc\view\viewClass::getMessageError('inputTipo') ?>
+                        <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>">
+                            <option value=""> -----Seleccione una tipo pqrs -----    </option>
+                            <?php foreach ($objtipoPqrs as $tipoPqrs): ?>
+                                <option value="<?php echo $tipoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($tipoPqrs->id === $objpqrs[0]->$tipoPqrs_id) ? 'selected' : '' : '' ?>><?php echo tipoPqrsTableClass::getNombreById($tipoPqrs->id) ?></option>
+
+                            <?php endforeach ?>
+                        </select>
+                    </div>
+                </div>
+                    
+                    
+                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputEstado')) ? 'has-error has-feedback' : '' ?>">
+                    <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('pqrsfState') ?></label>
+                    <div class="col-sm-7">
+                        <?php mvc\view\viewClass::getMessageError('inputEstado') ?>
+
+                        <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>">
+                            <option value=""> -----Seleccione una estado pqrs -----    </option>
+                            <?php foreach ($objestado as $estadoPqrs): ?>
+                                <option value="<?php echo $estadoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($estadoPqrs->id === $objpqrs[0]->$estadoPqrs_id) ? 'selected' : '' : '' ?>><?php echo estadoPqrsTableClass::getNombreById($estadoPqrs->id) ?></option>
+
+                            <?php  endforeach ?>
+                        </select>
+                    </div>
+                </div>
 
                 <div class="form-group <?php echo (session::getInstance()->hasFlash('inputTitulo')) ? 'has-error has-feedback' : '' ?>">
                     <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TITULO, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TITULO, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('title') ?></label>
@@ -43,39 +74,12 @@ use mvc\request\requestClass as request ?>
                     </div>
                 </div>
 
-                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputTipo')) ? 'has-error has-feedback' : '' ?>">
+        
+  <?php // if (session::getInstance()->hasCredential('admin')): ?>
 
-                    <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo tipoPqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('feedbackType') ?></label>
-                    <div class="col-sm-7">
-                        <?php mvc\view\viewClass::getMessageError('inputTipo') ?>
-                        <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>">
-                            <option value=""> -----Seleccione una tipo pqrs -----    </option>
-                            <?php foreach ($objtipoPqrs as $tipoPqrs): ?>
-                                <option value="<?php echo $tipoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($tipoPqrs->id === $objpqrs[0]->$tipoPqrs_id) ? 'selected' : '' : '' ?>><?php echo tipoPqrsTableClass::getNombreById($tipoPqrs->id) ?></option>
-
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-                </div>
-  <?php if (session::getInstance()->hasCredential('admin')): ?>
-
-                <div class="form-group <?php echo (session::getInstance()->hasFlash('inputEstado')) ? 'has-error has-feedback' : '' ?>">
-                    <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('pqrsfState') ?></label>
-                    <div class="col-sm-7">
-                        <?php mvc\view\viewClass::getMessageError('inputEstado') ?>
-
-                        <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>">
-                            <option value=""> -----Seleccione una estado pqrs -----    </option>
-                            <?php foreach ($objestado as $estadoPqrs): ?>
-                                <option value="<?php echo $estadoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($estadoPqrs->id === $objpqrs[0]->$estadoPqrs_id) ? 'selected' : '' : '' ?>><?php echo estadoPqrsTableClass::getNombreById($estadoPqrs->id) ?></option>
-
-                            <?php endforeach ?>
-                        </select>
-                    </div>
-                </div>
                     
                     
-                        <?php endif; ?>
+                        <?php // endif; ?>
 
                 <div class="form-group">
                     <div class="col-sm-offset-5 col-sm-">

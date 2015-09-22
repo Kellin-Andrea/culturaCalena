@@ -23,6 +23,7 @@ use mvc\session\sessionClass as session ?>
 </div>
 
 <header class="header">
+    
     <div class="container">
         <div class="logo">
             <a href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>">
@@ -222,15 +223,40 @@ use mvc\session\sessionClass as session ?>
             </div>	
         </div>
     </div>
+    
+
+<script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 </header>
+<script>
+
+    function mostrarGoogleMaps()
+   {
+        //Creamos el punto a partir de las coordenadas:
+       var punto = new google.maps.LatLng(3.420956, -76.496750);
+ 
+       //Configuramos las opciones indicando Zoom, punto(el que hemos creado) y tipo de mapa
+       var myOptions = {
+           zoom: 15, center: punto, mapTypeId: google.maps.MapTypeId.ROADMAP
+       };
+ 
+       //Creamos el mapa e indicamos en qué caja queremos que se muestre
+       var map = new google.maps.Map(document.getElementById("mostrarMapa"),  myOptions);
+ 
+       //Opcionalmente podemos mostrar el marcador en el punto que hemos creado.
+       var marker = new google.maps.Marker({
+           position:punto,
+           map: map,
+           title:"Título del mapa"});
+}
+ 
+
+</script>
 
 
-<div class="form-group" id="googleMapBlock">
-    <label class="col-sm-2 control-label"><i class="fa fa-map-marker fa-fw"></i>Mapa<br><button type="button" id="btnCapturarGoogleMap" class="btn btn-default btn-xs">Capturar posición</button></label>
-    <div class="col-lg-7" style=" height: 500px" id="googleMap"></div>
-</div>
+<body  onload="mostrarGoogleMaps()">
 
-
+<div id="mostrarMapa" > </div>
+</body>
 
 
 
