@@ -147,7 +147,11 @@ body{
 }
 
 #mostrarMapa{
+    margin-top: 1cm; 
+    width: 800px;
+    height: 500px ;
+    margin-left:279px;
+    margin-right: -156px;
     
-    width: 200px;
-    height: 300px ;
+    
 }

@@ -233,7 +233,7 @@ use mvc\session\sessionClass as session ?>
     function mostrarGoogleMaps()
    {
         //Creamos el punto a partir de las coordenadas:
-       var punto = new google.maps.LatLng(3.420956, -76.496750);
+       var punto = new google.maps.LatLng(3.427286617066255, -76.50347367070009);
  
        //Configuramos las opciones indicando Zoom, punto(el que hemos creado) y tipo de mapa
        var myOptions = {
@@ -273,7 +273,7 @@ use mvc\session\sessionClass as session ?>
                 <div class="row">
                     <div class="col-xs-12  col-sm-4">
                         <span class="wpcf7-form-control-wrap your-name">
-                            <input type="text" name="your-name" value="" size="40" class="wpcf7-form-control wpcf7-text" placeholder="Your Name"/>
+                            <input type="text" name="name" value="" size="40"  placeholder="Name"/>
                         </span><br/>
                         <span class="wpcf7-form-control-wrap your-email">
                             <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="E-mail address"/>
