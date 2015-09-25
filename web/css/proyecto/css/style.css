@@ -168,7 +168,8 @@ img { vertical-align: middle; }
 .img-responsive {
     display: block;
     max-width: -68px;
-    height: 400px;
+    height: 354px;
+    width: 392px;
 } 
 
 .img-rounded { border-radius: 6px; }

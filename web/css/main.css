@@ -146,11 +146,35 @@ body{
   
 }
 
-#mostrarMapa{
+#mostrarMapa {
     margin-top: 1cm; 
     width: 800px;
     height: 500px ;
     margin-left:279px;
     margin-right: -156px;
 } 
+.hovergallery img {
+-webkit-transform:scale(0.8); 
+-moz-transform:scale(0.8); 
+-o-transform:scale(0.8); 
+-ms-transform:scale(0.8); 
+-webkit-transition-duration: 0.5s; 
+-moz-transition-duration: 0.5s; 
+-o-transition-duration: 0.5s; 
+-ms-transition-duration: 0.5s;
+opacity: 0.7; /*Nivel de opacidad de las imágenes*/
+margin: 0 10px 5px 0; /*Margen entre las imágenes*/
+}
+
+.hovergallery img:hover {
+-webkit-transform:scale(1.1); /*Webkit: Escala de aumento de la imagen 1.2x tamaño original*/
+-moz-transform:scale(1.1); 
+-o-transform:scale(1.1); 
+-ms-transform:scale(1.1); 
+box-shadow:0px 0px 30px gray; /*Sombra sobre toda la imagen*/
+-webkit-box-shadow:0px 0px 30px gray; 
+-moz-box-shadow:0px 0px 30px gray;
+-ms-box-shadow:0px 0px 30px gray; 
+opacity: 1;
+}
 
