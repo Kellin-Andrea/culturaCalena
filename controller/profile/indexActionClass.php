@@ -24,8 +24,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $id = session::getInstance()->getUserId();
 
 
-
-
+            
+            
 
             $fields = array(
                 usuarioTableClass::ID,
@@ -51,6 +51,18 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 usuarioGustaCategoriaTableClass::CATEGORIA_ID,
                 usuarioGustaCategoriaTableClass::USUARIO_ID
             );
+            
+              $fields4 = array(
+              eventoTableClass::ID,
+              eventoTableClass::COSTO,
+              eventoTableClass::FECHA_INICIAL_EVENTO,
+              eventoTableClass::NOMBRE,
+              eventoTableClass::FECHA_FINAL_EVENTO,
+              eventoTableClass::FECHA_INICIAL_PUBLICACION,
+              eventoTableClass::FECHA_FINAL_PUBLICACION,
+              eventoTableClass::USUARIO_ID
+            );
+
 
 
 
@@ -65,6 +77,13 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $where3 = array(
                 usuarioGustaCategoriaTableClass::USUARIO_ID => session::getInstance()->getUserId()
             );
+            
+              $where4 = array(
+                eventoTableClass::USUARIO_ID => session::getInstance()->getUserId()
+            );
+            
+            
+           
 
 
 
@@ -94,7 +113,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $this->objCount = eventoTableClass::getEventTotal($id);
             $this->objCount1 = usuarioGustaCategoriaTableClass::getCateTotal($id);
             $this->objCount2 = bitacoraTableClass::getBitacoraTotal($id);
-            $this->objEventoProfile = eventoTableClass::getEventoProfile($id, config::getRowGrid(), $page, $where);
+            $this->objEventoProfile = eventoTableClass::getAll($fields4, False,NULL,NULL, config::getRowGrid(), $page, $where4);
+         
 
             $this->defineView('index', 'profile', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {

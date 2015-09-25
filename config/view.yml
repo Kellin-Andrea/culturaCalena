@@ -12,7 +12,6 @@ all:
     - admin/assets/css/bootstrap.css
     - admin/assets/css/font-awesome.css
     - admin/assets/css/ace-fonts.css
-    - admin/assets/css/ace.css
     - bootstrap.css
     - main.css
     - font-awesome.min.css
@@ -27,6 +26,7 @@ shfSecurity:
 homepage:
   index:
     stylesheet:
+      - [acerca.index]
         #<!-- animate.css -->    
       - homepage/css/animate.css
         #<!--prettyPhoto.css -->
@@ -37,6 +37,7 @@ homepage:
       - homepage/css/style.css
     javascript:
       #<!-- javascripts -->
+      - [acerca.index]
       - homepage/js/almond.js
       - homepage/js/header_carousel.js
       - homepage/js/imagesloaded.js
@@ -327,6 +328,7 @@ evento:
   index:  
     title: Cultura Caleña
     stylesheet:
+      - [homepage.index]
       - admin/assets/css/bootstrap.css
       - admin/assets/css/font-awesome.css
       - admin/assets/css/ace-fonts.css

@@ -282,29 +282,28 @@ use mvc\session\sessionClass as session ?>
                             <td>
                                 <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
 
-                                <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
-                        <!--              <a href="#" onclick="confirmarEliminar(<?php //echo $usuario->$id                     ?>)" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" data-toggle="popover" title="Borrar" data-content="Eliminar usuario"></i></a>-->
-                        <!--              <a href="#" data-toggle="modal" data-target="#myModalDeleteMasivo" role="dialog" title="Borrar" data-content="Eliminar usuario"  onclick="eliminar(<?php //echo $usuario->$id                     ?>)"class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>-->
-                                <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoProfile->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash" ></i></a>
-                            </td>
-                        </tr>
-                    <div class="modal fade" id="myModalDelete<?php echo $eventoProfile->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                        <div class="modal-dialog">
-                            <div class="modal-content">
-                                <div class="modal-header">
-                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                    <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
+                                <a href="<?php  echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
+                                   <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoProfile->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                                  </td>
+                                </tr>
+
+                              <div class="modal fade" id="myModalDelete<?php echo $eventoProfile->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
+                                  <div class="modal-content">
+                                    <div class="modal-header">
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
+                                    </div>
+                                    <div class="modal-body">
+                                      ¿Desea Eliminar el registro <?php echo $eventoProfile->nombre ?> ?
+                                    </div>
+                                    <div class="modal-footer">
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                                      <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $eventoProfile->$id ?>, '<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?> ')">Confirmar Eliminar</button>
+                                    </div>
+                                  </div>
                                 </div>
-                                <div class="modal-body">
-                                    ¿Desea Eliminar el registro <?php echo $eventoProfile->nombre ?> ?
-                                </div>
-                                <div class="modal-footer">
-                                    <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                    <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $eventoProfile->$id ?>, '<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?> ')">Confirmar Eliminar</button>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                              </div>
 
 
 

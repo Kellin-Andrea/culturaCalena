@@ -40,7 +40,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
 
       $this->cntPages = usuarioGustaCategoriaTableClass::getTotalpages(config::getRowGrid(), $where);
-      $this->objusgusca = usuarioGustaCategoriaTableClass::getAll($fields, false, $orderBy, 'ASC');
+      $this->objusgusca = usuarioGustaCategoriaTableClass::getAll($fields, false, $orderBy, 'ASC', config::getRowGrid(), $page, $where);
       $this->defineView('index', 'usuarioGustaCategoria', session::getInstance()->getFormatOutput());
       } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);

@@ -26,23 +26,20 @@ class createActionClass extends controllerClass implements controllerActionInter
                 $titulo = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TITULO, true));
                 $contenido = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true));
                 $tipo = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true));
-                $estado = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true));
-
-      //          if (strlen($organizacion) > organizacionTableClass::USER_LENGTH) {
-//                    throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USER_LENGTH)), 00001);
-          //      }
+                $estado = 1;
+                $usuarioID = session::getInstance()->getUserId();
                 
                 
-            validator::validateInsert($titulo,$contenido,$tipo,$estado );
+                validator::validateInsert($titulo, $contenido, $tipo, $estado);
 
                 $data = array(
                     pqrsTableClass::TITULO => $titulo,
                     pqrsTableClass::CONTENIDO => $contenido,
                     pqrsTableClass::TIPO_PQRS => $tipo,
-                    pqrsTableClass::ESTADO_PQRS => $estado
-                    
+                    pqrsTableClass::ESTADO_PQRS => $estado,
+                    pqrsTableClass::USUARIO_ID => $usuarioID
                 );
-  
+
                 pqrsTableclass::insert($data);
                 routing::getInstance()->redirect('pqrs', 'index');
             } else {
