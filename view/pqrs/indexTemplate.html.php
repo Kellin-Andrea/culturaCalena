@@ -7,6 +7,8 @@ use mvc\config\configClass as config ?>
 use mvc\request\requestClass as request ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
+<?php
+use mvc\view\viewClass as view ?>
 <?php $id = pqrsTableClass::ID ?>
 <?php $titulo = pqrsTableClass::TITULO ?>
 
@@ -15,98 +17,11 @@ use mvc\i18n\i18nClass as i18n ?>
 
 <div class="no-skin">
   <!-- #section:basics/navbar.layout -->
-  <div id="navbar" class="navbar navbar-default">
-    <script type="text/javascript">
-      try {
-        ace.settings.check('navbar', 'fixed')
-      } catch (e) {
-      }
-    </script>
-
-    <div class="navbar-container" id="navbar-container">
-      <!-- #section:basics/sidebar.mobile.toggle -->
-      <button type="button" class="navbar-toggle menu-toggler pull-left" id="menu-toggler" data-target="#sidebar">
-        <span class="sr-only">Toggle sidebar</span>
-
-        <span class="icon-bar"></span>
-
-        <span class="icon-bar"></span>
-
-        <span class="icon-bar"></span>
-      </button>
-
-
-      <!-- /section:basics/sidebar.mobile.toggle -->
-      <div class="navbar-header pull-left">
-        <!-- #section:basics/navbar.layout.brand -->
-        <a href="#" class="navbar-brand">
-          <small>
-            <i class="glyphicon glyphicon-leaf"></i>
-<?php echo i18n::__('cultureCaleña') ?>
-          </small>
-        </a>
-
-        <!-- /section:basics/navbar.layout.brand -->
-
-        <!-- #section:basics/navbar.toggle -->
-
-        <!-- /section:basics/navbar.toggle -->
-      </div>
-
-      <!-- #section:basics/navbar.dropdown -->
-      <div class="navbar-buttons navbar-header pull-right" role="navigation">
-        <ul class="nav ace-nav">
-          <!-- #section:basics/navbar.user_menu -->
-          <li class="light-blue">
-            <a data-toggle="dropdown" href="#" class="dropdown-toggle">
-              <img class="nav-user-photo" src="<?php echo \mvc\routing\routingClass::getInstance()->getUrlImg('logo.png') ?>" />
-              <span class="user-info">
-                <small><?php echo i18n::__('welcome') ?></small>
-<?php echo i18n::__('administrator') ?>
-              </span>
-
-              <i class="ace-icon fa fa-caret-down"></i>
-            </a>
-
-            <ul class="user-menu dropdown-menu-right dropdown-menu dropdown-yellow dropdown-caret dropdown-close">
-
-
-              <li>
-                  <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('profile', 'index')?>">
-                  <i class="ace-icon fa fa-user"></i>
-<?php echo i18n::__('profile') ?>
-                </a>
-              </li>
-              
-               <li class="divider"></li>
-
-              <li>
-                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('homepage', 'index') ?>">
-                  <i class="ace-icon fa fa-home"></i>
-<?php echo i18n::__('homePage') ?>
-                </a>
-              </li>
-
-              <li class="divider"></li>
-
-              <li>
-                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>">
-                  <i class="ace-icon fa fa-power-off"></i>
-<?php echo i18n::__('exit') ?>
-                </a>
-              </li>
-              
-              
-            </ul>
-          </li>
-
-          <!-- /section:basics/navbar.user_menu -->
-        </ul>
-      </div>
-
-      <!-- /section:basics/navbar.dropdown -->
-    </div><!-- /.navbar-container -->
+<div id="navbar" class="navbar navbar-default">
+    
+    <?php view::includePartial('admin/menuAdmin')  ?>
   </div>
+  
 
 
   <!-- /section:basics/navbar.layout -->
@@ -119,245 +34,8 @@ use mvc\i18n\i18nClass as i18n ?>
     </script>
 
     <!-- #section:basics/sidebar -->
-    <div id="sidebar" class="sidebar                  responsive">
-      <script type="text/javascript">
-        try {
-          ace.settings.check('sidebar', 'fixed')
-        } catch (e) {
-        }
-      </script>
-
-      <div class="sidebar-shortcuts" id="sidebar-shortcuts">
-        <div class="sidebar-shortcuts-large" id="sidebar-shortcuts-large">
-
-          <ul class="nav ace-nav">
-            <li class=" light-blue">
-              <a data-toggle="dropdown" class="dropdown-toggle" >
-                <i class="ace-icon fa fa-globe  bigger-150"  data-toggle="modal" data-target="#myModal"></i>
-                <span class="icon-box__subtitle"><?php echo i18n::__('language1') ?></span>
-                <!-- Modal -->
-                <div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                  <div class="modal-dialog">
-                    <div class="modal-content">
-                      <div class="modal-header">
-                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('language') ?></h4>
-                      </div>
-                      <div class="modal-body">
-
-                        <form id="frmTraductor" action="<?php echo routing::getInstance()->getUrlWeb('admin', 'traductor') ?>" method="POST">
-
-                          <select name="language" onchange="$('#frmTraductor').submit()" class="col-sm-5">
-                            <option <?php echo (config::getDefaultCulture() == 'es') ? 'selected' : '' ?> value="es" >Español</option>
-                            <option <?php echo (config::getDefaultCulture() == 'en') ? 'selected' : '' ?>  value="en">English</option>
-                          </select>
-                          <input type="hidden" name="PATH_INFO" value="<?php echo request::getInstance()->getServer('PATH_INFO') ?>">
-                        </form>
-
-                      </div>
-
-                    </div>
-                  </div>
-                </div>
-
-              </a>
-            </li>
-
-          </ul>
-          </div>
-
-                     <div class="sidebar-shortcuts-mini" id="sidebar-shortcuts-mini">
-
-
-          <span class="btn btn-info"></span>
-
-        </div>
-      </div><!-- /.sidebar-shortcuts -->
-
-      <ul class="nav nav-list">
-        <li class="active">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('admin', 'index') ?>">
-            <i class="menu-icon fa fa-home"></i>
-            <span class="menu-text"><?php echo i18n::__('mainMenu') ?> </span>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-
-
-        <li class="">
-          <a href="#" class="dropdown-toggle">
-            <i class="menu-icon fa fa-list"></i>
-            <span class="menu-text"> <?php echo i18n::__('tables') ?> </span>
-
-            <b class="arrow fa fa-angle-down"></b>
-          </a>
-
-          <b class="arrow"></b>
-
-          <ul class="submenu">
-            <li class="">
-              <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuario', 'index') ?>">
-                <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('user') ?>
-              </a>
-
-              <b class="arrow"></b>
-            </li>
-
-            <li class="">
-              <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('bitacora', 'index') ?>">
-                <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('logBook') ?>
-              </a>
-
-              <b class="arrow"></b>
-            </li>
-            <li class="">
-              <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('categoria', 'index') ?>">
-                <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('category') ?>
-              </a>
-
-              <b class="arrow"></b>
-            </li>
-            <li class="">
-              <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('evento', 'index') ?>">
-                <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('events') ?>
-              </a>
-
-              <b class="arrow"></b>
-            </li>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('datoUsuario', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('userData') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoDocumento', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('document_type') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('credencial', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('credential') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('localidad', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('locality') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('pqrs', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('feedback') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('detallePqrs', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('feedbackSpecs') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('estadoPqrs', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('feedbackState') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('tipoPqrs', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('feedbackType') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('organizacion', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('organizations') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('eventoPatrocinador', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('EventPartner') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('patrocinador', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('partner') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioCredencial', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('userCredential') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-        <li class="">
-          <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('usuarioGustaCategoria', 'index') ?>">
-            <i class="menu-icon fa fa-caret-right"></i>
-<?php echo i18n::__('events_like_me') ?>
-          </a>
-
-          <b class="arrow"></b>
-        </li>
-      </ul>
-      </li>
-
-
-      <li class="">
-        <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('reporte', 'index') ?>">
-          <i class="menu-icon fa fa-file-archive-o"></i>
-          <span class="menu-text"><?php echo i18n::__('reports') ?>  </span>
-        </a>
-
-        <b class="arrow"></b>
-      </li>
-
-      </ul><!-- /.nav-list -->
-
-      <!-- #section:basics/sidebar.layout.minimize -->
-      <div class="sidebar-toggle sidebar-collapse" id="sidebar-collapse">
-        <i class="ace-icon fa fa-angle-double-left" data-icon1="ace-icon fa fa-angle-double-left" data-icon2="ace-icon fa fa-angle-double-right"></i>
-      </div>
-
-      <!-- /section:basics/sidebar.layout.minimize -->
-
+ <div id="sidebar" class="sidebar                  responsive">
+<?php view::includePartial('admin/board')?>
     </div>
 
 
@@ -506,34 +184,9 @@ use mvc\i18n\i18nClass as i18n ?>
               </div>
               </div><!-- /.main-content -->
 
-              <div class="footer">
-                <div class="footer-inner">
-                  <!-- #section:basics/footer -->
-                  <div class="footer-content">
-                    <span class="bigger-120">
-                      <span class="blue bolder">&copy; 2015-2016</span>
-                      Cultura Caleña - Todos Los Derechos Reservados Design By
-                    </span>
-
-                    &nbsp; &nbsp;
-                    <span class="action-buttons">
-                      <a href="https://twitter.com/">
-                        <i class="ace-icon fa fa-twitter-square light-blue bigger-150"></i>
-                      </a>
-
-                      <a href="https://www.facebook.com">
-                        <i class="ace-icon fa fa-facebook-square text-primary bigger-150"></i>
-                      </a>
-
-                      <a href="https://instagram.com/">
-                        <i class="ace-icon fa fa-instagram orange bigger-150"></i>
-                      </a>
-                    </span>
-                  </div>
-
-                  <!-- /section:basics/footer -->
-                </div>
-              </div>
+       <div class="footer">
+ <?php view::includePartial('admin/footerAdmin')?>
+    </div>
 
               <a href="#" id="btn-scroll-up" class="btn-scroll-up btn btn-sm btn-inverse">
                 <i class="ace-icon fa fa-angle-double-up icon-only bigger-110"></i>
