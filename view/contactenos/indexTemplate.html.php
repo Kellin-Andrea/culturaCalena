@@ -17,6 +17,27 @@ use mvc\session\sessionClass as session ?>
 </header>
     
 
+<div class="spacer-big"></div>
+<div class="container">
+  <div class="row">
+    <div class="col-md-6">
+      <div class="panel widget widget_text panel-first-child" id="panel-7-3-0-0">	
+        <div class="textwidget"></div>
+      </div>
+      <div class="panel panel-grid widget widget_black-studio-tinymce panel-last-child" id="panel">
+        <h3 class="widget-title"><?php echo i18n::__('contact') ?></h3>
+        <div class="textwidget">
+          <i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('name')?>: Junta De Accion Comunal 12 De Octubre <br>
+          <i class="glyphicon glyphicon-home"></i> <?php echo i18n::__('adress')?>: Cra 28f # 28f-130 <br> 
+          <i class="glyphicon glyphicon-phone"></i> <?php echo i18n::__('cell')?>: 666666666 <br>
+          <i class="glyphicon glyphicon-phone-alt"></i> <?php echo i18n::__('phone')?>: 000000000 <br>
+          <i class="glyphicon glyphicon-envelope"></i> <?php echo i18n::__('email')?>: culturacalena12octubre@gmail          
+       </div>
+      </div>
+    </div>
+  </div>
+</div>
+
 <script type="text/javascript" src="https://maps.google.com/maps/api/js?sensor=false"></script>
 
 
@@ -53,41 +74,7 @@ use mvc\session\sessionClass as session ?>
 
 
 
-<div class="spacer-big"></div>
-<div class="container">
-    <div class="row">
 
-        <div class="col-md-6">
-            <div class="panel panel-grid widget widget_text panel-last-child">
-                <h3 class="widget-title"><?php echo i18n::__('contact') ?></h3
-            </div>
-            <form method="post" class="wpcf7-form" novalidate="novalidate">
-                <div class="row">
-                    <div class="col-xs-12  col-sm-4">
-                        <span class="wpcf7-form-control-wrap your-name">
-                            <input type="text" name="name" value="" size="40"  placeholder="Name"/>
-                        </span><br/>
-                        <span class="wpcf7-form-control-wrap your-email">
-                            <input type="email" name="your-email" value="" size="40" class="wpcf7-form-control wpcf7-text wpcf7-email" placeholder="E-mail address"/>
-                        </span><br/>
-                        <span class="wpcf7-form-control-wrap your-subject">
-                            <input type="text" name="your-subject" value="" size="40" class="wpcf7-form-control wpcf7-text" placeholder="Subject"/>
-                        </span>
-                    </div>
-                    <div class="col-xs-12  col-sm-8">
-                        <span class="wpcf7-form-control-wrap your-message">
-                            <textarea name="your-message" cols="40" rows="10" class="wpcf7-form-control wpcf7-textarea" placeholder="Message"></textarea>
-                        </span><br/>
-                        <input type="submit" value="SEND MESSAGE" class="wpcf7-form-control wpcf7-submit btn btn-primary"/>
-                    </div>
-                </div>
-            </form>
-
-
-        </div>
-    </div>
-</div>
-</div>
 
 
 <div class="panel-grid" id="pg">

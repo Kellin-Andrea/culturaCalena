@@ -132,7 +132,7 @@ dictionary:
     know more here:                                                         Conoce mas aqui
     project:                                                                Proyecto
     message:                                                                Mensaje
-    submit:                                                                   Enviar
+    submit:                                                                 Enviar
     #---------------------------Usuario----------------------------------------#
     userManagement:                                                         Gestion de Usuario
     id:                                                                     ID
@@ -150,6 +150,7 @@ dictionary:
     user:                                                                   Usuario
     returning_to_user:                                                      Regresar a usuario
     usermanagement:                                                         Gestion Usuario
+    cell:                                                                   Celular
     #----------------------------admin--------------------------------------#
     mainMenu:                                                               Menu Principal
     cultureCaleña:                                                          Cultura Caleña

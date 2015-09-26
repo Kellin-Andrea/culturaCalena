@@ -10,5 +10,5 @@
       <h1 class="glyphicon glyphicon-user"> <?php echo i18n::__('editUser')?> <?php echo $objUsuarios[0]->$usuario ?></h1>
   </div>
 
-<?php view::includePartial('default/formUser', array('objUsuarios' => $objUsuarios, 'usuario' => $usuario)) ?>
+<?php view::includePartial('usuario/formUser', array('objUsuarios' => $objUsuarios, 'usuario' => $usuario)) ?>
 </div>

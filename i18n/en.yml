@@ -160,6 +160,7 @@ dictionary:
     user:                                                              User
     usermanagement:                                                    User Management
     returning_to_user:                                                 Returning to user
+    cell:                                                              Cell
     #----------------------------admin--------------------------------------#
     mainMenu:                                                          Main Menu
     cultureCaleña:                                                     Culture Caleña
@@ -340,7 +341,9 @@ dictionary:
     deleteSelection:                                                   Delete Selection
     printReportPdf:                                                    Print report PDF
     filter:                                                            Filter
+    My_feedback:                                                       My_feedback
     deleteFilter:                                                      Delete filter
+    errorReport:                                                       In the period chosen No Data To Display
 
 #- #---------------------------Profile user------------------------------------#
     profileInformation:                                                Profile information

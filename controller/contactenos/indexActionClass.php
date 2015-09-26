@@ -21,30 +21,9 @@ public function execute() {
 
 
 try {
-if (request::getInstance()->isMethod('POST')) {
+
   
- 
-  
-$name= request::getInstance()->getPost('name');
-$email = request::getInstance()->getPost('email');
-$message = request::getInstance()->getPost('message');
 
-
-$para      = 'kellinandrea18@hotmail.com';
-$titulo    = 'Contatenos CulturaCaleña';
-$mensaje   = $message;
-$cabeceras = 'From: kellinandrea18@hotmail.com' . "\r\n" .
-    'Reply-To: kellinandrea18@hotmail.com' . "\r\n" .
-    'X-Mailer: PHP/' . phpversion();
-
-$bool = $email($para, $titulo, $mensaje, $cabeceras);
-if($bool){
-    echo "Mensaje enviado";
-}else{
-    echo "Mensaje no enviado";
-}
-
-}
 
 $this->defineView('index', 'contactenos', session::getInstance()->getFormatOutput());
 } catch (PDOException $exc) {
