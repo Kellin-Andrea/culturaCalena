@@ -34,13 +34,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 //var_export($fields);
                 
                 //exit();
-        
+       
         session::getInstance()->setFlash('edit', 'true');
      
         $this->objUsuarios = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'default', session::getInstance()->getFormatOutput());
+        $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
       } else {
-        routing::getInstance()->redirect('default', 'index');
+        routing::getInstance()->redirect('usuario', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {
 //

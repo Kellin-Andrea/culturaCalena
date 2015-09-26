@@ -378,8 +378,8 @@ use mvc\view\viewClass as view ?>
 </div><!-- /.main-content -->
 
 <div class="footer">
- <?php view::includePartial('admin/footerAdmin')?>
-    </div>
+  <?php view::includePartial('admin/footerAdmin') ?>
+</div>
 
     <!-- /section:basics/footer -->
   </div>

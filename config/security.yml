@@ -17,3 +17,5 @@ default:
       - [admin, usuario]
   insert:
     security: true
+  edit:
+    security: true

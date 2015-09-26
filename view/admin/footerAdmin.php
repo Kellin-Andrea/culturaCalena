@@ -3,7 +3,7 @@
     <div class="footer-content">
       <span class="bigger-120">
         <span class="blue bolder">&copy; 2015-2016</span>
-        Cultura Caleña - Todos Los Derechos Reservados Design Bysssss
+        Cultura Caleña - Todos Los Derechos Reservados Design By
       </span>
 
       &nbsp; &nbsp;

@@ -48,6 +48,7 @@ class createActionClass extends controllerClass implements controllerActionInter
                
                 
                 log::register('insertar', usuarioTableClass::getNameTable(), null, 1);
+             
                 routing::getInstance()->redirect('default', 'index');
                 session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
                  } else {

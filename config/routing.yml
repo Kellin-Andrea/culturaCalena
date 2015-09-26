@@ -458,6 +458,9 @@ default_edit:
       - model/usuarioTableClass.php
       - model/base/datoUsuarioBaseTableClass.php
       - model/datoUsuarioTableClass.php
+      - hooks/logHookClass.php
+      - model/base/bitacoraBaseTableClass.php
+      - model/bitacoraTableClass.php
       - libs/validator/usuario/createUserValidatorClass.php
 
 default_update:

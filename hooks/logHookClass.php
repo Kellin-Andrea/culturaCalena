@@ -48,7 +48,7 @@ namespace hook\log {
             }
             session::getInstance()->setAttribute('shfLogRegister', serialize($data));
         }
-
+        
     }
 
 }

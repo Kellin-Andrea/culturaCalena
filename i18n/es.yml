@@ -131,6 +131,8 @@ dictionary:
     Theater:                                                                Artes
     know more here:                                                         Conoce mas aqui
     project:                                                                Proyecto
+    message:                                                                Mensaje
+    submit:                                                                   Enviar
     #---------------------------Usuario----------------------------------------#
     userManagement:                                                         Gestion de Usuario
     id:                                                                     ID

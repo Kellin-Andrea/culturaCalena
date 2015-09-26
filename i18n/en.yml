@@ -141,6 +141,8 @@ dictionary:
     know more here:                                                    know more here
     Project:                                                           Project
     adminPanel:                                                        Admin Panel
+    message:                                                           Message
+    send:                                                              Send 
     #-----------------------------User-----------------------------------------#
     userManagement:                                                    User management
     id:                                                                Id
