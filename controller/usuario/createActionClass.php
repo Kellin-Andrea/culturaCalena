@@ -48,47 +48,25 @@ class createActionClass extends controllerClass implements controllerActionInter
                
                 
                 log::register('insertar', usuarioTableClass::getNameTable(), null, 1);
-                routing::getInstance()->redirect('default', 'index');
+                routing::getInstance()->redirect('usuario', 'index');
                 session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
                  } else {
-                routing::getInstance()->redirect('default', 'index');
+                routing::getInstance()->redirect('usuario', 'index');
             }
       } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
-
-
-  
-    private function validate($user, $pass1, $pass2) {
-        $flag = false;
-
-        if ($user > usuarioTableClass::USER_LENGTH) {
-            session::getInstance()->setError(i18n::__(00004, null, 'errors', array('%user%' => $user, '%caracteres%' => usuarioTableClass::USER_LENGTH)));
-            $flag = true;
-            session::getInstance()->getFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true), true);
-        }
-
-        if (($pass1) !== ($pass2)) {
-            session::getInstance()->setError(i18n::__(00005, null, 'errors'));
-            $flag = true;
-            session::getInstance()->getFlash(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true), true);
-
-
-      }
-      
-        if($user == "" or $pass1 == "" or $pass2 == "" ){ 
-            session::getInstance()->setError(i18n::__(00007,null,'errors'));
-            $flag = true;
+}
             session::getInstance()->getFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true),true);
 
-} 
+ 
         if ($flag === true) {
             request::getInstance()->setMethod('GET');
-            routing::getInstance()->forward('default', 'insert');
+            routing::getInstance()->forward('usuario', 'insert');
         }
-    }
 
-    }
+
+
 

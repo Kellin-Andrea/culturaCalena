@@ -19,7 +19,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
   public function execute() {
     try {
-      if (request::getInstance()->hasRequest(usuarioTableClass::ID)) {
+      if (request::getInstance()->hasGet(usuarioTableClass::ID)) {
         $fields = array(
             usuarioTableClass::ID,
             usuarioTableClass::USER,
@@ -28,7 +28,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         
   
         $where = array(
-            usuarioTableClass::ID => request::getInstance()->getRequest(usuarioTableClass::ID)
+            usuarioTableClass::ID => request::getInstance()->getGet(usuarioTableClass::ID)
         );
      
                 //var_export($fields);
@@ -38,9 +38,9 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         session::getInstance()->setFlash('edit', 'true');
      
         $this->objUsuarios = usuarioTableClass::getAll($fields, true, null, null, null, null, $where);
-        $this->defineView('edit', 'default', session::getInstance()->getFormatOutput());
+        $this->defineView('edit', 'usuario', session::getInstance()->getFormatOutput());
       } else {
-        routing::getInstance()->redirect('default', 'index');
+        routing::getInstance()->redirect('usuario', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {
 //

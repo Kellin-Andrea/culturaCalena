@@ -414,101 +414,7 @@ datoUsuario_traductor:
   load:
 
 
-##-------------------------- Default--------------------------##
-default_index:
-    url:    /default/index
-    param:  { module: default, action: index, format: html }
-    load:
-      - model/base/usuarioBaseTableClass.php
-      - model/usuarioTableClass.php
-      - model/base/datoUsuarioBaseTableClass.php
-      - model/datoUsuarioTableClass.php
-      - model/base/credencialBaseTableClass.php
-      - model/credencialTableClass.php 
-
-default_insert:
-    url:    /usuario/insert
-    param:  { module: default, action: insert, format: html }
-    load:
-      - model/base/usuarioBaseTableClass.php
-      - model/usuarioTableClass.php
-      - model/base/datoUsuarioBaseTableClass.php
-      - model/datoUsuarioTableClass.php
-      - libs/validator/usuario/createUserValidatorClass.php
-      
-
-default_create:
-    url:    /usuario/crear
-    param:  { module: default, action: create, format: html }
-    load:
-      - model/base/usuarioBaseTableClass.php
-      - model/usuarioTableClass.php
-      - model/base/datoUsuarioBaseTableClass.php
-      - model/datoUsuarioTableClass.php
-      - hooks/logHookClass.php
-      - model/base/bitacoraBaseTableClass.php
-      - model/bitacoraTableClass.php
-      - libs/validator/usuario/createUserValidatorClass.php
-
-default_edit:
-    url:    /usuario/edit
-    param:  { module: default, action: edit, format: html }
-    load:
-      - model/base/usuarioBaseTableClass.php
-      - model/usuarioTableClass.php
-      - model/base/datoUsuarioBaseTableClass.php
-      - model/datoUsuarioTableClass.php
-      - hooks/logHookClass.php
-      - model/base/bitacoraBaseTableClass.php
-      - model/bitacoraTableClass.php
-      - libs/validator/usuario/createUserValidatorClass.php
-
-default_update:
-    url:    /usuario/update
-    param:  { module: default, action: update, format: html }
-    load:
-      - model/base/usuarioBaseTableClass.php
-      - model/usuarioTableClass.php
-      - libs/validator/usuario/createUserValidatorClass.php
-
-default_delete:
-    url:    /usuario/delete
-    param:  { module: default, action: delete, format: json }
-    load:
-      - model/base/usuarioBaseTableClass.php
-      - model/usuarioTableClass.php
-
-default_deleteSelect:
-    url:    /usuario/deleteSelect
-    param:  { module: default, action: deleteSelect, format: html }
-    load:
-      - model/base/usuarioBaseTableClass.php
-      - model/usuarioTableClass.php
-
-default_reporte:
-    url:    /usuario/reporte
-    param:  { module: default, action: report, format: pdf }
-    load:
-      - libs/fpdf/fpdf.php
-
-default_deleteFilters:
-    url:    /borrar-filtros
-    param:  { module: default, action: deleteFilters, format: html }
-  
-   
-default_grafica:
-     url: /generar-grafica
-     param:  { module: default, action: grafica, format: html }
-     
-default_traductor:
-  url:   /default/traductor
-  param:  { module: default, action: traductor, format: html }
-  load:
-
-    
-
-    
-    ##--------------------------DETALLE PQRSF--------------------------##
+##--------------------------DETALLE PQRSF--------------------------##
 detallePqrs_index:
   url:    /detallePqrs/index
   param:  { module: detallePqrs, action: index, format: html }
@@ -1613,16 +1519,17 @@ usuario_index:
     - model/usuarioTableClass.php
 
 usuario_insert:
-  url:    /usuario/insertar
+  url:    /usuario/insert
   param:  { module: usuario, action: insert, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - libs/validator/usuario/createUserValidatorClass.php
 
 usuario_create:
-  url:    /usuario/crear
+  url:    /usuario/create
   param:  { module: usuario, action: create, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
@@ -1632,20 +1539,25 @@ usuario_create:
     - model/bitacoraTableClass.php
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - libs/validator/usuario/createUserValidatorClass.php
 
 usuario_edit:
-  url:    /usuario/editar
+  url:    /usuario/edit
   param:  { module: usuario, action: edit, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - libs/validator/usuario/editUserValidatorClass.php
+
 
 usuario_update:
-  url:    /usuario/actualizar
+  url:    /usuario/update
   param:  { module: usuario, action: update, format: html }
   load:
     - model/base/usuarioBaseTableClass.php
     - model/usuarioTableClass.php
+    - libs/validator/usuario/editUserValidatorClass.php
+
 
 usuario_delete:
   url:    /usuario/eliminar

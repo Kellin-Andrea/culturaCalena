@@ -104,7 +104,7 @@ use mvc\request\requestClass as request ?>
 
                           <div class="container container-fluid">
                             <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('usermanagement') ?></h1>
-                            <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('default', 'deleteSelect') ?>" method="POST">
+                            <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteSelect') ?>" method="POST">
                               <div style="margin-bottom: 10px; margin-top: 30px">
 
                               </div>
@@ -128,10 +128,9 @@ use mvc\request\requestClass as request ?>
                                       <td><?php echo $usuario->created_at ?></td>
 
                                       <td>
-                                        <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'update') ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-eye-open"></i></a>
-                                        <a href="<?php echo routing::getInstance()->getUrlWeb('default', 'edit', array(usuarioTableClass::ID => $usuario->id)) ?>" class="btn btn-success btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
+                                        <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'edit', array(usuarioTableClass::ID => $usuario->id)) ?>" class="btn btn-success btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
                                         <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $usuario->id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
-                                        <a href="<?php echo routing::getInstance()->getUrlWeb('usuarioCredencial', 'index', array(usuarioCredencialTableClass::getNameField(usuarioCredencialTableClass::USUARIO_ID, true) => $usuario->id)) ?>" class="btn btn-primary btn-xs"><i class="glyphicon glyphicon-list-alt"></i></a>
+                                       
 
                                       </td>
                                     </tr>
@@ -147,7 +146,7 @@ use mvc\request\requestClass as request ?>
                                         </div>
                                         <div class="modal-footer">
                                           <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                          <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $usuario->id ?>, '<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('default', 'delete') ?> ')">Confirmar Eliminar</button>
+                                          <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $usuario->id ?>, '<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?> ')">Confirmar Eliminar</button>
                                         </div>
                                       </div>
                                     </div>
@@ -158,7 +157,7 @@ use mvc\request\requestClass as request ?>
                               </table>
                             </form>    
 
-                            <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('default', 'delete') ?>" method="POST">
+                            <form id="frmDelete" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'delete') ?>" method="POST">
                               <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">
 
                               <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>

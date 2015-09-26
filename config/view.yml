@@ -179,6 +179,9 @@ default:
       
     javascript:
       - [admin.index]
+  edit:
+    stylesheet:
+      - [admin.index]
       
 bitacora:
   index:  
@@ -651,4 +654,5 @@ usuario:
   insert:
     stylesheet:
       - [admin.index]
-            
+
+                        

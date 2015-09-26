@@ -17,7 +17,7 @@ use mvc\view\viewClass as view ?>
     <div class="panel panel-primary">
 
         <div class="panel-body">
-            <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('default', ((isset($objUsuarios)) ? 'update' : 'create')) ?>">
+            <form class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('usuario', ((isset($objUsuarios)) ? 'update' : 'create')) ?>">
 
                 <?php if (isset($objUsuarios) == true) : ?>
                     <input name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>" value="<?php echo $objUsuarios[0]->$id ?>" type="hidden">
@@ -28,9 +28,9 @@ use mvc\view\viewClass as view ?>
                 <div class="form-group <?php echo (session::getInstance()->hasFlash('inputUser')) ? 'has-error has-feedback' : '' ?>">
 
                     <label for="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('name') ?></label>
-                       <?php mvc\view\viewClass::getMessageError('inputUser') ?>
+                      
                     <div class="col-sm-10">
-                        
+                         <?php mvc\view\viewClass::getMessageError('inputUser') ?>
 
 
                         <input type="text" class="form-control" id="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>"  name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::USER, true) ?>" 
@@ -63,8 +63,8 @@ use mvc\view\viewClass as view ?>
                     </div>
                 </div>     
                 <div class="form-group">
-                    <div class="col-sm-offset-5 col-lg-2">
-                        <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
+                    <div class="col-sm-offset-5 col-lg-10">
+                      <a href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
                         <button type="submit" class="btn-lg btn-primary"><?php echo i18n::__('register') ?></button>
 
 
@@ -77,3 +77,5 @@ use mvc\view\viewClass as view ?>
 </div>
 </div> 
 </div>
+
+

@@ -18,7 +18,7 @@ namespace mvc\validator {
     public static function validateEdit($user,$pass1,$pass2) {
       $flag = false;
       
-      if (self::notBlank($user)) {
+       if (self::notBlank($user)) {
         $flag = true;
         session::getInstance()->setFlash('inputUser', true);
         session::getInstance()->setError('El nombre de usuario es requerido', 'inputUser');
@@ -26,31 +26,30 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputUser', true);
         session::getInstance()->setError('El usuario no puede ser númerico', 'inputUser');
-      } else if(strlen($user) > \usuarioTableClass::USER_LENGTH) {
+      } else if (strlen($user) > \usuarioTableClass::USER_LENGTH) {
         $flag = true;
         session::getInstance()->setFlash('inputUser', true);
         session::getInstance()->setError('El usuario digitado es mayor en cantidad de caracteres a lo permitido', 'inputUser');
-      } else if(self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER => request::getInstance()->getPost('inputUser')), \usuarioTableClass::getNameTable())) {
+      } else if (self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER => trim($user)), \usuarioTableClass::getNameTable())) {
         $flag = true;
         session::getInstance()->setFlash('inputUser', true);
         session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
       }
 
-      if (self::notBlank(request::getInstance()->getPost('inputPass1')) or self::notBlank(request::getInstance()->getPost('inputPass2'))) {
+      if (self::notBlank($pass1) or self::notBlank($pass2)) {
         $flag = true;
         session::getInstance()->setFlash('inputPass', true);
-        session::getInstance()->setError('La contraseña es requerida', 'inputPass');
-      } else if (request::getInstance()->getPost('inputPass1') !== request::getInstance()->getPost('inputPass2')) {
+        session::getInstance()->setError('Las contraseñas son requeridas', 'inputPass');
+      } else if (($pass1) !== ($pass2)) {
         $flag = true;
         session::getInstance()->setFlash('inputPass', true);
         session::getInstance()->setError('Las contraseñas no coinciden', 'inputPass');
       }
-      
      
       if ($flag === true) {
         request::getInstance()->setMethod('GET');
         request::getInstance()->addParamGet(array(\usuarioTableClass::ID => $id));          
-        routing::getInstance()->forward('default', 'edit');
+        routing::getInstance()->forward('usuario', 'edit');
       }
     }
 

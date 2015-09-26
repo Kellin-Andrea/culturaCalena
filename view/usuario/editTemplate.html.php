@@ -2,7 +2,7 @@
 <?php use mvc\i18n\i18nClass as i18n ?>
 <?php use mvc\view\viewClass as view ?>
 <?php $usuario = usuarioTableClass::USER ?>
-<?php view::includePartial('default/menuPrincipal')?>
+<?php view::includePartial('usuario/menuPrincipal')?>
 <div class="container container-fluid">
 <div class="panel panel-primary">
   <div class="panel-heading">

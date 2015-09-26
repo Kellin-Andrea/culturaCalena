@@ -19,25 +19,25 @@ namespace mvc\validator {
         public static function validateInsert($user, $pass1, $pass2) {
             $flag = false;
 
-            if (self::notBlank($user)) {
-                $flag = true;
-                session::getInstance()->setFlash('inputUser', true);
-                session::getInstance()->setError('El nombre de usuario es requerido', 'inputUser');
-            } else if (is_numeric($user)) {
-                $flag = true;
-                session::getInstance()->setFlash('inputUser', true);
-                session::getInstance()->setError('El usuario no puede ser númerico', 'inputUser');
-            } else if (strlen($user) > \usuarioTableClass::USER_LENGTH) {
-                $flag = true;
-                session::getInstance()->setFlash('inputUser', true);
-                session::getInstance()->setError('El usuario digitado es mayor en cantidad de caracteres a lo permitido', 'inputUser');
-            } else if (self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER => request::getInstance()->getPost('inputUser')), \usuarioTableClass::getNameTable())) {
-                $flag = true;
-                session::getInstance()->setFlash('inputUser', true);
-                session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
-            }
+           if (self::notBlank($user)) {
+        $flag = true;
+        session::getInstance()->setFlash('inputUser', true);
+        session::getInstance()->setError('El nombre de usuario es requerido', 'inputUser');
+      } else if (is_numeric($user)) {
+        $flag = true;
+        session::getInstance()->setFlash('inputUser', true);
+        session::getInstance()->setError('El usuario no puede ser númerico', 'inputUser');
+      } else if (strlen($user) > \usuarioTableClass::USER_LENGTH) {
+        $flag = true;
+        session::getInstance()->setFlash('inputUser', true);
+        session::getInstance()->setError('El usuario digitado es mayor en cantidad de caracteres a lo permitido', 'inputUser');
+      } else if (self::isUnique(\usuarioTableClass::ID, true, array(\usuarioTableClass::USER => trim($user)), \usuarioTableClass::getNameTable())) {
+        $flag = true;
+        session::getInstance()->setFlash('inputUser', true);
+        session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
+      }
 
-            if (self::notBlank($pass1) or self::notBlank($pass2)) {
+      if (self::notBlank($pass1) or self::notBlank($pass2)) {
         $flag = true;
         session::getInstance()->setFlash('inputPass', true);
         session::getInstance()->setError('Las contraseñas son requeridas', 'inputPass');
