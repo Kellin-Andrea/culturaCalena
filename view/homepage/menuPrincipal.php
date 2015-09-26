@@ -78,7 +78,7 @@ use mvc\session\sessionClass as session ?>
 
         <div class="icon-box">
           <!-- Button trigger modal -->
-          <div type="icon-box" class="fa fa-arrow-down white " data-toggle="modal" data-target="#myModalPerfil"></div>
+          <div id="inicio" type="icon-box" class="fa fa-arrow-down white " data-toggle="modal" data-target="#myModalPerfil"></div>
           <span class="icon-box__subtitle"><?php echo i18n::__('welcome');
         echo '<br>';
         echo session::getInstance()->getUserName(); ?></span>

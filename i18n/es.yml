@@ -36,6 +36,7 @@ dictionary:
     event_select:                                                           Seleccione Evento
     createUser:                                                             Crear usuario
     editUser:                                                               Editar usuario
+    editDateUser:                                                           Editar Dato Usuario
     editOrganization:                                                       Editar Organizacion
     music:                                                                  Musica
     newPass:                                                                Nueva contraseña
@@ -68,13 +69,14 @@ dictionary:
     title:                                                                  Titulo
     content:                                                                Contenido
     create_credential:                                                      Crear Credencial
-    modify_credential:                                                      Editar credencial
-    are_sure_delete_registers:                                              ¿Desea eliminar los registros seleccionados?
-    are_sure_delete_this_register:                                          ¿Desea eliminar este registro?
+    modify_credential:                                                      Editar Credencial
+    modify_category:                                                        Editar Categoria
+    are_sure_delete_registers:                                              ¿Desea Eliminar Los Registros Seleccionados?
+    are_sure_delete_this_register:                                          ¿Desea Eliminar Este Registro?
     deleteSelect:                                                           Eliminar Seleccion
     close:                                                                  Cerrar
     Save changes:                                                           Guardar cambios
-    confirm:                                                                Confirmar
+    confirm:                                                                Confirmar Eliminar
     delete_registers:                                                       Borrar registros
     delete_the_registration_was_successful:                                 La eliminacion del registro fue exitosa
     the_record_was_successfully_removed:                                    El registro fue eliminado satisfactoriamente
@@ -133,6 +135,7 @@ dictionary:
     project:                                                                Proyecto
     message:                                                                Mensaje
     submit:                                                                 Enviar
+    userDateManagement:                                                     Gestion De Dato Usuario
     #---------------------------Usuario----------------------------------------#
     userManagement:                                                         Gestion de Usuario
     id:                                                                     ID

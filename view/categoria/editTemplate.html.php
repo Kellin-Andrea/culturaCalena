@@ -7,7 +7,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     
-      <h1 class="glyphicon glyphicon-cog"> EDITAR CATEGORIA <?php echo $objcategoria[0]->$categoria ?></h1>
+    <h1 class="glyphicon glyphicon-cog"><?php echo i18n::__('modify_category')?> <?php echo $objcategoria[0]->$categoria ?></h1>
   
   </div>
 <?php view::includePartial('categoria/formUser', array('objcategoria' => $objcategoria, 'categoria' => $categoria)) ?>

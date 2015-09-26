@@ -11,6 +11,8 @@
 </header>
 
 <div class="container container-fluid">
+  
+  
   <?php foreach ($arrayEvento as $img): ?>
   <div class="hovergallery">
     <div class="row">

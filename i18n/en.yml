@@ -11,10 +11,12 @@ dictionary:
     pass:                                                              Pass
     dateCreate:                                                        Date Create
     eventPartnerManagement:                                            Event Partner Management
+    userDateManagement:                                                User Date Management
     newEventPartner:                                                   New Event Partner
     partner_select:                                                    Partner Select
     event_select:                                                      Event Select
     editUser:                                                          Edit user
+    editDateUser:                                                      Edit Date User
     EventPartner:                                                      Event Partner
     registeredUser:                                                    Registered User
     registeredEvent:                                                   Registered Events   
@@ -77,6 +79,7 @@ dictionary:
     title:                                                             Title
     content:                                                           Content
     modify_credential:                                                 Edit credential
+    modify_category:                                                   Edit Category
     are_sure_delete_registers:                                         Are sure delete registers?
     are_sure_delete_this_register:                                     Are sure delete this register?
     close:                                                             Close
@@ -328,8 +331,8 @@ dictionary:
     eventPlace:                                                        EventPlace
     eventPlaceID:                                                      Id de lugar
     locality:                                                          Locality
-    newLocality:                                                       Nueva localidad
-    editLocality:                                                      Editar localidad
+    newLocality:                                                       New Locality
+    editLocality:                                                      edit Locality
     locality_select:                                                   Locality select
     #----------------------------Actions---------------------------------------#
     edit:                                                              Edit 

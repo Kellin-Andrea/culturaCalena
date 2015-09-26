@@ -11,7 +11,7 @@
 <div class="panel panel-primary">
   <div class="panel-heading">
     
-      <h1 class="glyphicon glyphicon-log-in"> EDITAR DATOS USUARIO <?php echo $objdatos[0]->$datos ?></h1>
+    <h1 class="glyphicon glyphicon-log-in"> <?php echo i18n::__('editDateUser')?> <?php echo $objdatos[0]->$datos ?></h1>
   
   </div>
 <?php view::includePartial('datoUsuario/formUser', array(

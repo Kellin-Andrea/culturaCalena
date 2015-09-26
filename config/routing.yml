@@ -33,6 +33,12 @@ shfSecurity_login:
     - hooks/logHookClass.php
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php
+    
+    
+shfSecurity traductor:
+  url:   /shfSecurity/traductor
+  param:  { module: shfSecurity, action: traductor, format: html }
+  load:    
 
 shfSecurity_logout:
   url:    /logout

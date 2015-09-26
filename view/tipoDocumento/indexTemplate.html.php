@@ -97,14 +97,14 @@ use mvc\view\viewClass as view ?>
                                       <div class="modal-content">
                                         <div class="modal-header">
                                           <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                          <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
+                                          <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirm')?> </h4>
                                         </div>
                                         <div class="modal-body">
-                                          ¿Desea Eliminar el registro <?php echo $tipoDocumento->nombre ?> ?
+                                          <?php echo i18n::__('are_sure_delete_this_register')?> <?php echo $tipoDocumento->nombre ?> ?
                                         </div>
                                         <div class="modal-footer">
-                                          <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                          <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $tipoDocumento->$id ?>, '<?php echo tipoDocumentoTableClass::getNameField(tipoDocumentoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'delete') ?> ')">Confirmar Eliminar</button>
+                                          <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo i18n::__('cancel')?></button>
+                                          <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $tipoDocumento->$id ?>, '<?php echo tipoDocumentoTableClass::getNameField(tipoDocumentoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'delete') ?> ')"><?php echo i18n::__('confirm')?></button>
                                         </div>
                                       </div>
                                     </div>
@@ -127,14 +127,14 @@ use mvc\view\viewClass as view ?>
                                   <div class="modal-content">
                                     <div class="modal-header">
                                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                      <h4 class="modal-title" id="myModalLabel">Confirma Eliminar los Elemetos Seleccionados</h4>
+                                      <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete_registers')?></h4>
                                     </div>
                                     <div class="modal-body">
-                                      ¿Desea eliminar Los elementos seleccionados ?
+                                      ¿<?php echo i18n::__('are_sure_delete_registers')?>
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-success" data-dismiss="modal">Cancelar</button>
-                                      <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()">Confirmar</button>
+                                      <button type="button" class="btn btn-success" data-dismiss="modal"><?php echo i18n::__('cancel')?></button>
+                                      <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirm')?></button>
                                     </div>
                                   </div>
                                 </div>

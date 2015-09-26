@@ -47,7 +47,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
 
       $objProyecto = eventoTableClass::getAll($fields, true, $ordeBy, 'ASC', config::getRowGridProyect(), $page);
-
+     
 
       $arrayEvento = array();
       $x = 0;
