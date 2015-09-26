@@ -100,24 +100,24 @@ use mvc\view\viewClass as view ?>
 
                                   </td>
                                 </tr>
-                              <div class="modal fade" id="myModalDelete<?php echo $pqrs->id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel"
-                                   <div class="modal-dialog">
+                               <div class="modal fade" id="myModalDelete<?php echo $pqrs->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                                <div class="modal-dialog">
                                   <div class="modal-content">
                                     <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span> 
-                                        <h4 class="modal-title" id="myModalLabel">confirmar elimar</h4>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                      <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
                                     </div>
-                                    <div  class="modal-body">
-                                      desea eliminar el registro <?php echo $pqrs->titulo ?>
+                                    <div class="modal-body">
+                                      ¿Desea Eliminar el registro <?php echo $pqrs->titulo ?> ?
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-default" data-dismiss="modal">cancelar</button>
-
-                                      <button type="button" class="btn btn-danger" onclick="eliminar(<?php echo $pqrs->id ?>, '<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('pqrs', 'delete') ?>')">eliminar</button>
-                                    </div>   
-                                  </div> 
-                                </div> 
-                              </div> 
+                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                                      <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $pqrs->$id ?>, '<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('pqrs', 'delete') ?> ')">Confirmar Eliminar</button>
+                                    </div>
+                                  </div>
+                                </div>
+                              </div>
+                          
 
 
                             <?php endforeach ?>
