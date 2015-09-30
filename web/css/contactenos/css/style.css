@@ -2023,7 +2023,7 @@ a > img.aligncenter { display: block; margin-left: auto; margin-right: auto; }
 
 .hentry__content table td, .hentry__content table th { padding: 5px 10px; border: 1px solid #dedede; }
 
-.panel-grid .widget-title { font-size: 30px; margin-top: 0; }
+.panel-grid .widget-title { font-size: 30px; margin-top: 0; text-align: center; }
 
 .read-more { font-family: "Montserrat", Helvetica, Arial, sans-serif; font-weight: bold; display: inline-block; text-transform: uppercase; font-size: 14px; }
 .read-more:hover { text-decoration: underline; }

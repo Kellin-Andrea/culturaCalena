@@ -49,7 +49,7 @@ use mvc\session\sessionClass as session ?>
           </div>  
 
           <div class="banner" id="terMenu">
-           <li><a href="#" class="link1"><?php echo i18n::__('terms of use') ?> </a></li>
+            <li><a href="<?php echo routing::getInstance()->getUrlWeb('termino', 'index')?>" class="link1"><?php echo i18n::__('terms of use') ?> </a></li>
 
            
           </div>

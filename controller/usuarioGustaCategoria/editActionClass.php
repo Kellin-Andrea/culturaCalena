@@ -47,6 +47,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 $this->objusuarios = usuarioTableClass::getAll($fields2, true, $ordeBy2, 'ASC');
                 $this->objusgusca = usuarioGustaCategoriaTableClass::getAll($fields, false, null, null, null, null, $where);
                 $this->defineView('edit', 'usuarioGustaCategoria', session::getInstance()->getFormatOutput());
+                session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');            
+                
             } else {
                 routing::getInstance()->redirect('usuarioGustaCategoria', 'index');
             }

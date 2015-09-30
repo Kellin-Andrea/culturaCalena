@@ -26,7 +26,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $where = array(
             tipoPqrsTableClass::ID => request::getInstance()->getGet(tipoPqrsTableClass::ID)
         );
-        
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
         session::getInstance()->setFlash('edit', 'true');
         $this->objtipoPqrs = tipoPqrsTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'tipoPqrs', session::getInstance()->getFormatOutput());

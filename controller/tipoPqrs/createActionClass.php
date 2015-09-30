@@ -34,8 +34,9 @@ class createActionClass extends controllerClass implements controllerActionInter
             tipoPqrsTableClass::NOMBRE => $nombre
         );
         tipoPqrsTableClass::insert($data);
-         session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
         routing::getInstance()->redirect('tipoPqrs', 'index');
+        session::getInstance()->setSuccess('El Registro Fue Registrado Exitosamente');
+        
       } else {
         routing::getInstance()->redirect('tipoPqrs', 'index');
       }

@@ -41,6 +41,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                 );
                 patrocinadorTableClass::insert($data);
                 routing::getInstance()->redirect('patrocinador', 'index');
+                session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
+        
             } else {
                 routing::getInstance()->redirect('patrocinador', 'index');
             }

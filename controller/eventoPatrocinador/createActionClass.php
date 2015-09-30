@@ -30,6 +30,8 @@ class createActionClass extends controllerClass implements controllerActionInter
         );
         eventoPatrocinadorTableClass::insert($data);
         routing::getInstance()->redirect('eventoPatrocinador', 'index');
+        session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
+        
     } else {
         routing::getInstance()->redirect('eventoPatrocinador', 'index');
       }

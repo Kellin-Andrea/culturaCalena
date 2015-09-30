@@ -30,6 +30,8 @@ class createActionClass extends controllerClass implements controllerActionInter
         );
         detallePqrsTableClass::insert($data);
         routing::getInstance()->redirect('detallePqrs', 'index');
+        session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
+        
       } else {
         routing::getInstance()->redirect('detallePqrs', 'index');
       }

@@ -68,8 +68,9 @@ use mvc\request\requestClass as request ?>
                   <h1><i class="glyphicon glyphicon-star-empty"></i><?php echo i18n::__('eventPartnerManagement') ?> </h1>
                   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('eventoPatrocinador', 'deleteSelect') ?>" method="POST">
                     <div style="margin-bottom: 10px; margin-top: 30px">
-
                     </div>
+                    
+                    <?php view::includeHandlerMessage() ?>
                     <table class="table table-bordered table-hover">
                       <thead>
                         <tr>

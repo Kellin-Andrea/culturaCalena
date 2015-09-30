@@ -70,6 +70,8 @@ use mvc\view\viewClass as view ?>
               <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'deleteSelect') ?>" method="POST">
                 <div style="margin-bottom: 10px; margin-top: 30px">
                 </div>
+                
+                <?php view::includeHandlerMessage() ?>
                 <table class="table table-bordered table-responsive">
                   <thead>
                     <tr>

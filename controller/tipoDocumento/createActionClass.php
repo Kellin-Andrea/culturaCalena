@@ -37,8 +37,9 @@ class createActionClass extends controllerClass implements controllerActionInter
         tipoDocumentoTableClass::NOMBRE => $nombre
         );
         tipoDocumentoTableClass::insert($data);
-         session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
         routing::getInstance()->redirect('tipoDocumento', 'index');
+        session::getInstance()->setSuccess('El Registro Fue Registrado Exitosamente');
+        
       } else {
         routing::getInstance()->redirect('tipoDocumento', 'index');
       }

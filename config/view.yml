@@ -486,6 +486,35 @@ recaudoEconomico:
   edit:
     stylesheet:
       - [admin.index]     
+  
+                  
+termino:
+  index:
+    stylesheet:
+        #<!-- animate.css -->    
+      - termino/css/animate.css
+        #<!--prettyPhoto.css -->
+      - termino/css/prettyPhoto.css
+        #<!--shop css-->
+      - termino/css/shop.css
+        #<!--style css-->
+      - termino/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - termino/js/almond.js
+      - termino/js/header_carousel.js
+      - termino/js/imagesloaded.js
+      - termino/js/isotope.js
+      - termino/js/jquery.min.js
+      - termino/js/jquery.prettyPhoto.js
+      - termino/js/jquery.validate.min.js
+      - termino/js/main.js
+      - termino/js/main.min.js
+      - termino/js/modernizr.custom.24530.js
+      - termino/js/require.js
+      - termino/js/simplemap.js
+      - termino/js/sticky_navbar.js
+      - termino/js/underscore.js                  
                   
       
 tipoPqrs:

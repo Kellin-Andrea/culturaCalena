@@ -58,8 +58,9 @@ class createActionClass extends controllerClass implements controllerActionInter
         );
 
         eventoTableClass::insert($data);
-
+        session::getInstance()->setSuccess('El evento fue registrado exitosamente');
         session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('evento', 'index'):routing::getInstance()->redirect('proyecto', 'index');
+        
       } else {
         session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('evento', 'index'):routing::getInstance()->redirect('proyecto', 'index');
       }

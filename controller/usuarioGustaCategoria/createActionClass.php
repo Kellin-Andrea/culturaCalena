@@ -36,6 +36,8 @@ class createActionClass extends controllerClass implements controllerActionInter
                 );
                 usuarioGustaCategoriaTableClass::insert($data);
                 routing::getInstance()->redirect('usuarioGustaCategoria', 'index');
+                session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
+        
             } else {
                 routing::getInstance()->redirect('usuarioGustaCategoria', 'index');
             }

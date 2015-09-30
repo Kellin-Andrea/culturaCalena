@@ -49,7 +49,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 
 
 
-
+                session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
                 $this->defineView('edit', 'eventoPatrocinador', session::getInstance()->getFormatOutput());
             } else {
                 routing::getInstance()->redirect('eventoPatrocinador', 'index');

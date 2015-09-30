@@ -40,6 +40,8 @@ class createActionClass extends controllerClass implements controllerActionInter
         );
         localidadTableClass::insert($data);
         routing::getInstance()->redirect('localidad', 'index');
+        session::getInstance()->setSuccess('El Registro Fue Registrado Exitosamente');
+        
       } else {
         routing::getInstance()->redirect('localidad', 'index');
       }

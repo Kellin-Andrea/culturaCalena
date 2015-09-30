@@ -48,11 +48,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 estadoPqrsTableClass::NOMBRE
                 
                 );
+                
                 $this->objtipoPqrs = tipoPqrsTableClass::getAll($fields2, true, $ordeBy, 'ASC');
                 $this->objestado = estadoPqrsTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
                 $this->objpqrs = pqrsTableClass::getAll($fields, true, null, null, null, null, $where);
                 $this->defineView('edit', 'pqrs', session::getInstance()->getFormatOutput());
-            } else {
+                session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
+                } else {
                 routing::getInstance()->redirect('pqrs', 'index');
             }
 //      if (request::getInstance()->isMethod('POST')) {

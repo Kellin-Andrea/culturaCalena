@@ -1037,6 +1037,14 @@ privacidad_index:
   url:    /privacidad/index
   param:  { module: privacidad, action: index, format: html }
   load:
+    
+      
+##--------------------------TERMINO--------------------------##       
+    
+termino_index:
+  url:    /termino/index
+  param:  { module: termino, action: index, format: html }
+  load:    
            
 ##-------------------------- Recaudo Economico --------------------------##
 recaudoEconomico_index:

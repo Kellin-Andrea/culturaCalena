@@ -30,6 +30,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $where = array(
         patrocinadorTableClass::ID => request::getInstance()->getGet(patrocinadorTableClass::ID)
         );
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
         session::getInstance()->setFlash('edit',true);
         
         $this->objpatrocinador = patrocinadorTableClass::getAll($fields, true, null, null, null, null, $where);

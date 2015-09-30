@@ -94,11 +94,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
           $categorias[] = $categoria->id;
         }
         session::getInstance()->setAttribute('collectionCategorias', $categorias);
-
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
         session::getInstance()->setFlash('edit', true);
-
+        
         $this->defineView('edit', 'datoUsuario', session::getInstance()->getFormatOutput());
-      } else {
+        
+        
+        } else {
         routing::getInstance()->redirect('datoUsuario', 'index');
       }
 //      if (request::getInstance()->isMethod('POST')) {

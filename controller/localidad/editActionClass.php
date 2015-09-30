@@ -32,6 +32,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         );
         $this->objlocal = localidadTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'localidad', session::getInstance()->getFormatOutput());
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
+        
       } else {
         routing::getInstance()->redirect('localidad', 'index');
       }

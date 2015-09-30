@@ -31,10 +31,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $where = array(
         organizacionTableClass::ID => request::getInstance()->getGet(organizacionTableClass::ID)
         );
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
         session::getInstance()->setFlash('edit',true);
         
         $this->objorganizacion = organizacionTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'organizacion', session::getInstance()->getFormatOutput());
+        
+        
       } else {
         routing::getInstance()->redirect('organizacion', 'index');
       }

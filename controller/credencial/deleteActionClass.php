@@ -35,6 +35,9 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         ); 
         
           $this->defineView('delete', 'credencial', session::getInstance()->getFormatOutput());
+          session::getInstance()->setSuccess('El registro fue eliminado exitosamente');
+
+          
       } else {
         routing::getInstance()->redirect('credencial', 'index');
       }

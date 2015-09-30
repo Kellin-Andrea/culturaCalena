@@ -32,6 +32,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         );
         $this->objcredenciales = credencialTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'credencial', session::getInstance()->getFormatOutput());
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
+        
       } else {
         routing::getInstance()->redirect('credencial', 'index');
       }
@@ -39,7 +41,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
 //
 //        $usuario = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::USUARIO, true));
 //        $password = request::getInstance()->getPost(usuarioTableClass::getNameField(usuarioTableClass::PASSWORD, true));
-//
+//       
 //        if (strlen($usuario) > usuarioTableClass::USUARIO_LENGTH) {
 //          throw new PDOException(i18n::__(00001, null, 'errors', array(':longitud' => usuarioTableClass::USUARIO_LENGTH)), 00001);
 //        }

@@ -67,9 +67,9 @@ use mvc\request\requestClass as request ?>
                   <h1><i class="glyphicon glyphicon-thumbs-up"></i> <?php echo i18n::__('events_like_me_Management') ?> </h1>
                   <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('usuarioGustaCategoria', 'deleteSelect') ?>" method="POST">
                     <div style="margin-bottom: 10px; margin-top: 30px">
-
-
                     </div>
+                    
+                    <?php view::includeHandlerMessage() ?>
                     <table class="table table-bordered table-hover">
                       <thead>
                         <tr>

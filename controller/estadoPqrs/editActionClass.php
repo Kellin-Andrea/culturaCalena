@@ -28,6 +28,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         );
         $this->objestado = estadoPqrsTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'estadoPqrs', session::getInstance()->getFormatOutput());
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');      
+        
       } else {
         routing::getInstance()->redirect('estadoPqrs', 'index');
       }

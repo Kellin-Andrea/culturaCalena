@@ -70,9 +70,9 @@ use mvc\view\viewClass as view ?>
                             <h1><i class="glyphicon glyphicon-certificate"></i> <?php echo i18n::__('IdTypeManagement') ?> </h1>
                             <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('tipoDocumento', 'deleteSelect') ?>" method="POST">
                               <div style="margin-bottom: 10px; margin-top: 30px">
-
-
                               </div>
+                              
+                              <?php view::includeHandlerMessage() ?>
                               <table class="table table-bordered table-hover">
                                 <thead>
                                   <tr>

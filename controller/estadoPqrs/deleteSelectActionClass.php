@@ -31,6 +31,7 @@ class deleteSelectActionClass extends controllerClass implements controllerActio
         session::getInstance()->setSuccess('Los Elementos Seleccionados fueron Borrados Exitosamente');
         
         routing::getInstance()->redirect('estadoPqrs', 'index');
+        
       } else {
         routing::getInstance()->redirect('estadoPqrs', 'index');
       }

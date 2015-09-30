@@ -66,8 +66,9 @@ use mvc\view\viewClass as view ?>
               <h1><i class="glyphicon glyphicon-calendar"> </i><?php echo i18n::__('eventManagement') ?> </h1>
               <form   id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'deleteSelect') ?>" method="POST">
                 <div style="margin-bottom: 10px; margin-top: 30px">
-
                 </div>
+                
+                <?php view::includeHandlerMessage() ?>
                 <table class="table table-bordered table-hover">
                   <thead>
                     <tr>

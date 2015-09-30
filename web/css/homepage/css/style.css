@@ -1402,7 +1402,7 @@ body.boxed > .boxed-container { margin: 0 auto; box-shadow: 0 0 20px rgba(0, 0, 
 @media (min-width: 992px) { body.boxed > .boxed-container { width: 1030px; } }
 @media (min-width: 1200px) { body.boxed > .boxed-container { width: 1230px; } }
 
-p { text-rendering: optimizeLegibility; -webkit-font-feature-settings: "kern"; font-feature-settings: "kern"; -webkit-font-kerning: normal; font-kerning: normal; padding-left: 20px; padding-right: 30px;}
+p { text-rendering: optimizeLegibility; -webkit-font-feature-settings: "kern"; font-feature-settings: "kern"; -webkit-font-kerning: normal; font-kerning: normal; padding-left: 20px; padding-right: 30px; text-align: justify;}
 
 
 a {color:#0000CC;}

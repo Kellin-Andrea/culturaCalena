@@ -31,9 +31,13 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         );
         $this->objcategoria = categoriaTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'categoria', session::getInstance()->getFormatOutput());
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
+        
+        
       }//end if
       else {
         routing::getInstance()->redirect('categoria', 'index');
+        
       }//endelse
 //      if (request::getInstance()->isMethod('POST')) {
 //

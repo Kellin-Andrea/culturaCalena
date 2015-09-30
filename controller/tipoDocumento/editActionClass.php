@@ -29,7 +29,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         $where = array(
         tipoDocumentoTableClass::ID => request::getInstance()->getGet(tipoDocumentoTableClass::ID)
         );
-        
+        session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
         session::getInstance()->setFlash('edit', 'true');
         $this->objtipoDocumento = tipoDocumentoTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'tipoDocumento', session::getInstance()->getFormatOutput());
