@@ -84,33 +84,41 @@ use mvc\session\sessionClass as session ?>
                                 </a>
                             </li>
 
-                            
-                            <?php if (session::getInstance()->isUserAuthenticated() === true and session::getInstance()->hasCredential('admin')): ?>
-                            <li class="divider"></li>
 
+                            <?php if (session::getInstance()->isUserAuthenticated() === true and session::getInstance()->hasCredential('admin')): ?>
+                                <li class="divider"></li>
+
+                                <li>
+                                    <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('admin', 'index') ?>">
+                                        <i class="ace-icon fa fa-tasks"></i>
+                                        <?php echo i18n::__('adminPanel') ?>
+                                    </a>
+                                </li>
+
+                            <?php else: ?>
+
+                            <?php endif ?>
+
+                            <li class="divider"></li>
+                            <?php foreach ($objDatosProfile as $datoPerfil): ?>
                             <li>
-                                <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('admin', 'index') ?>">
-                                    <i class="ace-icon fa fa-tasks"></i>
-                                    <?php echo i18n::__('adminPanel') ?>
+                                <a href="<?php echo routing::getInstance()->getUrlWeb('datoUsuario', 'edit', array(datoUsuarioTableClass::ID => $datoPerfil->$id)) ?>">
+                                    <i class="ace-icon fa fa-cogs"></i>
+                                    <?php echo i18n::__('settings') ?>
                                 </a>
                             </li>
-                            
-                            <?php else:?>
-                            
-                            <?php endif?>
-                            
-                             <li class="divider"></li>
+                            <?php endforeach; ?>
+
+
+                            <li class="divider"></li>
 
                             <li>
                                 <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('shfSecurity', 'logout') ?>">
                                     <i class="ace-icon fa fa-power-off"></i>
                                     <?php echo i18n::__('exit') ?>
                                 </a>
-                            </li>
-                            
-                            
-                            
-                            
+                            </li>  
+
                         </ul>
                     </li>
 
@@ -183,142 +191,142 @@ use mvc\session\sessionClass as session ?>
 
 
         </div>      
-        
-         <?php if (empty($objGustosProfile)): ?>  
-            
-             <div class="alert alert-warning" role="alert"> 
+
+        <?php if (empty($objGustosProfile)): ?>  
+
+            <div class="alert alert-warning" role="alert"> 
                 <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
                 En El Momento No Tiene Categorias Para Mostrar</div>
 
 
         <?php else : ?>
 
-        <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
-            <nav id="evento"> <h1><?php echo i18n::__('youCategory') ?></h1></nav>
+            <div id="carousel-example-generic" class="carousel slide" data-ride="carousel">
+                <nav id="evento"> <h1><?php echo i18n::__('youCategory') ?></h1></nav>
 
-            <?php // if empty($objGustosProfile):?>
+                <?php // if empty($objGustosProfile):?>
 
-<!--            <span class="user-info">
-               No Hay Categorias Para Mostrar
+            <!--            <span class="user-info">
+                           No Hay Categorias Para Mostrar
 
-            </span>-->
+                        </span>-->
 
-            <?php // else; ?>
-            <!-- Indicators -->
-            <ol class="carousel-indicators">
-                <?php foreach ($objGustosProfile as $key => $dato): ?>
-                    <li data-target="#carousel-example-generic" data-slide-to="<?php echo $key ?>"></li>
-                <?php endforeach ?>
-            </ol>
+                <?php // else; ?>
+                <!-- Indicators -->
+                <ol class="carousel-indicators">
+                    <?php foreach ($objGustosProfile as $key => $dato): ?>
+                        <li data-target="#carousel-example-generic" data-slide-to="<?php echo $key ?>"></li>
+                    <?php endforeach ?>
+                </ol>
 
-            <!-- Wrapper for slides -->
-            <div class="carousel-inner" role="listbox">
+                <!-- Wrapper for slides -->
+                <div class="carousel-inner" role="listbox">
 
-                <?php foreach ($objGustosProfile as $key => $dato) : ?>
-                    <div class="item <?php echo $key === 0 ? 'active' : '' ?>">
-                        <img src="<?php echo routing::getInstance()->getUrlImgUpload($dato->imagen) ?>" style="height: 300px" class="img-responsive">
-                        <div class="carousel-caption">
-                            <h2 id="colorLetra"><?php echo $dato->nombre ?></h2>
-                            <h4 id="colorLetra">Valor Evento: $<?php echo $dato->costo ?></h4>
-                            <p id="colorLetra"><?php echo $dato->descripcion ?></p>
-                        </div>            
-                    </div>
-                <?php endforeach ?>
-                <?php // endif ?>
+                    <?php foreach ($objGustosProfile as $key => $dato) : ?>
+                        <div class="item <?php echo $key === 0 ? 'active' : '' ?>">
+                            <img src="<?php echo routing::getInstance()->getUrlImgUpload($dato->imagen) ?>" style="height: 300px" class="img-responsive">
+                            <div class="carousel-caption">
+                                <h2 id="colorLetra"><?php echo $dato->nombre ?></h2>
+                                <h4 id="colorLetra">Valor Evento: $<?php echo $dato->costo ?></h4>
+                                <p id="colorLetra"><?php echo $dato->descripcion ?></p>
+                            </div>            
+                        </div>
+                    <?php endforeach ?>
+                    <?php // endif ?>
+                </div>
+
+                <!-- Controls -->
+                <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
+                    <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+                    <span class="sr-only">Previous</span>
+                </a>
+                <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
+                    <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
+                    <span class="sr-only">Next</span>
+                </a>
             </div>
-
-            <!-- Controls -->
-            <a class="left carousel-control" href="#carousel-example-generic" role="button" data-slide="prev">
-                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-                <span class="sr-only">Previous</span>
-            </a>
-            <a class="right carousel-control" href="#carousel-example-generic" role="button" data-slide="next">
-                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-                <span class="sr-only">Next</span>
-            </a>
-        </div>
-<?php endif?>
+        <?php endif ?>
 
 
 
 
 
 
-        
-            <h1><?php echo i18n::__('my_events') ?></h1>
-            
-            
-            <div class="container">
-   <?php if (empty($objEventoProfile)): ?>  
-            
-             <div class="alert alert-info" role="alert"> 
-                <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                En El Momento No Tiene Eventos Para Mostrar</div>
+
+        <h1><?php echo i18n::__('my_events') ?></h1>
 
 
-        <?php else : ?>
+        <div class="container">
+            <?php if (empty($objEventoProfile)): ?>  
+
+                <div class="alert alert-info" role="alert"> 
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    En El Momento No Tiene Eventos Para Mostrar</div>
 
 
-            <table class="table table-bordered table-striped">
-                <thead>
-                    <tr>
+            <?php else : ?>
 
-                        <th><?php echo i18n::__('eventName') ?></th>
-                        <th><?php echo i18n::__('cost') ?></th>
-                        <th><?php echo i18n::__('start_date') ?></th>
-                        <th><?php echo i18n::__('finish_date') ?></th>
-                        <th><?php echo i18n::__('actions') ?></th>
 
-                    </tr>
-                </thead>
-                <tbody >
-                    <?php foreach ($objEventoProfile as $eventoProfile): ?>
+                <table class="table table-bordered table-striped">
+                    <thead>
                         <tr>
 
-                            <td><?php echo $eventoProfile->nombre ?></td>
-                            <td><?php echo $eventoProfile->costo ?></td>
-                            <td><?php echo $eventoProfile->fecha_inicial_evento ?></td>
-                            <td><?php echo $eventoProfile->fecha_final_evento ?></td>
-                            <td>
-                                <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
+                            <th><?php echo i18n::__('eventName') ?></th>
+                            <th><?php echo i18n::__('cost') ?></th>
+                            <th><?php echo i18n::__('start_date') ?></th>
+                            <th><?php echo i18n::__('finish_date') ?></th>
+                            <th><?php echo i18n::__('actions') ?></th>
 
-                                <a href="<?php  echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
-                                   <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoProfile->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
-                                  </td>
-                                </tr>
+                        </tr>
+                    </thead>
+                    <tbody >
+                        <?php foreach ($objEventoProfile as $eventoProfile): ?>
+                            <tr>
 
-                              <div class="modal fade" id="myModalDelete<?php echo $eventoProfile->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                                <div class="modal-dialog">
-                                  <div class="modal-content">
+                                <td><?php echo $eventoProfile->nombre ?></td>
+                                <td><?php echo $eventoProfile->costo ?></td>
+                                <td><?php echo $eventoProfile->fecha_inicial_evento ?></td>
+                                <td><?php echo $eventoProfile->fecha_final_evento ?></td>
+                                <td>
+                                    <!--              <a href="#" class="btn btn-warning btn-xs">Ver</a>-->
+
+                                    <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $eventoProfile->$id)) ?>" class="btn btn-warning btn-xs" data-toggle="popover" title="<?php echo i18n::__('edit') ?>" data-content="edicion de usuario"><i class="glyphicon glyphicon-pencil"></i></a>
+                                    <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $eventoProfile->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                                </td>
+                            </tr>
+
+                        <div class="modal fade" id="myModalDelete<?php echo $eventoProfile->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
                                     <div class="modal-header">
-                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                      <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
+                                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                                        <h4 class="modal-title" id="myModalLabel">Confirma Eliminar </h4>
                                     </div>
                                     <div class="modal-body">
-                                      ¿Desea Eliminar el registro <?php echo $eventoProfile->nombre ?> ?
+                                        ¿Desea Eliminar el registro <?php echo $eventoProfile->nombre ?> ?
                                     </div>
                                     <div class="modal-footer">
-                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
-                                      <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $eventoProfile->$id ?>, '<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?> ')">Confirmar Eliminar</button>
+                                        <button type="button" class="btn btn-primary" data-dismiss="modal">Cancelar</button>
+                                        <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $eventoProfile->$id ?>, '<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?> ')">Confirmar Eliminar</button>
                                     </div>
-                                  </div>
                                 </div>
-                              </div>
+                            </div>
+                        </div>
 
 
 
-                <?php endforeach ?>
-                </tbody>
-            </table>
-        </div>
-        <div class="text-right">
-            Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo (session::getInstance()->isUserAuthenticated() and session::getInstance()->hasCredential(myConfig::CREDENCIAL_ADMIN)) ? routing::getInstance()->getUrlWeb('evento', 'index') : routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
-                <?php for ($x = 1; $x <= $cntPages; $x++): ?>
-                    <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
-                <?php endfor ?>
-            </select> <?php echo $cntPages ?>
-        </div>
-<?php endif?>
+                    <?php endforeach ?>
+                    </tbody>
+                </table>
+            </div>
+            <div class="text-right">
+                Página <select id="slqPaginador" onchange="Paginador(this, '<?php echo (session::getInstance()->isUserAuthenticated() and session::getInstance()->hasCredential(myConfig::CREDENCIAL_ADMIN)) ? routing::getInstance()->getUrlWeb('evento', 'index') : routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
+                    <?php for ($x = 1; $x <= $cntPages; $x++): ?>
+                        <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
+                    <?php endfor ?>
+                </select> <?php echo $cntPages ?>
+            </div>
+        <?php endif ?>
 
 
         <h1 id="titulosPerfil" ><?php echo i18n::__('My_feedback') ?></h1>

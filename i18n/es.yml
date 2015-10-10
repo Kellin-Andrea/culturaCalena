@@ -77,6 +77,7 @@ dictionary:
     close:                                                                  Cerrar
     Save changes:                                                           Guardar cambios
     confirm:                                                                Confirmar Eliminar
+    settings:                                                               Configuracion
     delete_registers:                                                       Borrar registros
     delete_the_registration_was_successful:                                 La eliminacion del registro fue exitosa
     the_record_was_successfully_removed:                                    El registro fue eliminado satisfactoriamente

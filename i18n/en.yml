@@ -85,6 +85,7 @@ dictionary:
     close:                                                             Close
     Save changes:                                                      Save changes
     confirm:                                                           Confirm
+    settings:                                                          settings
     delete_registers:                                                  Delete registers
     delete_the_registration_was_successful:                            Delete the registration was seccessful
     the_record_was_successfully_removed:                               The record was successfully removed
