@@ -68,7 +68,7 @@ use mvc\request\requestClass as request ?>
                     <div class="col-lg-7">
                         <?php mvc\view\viewClass::getMessageError('inputdate') ?>
                       <input type="datetime-local" class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>"  name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true) ?>" placeholder="<?php echo i18n::__('start_date') ?>"
-                             value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) : ((( isset($objevento) == true ) ? date('Y-m-d-s', strtotime($objevento[0]->$fecha)) : '' )) ?>">
+                             value="<?php echo (request::getInstance()->hasPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) === true) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_EVENTO, true)) : ((( isset($objevento) == true ) ? date('Y-m-d', strtotime($objevento[0]->$fecha)) : '' )) ?>">
                     </div>
                 </div>
 

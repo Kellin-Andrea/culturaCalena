@@ -67,6 +67,7 @@ class pqrsTableClass extends pqrsBaseTableClass {
               . 'FROM ' . pqrsTableClass::getNameTable() .
               ' WHERE ' . pqrsTableClass::DELETED_AT . ' IS NULL' . ' AND ' . pqrsTableClass::USUARIO_ID . ' = ' . session::getInstance()->getUserId();
 
+
       $answer = model::getInstance()->prepare($sql);
       $answer->execute();
       $answer = $answer->fetchAll(PDO::FETCH_OBJ);

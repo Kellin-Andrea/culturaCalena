@@ -52,9 +52,9 @@ class createActionClass extends controllerClass implements controllerActionInter
 
         detallePqrsTableClass::insert($data2);
 
-        routing::getInstance()->redirect('pqrs', 'index');
+        routing::getInstance()->redirect('profile', 'index');
       } else {
-        routing::getInstance()->redirect('pqrs', 'index');
+        routing::getInstance()->redirect('profile', 'index');
       }
     } catch (PDOException $exc) {
       echo $exc->getMessage();

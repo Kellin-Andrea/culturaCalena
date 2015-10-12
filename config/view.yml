@@ -216,6 +216,8 @@ evento:
   insert:
     stylesheet:
       - [admin.index]
+    javascript:
+      - capturarGoogleMap.js
   edit:
     stylesheet:
       - [admin.index]      
