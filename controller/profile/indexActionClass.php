@@ -99,9 +99,9 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
 
             $page1 = 0;
-            if (request::getInstance()->hasGet('page1')) {
-                $this->page1 = request::getInstance()->getGet('page1');
-                $page1 = request::getInstance()->getGet('page1') - 1;
+            if (request::getInstance()->hasGet('page')) {
+                $this->page1 = request::getInstance()->getGet('page');
+                $page1 = request::getInstance()->getGet('page') - 1;
                 $page1 = $page1 * config::getRowGrid();
             }
 

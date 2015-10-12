@@ -30,7 +30,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 );
 
                 
-                $this->objdetalle = detallePqrsTableClass::getAll($fields, true, null, null . null, null, $where);
+                $this->objdetalle = detallePqrsTableClass::getAll($fields, true, null, null , null, null, $where);
                 $this->defineView('edit', 'detallePqrs', session::getInstance()->getFormatOutput());
                 session::getInstance()->setSuccess('Los datos fueron modificados exitosamente');
                 

@@ -4,6 +4,7 @@ function Paginador(objeto, url) {
 }
 
 
+
 function eliminar(id, variable, url ){
     $.ajax({
         url: url,
