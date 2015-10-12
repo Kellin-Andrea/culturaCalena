@@ -19,39 +19,51 @@ use mvc\validator\editPqrsValidatorClass as validator;
  */
 class updateActionClass extends controllerClass implements controllerActionInterface {
 
-    public function execute() {
-        try {
-            if (request::getInstance()->isMethod('POST')) {
+  public function execute() {
+    try {
+      if (request::getInstance()->isMethod('POST')) {
 
-                $id = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::ID, true));
-                $titulo = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TITULO, true));
-                $contenido = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true));
-                $tipo = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true));
-                $estado = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true));
+        $id = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::ID, true));
+        $titulo = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TITULO, true));
+        $contenido = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true));
+        $tipo = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true));
+        $estado = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true));
+        $respuesta=request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true));
 
-                $ids = array(
-                    pqrsTableClass::ID => $id
-                );
+        $ids = array(
+            pqrsTableClass::ID => $id
+        );
 
-                validator::validateEdit($titulo, $contenido, $tipo, $estado, $id);
+        validator::validateEdit($titulo, $contenido, $tipo, $estado, $id);
+        $data = array(
+            pqrsTableClass::ESTADO_PQRS_ID => $estado
+        );
+
+        $ids2= array(
+            detallePqrsTableClass::PQRS_ID => $id
+        );
+
+        $data2 = array(
+            
+            detallePqrsTableClass::RESPUESTA => $respuesta
+        );
 
 
-                $data = array(
-                    pqrsTableClass::TITULO => $titulo,
-                    pqrsTableClass::CONTENIDO => $contenido,
-                );
 
-                pqrsTableClass::update($ids, $data);
-            }
 
-            routing::getInstance()->redirect('pqrs', 'index');
-        } catch (PDOException $exc) {
-            echo $exc->getMessage();
-            echo '<br>';
-            echo '<pre>';
-            print_r($exc->getTrace());
-            echo '</pre>';
-        }
+
+        pqrsTableClass::update($ids, $data);
+        detallePqrsTableClass::update($ids2, $data2);
+      }
+
+      routing::getInstance()->redirect('pqrs', 'index');
+    } catch (PDOException $exc) {
+      echo $exc->getMessage();
+      echo '<br>';
+      echo '<pre>';
+      print_r($exc->getTrace());
+      echo '</pre>';
     }
+  }
 
 }

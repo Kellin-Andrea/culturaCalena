@@ -349,35 +349,71 @@ use mvc\session\sessionClass as session ?>
                 <table class="table table-bordered table-striped">
                     <thead>
                         <tr>
-                            <th><?php echo i18n::__('answer') ?></th>
+              <th><?php echo i18n::__('pqrsfState') ?></th>
                             <th><?php echo i18n::__('title') ?></th>
-                            <th><?php echo i18n::__('name') ?></th>
+              <th><?php echo i18n::__('feedbackType') ?></th>
                             <th><?php echo i18n::__('actions') ?></th>
                         </tr>
                     </thead>
                     <tbody >
                         <?php foreach ($ObjPqrs as $pqrs): ?>
                             <tr>
-                                <td><?php echo $pqrs->respuesta ?></td>
+                <td><?php echo $pqrs->estado ?></td>
                                 <td><?php echo $pqrs->titulo ?></td>
-                                <td><?php echo $pqrs->nombre ?></td>
+                <td><?php echo $pqrs->tipo ?></td>
+
                                 <td>
-                                    <a href="#" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-eye-open" data-toggle="popover" title="Ver" data-content="datos de usuario"></i></a>
+                  <a href="#" data-toggle="modal" data-target="#myModalDetalle<?php echo $pqrs->pqrs ?>" class="btn btn-primary btn-xs"><i class="fa fa-eye"></i></a>
                                 </td>
                             </tr>
+
+            <div class="modal fade" id="myModalDetalle<?php echo $pqrs->pqrs ?>">
+              <div class="modal-dialog">
+                <div class="modal-content">
+                  <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                    <h4 class="modal-title">Modal title</h4>
+                  </div>
+                  <div class="modal-body">
+                    
+                      <?php echo i18n::__('content') ?>: <i><?php echo $pqrs->contenido ?></i>
+                      <br>
+                      <?php echo i18n::__('answer') ?>: <i><?php echo $pqrs->respuesta ?></i>
+              ffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffffff
+              s
+              s
+              xdds
+              sssssssssssssssssssssssssssssssss
+              s
+              s
+              
+              s
+              s
+              s
+                  </div>
+                  <div class="modal-footer">
+                    <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                    <button type="button" class="btn btn-primary">Save changes</button>
+                  </div>
+                </div><!-- /.modal-content -->
+              </div><!-- /.modal-dialog -->
+            </div><!-- /.modal -->
+
+
+
                         <?php endforeach ?>
 
                     </tbody>
                 </table>
-
                 <div class="text-right">
-                    <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="paginador(this, '<?php echo (session::getInstance()->isUserAuthenticated() and session::getInstance()->hasCredential(myConfig::CREDENCIAL_ADMIN)) ? routing::getInstance()->getUrlWeb('evento', 'index') : routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
+          <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="Paginador(this, '<?php echo (session::getInstance()->isUserAuthenticated() and session::getInstance()->hasCredential(myConfig::CREDENCIAL_ADMIN)) ? routing::getInstance()->getUrlWeb('evento', 'index') : routing::getInstance()->getUrlWeb('profile', 'index') ?>')">
                         <?php for ($x = 1; $x <= $cntPagesPqrs; $x++): ?>
                             <option <?php echo (isset($page1) and $page1 == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
                         <?php endfor ?>
                     </select> 
                     <?php echo i18n::__('of') ?> <?php echo $cntPagesPqrs ?>
                 </div>
+
             <?php endif ?>
             <?php //view::includePartial('homePage/footer') ?>
         </div>

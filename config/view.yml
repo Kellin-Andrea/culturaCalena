@@ -566,7 +566,12 @@ profile:
   index:  
     title: Cultura Caleña
     stylesheet:
-      - [admin.index]
+      - admin/assets/css/bootstrap.css
+      - admin/assets/css/font-awesome.css
+      - admin/assets/css/ace-fonts.css
+      - profile/ace.css
+      - jquery.jqplot.css
+      - main.css
       
     javascript:
       - [admin.index]
@@ -707,6 +712,12 @@ reporte:
       #- jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js
       - jqplot/plugins/jqplot.pieRenderer.min.js
       - jqplot/plugins/jqplot.donutRenderer.min.js
+  bitacora: 
+    title: Reporte Evento
+    stylesheet:
+      - signin.css
+
+      
       
 usuario:
   index:  

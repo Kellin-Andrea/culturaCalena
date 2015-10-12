@@ -56,12 +56,30 @@ class installerClass {
             $Scope = $_POST['Scope'];
             $idioma = $_POST['idioma'];
             $FormatTimestamp = $_POST['FormatTimestamp'];
+            $CookiePath=$_POST['CookiePath'];
+            $CookieTime=$_POST['CookiePath'];
             include_once 'config.php';
 
             $file = fopen('../config/config.php', 'w');
             fputs($file, $config);
             fclose($file);
+             
+           $sql=  file_get_contents('../sql/postgresql-9.3.sql');            
+            try {
+            $dsn = $_SESSION['driver'] . ':dbname=' . $_SESSION['dbName'] . ';host=' . $_SESSION['host'] . ';port=' . $_SESSION['port'];
+            $usuario = $_SESSION['dbUser'];
+            $contrasena = $_SESSION['dbPass'];
+            $conexion = new PDO($dsn, $usuario, $contrasena);
             
+            
+            $conexion->beginTransaction();
+            $conexion->exec($sql);
+            $conexion->commit();
+            
+            } catch (PDOException $exc) {
+            $exc->getMessage();
+            
+            }
             // aqui falta correr el archivo SQL en la base de datos
             
             include_once 'view/felicidades.html.php';
@@ -69,7 +87,7 @@ class installerClass {
           } else {
             include_once 'view/configuration.html.php';
           }
-          
+         
           break;
       }
     }

@@ -8,8 +8,8 @@ and open the template in the editor.
     <head>
      <meta charset="UTF-8">
     <title></title>
-    <link rel="stylesheet" type="text/css" href="css/bootstrap.css">
-    <link rel="stylesheet" type="text/css" href="css/signin_1.css">
+    <link rel="stylesheet" type="text/css" href="../css/bootstrap.css">
+    <link rel="stylesheet" type="text/css" href="../css/install.css">
 </head>
 <body>
     <div class="container container-fluid">
@@ -18,6 +18,8 @@ and open the template in the editor.
             <p> <h2>Lo felicitamos usted a terminado la configuracion de su sistema con</h2> 
             <h3>Exito</h3>
              </p>
+             <a href="../../web/" type="button" class="btn btn-primary">inicio</a>
+             
         </div>
     </div>
 </body>

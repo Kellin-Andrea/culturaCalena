@@ -99,7 +99,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             if (request::getInstance()->hasGet('page1')) {
                 $this->page1 = request::getInstance()->getGet('page1');
                 $page1 = request::getInstance()->getGet('page1') - 1;
-                $page1 = $page1 * config::getRowGridEvent();
+                $page1 = $page1 * config::getRowGrid();
             }
 
 
@@ -107,7 +107,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $this->cntPages = eventoTableClass::getTotalpages(config::getRowGrid(), $where);
             $this->objPerfilUser = usuarioTableClass::getAll($fields, FALSE, null, null, null, null, $where1);
             $this->cntPagesPqrs = pqrsTableClass::getTotalPagesPqrs(config::getRowGridProyect());
-            $this->ObjPqrs = pqrsTableClass::getPqrs($id, config::getRowGridProyect(), $page1);
+            $this->ObjPqrs = pqrsTableClass::getPqrs($id, config::getRowGrid(), $page1);
             $this->objDatosProfile = datoUsuarioTableClass::getAll($fields2, FALSE, null, null, null, null, $where2);
             $this->objGustosProfile = usuarioTableClass::getCategoria($id);
             $this->objCount = eventoTableClass::getEventTotal($id);

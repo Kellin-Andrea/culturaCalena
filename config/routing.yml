@@ -939,6 +939,8 @@ pqrs_index:
     - model/tipoPqrsTableClass.php
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
 
 pqrs_insert:
   url:    /pqrs/insertar
@@ -950,6 +952,8 @@ pqrs_insert:
     - model/tipoPqrsTableClass.php
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php 
     - libs/validator/pqrs/createPqrsValidatorClass.php
 
 
@@ -963,6 +967,8 @@ pqrs_create:
     - model/tipoPqrsTableClass.php
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
     - libs/validator/pqrs/createPqrsValidatorClass.php 
 
 pqrs_edit:
@@ -975,6 +981,8 @@ pqrs_edit:
     - model/tipoPqrsTableClass.php
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
     - libs/validator/pqrs/editPqrsValidatorClass.php 
     
 
@@ -988,6 +996,8 @@ pqrs_update:
     - model/tipoPqrsTableClass.php
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
     - libs/validator/pqrs/editPqrsValidatorClass.php 
     
 
@@ -997,6 +1007,8 @@ pqrs_delete:
   load:
     - model/base/pqrsBaseTableClass.php
     - model/pqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
 
 pqrs_deleteSelect:
   url:    /pqrs/eliminarSeleccion
@@ -1004,6 +1016,8 @@ pqrs_deleteSelect:
   load:
     - model/base/pqrsBaseTableClass.php
     - model/pqrsTableClass.php
+    - model/base/detallePqrsBaseTableClass.php
+    - model/detallePqrsTableClass.php
     
 pqrs_deleteFilters:
   url:    /Borrar_Filtros
@@ -1268,6 +1282,20 @@ reporte_eventoCostoReportPdf:
     - libs/fpdf/fpdf.php
     - libs/fpdf/linegraph.php
     
+reporte_bitacora:
+  url:    /reporte/bitacora
+  param:  { module: reporte, action: bitacora, format: html}
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
+      
+
+
+
 
       
 ##-------------------------- Tarifa --------------------------##
@@ -1826,3 +1854,5 @@ profile:
     - model/estadoPqrsTableClass.php
     - model/base/detallePqrsBaseTableClass.php
     - model/detallePqrsTableClass.php
+    - model/base/tipoPqrsBaseTableClass.php
+    - model/tipoPqrsTableClass.php    

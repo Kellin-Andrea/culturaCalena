@@ -31,7 +31,7 @@ body{
 
 .panel-body {
   padding: 0px;
- 
+
 }
 
 .container-fluid {
@@ -42,7 +42,7 @@ body{
   width: 80%;
 }
 
- 
+
 
 .panel-primary > .panel-heading {
   color: #fff;
@@ -52,76 +52,76 @@ body{
 
 
 .logo {
-    
-    top:-2px;
-    margin: 1px;
-  
-       
+
+  top:-2px;
+  margin: 1px;
+
+
 }
 
 .navigation--main {
 
-    background-image: url("../img/header.jpg");  
+  background-image: url("../img/header.jpg");  
 }
 
 #menucito
 {
-    margin-right: 27px; 
-    //margin-left: -100px;
-    //width: 50%;
-    top: 30px;
- 
-    
-   
+  margin-right: 27px; 
+  //margin-left: -100px;
+  //width: 50%;
+  top: 30px;
+
+
+
 }
 
 #panel {
- background-image: url("../..//web/css/homepage/images/panel.jpg");
+  background-image: url("../..//web/css/homepage/images/panel.jpg");
 }
 
 #pane {
- background-image: url("../..//web/css/homepage/images/panel.jpg");
- 
- 
+  background-image: url("../..//web/css/homepage/images/panel.jpg");
+
+
 }
 
 #mascara {
-    margin-left: 190px;
+  margin-left: 190px;
 }
 
 #Menu {
-    
-    text-align: left;
-    content: "\00BB \0020";
+
+  text-align: left;
+  content: "\00BB \0020";
 }
 
 #SecMenu {
-    text-align: center;
-    margin-top: -75px;
+  text-align: center;
+  margin-top: -75px;
 }
 
 #terMenu {
-    text-align: right;
-    margin-top: -75px;
+  text-align: right;
+  margin-top: -75px;
 }
 
 #evento{
-    float: left ;
-   font-style: oblique;
-   font-weight:bold;
-   font-size:2em;
-   
+  float: left ;
+  font-style: oblique;
+  font-weight:bold;
+  font-size:2em;
+
   font-family:'Book Antiqua','Verdana','Monaco',sans-serif;
 }
 
 #buton {
-    color: #ffffff;
+  color: #ffffff;
 }
 
 #sizeImg {
-    width: 300px;
-    
-    
+  width: 300px;
+
+
 }
 
 #proyecto {
@@ -134,49 +134,49 @@ body{
 }
 
 #profileSize{
-    
-    margin-top: 32px;
-    margin-left: -287px;
-    height:389px; 
+
+  margin-top: 32px;
+  margin-left: -287px;
+  height:389px; 
 }
 
 #colorLetra{
-  
+
   color: #000000 ;
   font: oblique bold 150% cursive; 
-  
+
 }
 
 #mostrarMapa {
-    margin-top: 1cm; 
-    width: 800px;
-    height: 500px ;
-    margin-left:279px;
-    margin-right: -156px;
+  margin-top: 1cm; 
+  width: 800px;
+  height: 500px ;
+  margin-left:279px;
+  margin-right: -156px;
 } 
 .hovergallery img {
--webkit-transform:scale(0.8); 
--moz-transform:scale(0.8); 
--o-transform:scale(0.8); 
--ms-transform:scale(0.8); 
--webkit-transition-duration: 0.5s; 
--moz-transition-duration: 0.5s; 
--o-transition-duration: 0.5s; 
--ms-transition-duration: 0.5s;
-opacity: 0.7; /*Nivel de opacidad de las imágenes*/
-margin: 0 10px 5px 0; /*Margen entre las imágenes*/
+  -webkit-transform:scale(0.8); 
+  -moz-transform:scale(0.8); 
+  -o-transform:scale(0.8); 
+  -ms-transform:scale(0.8); 
+  -webkit-transition-duration: 0.5s; 
+  -moz-transition-duration: 0.5s; 
+  -o-transition-duration: 0.5s; 
+  -ms-transition-duration: 0.5s;
+  opacity: 0.7; /*Nivel de opacidad de las imágenes*/
+  margin: 0 10px 5px 0; /*Margen entre las imágenes*/
 }
 
 .hovergallery img:hover {
--webkit-transform:scale(1.1); /*Webkit: Escala de aumento de la imagen 1.2x tamaño original*/
--moz-transform:scale(1.1); 
--o-transform:scale(1.1); 
--ms-transform:scale(1.1); 
-box-shadow:0px 0px 30px gray; /*Sombra sobre toda la imagen*/
--webkit-box-shadow:0px 0px 30px gray; 
--moz-box-shadow:0px 0px 30px gray;
--ms-box-shadow:0px 0px 30px gray; 
-opacity: 1;
+  -webkit-transform:scale(1.1); /*Webkit: Escala de aumento de la imagen 1.2x tamaño original*/
+  -moz-transform:scale(1.1); 
+  -o-transform:scale(1.1); 
+  -ms-transform:scale(1.1); 
+  box-shadow:0px 0px 30px gray; /*Sombra sobre toda la imagen*/
+  -webkit-box-shadow:0px 0px 30px gray; 
+  -moz-box-shadow:0px 0px 30px gray;
+  -ms-box-shadow:0px 0px 30px gray; 
+  opacity: 1;
 }
 
 #inicio {
@@ -187,3 +187,12 @@ opacity: 1;
   margin-left: 259px
 }
 
+
+#titleProfile{
+  font: oblique bold 180% cursive; 
+}
+
+#modalProfile{
+  padding: auto;
+  padding-left: 10px;
+}

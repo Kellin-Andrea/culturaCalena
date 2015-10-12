@@ -15,7 +15,7 @@
         
               
   </div>
-<?php view::includePartial('pqrs/formUser', array('objpqrs' => $objpqrs, 'pqrs' => $pqrs, 'objtipoPqrs' => $objtipoPqrs, 'tipoPqrs' => $tipoPqrs, 'objestado' => $objestado, 'estadoPqrs', $estadoPqrs)) ?>
+<?php view::includePartial('pqrs/formUser', array('objpqrs' => $objpqrs, 'pqrs' => $pqrs, 'objtipoPqrs' => $objtipoPqrs, 'tipoPqrs' => $tipoPqrs, 'objestado' => $objestado, 'estadoPqrs', $estadoPqrs,'objDetalle'=>$objDetalle)) ?>
 
 </div>
     
