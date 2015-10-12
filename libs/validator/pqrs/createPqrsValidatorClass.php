@@ -24,17 +24,14 @@ namespace mvc\validator {
         session::getInstance()->setError('El titulo del pqrs es obligatorio', 'inputTitulo');
       } else if (is_numeric($titulo)) {
         $flag = true;
-        session::getInstance()->setFlash('inputname', true);
+        session::getInstance()->setFlash('inputTitulo', true);
         session::getInstance()->setError('El titulo del pqrs no puede ser númerico', 'inputTitulo');
       } else if(strlen($titulo) > \pqrsTableClass::TITULO_LENGHT) {
         $flag = true;
-        session::getInstance()->setFlash('inputname', true);
+        session::getInstance()->setFlash('inputTitulo', true);
         session::getInstance()->setError('El titulo del pqrs excede los caracteres permitidos', 'inputTitulo');
-     } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($titulo))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputname', true);
-        session::getInstance()->setError('Por favor digite un titulo válido', 'inputname');
-      
+//     
+//     
      }
         
       if (self::notBlank($contenido )) {
@@ -49,11 +46,6 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputContenido', true);
         session::getInstance()->setError('El contenido excede los caracteres permitidos', 'inputContenido');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($contenido))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputContenido', true);
-        session::getInstance()->setError('Por favor digite un contenido válido', 'inputContenido');
-      
         
       }
      

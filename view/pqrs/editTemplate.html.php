@@ -5,7 +5,6 @@
 <?php $estadoPqrs= estadoPqrsTableClass::ID ?>
 <?php $pqrs = pqrsTableClass::ID ?>
 <?php view::includePartial('pqrs/menuPrincipal')?>
-
 <div class="container container-fluid">
 <div class="panel panel-primary">
   <div class="panel-heading">
@@ -19,6 +18,4 @@
 
 </div>
     
-
-
 

@@ -1,5 +1,4 @@
 <?php
-
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\config\configClass as config;
@@ -7,7 +6,6 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
 /**
  * @description: En esta clase se llaman  las consultas de la bd
  * @author: 
@@ -17,10 +15,8 @@ use mvc\i18n\i18nClass as i18n;
  * @category: Pertenece al controlador modulo Pqrs.
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
-
     public function execute() {
         try {
-
             $where = null;
             
             $fields = array(
@@ -57,5 +53,4 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             echo '</pre>';
         }
     }
-
 }

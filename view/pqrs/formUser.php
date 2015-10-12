@@ -1,5 +1,4 @@
 <?php
-
 use mvc\routing\routingClass as routing ?>
 <?php
 use mvc\i18n\i18nClass as i18n ?>
@@ -14,16 +13,10 @@ use mvc\request\requestClass as request ?>
 <?php $tipoPqrs_id = pqrsTableClass::TIPO_PQRS?>
 <?php $respuesta = detallePqrsTableClass::RESPUESTA ?>
 <?php $usuarioid = pqrsTableClass::USUARIO_ID ?>
-
-
-
 <div class="container container-fluid">
   <div class="panel panel-primary">
     <div class="panel-body">
-
       <form  id ="formulario" class="form-horizontal" role="form" method="POST" action="<?php echo routing::getInstance()->getUrlWeb('pqrs', ((isset($objpqrs)) ? 'update' : 'create')) ?>">
-
-
         <?php if (isset($objpqrs) == true) : ?>
           <input name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>" value="<?php echo $objpqrs[0]->$id ?>" type="hidden">
         <?php endif ?>
@@ -56,7 +49,8 @@ use mvc\request\requestClass as request ?>
             <div class="col-sm-7">
               <textarea class="form-control input-sm" id="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>" name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>" placeholder="<?php echo i18n::__('answer') ?>"></textarea>
               <?php if (session::getInstance()->hasFlash(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, TRUE)) === TRUE): ?>
-                <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
+                
+              <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
               <?php endif ?>
             </div>
           </div>
@@ -132,12 +126,11 @@ use mvc\request\requestClass as request ?>
 
     <div class="form-group">
       <div class="col-sm-offset-5 col-sm-">
-        <a href="<?php  session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('pqrs', 'index'):routing::getInstance()->redirect('profile', 'index'); ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
+        <a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
         <button type="submit" class="btn btn-primary"><?php echo i18n::__('register') ?></button>
       </div>
     </div>
     </form> 
 
   </div>
-</div>
 </div>

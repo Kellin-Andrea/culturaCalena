@@ -15,7 +15,7 @@ namespace mvc\validator {
    */
   class editPqrsValidatorClass extends validatorClass {
 
-    public static function validateEdit($titulo,$contenido,$tipo,$estado,$id) {
+    public static function validateEdit($titulo,$contenido,$tipo,$estado,$respuesta,$id) {
       $flag = false;
       
       if (self::notBlank($titulo)) {
@@ -66,6 +66,21 @@ namespace mvc\validator {
 //        session::getInstance()->setFlash('inputSexo', true);
 //        session::getInstance()->setError('La respuesta dada no es correcta', 'inputSexo');
       }
+      
+         if (self::notBlank($respuesta)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputrespuesta', true);
+                session::getInstance()->setError('La respuesta  es obligatoria', 'inputrespuesta');
+            } else if (is_numeric($respuesta)) {
+                $flag = true;
+                session::getInstance()->setFlash('inputrespuesta', true);
+                session::getInstance()->setError('La respuesta no puede ser númerica', 'inputrespuesta');
+            } else if (strlen($respuesta) > \detallePqrsTableClass::RESPUESTA_LENGT) {
+                $flag = true;
+                session::getInstance()->setFlash('inputrespuesta', true);
+                session::getInstance()->setError('La respuesta  excede los caracteres  permitidos', 'inputrespuesta');
+            }
+
      
 
       if ($flag === true) {

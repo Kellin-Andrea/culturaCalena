@@ -1,5 +1,4 @@
 <?php
-
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\config\configClass as config;
@@ -7,7 +6,6 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
 /**
  * @description: En esta clase se llaman  las consultas de la bd
  * @author: 
@@ -17,10 +15,9 @@ use mvc\i18n\i18nClass as i18n;
  * @category: Pertenece al controlador modulo Pqrs.
  */
 class editActionClass extends controllerClass implements controllerActionInterface {
-
     public function execute() {
          try {
-      if (request::getInstance()->hasRequest(pqrsTableClass::ID)) {
+      if (request::getInstance()->hasGet(pqrsTableClass::ID)) {
         
         $fields = array(
            pqrsTableClass::ID,
@@ -32,7 +29,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
             
             );
         $where = array(
-           pqrsTableClass::ID => request::getInstance()->getRequest(pqrsTableClass::ID)
+           pqrsTableClass::ID => request::getInstance()->getGet(pqrsTableClass::ID)
         );
         
         $this->objpqrs =pqrsTableClass::getAll($fields, true, null, null, null, null, $where);
@@ -45,7 +42,7 @@ class editActionClass extends controllerClass implements controllerActionInterfa
         
         
         $where2 = array(
-           detallePqrsTableClass::ID => request::getInstance()->getRequest(pqrsTableClass::ID)
+           detallePqrsTableClass::ID => request::getInstance()->getGet(pqrsTableClass::ID)
         );
         
         $this->objDetalle =detallePqrsTableClass::getAll($fields2, true, null, null, null, null, $where2);
@@ -63,11 +60,9 @@ class editActionClass extends controllerClass implements controllerActionInterfa
       } else {
         routing::getInstance()->redirect('pqrs', 'index');
       }
-
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
     }
   }
-
 }

@@ -1,5 +1,4 @@
 <?php
-
 use mvc\interfaces\controllerActionInterface;
 use mvc\controller\controllerClass;
 use mvc\config\configClass as config;
@@ -7,7 +6,6 @@ use mvc\request\requestClass as request;
 use mvc\routing\routingClass as routing;
 use mvc\session\sessionClass as session;
 use mvc\i18n\i18nClass as i18n;
-
 /**
  * @description: En esta clase se llaman  las consultas de la bd
  * @author: 
@@ -17,11 +15,9 @@ use mvc\i18n\i18nClass as i18n;
  * @category: Pertenece al controlador modulo Pqrs.
  */
 class deleteActionClass extends controllerClass implements controllerActionInterface {
-
   public function execute() {
     try {
       if (request::getInstance()->isMethod('POST')) {
-
         $id = request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::ID, true));
         
         $ids = array(
@@ -35,7 +31,6 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         );
           $this->defineView('delete', 'pqrs', session::getInstance()->getFormatOutput());
           session::getInstance()->setSuccess('El registro fue eliminado exitosamente');
-
           
       } else {
         routing::getInstance()->redirect('pqrs', 'index');
@@ -48,5 +43,4 @@ class deleteActionClass extends controllerClass implements controllerActionInter
       echo '</pre>';
     }
   }
-
 }
