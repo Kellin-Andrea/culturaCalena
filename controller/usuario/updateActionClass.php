@@ -34,7 +34,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
 
         $data = array(
             usuarioTableClass::USER => $user,
-            usuarioTableClass::PASSWORD => $pass1
+            usuarioTableClass::PASSWORD => md5($pass1),
         );
 
         usuarioTableClass::update($ids, $data);

@@ -73,10 +73,6 @@ namespace mvc\validator {
                 $flag = true;
                 session::getInstance()->setFlash('inputEmail', true);
                 session::getInstance()->setError('Por favor digite un corre válido', 'inputEmail');
-            } else if (self::isUnique(\organizacionTableClass::ID, true, array(\organizacionTableClass::CORREO => trim($correo)), \organizacionTableClass::getNameTable())) {
-                $flag = true;
-                session::getInstance()->setFlash('inputEmail', true);
-                session::getInstance()->setError('El correo digitado ya está siendo usado', 'inputEmail');
             }
             if (self::notBlank($paginaWeb)) {
                 $flag = true;

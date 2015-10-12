@@ -53,12 +53,11 @@ class editActionClass extends controllerClass implements controllerActionInterfa
                 categoriaTableClass::NOMBRE
                 
                 );  
-                
+        session::getInstance()->setSuccess('Los datos del evento fueron modificados exitosamente');        
         $this->objcategoria = categoriaTableClass::getAll($fields1, true, $ordeBy1, 'ASC');
         $this->objevento = eventoTableClass::getAll($fields, true, null, null, null, null, $where);
         $this->defineView('edit', 'evento', session::getInstance()->getFormatOutput());
-        session::getInstance()->setSuccess('Los datos del evento fueron modificados exitosamente');
-        
+         
       } else {
         routing::getInstance()->redirect('evento', 'index');
       }

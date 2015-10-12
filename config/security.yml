@@ -9,6 +9,157 @@ shfSecurity:
     security: false
   exception:
     security: false
+    
+bitacora:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true    
+    
+categoria:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true
+    
+credencial:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true 
+    
+datoUsuario:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true 
+    
+bitacora:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true   
+    
+detallePqrs:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true 
+    
+estadoPqrs:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true 
+    
+evento:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true 
+    
+eventoPatrocinador:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true 
+    
+localidad:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true    
+    
+organizacion:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true  
+    
+patrocinador:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true  
+    
+pqrs:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true  
+    
+tipoDocumento:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true 
+    
+tipoPqrs:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true  
+    
 
 usuario:
   index:
@@ -19,3 +170,25 @@ usuario:
     security: true
   edit:
     security: true
+    
+
+usuarioCredencial:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true
+    
+    
+usuarioGustaCategoria:
+  index:
+    security: true
+    
+  insert:
+    security: true
+    
+  edit:
+    security: true     

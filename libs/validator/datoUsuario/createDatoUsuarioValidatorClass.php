@@ -49,6 +49,12 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputUser', true);
         session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');
+      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($user))) {
+        $flag = true;
+        session::getInstance()->setFlash('inputUser', true);
+        session::getInstance()->setError('Por favor digite un usuario válido', 'inputUser');
+      
+        
       }
 
       if (self::notBlank($pass1) or self::notBlank($pass2)) {
@@ -74,6 +80,12 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputname', true);
         session::getInstance()->setError('El nombre del usuario excede los caracteres permitidos', 'inputname');
+      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($name))) {
+        $flag = true;
+        session::getInstance()->setFlash('inputname', true);
+        session::getInstance()->setError('Por favor digite un nombre válido', 'inputname');
+      
+        
       }
 
       if (self::notBlank($lastName)) {
@@ -88,6 +100,12 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputLastName', true);
         session::getInstance()->setError('El apellido excede los caracteres permitidos', 'inputLastName');
+      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($lastName))) {
+        $flag = true;
+        session::getInstance()->setFlash('inputLastName', true);
+        session::getInstance()->setError('Por favor digite un apellido válido', 'inputLastName');
+      
+        
       }
 
       if (self::notBlank($mail)) {

@@ -24,12 +24,22 @@ namespace mvc\validator {
         session::getInstance()->setError('El nombre de la categoria es obligatorio', 'inputname');
       } else if (is_numeric($nombre)) {
         $flag = true;
-        session::getInstance()->setFlash('inputnameEvent', true);
+        session::getInstance()->setFlash('inputname', true);
         session::getInstance()->setError('El nombre de la categoria no puede ser númerico', 'inputname');
       } else if(strlen($nombre) > \categoriaTableClass::NOMBRE_LENGTH) {
         $flag = true;
         session::getInstance()->setFlash('inputname', true);
         session::getInstance()->setError('El nombre de la categoria excede los caracteres  permitidos', 'inputname');
+       } else if (self::isUnique(\categoriaTableClass::ID, true, array(\categoriaTableClass::NOMBRE => trim($nombre)), \categoriaTableClass::getNameTable())) {
+        $flag = true;
+        session::getInstance()->setFlash('inputname', true);
+        session::getInstance()->setError('la categoria digitada ya existe', 'inputname');
+      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($nombre))) {
+        $flag = true;
+        session::getInstance()->setFlash('inputname', true);
+        session::getInstance()->setError('Por favor digite un nombre válido', 'inputname');
+      
+        
       }
       
     

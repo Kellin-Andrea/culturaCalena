@@ -30,6 +30,15 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputname', true);
         session::getInstance()->setError('El nombre de la credencial excede los caracteres  permitidos', 'inputname');
+       } else if (self::isUnique(\credencialTableClass::ID, true, array(\credencialTableClass::NOMBRE => trim($nombre)), \credencialTableClass::getNameTable())) {
+        $flag = true;
+        session::getInstance()->setFlash('inputname', true);
+        session::getInstance()->setError('La credencial digitada ya existe', 'inputname');
+      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($nombre))) {
+        $flag = true;
+        session::getInstance()->setFlash('inputname', true);
+        session::getInstance()->setError('Por favor digite un nombre válido', 'inputname');
+        
       }
       
     

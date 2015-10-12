@@ -59,13 +59,6 @@ class createActionClass extends controllerClass implements controllerActionInter
     }
   }
 }
-            session::getInstance()->getFlash(usuarioTableClass::getNameField(usuarioTableClass::USER, true),true);
-
- 
-        if ($flag === true) {
-            request::getInstance()->setMethod('GET');
-            routing::getInstance()->forward('usuario', 'insert');
-        }
 
 
 
