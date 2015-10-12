@@ -31,10 +31,6 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputrespuesta', true);
         session::getInstance()->setError('La respuesta  excede los caracteres  permitidos', 'inputrespuesta');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($respuesta))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputrespuesta', true);
-        session::getInstance()->setError('Por favor digite una respuesta  válida', 'inputrespuesta');
       }
 
 

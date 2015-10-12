@@ -30,11 +30,7 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputnameEvent', true);
         session::getInstance()->setError('El nombre del evento excede los caracteres  permitidos', 'inputnameEvent');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($nameEvent))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputnameEvent', true);
-        session::getInstance()->setError('Por favor digite un nombre evento válido', 'inputnameEvent');
-      }
+       }
 
       if (self::notBlank($description)) {
         $flag = true;
@@ -48,12 +44,7 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputdescription', true);
         session::getInstance()->setError('la descripcion del evento excede los caracteres  permitidos', 'inputdescription');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($description))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputdescription', true);
-        session::getInstance()->setError('Por favor digite una descripcion válida', 'inputdescription');
-      
-        
+         
       }
 
       if (self::notBlank($date)) {
@@ -87,11 +78,6 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputaddress', true);
         session::getInstance()->setError('la direccion del evento excede los caracteres  permitidos', 'inputaddress');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($address))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputaddress', true);
-        session::getInstance()->setError('Por favor digite una direccion válida', 'inputaddress');
-      
         
       }
 

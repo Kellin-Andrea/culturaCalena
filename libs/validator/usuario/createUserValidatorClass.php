@@ -35,10 +35,6 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputUser', true);
         session::getInstance()->setError('El usuario digitado ya existe', 'inputUser');  
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($user))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputUser', true);
-        session::getInstance()->setError('Por favor digite un usuario válido', 'inputUser');
       }
 
       if (self::notBlank($pass1) or self::notBlank($pass2)) {

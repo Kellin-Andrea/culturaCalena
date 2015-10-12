@@ -30,10 +30,6 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputname', true);
         session::getInstance()->setError('El nombre del patrocinador excede los caracteres  permitidos', 'inputname');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($nombre))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputname', true);
-        session::getInstance()->setError('Por favor digite un patrocinador válido', 'inputname');
       }
 
       if (self::notBlank($telefono)) {
@@ -68,12 +64,7 @@ namespace mvc\validator {
 
         session::getInstance()->setFlash('inputadress', true);
         session::getInstance()->setError('La direccion  excede los caracteres  permitidos', 'inputadress');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($direccion))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputadress', true);
-        session::getInstance()->setError('Por favor digite una direccion válida', 'inputadress');
       
-        
       }
 
 

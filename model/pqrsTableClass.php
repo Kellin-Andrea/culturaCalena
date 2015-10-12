@@ -61,12 +61,23 @@ class pqrsTableClass extends pqrsBaseTableClass {
     }//end catch
   }
 
-  public static function getTotalPagesPqrs($lines) {
+  public static function getTotalPagesPqrs($lines,$where) {
     try {
       $sql = 'SELECT count(' . pqrsTableClass::ID . ') AS cantidad '
               . 'FROM ' . pqrsTableClass::getNameTable() .
               ' WHERE ' . pqrsTableClass::DELETED_AT . ' IS NULL' . ' AND ' . pqrsTableClass::USUARIO_ID . ' = ' . session::getInstance()->getUserId();
 
+      
+      if (is_array($where) === true) {
+        foreach ($where as $fields => $value) {
+          if (is_array($value)) {
+            $sql = $sql . '  AND  ' . $fields . '  BETWEEN  ' . ((is_numeric($value[0])) ? $value[0] : " '$value[0]' ") . 'AND' . ((is_numeric($value[1])) ? $value[1] : " '$value[1]' ");
+          }//end if 
+          else {
+            $sql = $sql . '  AND   ' . $fields . '  =  ' . ((is_numeric($value)) ? $value : " '$value' ");
+          }//end else
+        }//end foreach
+      }//end  if
 
       $answer = model::getInstance()->prepare($sql);
       $answer->execute();

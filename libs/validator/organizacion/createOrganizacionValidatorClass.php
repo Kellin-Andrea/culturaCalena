@@ -34,11 +34,7 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputname', true);
         session::getInstance()->setError('La organizacion digitada ya existe', 'inputname');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($nombre))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputname', true);
-        session::getInstance()->setError('Por favor digite un nombre válido', 'inputname');
-      }
+       }
 
 
       if (self::notBlank($direccion)) {
@@ -49,10 +45,6 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputadress', true);
         session::getInstance()->setError('la direccion de la organizacion excede los caracteres  permitidos', 'inputadress');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($direccion))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputadress', true);
-        session::getInstance()->setError('Por favor digite una direccion válida', 'inputadress');
       }
 
       if (self::notBlank($telefono)) {

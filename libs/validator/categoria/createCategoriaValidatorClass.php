@@ -34,11 +34,6 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputname', true);
         session::getInstance()->setError('la categoria digitada ya existe', 'inputname');
-      } else if (!preg_match("/([\w\.\-_]+)?\w+@[\w-_]+(\.\w+){1,}/", trim($nombre))) {
-        $flag = true;
-        session::getInstance()->setFlash('inputname', true);
-        session::getInstance()->setError('Por favor digite un nombre válido', 'inputname');
-      
         
       }
       

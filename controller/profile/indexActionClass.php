@@ -20,6 +20,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         try {
 
             $where = null;
+            $where0= null;
 
             $id = session::getInstance()->getUserId();
 
@@ -82,6 +83,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
                 eventoTableClass::USUARIO_ID => session::getInstance()->getUserId()
             );
             
+              
+            
             
            
 
@@ -106,7 +109,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
 
             $this->cntPages = eventoTableClass::getTotalpages(config::getRowGrid(), $where);
             $this->objPerfilUser = usuarioTableClass::getAll($fields, FALSE, null, null, null, null, $where1);
-            $this->cntPagesPqrs = pqrsTableClass::getTotalPagesPqrs(config::getRowGrid());
+            $this->cntPagesPqrs = pqrsTableClass::getTotalPagesPqrs(config::getRowGrid(),$where0);
             $this->ObjPqrs = pqrsTableClass::getPqrs($id, config::getRowGrid(), $page1);
             $this->objDatosProfile = datoUsuarioTableClass::getAll($fields2, FALSE, null, null, null, null, $where2);
             $this->objGustosProfile = usuarioTableClass::getCategoria($id);

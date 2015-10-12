@@ -44,14 +44,12 @@ use mvc\request\requestClass as request ?>
           
         <?php if (session::getInstance()->hasCredential('admin')): ?>
 
-          <div class="form-group">
-            <label class="col-sm-2 control-label"><?php echo i18n::__('answer') ?></label>
-            <div class="col-sm-7">
-              <textarea class="form-control input-sm" id="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>" name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>" placeholder="<?php echo i18n::__('answer') ?>"></textarea>
-              <?php if (session::getInstance()->hasFlash(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, TRUE)) === TRUE): ?>
-                
-              <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
-              <?php endif ?>
+          <div class="form-group <?php echo (session::getInstance()->hasFlash('inputrespuesta')) ? 'has-error has-feedback' : '' ?>">
+                    <label for="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>"  name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?><" class="col-sm-2 control-label"> <?php echo i18n::__('answer') ?></label>
+                    <div class="col-sm-7">
+                        <?php mvc\view\viewClass::getMessageError('inputrespuesta') ?>
+                      <textarea  type="text" class="form-control" id="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>"  name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>"
+                                 value="<?php echo (request::getInstance()->hasPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true)) === true) ? request::getInstance()->getPost(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true)) : ((( isset($objdetalle) == true ) ? $objdetalle[0]->$rsp : '' )) ?>" placeholder="<?php echo i18n::__('answer') ?>"></textarea>
             </div>
           </div>
 
