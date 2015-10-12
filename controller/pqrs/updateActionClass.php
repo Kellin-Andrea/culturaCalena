@@ -36,7 +36,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
 
         validator::validateEdit($titulo, $contenido, $tipo, $estado, $id);
         $data = array(
-            pqrsTableClass::ESTADO_PQRS_ID => $estado
+            pqrsTableClass::ESTADO_PQRS => $estado
         );
 
         $ids2= array(

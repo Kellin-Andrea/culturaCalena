@@ -26,6 +26,8 @@ class editActionClass extends controllerClass implements controllerActionInterfa
            pqrsTableClass::ID,
            pqrsTableClass::TITULO,
             pqrsTableClass::CONTENIDO,
+            pqrsTableClass::TIPO_PQRS,
+            pqrsTableClass::ESTADO_PQRS,
             pqrsTableClass::USUARIO_ID
             
             );

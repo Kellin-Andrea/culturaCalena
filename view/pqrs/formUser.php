@@ -36,13 +36,14 @@ use mvc\request\requestClass as request ?>
             <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo tipoPqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('feedbackType') ?></label>
             <div class="col-sm-7">
               <?php mvc\view\viewClass::getMessageError('inputTipo') ?>
-              <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>">
-                <option value=""> -----Seleccione una tipo pqrs -----    </option>
-                <?php foreach ($objtipoPqrs as $tipoPqrs): ?>
-                  <option value="<?php echo $tipoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($tipoPqrs->id === $objpqrs[0]->$tipoPqrs_id) ? 'selected' : '' : '' ?>><?php echo tipoPqrsTableClass::getNombreById($tipoPqrs->id) ?></option>
+              <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>">
+              <option value="">----------------------<?php echo i18n::__('locality_select') ?> -----------------</option>
+              <?php foreach ($objtipoPqrs as $tipoPqrs): ?>
+              <option value="<?php echo $tipoPqrs->id; ?>"<?php echo (isset($objpqrs)) ? ($tipoPqrs->id === $objpqrs[0]->$tipoPqrs_id) ? 'selected' : '' : '' ?>><?php echo tipoPqrsTableClass::getNombreById($tipoPqrs->id) ?></option>
+              <?php endforeach ?>
 
-                <?php endforeach ?>
-              </select>
+
+            </select> 
             </div>
           </div>
         <?php //  endif; ?>
@@ -80,12 +81,14 @@ use mvc\request\requestClass as request ?>
             <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('pqrsfState') ?></label>
 
             <div class=" col-sm-7">
-              <select class="form-control" name="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, TRUE) ?>" id="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, TRUE) ?>">
+              <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>">
+              <option value="">----------------------<?php echo i18n::__('locality_select') ?> -----------------</option>
+              <?php foreach ($objestado as $estadoPqrs): ?>
+              <option value="<?php echo $estadoPqrs->id; ?>"<?php echo (isset($objpqrs)) ? ($estadoPqrs->id === $objpqrs[0]->$estadoPqrs_id ) ? 'selected' : '' : '' ?>><?php echo estadoPqrsTableClass::getNombreById($estadoPqrs->id) ?></option>
+              <?php endforeach ?>
 
-                <?php foreach ($objestado as $estado): ?>
-                  <option value="<?php echo $estado->id ?>"><?php echo $estado->nombre ?></option>
-                <?php endforeach ?>
-              </select>
+
+            </select> 
             </div>
           </div>
         <?php endif; ?>
