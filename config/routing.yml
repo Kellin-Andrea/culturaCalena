@@ -982,9 +982,8 @@ pqrs_edit:
     - model/base/estadoPqrsBaseTableClass.php
     - model/estadoPqrsTableClass.php
     - model/base/detallePqrsBaseTableClass.php
-    - model/detallePqrsTableClass.php
-    - libs/validator/pqrs/editPqrsValidatorClass.php 
-    
+    - model/detallePqrsTableClass.php 
+    - libs/validator/pqrs/createPqrsValidatorClass.php
 
 pqrs_update:
   url:    /pqrs/actualizar
@@ -1292,7 +1291,9 @@ reporte_bitacora:
     - model/eventoTableClass.php 
     - model/base/categoriaBaseTableClass.php
     - model/categoriaTableClass.php 
-      
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php 
+            
 
 
 

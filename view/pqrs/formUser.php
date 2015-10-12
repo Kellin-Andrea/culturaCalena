@@ -11,8 +11,9 @@ use mvc\request\requestClass as request ?>
 <?php $titulo = pqrsTableClass::TITULO ?>
 <?php $contenido = pqrsTableClass::CONTENIDO ?>
 <?php $estadoPqrs_id = pqrsTableClass::ESTADO_PQRS ?>
-<?php $tipoPqrs_id = pqrsTableClass::TIPO_PQRS ?>
+<?php $tipoPqrs_id = pqrsTableClass::TIPO_PQRS?>
 <?php $respuesta = detallePqrsTableClass::RESPUESTA ?>
+<?php $usuarioid = pqrsTableClass::USUARIO_ID ?>
 
 
 
@@ -27,65 +28,67 @@ use mvc\request\requestClass as request ?>
           <input name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>" value="<?php echo $objpqrs[0]->$id ?>" type="hidden">
         <?php endif ?>
 
-        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputTipo')) ? 'has-error has-feedback' : '' ?>">
+        <?php //  if (session::getInstance()->hasCredential('admin')): ?>
 
-          <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo tipoPqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('feedbackType') ?></label>
-          <div class="col-sm-7">
-            <?php mvc\view\viewClass::getMessageError('inputTipo') ?>
-            <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>">
-              <option value=""> -----Seleccione una tipo pqrs -----    </option>
-              <?php foreach ($objtipoPqrs as $tipoPqrs): ?>
-                <option value="<?php echo $tipoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($tipoPqrs->id === $objpqrs[0]->$tipoPqrs_id) ? 'selected' : '' : '' ?>><?php echo tipoPqrsTableClass::getNombreById($tipoPqrs->id) ?></option>
+        <?php //  else: ?>
+          <div class="form-group <?php // echo (session::getInstance()->hasFlash('inputTipo')) ? 'has-error has-feedback' : '' ?>">
 
-              <?php endforeach ?>
-            </select>
+            <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo tipoPqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('feedbackType') ?></label>
+            <div class="col-sm-7">
+              <?php mvc\view\viewClass::getMessageError('inputTipo') ?>
+              <select class="form-control" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::TIPO_PQRS, true) ?>">
+                <option value=""> -----Seleccione una tipo pqrs -----    </option>
+                <?php foreach ($objtipoPqrs as $tipoPqrs): ?>
+                  <option value="<?php echo $tipoPqrs->id ?>"<?php echo (isset($objpqrs)) ? ($tipoPqrs->id === $objpqrs[0]->$tipoPqrs_id) ? 'selected' : '' : '' ?>><?php echo tipoPqrsTableClass::getNombreById($tipoPqrs->id) ?></option>
+
+                <?php endforeach ?>
+              </select>
+            </div>
           </div>
-        </div>
+        <?php //  endif; ?>
+          
+          
+        <?php if (session::getInstance()->hasCredential('admin')): ?>
 
-        <?php  if (session::getInstance()->hasCredential('admin')): ?>
-
-
-
-
-        <div class="form-group">
-          <label class="col-sm-2 control-label"><?php echo i18n::__('answer') ?></label>
-          <div class="col-sm-7">
-            <textarea class="form-control input-sm" id="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>" name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>" placeholder="<?php echo i18n::__('answer') ?>"><?php echo (((isset($objPqrsf) == true) ? $objDetalle[0]->$respuesta : '')) ?></textarea>
-            <?php if (session::getInstance()->hasFlash(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, TRUE)) === TRUE): ?>
-              <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
-            <?php endif ?>
+          <div class="form-group">
+            <label class="col-sm-2 control-label"><?php echo i18n::__('answer') ?></label>
+            <div class="col-sm-7">
+              <textarea class="form-control input-sm" id="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>" name="<?php echo detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, true) ?>" placeholder="<?php echo i18n::__('answer') ?>"></textarea>
+              <?php if (session::getInstance()->hasFlash(detallePqrsTableClass::getNameField(detallePqrsTableClass::RESPUESTA, TRUE)) === TRUE): ?>
+                <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
+              <?php endif ?>
+            </div>
           </div>
-        </div>
 
 
-        <div class="form-group">
-          <label  class="col-sm-2 control-label"></label>
+          <div class="form-group">
+            <label  class="col-sm-2 control-label"></label>
 
-          <div class="col-sm-7">
-            <input type="text" class="form-control" placeholder="<?php echo i18n::__('user') ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::USUARIO_ID, true) ?>" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::USUARIO_ID, true) ?>" value="<?php echo (session::getInstance()->getUserId()); ?>" readonly>
-            <?php if (session::getInstance()->hasFlash(pqrsTableClass::getNameField(pqrsTableClass::USUARIO_ID, TRUE)) === TRUE): ?>
-              <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
-            <?php endif ?>
+            <div class="col-sm-7">
+              <input type="text" class="form-control" placeholder="<?php echo i18n::__('user') ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::USUARIO_ID, true) ?>" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::USUARIO_ID, true) ?>" value="<?php echo (session::getInstance()->hasFlash(pqrsTableClass::getNameField(pqrsTableClass::USUARIO_ID, TRUE)) === TRUE) ? request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::USUARIO_ID, TRUE)) : (((isset($objpqrs) == true) ? $objpqrs[0]->$usuarioid : '')) ?>" readonly>
+              <?php if (session::getInstance()->hasFlash(pqrsTableClass::getNameField(pqrsTableClass::USUARIO_ID, TRUE)) === TRUE): ?>
+                <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
+              <?php endif ?>
+            </div>
           </div>
-        </div>
 
 
 
-        <div class="form-group <?php echo (session::getInstance()->hasFlash('inputEstado')) ? 'has-error has-feedback' : '' ?>">
+          <div class="form-group <?php // echo (session::getInstance()->hasFlash('inputEstado')) ? 'has-error has-feedback' : '' ?>">
 
 
-          <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('pqrsfState') ?></label>
+            <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>"  name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ESTADO_PQRS, true) ?>" class="col-sm-2 control-label"><?php echo i18n::__('pqrsfState') ?></label>
 
-          <div class=" col-sm-7">
-            <select class="form-control" name="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, TRUE) ?>" id="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, TRUE) ?>">
+            <div class=" col-sm-7">
+              <select class="form-control" name="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, TRUE) ?>" id="<?php echo estadoPqrsTableClass::getNameField(estadoPqrsTableClass::ID, TRUE) ?>">
 
-              <?php foreach ($objestado as $estado): ?>
-                <option value="<?php echo $estado->id ?>"><?php echo $estado->nombre ?></option>
-              <?php endforeach ?>
-            </select>
+                <?php foreach ($objestado as $estado): ?>
+                  <option value="<?php echo $estado->id ?>"><?php echo $estado->nombre ?></option>
+                <?php endforeach ?>
+              </select>
+            </div>
           </div>
-        </div>
-        <?php   endif; ?>
+        <?php endif; ?>
 
 
         <div class="form-group <?php echo (session::getInstance()->hasFlash('inputTitulo')) ? 'has-error has-feedback' : '' ?>">
@@ -103,7 +106,7 @@ use mvc\request\requestClass as request ?>
           <label for="<?php echo pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true) ?>" name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true) ?>"  class="col-sm-2 control-label"><?php echo i18n::__('content') ?></label>
 
           <div class="col-sm-7">
-            <textarea class="form-control input-sm" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true) ?>" name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true) ?>" placeholder="<?php echo i18n::__('content') ?>" value="<?php echo (session::getInstance()->hasFlash(pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, TRUE)) === TRUE) ? request::getInstance()->getPost(pqrsfTableClass::getNameField(pqrsfTableClass::CONTENIDO, TRUE)) : (((isset($objPqrs) == true) ? $objPqrsf[0]->$contenido : '')) ?>" <?php if (session::getInstance()->getUserId() == 1): ?>readonly <?php endif; ?>><?php echo (((isset($objPqrs) == true) ? $objPqrs[0]->$contenido : '')) ?></textarea>
+            <textarea class="form-control input-sm" id="<?php echo pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true) ?>" name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, true) ?>" placeholder="<?php echo i18n::__('content') ?>" value="<?php echo (session::getInstance()->hasFlash(pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, TRUE)) === TRUE) ? request::getInstance()->getPost(pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, TRUE)) : (((isset($objpqrs) == true) ? $objpqrs[0]->$contenido : '')) ?>" <?php if (session::getInstance()->getUserId() == 1): ?>readonly <?php endif; ?>><?php echo (((isset($objpqrs) == true) ? $objpqrs[0]->$contenido : '')) ?></textarea>
             <?php if (session::getInstance()->hasFlash(pqrsTableClass::getNameField(pqrsTableClass::CONTENIDO, TRUE)) === TRUE): ?>
               <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
             <?php endif ?>

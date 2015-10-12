@@ -34,6 +34,11 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             pqrsTableClass::TITULO,
                    
             );
+            
+            $where2 = array(
+            pqrsTableClass::getNameTable().'.'. pqrsTableClass::DELETED_AT. ' IS NULL'
+            );
+            
             $page = 0;
             if (request::getInstance()->hasGet('page')) {
                 $this->page = request::getInstance()->getGet('page');
@@ -42,7 +47,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             }
       
             $this->cntPages = pqrsTableClass::getTotalpages(config::getRowGrid(), $where);
-            $this->objpqrs = pqrsTableClass::getAll($fields, true, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
+            $this->objpqrs = pqrsTableClass::getAll($fields, TRUE, $orderBy, 'ASC',config::getRowGrid(), $page, $where);
             $this->defineView('index', 'pqrs', session::getInstance()->getFormatOutput());
         } catch (PDOException $exc) {
             echo $exc->getMessage();

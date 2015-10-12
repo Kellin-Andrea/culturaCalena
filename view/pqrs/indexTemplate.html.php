@@ -70,7 +70,7 @@ use mvc\view\viewClass as view ?>
               <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'deleteSelect') ?>" method="POST">
                 <div style="margin-bottom: 10px; margin-top: 30px">
                 </div>
-                
+
                 <?php view::includeHandlerMessage() ?>
                 <table class="table table-bordered table-responsive">
                   <thead>
@@ -99,7 +99,7 @@ use mvc\view\viewClass as view ?>
 
                           <a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'edit', array(pqrsTableClass::ID => $pqrs->id)) ?>" class="btn btn-info btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
                           <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $pqrs->id ?> "class="btn btn-danger btn-xs"><i class=" glyphicon glyphicon-trash"></i></a>
-                          <a href="#" data-toggle="modal" data-target="#myModalView<?php echo $pqrs->$id ?>"  title="<?php echo i18n::__('view') ?>" data-content="Ver pqrs" class="btn btn-info btn-xs"><i class="glyphicon glyphicon-v" ></i></a>
+
 
                         </td>
                       </tr>
@@ -114,14 +114,14 @@ use mvc\view\viewClass as view ?>
                             ¿<?php echo i18n::__('are_sure_delete_this_register') ?> <?php echo $pqrs->titulo ?> ?
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo i18n::__('cancel')?></button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
                             <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $pqrs->$id ?>, '<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('pqrs', 'delete') ?> ')"><?php echo i18n::__('confirm') ?></button>
                           </div>
                         </div>
                       </div>
                     </div> 
 
-                   
+
 
 
                   <?php endforeach ?>
@@ -132,28 +132,27 @@ use mvc\view\viewClass as view ?>
                 <input type="hidden" id="idDelete" name="<?php echo pqrsTableClass::getNameField(pqrsTableClass::ID, true) ?>">
 
                 <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
-                <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'insert') ?>" type="button" class="btn btn-info"><i class="glyphicon glyphicon-certificate"></i></a>
                 <a id="boton" href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><i class="fa fa-eraser"></i></a>
 
 
-                  <!-- Eliminar Masivo-->
-                          <div class="modal fade" id="myModalDeleteMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
-                            <div class="modal-dialog">
-                              <div class="modal-content">
-                                <div class="modal-header">
-                                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                                  <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete_registers')?></h4>
-                                </div>
-                                <div class="modal-body">
-                                  ¿<?php echo i18n::__('are_sure_delete_registers')?>
-                                </div>
-                                <div class="modal-footer">
-                                  <button type="button" class="btn btn-success" data-dismiss="modal"><?php echo i18n::__('cancel')?></button>
-                                  <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirm')?></button>
-                                </div>
-                              </div>
-                            </div>
-                          </div>
+                <!-- Eliminar Masivo-->
+                <div class="modal fade" id="myModalDeleteMasivo" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                  <div class="modal-dialog">
+                    <div class="modal-content">
+                      <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete_registers') ?></h4>
+                      </div>
+                      <div class="modal-body">
+                        ¿<?php echo i18n::__('are_sure_delete_registers') ?>
+                      </div>
+                      <div class="modal-footer">
+                        <button type="button" class="btn btn-success" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                        <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirm') ?></button>
+                      </div>
+                    </div>
+                  </div>
+                </div>
               </form>
             </div>
           </div>

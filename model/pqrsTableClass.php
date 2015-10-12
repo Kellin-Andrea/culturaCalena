@@ -34,7 +34,7 @@ class pqrsTableClass extends pqrsBaseTableClass {
     }//end cath
   }
 
-  public static function getTotalpages($lines, $where) {
+  public static function getTotalPages($lines, $where) {
     try {
       $sql = 'SELECT count (' . pqrsTableClass::ID . ') AS cantidad ' .
               'FROM ' . pqrsTableClass::getNameTable() . ' ' .
@@ -98,9 +98,10 @@ class pqrsTableClass extends pqrsBaseTableClass {
               ' AND ' . pqrsTableClass::getNameTable() . '.' . pqrsTableClass::ESTADO_PQRS . '=' . estadoPqrsTableClass::getNameTable() . '.' . estadoPqrsTableClass::ID
               . ' AND ' . pqrsTableClass::getNameTable() . '.' . pqrsTableClass::TIPO_PQRS . '=' . tipoPqrsTableClass::getNameTable() . '.' . tipoPqrsTableClass::ID
               . ' AND ' . usuarioTableClass::getNameTable() . '.' . usuarioTableClass::ID . ' = ' . $id
-              . ' AND ' . pqrsTableClass::getNameTable() . '.' . pqrsTableClass::USUARIO_ID . ' = ' . $id;
+              . ' AND ' . pqrsTableClass::getNameTable() . '.' . pqrsTableClass::USUARIO_ID . ' = ' . $id
+              .' AND ' . pqrsTableClass::getNameTable() . '.' . pqrsTableClass::DELETED_AT . ' IS NULL ';
 
-//      print_r($sql);
+//    print_r($sql);
 //      exit();
 
       if ($limit !== null and $offset === null) {
