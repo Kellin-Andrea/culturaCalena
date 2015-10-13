@@ -270,7 +270,7 @@ class eventoTableClass extends eventoBaseTableClass {
                   .categoriaTableClass::getNameTable().' . '.categoriaTableClass::NOMBRE.' '.
                 ' FROM ' . eventoTableClass::getNameTable().' , '.categoriaTableClass::getNameTable().' '.
                   ' WHERE ' .eventoTableClass::getNameTable().'.'.eventoTableClass::CATEGORIA_ID.' = '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' '.
-                  ' AND '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::NOMBRE.' = '."'Musica'".
+                  ' AND '.categoriaTableClass::getNameTable().'.'.categoriaTableClass::NOMBRE.' = '."'Baile'".
                   ' AND '.eventoTableClass::getNameTable().'.'.eventoTableClass::DELETED_AT.' IS NULL ';
          
      

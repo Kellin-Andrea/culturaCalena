@@ -43,10 +43,7 @@ credencial:
 datoUsuario:
   index:
     security: true
-    
-  insert:
-    security: true
-    
+      
   edit:
     security: true 
     
