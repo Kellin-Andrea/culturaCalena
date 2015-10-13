@@ -116,7 +116,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
             $this->objCount = eventoTableClass::getEventTotal($id);
             $this->objCount1 = usuarioGustaCategoriaTableClass::getCateTotal($id);
             $this->objCount2 = bitacoraTableClass::getBitacoraTotal($id);
-            $this->objEventoProfile = eventoTableClass::getAll($fields4, False,NULL,NULL, config::getRowGrid(), $page, $where4);
+            $this->objEventoProfile = eventoTableClass::getAll($fields4, TRUE,NULL,NULL, config::getRowGrid(), $page, $where4);
          
 
             $this->defineView('index', 'profile', session::getInstance()->getFormatOutput());
