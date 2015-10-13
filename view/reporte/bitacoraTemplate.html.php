@@ -17,16 +17,16 @@ use mvc\session\sessionClass as session ?>
 
 <div class="container container-fluid">
 
-  <form class="form-signin" role="form" action="<?php //  echo routing::getInstance()->getUrlWeb('reporte', 'eventoReport') ?>" method="POST">
+  <form class="form-signin" role="form" action="<?php   echo routing::getInstance()->getUrlWeb('reporte', 'logbookReport') ?>" method="POST">
       <center><h2 class="form-signin-heading"></h2><h1><?php echo i18n::__('reportLogbook')?></h1></center>
       
        <div class="form-group">
          
               <label> <?php echo i18n::__('action') ?></label>
-              <select required class="form-control" id="<?php echo bitacoraTableClass::getNameField(bitacoraTableClass::ACCION, true) ?>" name="<?php  echo bitacoraTableClass::getNameField(bitacoraTableClass::ACCION, true) ?>" >
+              <select  class="form-control" id="<?php echo bitacoraTableClass::getNameField(bitacoraTableClass::ACCION, true) ?>" name="<?php  echo bitacoraTableClass::getNameField(bitacoraTableClass::ACCION, true) ?>" >
                <option value=""><?php echo i18n::__('category_select') ?></option>
-                <?php foreach ($objCategoria2  as $dato): ?> -->
-                  <option value="<?php  echo $dato->id ?>"><?php  echo $dato->nombre ?></option>
+                <?php foreach ($objAccion  as $dato): ?> -->
+                  <option value="<?php  echo $dato->accion ?>"><?php  echo $dato->accion ?></option>
                 <?php  endforeach ?>
               </select>
               
@@ -35,23 +35,23 @@ use mvc\session\sessionClass as session ?>
             </div>
 
       <div class="form-group" >
-              <label> <?php echo i18n::__('publicationStartDate') ?></label>
+              <label> <?php echo i18n::__('startDate2') ?></label>
               <input type="date" class="form-control" 
-                     id="<?php  echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>" 
-                     name="<?php echo eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, true) ?>" 
-                     value="<?php  echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, TRUE)) === TRUE) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_INICIAL_PUBLICACION, TRUE)) : ''?>" required>
+                     id="<?php  echo bitacoraTableClass::getNameField(bitacoraTableClass::FECHA, true) ?>" 
+                     name="<?php echo bitacoraTableClass::getNameField(bitacoraTableClass::FECHA, true) ?>" 
+                     value="<?php  echo (session::getInstance()->hasFlash(bitacoraTableClass::getNameField(bitacoraTableClass::FECHA, TRUE)) === TRUE) ? request::getInstance()->getPost(bitacoraTableClass::getNameField(bitacoraTableClass::FECHA, TRUE)) : ''?>" required>
               
                 <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
               
             </div>
       
       <div class="form-group" >
-              <label> <?php echo i18n::__('publicationFinishDate') ?></label>
+              <label> <?php echo i18n::__('endDate2') ?></label>
               <input type="date" class="form-control" 
-                     id="<?php  echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>" 
-                     name="<?php  echo eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, true) ?>" 
-                     value="<?php echo (session::getInstance()->hasFlash(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, TRUE)) === TRUE) ? request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::FECHA_FINAL_PUBLICACION, TRUE)) : '' ?>"  required>
-             
+                    id="fechaFin" 
+                     name="fechaFin" 
+                     value="fechaFin" required>
+              
                 <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
               
             </div>

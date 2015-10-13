@@ -14,6 +14,9 @@ dictionary:
     userDateManagement:                                                User Date Management
     newEventPartner:                                                   New Event Partner
     partner_select:                                                    Partner Select
+    reportLogbook:                                                     Report Logbook
+    startDate2:                                                        Start Date
+    endDate2:                                                          End Date
     event_select:                                                      Event Select
     editUser:                                                          Edit user
     editDateUser:                                                      Edit Date User

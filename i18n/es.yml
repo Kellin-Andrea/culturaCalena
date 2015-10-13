@@ -10,9 +10,12 @@ dictionary:
     youLogin:                                                               Tus Inicio De Session
     nameUser:                                                               Nombre Usuario
     name:                                                                   Nombre Completo
+    reportLogbook:                                                          Reporte Bitacora
     pass:                                                                   Contraseña
     dateCreate:                                                             Fecha de creaccion
     EventPartner:                                                           Evento Patrocinador
+    startDate2:                                                              Fecha Inicio
+    endDate2:                                                              Fecha Fin
     registeredUser:                                                         Usuarios Registrados
     registeredEvent:                                                        Eventos Registrados
     registeredOrganization:                                                 Organizaciones Registrados

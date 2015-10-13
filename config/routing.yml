@@ -1294,7 +1294,32 @@ reporte_bitacora:
     - model/base/bitacoraBaseTableClass.php
     - model/bitacoraTableClass.php 
             
-
+reporte_bitacoraReport:
+  url:    /reporte/logbookReport
+  param:  { module: reporte, action: logbookReport, format: html}
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
+    - model/base/bitacoraBaseTableClass.php
+    - model/bitacoraTableClass.php 
+            
+reporte_logbookReportPdf:
+  url:    /reporte/logbookReportPdf
+  param:  { module: reporte, action: logbookReportPdf, format: pdf }
+  load:
+    - model/base/reporteBaseTableClass.php
+    - model/reporteTableClass.php 
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php 
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php 
+    - libs/fpdf/fpdf.php
+    - libs/fpdf/linegraph.php            
+            
 
 
 
