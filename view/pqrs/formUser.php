@@ -131,7 +131,7 @@ use mvc\request\requestClass as request ?>
 
     <div class="form-group">
       <div class="col-sm-offset-5 col-sm-">
-        <a href="<?php echo routing::getInstance()->getUrlWeb('pqrs', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
+        <a href="<?php echo routing::getInstance()->getUrlWeb('profile', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
         <button type="submit" class="btn btn-primary"><?php echo i18n::__('register') ?></button>
       </div>
     </div>

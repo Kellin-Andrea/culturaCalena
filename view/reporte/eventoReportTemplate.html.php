@@ -33,7 +33,7 @@ use mvc\session\sessionClass as session ?>
         <img id="images" src="<?php echo routing::getInstance()->getUrlImg('logo.png') ?>">
 
         <h1 id="titulo"> Reporte Evento Categoria</h1>
-<?php if (empty($objCateEvento)): ?>  
+<?php if (empty($objEventoCate)): ?>  
 
           <div class="alert alert-info" role="alert"> 
             <button type="button" class="close" data-dismiss="alert" aria-label="Close"><span aria-hidden="true">&times;</span></button>
@@ -76,7 +76,7 @@ use mvc\session\sessionClass as session ?>
           </tbody>
 
         </table>
-        <?php if (empty($objCateEvento)): ?>  
+        <?php if (empty($objEventoCate)): ?>  
         
          <?php else:?>
         <a class="btn btn-success btn-lg" target="popup" href="<?php echo routing::getInstance()->getUrlWeb('reporte', 'eventoReportPdf'); ?>" role="button"> <?php echo i18n::__('printReport') ?></a>

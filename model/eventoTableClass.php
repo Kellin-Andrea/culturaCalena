@@ -95,9 +95,8 @@ class eventoTableClass extends eventoBaseTableClass {
               ' FROM ' . eventoTableClass::getNameTable() . ' , ' . categoriaTableClass::getNameTable() .
               ' WHERE ' . eventoTableClass::getNameTable() . '.' . eventoTableClass::CATEGORIA_ID . '=' . categoriaTableClass::getNameTable() . '.' . categoriaTableClass::ID . ' ' .
               'AND' . ' ' . eventoTableClass::getNameTable() . '.' . eventoTableClass::CATEGORIA_ID . ' = ' . $idCate .
-              ' AND ' . eventoTableClass::getNameTable() . '.' . eventoTableClass::FECHA_FINAL_PUBLICACION . ' ' .
+              ' AND ' . eventoTableClass::getNameTable() . '.' . eventoTableClass::CREATED_AT . ' ' .
               'BETWEEN' . ' ' . "'$fechaIni'" . ' ' . 'AND' . ' ' . "'$fechaFinal'";
-
 
 
       return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
