@@ -64,21 +64,13 @@ class insertActionClass extends controllerClass implements controllerActionInter
         usuarioGustaCategoriaTableClass::CATEGORIA_ID
         );
         
-        $fields6 = array(
-        datoUsuarioTableClass::ID,
-        datoUsuarioTableClass::GENERO
-        );
-        
-        $orderBy6 = array(
-        datoUsuarioTableClass::GENERO
-        );
+   
         
         $this->objlocal = localidadTableClass::getAll($fields1, true, $orderBy1, 'ASC');
         $this->objtipoDocumento = tipoDocumentoTableClass::getAll($fields2, true, $orderBy2, 'ASC');
         $this->objorganizacion = organizacionTableClass::getAll($fields3, true, $orderBy3, 'ASC');
         $this->objusuarios = usuarioTableClass::getAll($fields4, true, $orderBy4, 'ASC');
         $this->objCat = usuarioGustaCategoriaTableClass::getAll($fields5, false, $orderBy5, 'ASC');
-        $this->objdatos = datoUsuarioTableClass::getAll($fields6, true, $orderBy6, 'ASC');
         $this->objCategorias = categoriaTableClass::getAll(array(
           categoriaTableClass::ID,
           categoriaTableClass::NOMBRE

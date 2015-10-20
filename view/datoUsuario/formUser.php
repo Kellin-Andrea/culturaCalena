@@ -140,8 +140,8 @@ use mvc\request\requestClass as request ?>
             <?php mvc\view\viewClass::getMessageError('inputGenero') ?>
             <select  class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ID, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::GENERO, true) ?>">
               <option value="">---<?php echo i18n::__('gender_select') ?>---</option>
-              <option value="true"><?php echo i18n::__('female') ?> </option>
-              <option value="false"><?php echo i18n::__('male')?></option>
+              <option value="true" selected ='selected'><?php echo i18n::__('female') ?> </option>
+              <option value="false" selected='selected'><?php echo i18n::__('male')?></option>
             </select>
           </div>
         </div>

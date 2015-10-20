@@ -86,7 +86,7 @@ use mvc\request\requestClass as request ?>
 
                           <?php foreach ($objcategoria as $categoria): ?>
                             <tr>
-                              <td><input type="checkbox" name="chk[]" value="<?php echo $categoria->id ?>"></td>
+                             <td><input type="checkbox" name="chk[]" value="<?php echo $categoria->id ?>"></td>
                               <td><?php echo $categoria->nombre ?></td>
                               <td>
 
