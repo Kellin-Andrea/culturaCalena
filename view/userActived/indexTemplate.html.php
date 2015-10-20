@@ -162,7 +162,6 @@ use mvc\request\requestClass as request ?>
                     <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">
 
                     <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
-                    <a id="boton" href="<?php// echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" type="button" class="btn btn-info"><i class="fa fa-check-circle-o"></i></a>
                     <a id="boton" href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><i class="fa fa-eraser"></i></a>
 
                     <div class="text-right">

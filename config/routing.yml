@@ -1932,6 +1932,7 @@ userActived_deleteSelect:
     - model/base/organizacionBaseTableClass.php
     - model/organizacionTableClass.php
     
+
 ##-------------------------- USUARIO --------------------------##
 slider_index:
   url:    /slider/index

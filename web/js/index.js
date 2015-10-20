@@ -7,6 +7,10 @@ function activar(id, variable, url) {
   eliminar(id, variable, url);
 }
 
+function activarMasivo() {
+  eliminarMasivo();
+}
+
 function eliminar(id, variable, url) {
   $.ajax({
     url: url,
