@@ -25,7 +25,7 @@ use mvc\request\requestClass as request ?>
                     <label for="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"  name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?><"class="col-lg-2 control-label"> <?php echo i18n::__('name_category') ?></label>
                     <div class="col-lg-5">
                         <?php mvc\view\viewClass::getMessageError('inputname') ?>
-                      <input type="text" style="text-transform: capitalize;" class="form-control" id="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"  name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"
+                      <input type="text" style="text-transform: uppercase;" class="form-control" id="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"  name="<?php echo categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true) ?>"
                                 value="<?php echo (request::getInstance()->hasPost(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true)) === true) ? request::getInstance()->getPost(categoriaTableClass::getNameField(categoriaTableClass::NOMBRE, true)) : ((( isset($objcategoria) == true ) ? $objcategoria[0]->$categoria : '' )) ?>" placeholder="<?php echo i18n::__('name_category') ?>">
                     </div>
                 </div>

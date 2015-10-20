@@ -106,7 +106,28 @@ class datoUsuarioTableClass extends datoUsuarioBaseTableClass {
       throw $exc;
     }
   }
+  
+  public static function getGenero($id) {
+    try {
+      $sql = 'SELECT genero AS genero ' .
+              'FROM ' . datoUsuarioTableClass::getNameTable() .
+              ' WHERE  ' . datoUsuarioTableClass::ID . ' = :id';
 
+      $params = array(
+          ':id' => $id
+      );
+
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute($params);
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return $answer[0]->genero;
+    } //end try
+    catch (PDOException $exc) {
+      throw $exc;
+    }//end cath
+  }
+
+  
   
 }
 

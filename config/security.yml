@@ -1,3 +1,6 @@
+<?php
+use mvc\session\sessionClass as session ?>
+
 shfSecurity:
   index:
     security: false
@@ -10,146 +13,189 @@ shfSecurity:
   exception:
     security: false
     
-bitacora:
-  index:
-    security: true
-    
-  insert:
-    security: true
-    
-  edit:
-    security: true    
-    
+##------------------Categoria ------------------------------##    
 categoria:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
-    
+    credentials:
+      - [admin]
+      
   edit:
     security: true
+    credentials:
+      - [admin]
+      
+##------------------------Credencial--------------------------##      
     
 credencial:
   index:
     security: true
-    
+    credentials:
+      - [admin]
+      
+      
   insert:
     security: true
-    
+    credentials:
+      - [admin]
+      
   edit:
     security: true 
+    credentials:
+      - [admin]
+      
+##------------------------Dato Usuario ------------------------##      
     
 datoUsuario:
   index:
     security: true
-      
+    credentials:
+      - [admin]
+  
+  insert:
+    security: false
+   
+   
   edit:
-    security: true 
+    security: false 
+   
+  
+  
+##---------------------------Bitacora-------------------------##    
     
 bitacora:
   index:
     security: true
-    
-  insert:
-    security: true
-    
-  edit:
-    security: true   
-    
-detallePqrs:
-  index:
-    security: true
-    
-  insert:
-    security: true
-    
-  edit:
-    security: true 
-    
-estadoPqrs:
-  index:
-    security: true
-    
-  insert:
-    security: true
-    
-  edit:
-    security: true 
-    
+    credentials:
+      - [admin]
+   
+##------------------------Evento --------------------------------##   
+ 
 evento:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
     
   edit:
     security: true 
-    
+##-----------------------Evento Patrocinador --------------------##    
+
 eventoPatrocinador:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
+    credentials:
+      - [admin]
     
   edit:
     security: true 
+    credentials:
+      - [admin]
     
+##--------------------------Localidad ----------------------------------##
+
 localidad:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
+    credentials:
+      - [admin]
     
   edit:
-    security: true    
+    security: true 
+    credentials:
+      - [admin]
     
+##---------------------------Organizacion -----------------------------##    
 organizacion:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
+    credentials:
+      - [admin]
     
   edit:
-    security: true  
+    security: true 
+    credentials:
+      - [admin]
+    
+##-----------------------------Patrocinador ----------------------------##    
     
 patrocinador:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
+    credentials:
+      - [admin]
     
   edit:
     security: true  
+    credentials:
+      - [admin]
     
+##---------------------------Pqrs---------------------------------------##
+
 pqrs:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
     
   edit:
     security: true  
+    
+##--------------------------Tipo Documento -------------------------------##    
     
 tipoDocumento:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
+    credentials:
+      - [admin]
     
   edit:
     security: true 
+    credentials:
+      - [admin]
     
+##---------------------------Tipo Pqrs --------------------------------##    
 tipoPqrs:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
@@ -157,35 +203,66 @@ tipoPqrs:
   edit:
     security: true  
     
+
+
+##-------------------------Usuario -----------------------------------##
 
 usuario:
   index:
     security: true
     credentials:
-      - [admin, usuario]
+      - [admin]
   insert:
     security: true
+    credentials:
+      - [admin]
+      
   edit:
     security: true
+    credentials:
+      - [admin]
     
+##-----------------------Usuario Credencial -------------------------##
 
 usuarioCredencial:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
+    credentials:
+      - [admin]
     
   edit:
     security: true
-    
-    
+    credentials:
+      - [admin]
+##---------------------Usuario Gusta Categoria -----------------------##
+
 usuarioGustaCategoria:
   index:
     security: true
+    credentials:
+      - [admin]
     
   insert:
     security: true
+    credentials:
+      - [admin]
     
   edit:
-    security: true     
+    security: true  
+    credentials:
+      - [admin]
+      
+##---------------------Reporte -----------------------##
+
+reporte:
+  index:
+    security: true
+    credentials:
+      - [admin]
+    
+      
