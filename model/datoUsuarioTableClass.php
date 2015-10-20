@@ -91,6 +91,23 @@ class datoUsuarioTableClass extends datoUsuarioBaseTableClass {
     }//end catch
   }
 
+   public static function getAdminContactenos() {
+    try {
+
+
+   $sql = 'SELECT nombre, apellido, correo  '
+              . 'FROM dato_usuario, usuario '
+              . 'WHERE usuario.id=dato_usuario.usuario_id'
+              . ' AND usuario.id=1';
+
+
+      return model::getInstance()->query($sql)->fetchAll(\PDO::FETCH_OBJ);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+  }
+
+  
 }
 
 //end class

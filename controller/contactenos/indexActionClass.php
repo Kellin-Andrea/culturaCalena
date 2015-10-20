@@ -15,21 +15,23 @@ use mvc\i18n\i18nClass as i18n;
  */
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
-public function execute() {
+  public function execute() {
+
+
+    try {
+      
+      
+      
+        
 
 
 
-
-try {
-
-  
-
-
-$this->defineView('index', 'contactenos', session::getInstance()->getFormatOutput());
-} catch (PDOException $exc) {
-session::getInstance()->setFlash('exc', $exc);
-routing::getInstance()->forward('shfSecurity', 'exception');
-}
-}
+      $this->objContacto = datoUsuarioTableClass::getAdminContactenos();
+      $this->defineView('index', 'contactenos', session::getInstance()->getFormatOutput());
+    } catch (PDOException $exc) {
+      session::getInstance()->setFlash('exc', $exc);
+      routing::getInstance()->forward('shfSecurity', 'exception');
+    }
+  }
 
 }

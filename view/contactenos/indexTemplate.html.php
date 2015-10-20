@@ -13,9 +13,9 @@ use mvc\request\requestClass as request ?>
 use mvc\session\sessionClass as session ?>
 
 <header>
-    <?php view::includePartial('homepage/menuPrincipal')?>
+  <?php view::includePartial('homepage/menuPrincipal') ?>
 </header>
-    
+
 
 <div class="spacer-big"></div>
 <div class="container">
@@ -27,12 +27,11 @@ use mvc\session\sessionClass as session ?>
       <div class="panel panel-grid widget widget_black-studio-tinymce panel-last-child" id="panel">
         <h3 class="widget-title"><?php echo i18n::__('contact') ?></h3>
         <div class="textwidget">
-          <i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('name')?>: Junta De Accion Comunal 12 De Octubre <br>
-          <i class="glyphicon glyphicon-home"></i> <?php echo i18n::__('adress')?>: Cra 28f # 28f-130 <br> 
-          <i class="glyphicon glyphicon-phone"></i> <?php echo i18n::__('cell')?>: 666666666 <br>
-          <i class="glyphicon glyphicon-phone-alt"></i> <?php echo i18n::__('phone')?>: 000000000 <br>
-          <i class="glyphicon glyphicon-envelope"></i> <?php echo i18n::__('email')?>: culturacalena12octubre@gmail          
-       </div>
+          <?php foreach ($objContacto as $dato): ?>
+          <i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('name') ?>: <?php echo $dato->nombre?> <?php echo $dato->apellido?> <br>
+          <i class="glyphicon glyphicon-envelope"></i> <?php echo i18n::__('email') ?>: <?php echo $dato->correo?>         
+          <?php endforeach ?>
+        </div>
       </div>
     </div>
   </div>
@@ -43,33 +42,33 @@ use mvc\session\sessionClass as session ?>
 
 <script>
 
-    function mostrarGoogleMaps()
-   {
-        //Creamos el punto a partir de las coordenadas:
-       var punto = new google.maps.LatLng(3.427286617066255, -76.50347367070009);
- 
-       //Configuramos las opciones indicando Zoom, punto(el que hemos creado) y tipo de mapa
-       var myOptions = {
-           zoom: 15, center: punto, mapTypeId: google.maps.MapTypeId.ROADMAP
-       };
- 
-       //Creamos el mapa e indicamos en qué caja queremos que se muestre
-       var map = new google.maps.Map(document.getElementById("mostrarMapa"),  myOptions);
- 
-       //Opcionalmente podemos mostrar el marcador en el punto que hemos creado.
-       var marker = new google.maps.Marker({
-           position:punto,
-           map: map,
-           title:"Título del mapa"});
-}
- 
+  function mostrarGoogleMaps()
+  {
+    //Creamos el punto a partir de las coordenadas:
+    var punto = new google.maps.LatLng(3.427286617066255, -76.50347367070009);
+
+    //Configuramos las opciones indicando Zoom, punto(el que hemos creado) y tipo de mapa
+    var myOptions = {
+      zoom: 15, center: punto, mapTypeId: google.maps.MapTypeId.ROADMAP
+    };
+
+    //Creamos el mapa e indicamos en qué caja queremos que se muestre
+    var map = new google.maps.Map(document.getElementById("mostrarMapa"), myOptions);
+
+    //Opcionalmente podemos mostrar el marcador en el punto que hemos creado.
+    var marker = new google.maps.Marker({
+      position: punto,
+      map: map,
+      title: "Título del mapa"});
+  }
+
 
 </script>
 
 
 <body  onload="mostrarGoogleMaps()">
 
-<div id="mostrarMapa" > </div>
+  <div id="mostrarMapa" > </div>
 </body>
 
 
@@ -78,8 +77,8 @@ use mvc\session\sessionClass as session ?>
 
 
 <div class="panel-grid" id="pg">
-  <?php view::includePartial('homepage/relleno')?>
+  <?php view::includePartial('homepage/relleno') ?>
 </div>
 <footer>
-<?php view::includePartial('homepage/footer')?>
-  </footer>
+  <?php view::includePartial('homepage/footer') ?>
+</footer>

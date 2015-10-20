@@ -217,7 +217,8 @@ contactenos_index:
   url:    /contactenos/index
   param:  { module: contactenos, action: index, format: html }
   load:      
-
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
   ##--------------------------  CREDENCIAL --------------------------##
 credencial_index:
   url:    /credencial/index
