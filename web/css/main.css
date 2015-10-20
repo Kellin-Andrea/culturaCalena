@@ -165,6 +165,7 @@ body{
   -ms-transition-duration: 0.5s;
   opacity: 0.7; /*Nivel de opacidad de las imágenes*/
   margin: 0 10px 5px 0; /*Margen entre las imágenes*/
+  margin-top: 40px;
 }
 
 .hovergallery img:hover {
