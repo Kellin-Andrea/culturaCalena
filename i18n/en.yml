@@ -229,6 +229,7 @@ dictionary:
     eventManagement:                                                   Event management 
     eventCreate:                                                       Event create
     events:                                                            Events
+    event:                                                             Event     
     eventName:                                                         Event name
     start_date:                                                        Start date
     finish_date:                                                       Finish date

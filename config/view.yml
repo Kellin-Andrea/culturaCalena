@@ -226,7 +226,12 @@ evento:
   index:
     title: Cultura Caleña
     stylesheet:
-      - [admin.index]
+      - admin/assets/css/bootstrap.css
+      - admin/assets/css/font-awesome.css
+      - admin/assets/css/ace-fonts.css
+      - profile/ace.css
+      - jquery.jqplot.css
+      - main.css
 
     javascript:
       - [admin.index]

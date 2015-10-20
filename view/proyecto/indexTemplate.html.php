@@ -37,7 +37,11 @@
           <a href="#" data-toggle="modal" data-target="#myModalEvento<?php echo $imagen['key'] ?>">
             <img src="<?php echo $imagen['imagen'] ?>" class="thumbnail img-responsive">
           </a>
+          <div id="titleEventoProyecto">
+        <?php echo $imagen['name']?>
+      </div>
         </div>
+      
       <?php endforeach ?>
     </div>
   </div>

@@ -72,7 +72,7 @@ class createActionClass extends controllerClass implements controllerActionInter
         }
 
          session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('datoUsuario', 'index'):routing::getInstance()->redirect('shfSecurity', 'index');
-        session::getInstance()->setSuccess('Los datos fueron registrados exitosamente');
+        session::getInstance()->setSuccess('Los datos fueron registrados exitosamente, usted pordra logearse en 1 dia');
       } else {
       session::getInstance()->hasCredential('admin')?routing::getInstance()->redirect('datoUsuario', 'index'):routing::getInstance()->redirect('shfSecurity', 'index');
       }

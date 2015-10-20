@@ -40,6 +40,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       foreach ($objProyecto as $key => $dato) {
         $arrayEvento[$x][$y]['key'] = $key;
         $arrayEvento[$x][$y]['imagen'] = routing::getInstance()->getUrlImgUpload($dato->imagen);
+        $arrayEvento[$x][$y]['name'] = $dato->evento;
         $y++;
         if ($y === 3) {
           $y = 0;

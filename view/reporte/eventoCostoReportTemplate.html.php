@@ -77,8 +77,7 @@ use mvc\session\sessionClass as session ?>
                             <thead>
                               <tr>
                                 
-                                <th><?php echo i18n::__('NumEvent') ?></th>
-                                <th><?php echo i18n::__('cost') ?></th>
+                                <th><?php echo i18n::__('NumEvent') ?></th>                           
                                 <th><?php echo i18n::__('category') ?></th>
                                 
                               </tr>
@@ -87,8 +86,7 @@ use mvc\session\sessionClass as session ?>
                               <?php   foreach ($objCateEvento as $dato): ?>
                                 <tr>
                                   
-                                  <td><?php  echo $dato->conteo ?></td>
-                                  <td><?php  echo $dato->costo ?></td>
+                                  <td><?php  echo $dato->conteo ?></td>                                  
                                   <td><?php  echo $dato->nombre?></td>
                                   
                                   

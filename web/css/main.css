@@ -202,13 +202,13 @@ body{
   padding-left: 106px;
   font-size: 20px;
   font-family: serif;
-  
+
 }
 
 #imagenSlider2{
   width: 10px;
   height: 10px;
-  
+
 }
 
 .myThumb {
@@ -220,11 +220,18 @@ body{
 }
 
 img.expando{
-margin:10px;
-vertical-align: top; 
+  margin:10px;
+  vertical-align: top; 
 }
 
 #formuProyect{
   padding-top: 46px;
   padding: 31px;
+}
+
+#titleEventoProyecto{
+  text-align: center;
+  padding-top: 10px;
+   font: 150% sans-serif cursive; 
+
 }

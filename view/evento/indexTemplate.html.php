@@ -15,9 +15,9 @@ use mvc\view\viewClass as view ?>
 
 <div class="no-skin">
   <!-- #section:basics/navbar.layout -->
-<div id="navbar" class="navbar navbar-default">
-    
-    <?php view::includePartial('admin/menuAdmin')  ?>
+  <div id="navbar" class="navbar navbar-default">
+
+    <?php view::includePartial('admin/menuAdmin') ?>
   </div>
 
   <!-- /section:basics/navbar.layout -->
@@ -30,8 +30,8 @@ use mvc\view\viewClass as view ?>
     </script>
 
     <!-- #section:basics/sidebar -->
-     <div id="sidebar" class="sidebar                  responsive">
-<?php view::includePartial('admin/board')?>
+    <div id="sidebar" class="sidebar                  responsive">
+      <?php view::includePartial('admin/board') ?>
     </div>
 
 
@@ -67,7 +67,7 @@ use mvc\view\viewClass as view ?>
               <form   id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('evento', 'deleteSelect') ?>" method="POST">
                 <div style="margin-bottom: 10px; margin-top: 30px">
                 </div>
-                
+
                 <?php view::includeHandlerMessage() ?>
                 <table class="table table-bordered table-hover">
                   <thead>
@@ -75,12 +75,9 @@ use mvc\view\viewClass as view ?>
                       <th><input type="checkbox" id="chkAll"></th>
 
                       <th><?php echo i18n::__('name') ?></th>
-                      <th><?php echo i18n::__('description') ?></th>
+
                       <th><?php echo i18n::__('start_date') ?></th>
                       <th><?php echo i18n::__('finish_date') ?></th>
-                      <th><?php echo i18n::__('adress') ?></th>
-                      <th><?php echo i18n::__('cost') ?></th>
-                      <th><?php echo i18n::__('category') ?></th>
                       <th><?php echo i18n::__('publicationStartDate') ?></th>
                       <th><?php echo i18n::__('publicationFinishDate') ?></th>
                       <th><?php echo i18n::__('actions') ?></th>
@@ -90,17 +87,16 @@ use mvc\view\viewClass as view ?>
                       <tr>
                         <td><input type="checkbox" name="chk[]" value="<?php echo $evento->$id ?>"></td>
                         <td><?php echo $evento->nombre ?></td>
-                        <td><?php echo $evento->descripcion ?></td>
+
                         <td><?php echo $evento->fecha_inicial_evento ?></td>
                         <td><?php echo $evento->fecha_final_evento ?></td>
-                        <td><?php echo $evento->direccion ?></td>
-                        <td><?php echo $evento->costo ?></td>
-                        <td><?php echo categoriaTableClass::getNombreById($evento->categoria_id) ?></td>
                         <td><?php echo $evento->fecha_inicial_publicacion ?></td>
                         <td><?php echo $evento->fecha_final_publicacion ?></td>
                         <td>
                           <a href="<?php echo routing::getInstance()->getUrlWeb('evento', 'edit', array(eventoTableClass::ID => $evento->$id)) ?>" class="btn btn-info btn-xs"><i class=" glyphicon glyphicon-pencil"></i></a>
                           <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $evento->$id ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
+                          <a href="#" data-toggle="modal" data-target="#myModalVer<?php echo $evento->$id ?>" class="btn btn-warning btn-xs"><i class="glyphicon glyphicon-eye-open"></i></a>
+
                         </td>
                       </tr>
 
@@ -109,14 +105,43 @@ use mvc\view\viewClass as view ?>
                         <div class="modal-content">
                           <div class="modal-header">
                             <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirm')?> </h4>
+                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('confirm') ?> </h4>
                           </div>
                           <div class="modal-body">
-                            ¿<?php echo i18n::__('are_sure_delete_this_register')?> <?php echo $evento->nombre ?> ?
+                            ¿<?php echo i18n::__('are_sure_delete_this_register') ?> <?php echo $evento->nombre ?> ?
+
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo i18n::__('cancel')?></button>
-                            <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $evento->$id ?>, '<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?> ')"><?php echo i18n::__('confirm')?></button>
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                            <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $evento->$id ?>, '<?php echo eventoTableClass::getNameField(eventoTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('evento', 'delete') ?> ')"><?php echo i18n::__('confirm') ?></button>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+
+
+                    <div class="modal fade" id="myModalVer<?php echo $evento->$id ?>" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                            <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('event') ?> <?php echo $evento->nombre ?></h4>
+                          </div>
+                          <div class="modal-body">
+                            <?php echo i18n::__('description') ?> : <?php echo $evento->descripcion ?><br>
+
+                            <?php echo i18n::__('adress') ?> : <?php echo $evento->direccion ?>
+                            <br>
+                            <?php echo i18n::__('cost') ?> : <?php echo $evento->costo ?><br>
+                            <?php echo i18n::__('category') ?> : <?php echo categoriaTableClass::getNombreById($evento->categoria_id) ?><br>
+
+                            <?php echo i18n::__('user') ?> : <?php echo usuarioTableClass::getNombreById($evento->usuario_id) ?>
+
+
+
+                          </div>
+                          <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
                           </div>
                         </div>
                       </div>
@@ -139,14 +164,14 @@ use mvc\view\viewClass as view ?>
                     <div class="modal-content">
                       <div class="modal-header">
                         <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-                        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete_registers')?></h4>
+                        <h4 class="modal-title" id="myModalLabel"><?php echo i18n::__('delete_registers') ?></h4>
                       </div>
                       <div class="modal-body">
-                        ¿<?php echo i18n::__('are_sure_delete_registers')?>
+                        ¿<?php echo i18n::__('are_sure_delete_registers') ?>
                       </div>
                       <div class="modal-footer">
-                        <button type="button" class="btn btn-success" data-dismiss="modal"><?php echo i18n::__('cancel')?></button>
-                        <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirm')?></button>
+                        <button type="button" class="btn btn-success" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
+                        <button type="button" class="btn btn-danger" onclick="$('#frmDeleteAll').submit()"><?php echo i18n::__('confirm') ?></button>
                       </div>
                     </div>
                   </div>

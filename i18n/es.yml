@@ -54,6 +54,7 @@ dictionary:
     notice:                                                                 Noticias
     novelty:                                                                Novedad
     events:                                                                 Eventos
+    event:                                                                 Evento 
     contact:                                                                Contactenos
     login:                                                                  Iniciar Sesion
     email:                                                                  Correo    

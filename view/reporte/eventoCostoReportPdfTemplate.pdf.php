@@ -60,7 +60,6 @@ $pdf->Cell(50,9);
 
 $pdf->Cell(100,9,'Numero De Eventos',1,0,'C');
 
-$pdf->Cell(40,9, 'Costo',1,0,'C');
 
 $pdf->Cell(55,9, 'Categorias',1,0,'C');
 
@@ -78,7 +77,7 @@ $pdf->Cell(50,9);
 
 $pdf->Cell(100,9,  utf8_decode($data->conteo),1,0,'L');
 
-$pdf->Cell(40,9,  utf8_decode($data->costo),1,0,'C');
+
 
 $pdf->Cell(55,9,  utf8_decode($data->nombre),1,0,'C');
 
