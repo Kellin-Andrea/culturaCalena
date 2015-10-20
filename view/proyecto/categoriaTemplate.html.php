@@ -76,7 +76,7 @@
 
 
 <div class="text-right">
-  <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>')">
+  <?php echo i18n::__('page') ?> <select id="sqlPaginador" onchange="Paginador(this, '<?php echo routing::getInstance()->getUrlWeb('proyecto', 'categoria') ?>')">
   <?php for ($x = 1; $x <= $cntPages; $x++): ?>
       <option <?php echo (isset($page) and $page == $x) ? 'selected' : '' ?> value="<?php echo $x ?>"><?php echo $x ?></option>
     <?php endfor ?>

@@ -35,8 +35,9 @@ class categoriaActionClass extends controllerClass implements controllerActionIn
 
 
       $objProyecto = eventoTableClass::getEventProyectCategoria(config::getRowGridProyect(), $page, $idCategoria);
-
-
+      $this->cntPages = eventoTableClass::getTotalProyectCategoria(config::getRowGridProyect(), $idCategoria);
+  
+              
       $arrayEvento = array();
       $x = 0;
       $y = 0;
@@ -51,7 +52,7 @@ class categoriaActionClass extends controllerClass implements controllerActionIn
       }
 
       $this->objCategoria2 = eventoTableClass::getEventoCategoria();
-      $this->cntPages = eventoTableClass::getTotalProyect(config::getRowGridProyect());
+
       $this->arrayEvento = $arrayEvento;
       $this->objProyecto = $objProyecto;
 

@@ -155,6 +155,25 @@ class eventoTableClass extends eventoBaseTableClass {
     }
   }
 
+    public static function getTotalProyectCategoria($lines, $idCategoria) {
+    try {
+      $sql = 'SELECT count(' .eventoTableClass::getNameTable().'.'. eventoTableClass::ID . ') AS cantidad '
+              . 'FROM ' . eventoTableClass::getNameTable() . ', '. categoriaTableClass::getNameTable(). 
+              ' WHERE ' . eventoTableClass::getNameTable().'.'.eventoTableClass::DELETED_AT . ' IS NULL'.
+              ' AND '. categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' = '. eventoTableClass::getNameTable().'.'.eventoTableClass::CATEGORIA_ID.
+              ' AND '. categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' = '. $idCategoria;
+//      print_r($sql);
+//      exit();
+
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute();
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return ceil($answer[0]->cantidad / $lines);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+  }
+  
   public static function getEventTotal($id) {
     try {
 
