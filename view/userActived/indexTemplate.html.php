@@ -104,7 +104,7 @@ use mvc\request\requestClass as request ?>
 
                 <div class="container container-fluid">
                   <h1><i class="glyphicon glyphicon-user"></i> <?php echo i18n::__('usermanagement') ?></h1>
-                  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('usuario', 'deleteSelect') ?>" method="POST">
+                  <form id="frmDeleteAll" action="<?php echo routing::getInstance()->getUrlWeb('userActived', 'deleteSelect') ?>" method="POST">
                     <div style="margin-bottom: 10px; margin-top: 30px">
 
                     </div>
@@ -129,7 +129,7 @@ use mvc\request\requestClass as request ?>
                             <td><?php echo $usuario->nombre ?></td>
                             <td><?php echo $usuario->organizacion ?></td>
                             <td>
-                              <a href="" class="btn btn-info btn-xs" onclick="activar(<?php  echo $usuario->id  ?>, '<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('userActived', 'actived') ?> ')""><?php echo i18n::__('activateUser')?></a>
+                              <a href="" class="btn btn-info btn-xs" onclick="activar(<?php  echo $usuario->id  ?>, '<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('userActived', 'actived') ?> ')"><i class="fa fa-check-circle-o"></i> <?php echo i18n::__('activateUser')?></a>
                               <a href="#" data-toggle="modal" data-target="#myModalDelete<?php echo $usuario->id  ?>" class="btn btn-danger btn-xs"><i class="glyphicon glyphicon-trash"></i></a>
 
 
@@ -162,7 +162,7 @@ use mvc\request\requestClass as request ?>
                     <input type="hidden" id="idDelete" name="<?php echo usuarioTableClass::getNameField(usuarioTableClass::ID, true) ?>">
 
                     <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('homepage', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xs"> <i class="fa fa-home"></i></a>
-                    <a id="boton" href="<?php echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" type="button" class="btn btn-info"><i class="glyphicon glyphicon-certificate"></i></a>
+                    <a id="boton" href="<?php// echo routing::getInstance()->getUrlWeb('usuario', 'insert') ?>" type="button" class="btn btn-info"><i class="fa fa-check-circle-o"></i></a>
                     <a id="boton" href="javascript:eliminarMasivo()" type="button" class="btn btn-danger" id="btnDeleteMasivo"><i class="fa fa-eraser"></i></a>
 
                     <div class="text-right">

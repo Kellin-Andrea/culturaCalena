@@ -24,7 +24,7 @@ use mvc\view\viewClass as view ?>
           <input name="<?php echo sliderImageTableClass::getNameField(sliderImageTableClass::ID, true) ?>" value="<?php echo $objSlider[0]->$id ?>" type="hidden">
         <?php endif ?>
 
-<?php if(isset($objSlider)==true):?>
+<?php if(isset($objSlider)==false):?>
         <div class="form-group <?php echo (session::getInstance()->hasFlash('inputFile')) ? 'has-error has-feedback' : '' ?>">
           <label for="<?php echo sliderImageTableClass::getNameField(sliderImageTableClass::IMAGEN, true) ?>"  name="<?php echo sliderImageTableClass::getNameField(sliderImageTableClass::IMAGEN, true) ?>" class="col-sm-2 control-label"> <?php echo i18n::__('image') ?></label>
           <div class="col-lg-7">

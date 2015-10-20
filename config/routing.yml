@@ -4,6 +4,8 @@ homepage:
   load:
     - model/base/datoUsuarioBaseTableClass.php
     - model/datoUsuarioTableClass.php
+    - model/base/sliderImageBaseTableClass.php
+    - model/sliderImageTableClass.php
 
 homepage traductor:
   url:   /homepage/traductor

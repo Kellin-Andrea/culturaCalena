@@ -16,12 +16,23 @@ use mvc\i18n\i18nClass as i18n;
 class indexActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
-    
+
 
     try {
-   
-     
-      
+      $fields = array(
+          sliderImageTableClass::ID,
+          sliderImageTableClass::IMAGEN,
+          sliderImageTableClass::NOMBRE,
+          sliderImageTableClass::POSICION
+      );
+
+      $orderBy = array(
+          sliderImageTableClass::POSICION
+      );
+
+
+
+      $this->objSlider = sliderImageTableClass::getAll($fields, FALSE, $orderBy, 'ASC');
       $this->defineView('index', 'homepage', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
