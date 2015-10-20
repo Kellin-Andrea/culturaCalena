@@ -273,6 +273,15 @@ dictionary:
     user_select:                                                           Seleccione un usuario
     feedback_select:                                                       Seleccione una opcion
     
+    #--------------------------Usuarios activos----------------------------------#
+    enableUsers:                                                           Usuarios Por Activar
+    activateUser:                                                              Activar
+    
+    #--------------------------slider----------------------------------#
+    sliderManagement:                                                        Gestion Slider 
+    position:                                                               Posicion
+    nameSli:                                                               Nombre
+    registerPosition:                                                  Registrar Posicion
     #-----------------------------estadoPqrsf---------------------------------#
     activate:                                                              Activado
     pqrsfState:                                                            Estado PQRSF

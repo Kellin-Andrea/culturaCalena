@@ -265,6 +265,10 @@ dictionary:
     newPartner:                                                        New partner
     createPartner:                                                     Create partner
     returning_to_partner:                                              Returning to partner
+    #--------------------------User Actived----------------------------------#
+    enableUsers:                                                       Enable Users
+    activateUser:                                                          Activate
+    
     #-----------------------------Feedback-------------------------------------#
     
     title:                                                             Title 
@@ -329,7 +333,12 @@ dictionary:
     #---------------------------Rememberme-------------------------------------#
     rememberMeManagement:                                              Remenber me management
     rememberMe:                                                        Remenber me
-    
+
+   #--------------------------slider----------------------------------#
+    sliderManagement:                                                        Gestion Slider  
+    position:                                                          Position
+    nameSli:                                                           Name
+    registerPosition:                                                  Register Position
     #------------------------------Locality---------------------------------------#
     eventlocalitysManagement:                                          Event Localitys Management
     eventPlace:                                                        EventPlace

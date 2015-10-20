@@ -91,10 +91,13 @@ namespace mvc\routing {
     public function getUrlImg($image) {
       return configClass::getUrlBase() . 'img/' . $image;
     }
-    
-    
+
     public function getUrlImgUpload($image) {
       return configClass::getUrlBase() . 'upload/' . $image;
+    }
+
+    public function getUrlImgSlider($image) {
+      return configClass::getUrlBase() . 'slider/' . $image;
     }
 
     public function getUrlJs($javascript) {
@@ -142,8 +145,8 @@ namespace mvc\routing {
         $variables = $this->genVariables($action);
         $action = $routing['param']['action'];
         header('Location: ' . $this->getUrlWeb($module, $action, $variables));
-        exit();  
-        } else {
+        exit();
+      } else {
         header('Location: ' . $this->getUrlWeb($module, $action, $variables));
       }
     }

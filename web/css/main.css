@@ -203,3 +203,22 @@ body{
   font-family: serif;
   
 }
+
+#imagenSlider2{
+  width: 10px;
+  height: 10px;
+  
+}
+
+.myThumb {
+  width: 180px;
+}
+
+.myThumbPos {
+  width: 10px;
+}
+
+img.expando{
+margin:10px;
+vertical-align: top; 
+}

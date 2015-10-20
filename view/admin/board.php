@@ -228,7 +228,24 @@ use mvc\view\viewClass as view ?>
       </ul>
       </li>
 
+      <li class="">
+        <a href="<?php  echo mvc\routing\routingClass::getInstance()->getUrlWeb('userActived', 'index') ?>">
+          <i class="menu-icon fa fa-users"></i>
+          <span class="menu-text"><?php echo i18n::__('enableUsers') ?>  </span>
+        </a>
 
+        <b class="arrow"></b>
+      </li>
+
+      <li class="">
+        <a href="<?php  echo mvc\routing\routingClass::getInstance()->getUrlWeb('slider', 'index') ?>">
+          <i class="menu-icon fa fa-image"></i>
+          <span class="menu-text"><?php echo i18n::__('sliderManagement') ?>  </span>
+        </a>
+
+        <b class="arrow"></b>
+      </li>      
+      
       <li class="">
         <a href="<?php echo mvc\routing\routingClass::getInstance()->getUrlWeb('reporte', 'index') ?>">
           <i class="menu-icon fa fa-file-archive-o"></i>

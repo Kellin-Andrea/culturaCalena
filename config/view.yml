@@ -1,18 +1,18 @@
 all:
-  favicon: 
+  favicon:
   title: cultura caleña
   meta:
     - charset="UTF-8"
     - http-equiv="X-UA-Compatible" content="IE=edge"
   javascript:
     - jquery-1.11.1.min.js
-    - bootstrap.js
+    - bootstrap.min.js
     - main.js
   stylesheet:
     - admin/assets/css/bootstrap.css
     - admin/assets/css/font-awesome.css
     - admin/assets/css/ace-fonts.css
-    - bootstrap.css
+    - bootstrap.min.css
     - main.css
     - font-awesome.min.css
 
@@ -22,12 +22,12 @@ shfSecurity:
     stylesheet:
       - signin.css
 
-      
+
 homepage:
   index:
     stylesheet:
       - [acerca.index]
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - homepage/css/animate.css
         #<!--prettyPhoto.css -->
       - homepage/css/prettyPhoto.css
@@ -52,12 +52,12 @@ homepage:
       - homepage/js/simplemap.js
       - homepage/js/sticky_navbar.js
       - homepage/js/underscore.js
-      
+
 
 acerca:
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - acerca/css/animate.css
         #<!--prettyPhoto.css -->
       - acerca/css/prettyPhoto.css
@@ -83,7 +83,7 @@ acerca:
       - acerca/js/underscore.js
 
 admin:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - admin/assets/css/bootstrap.css
@@ -136,15 +136,15 @@ admin:
       - jqplot/plugins/jqplot.pointLabels.js
       - index.js
       - main.js
- 
+
 contactenos:
   index:
     javascript:
       - capturarGoogleMap.js
-    
+
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - contactenos/css/animate.css
         #<!--prettyPhoto.css -->
       - contactenos/css/prettyPhoto.css
@@ -172,47 +172,47 @@ contactenos:
 
 
 default:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
-    javascript:
-      - [admin.index]
-  edit:
-    stylesheet:
-      - [admin.index]
-      
-bitacora:
-  index:  
-    title: Cultura Caleña
-    stylesheet:
-      - [admin.index]
-      
-    javascript:
-      - [admin.index]
-  insert:
-    stylesheet:
-      - [admin.index]
-      
-      
-      
-categoria:
-  index:  
-    title: Cultura Caleña
-    stylesheet:
-      - [admin.index]
-      
-    javascript:
-      - [admin.index]
-  insert:
-    stylesheet:
-      - [admin.index]
-  edit:
-    stylesheet:
-      - [admin.index]            
 
-evento: 
+    javascript:
+      - [admin.index]
+  edit:
+    stylesheet:
+      - [admin.index]
+
+bitacora:
+  index:
+    title: Cultura Caleña
+    stylesheet:
+      - [admin.index]
+
+    javascript:
+      - [admin.index]
+  insert:
+    stylesheet:
+      - [admin.index]
+
+
+
+categoria:
+  index:
+    title: Cultura Caleña
+    stylesheet:
+      - [admin.index]
+
+    javascript:
+      - [admin.index]
+  insert:
+    stylesheet:
+      - [admin.index]
+  edit:
+    stylesheet:
+      - [admin.index]
+
+evento:
   insert:
     stylesheet:
       - [admin.index]
@@ -220,40 +220,40 @@ evento:
       - capturarGoogleMap.js
   edit:
     stylesheet:
-      - [admin.index]      
+      - [admin.index]
     javascript:
       - capturarGoogleMap.js
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
-      
+
 
 datoUsuario:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
-      
+
   insert:
     stylesheet:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-      
+      - [admin.index]
+
 localidad:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -261,15 +261,15 @@ localidad:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]      
-            
-      
+      - [admin.index]
+
+
 credencial:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -277,15 +277,15 @@ credencial:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-            
-      
+      - [admin.index]
+
+
 tipoDocumento:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -293,12 +293,12 @@ tipoDocumento:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]    
-            
+      - [admin.index]
+
 teatro:
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - teatro/css/animate.css
         #<!--prettyPhoto.css -->
       - teatro/css/prettyPhoto.css
@@ -322,12 +322,12 @@ teatro:
       - teatro/js/simplemap.js
       - teatro/js/sticky_navbar.js
       - teatro/js/underscore.js
-      
+
 
 privacidad:
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - privacidad/css/animate.css
         #<!--prettyPhoto.css -->
       - privacidad/css/prettyPhoto.css
@@ -355,11 +355,11 @@ privacidad:
 
 
 pqrs:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -367,12 +367,12 @@ pqrs:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]      
-                  
+      - [admin.index]
+
 proyecto:
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - proyecto/css/animate.css
         #<!--prettyPhoto.css -->
       - proyecto/css/prettyPhoto.css
@@ -397,14 +397,14 @@ proyecto:
       - proyecto/js/sticky_navbar.js
       - proyecto/js/underscore.js
       - index.js
-      
-      
+
+
 detallePqrs:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -412,14 +412,14 @@ detallePqrs:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-                  
+      - [admin.index]
+
 estadoPqrs:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -427,14 +427,14 @@ estadoPqrs:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-            
+      - [admin.index]
+
 eventoPatrocinador:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -442,14 +442,14 @@ eventoPatrocinador:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-                  
+      - [admin.index]
+
 organizacion:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -457,14 +457,14 @@ organizacion:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-                  
+      - [admin.index]
+
 patrocinador:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -472,14 +472,14 @@ patrocinador:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-                 
+      - [admin.index]
+
 recaudoEconomico:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -487,13 +487,13 @@ recaudoEconomico:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-  
-                  
+      - [admin.index]
+
+
 termino:
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - termino/css/animate.css
         #<!--prettyPhoto.css -->
       - termino/css/prettyPhoto.css
@@ -516,15 +516,15 @@ termino:
       - termino/js/require.js
       - termino/js/simplemap.js
       - termino/js/sticky_navbar.js
-      - termino/js/underscore.js                  
-                  
-      
+      - termino/js/underscore.js
+
+
 tipoPqrs:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -532,14 +532,14 @@ tipoPqrs:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-                  
+      - [admin.index]
+
 usuarioGustaCategoria:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -547,14 +547,14 @@ usuarioGustaCategoria:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-                  
+      - [admin.index]
+
 usuarioCredencial:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -562,10 +562,10 @@ usuarioCredencial:
       - [admin.index]
   edit:
     stylesheet:
-      - [admin.index]     
-                  
+      - [admin.index]
+
 profile:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - admin/assets/css/bootstrap.css
@@ -574,17 +574,17 @@ profile:
       - profile/ace.css
       - jquery.jqplot.css
       - main.css
-      
+
     javascript:
       - [admin.index]
   insert:
     stylesheet:
       - [admin.index]
-                  
+
 deporte:
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - deporte/css/animate.css
         #<!--prettyPhoto.css -->
       - deporte/css/prettyPhoto.css
@@ -609,11 +609,11 @@ deporte:
       - deporte/js/sticky_navbar.js
       - deporte/js/underscore.js
 
-      
+
 danza:
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - danza/css/animate.css
         #<!--prettyPhoto.css -->
       - danza/css/prettyPhoto.css
@@ -641,7 +641,7 @@ danza:
 musica:
   index:
     stylesheet:
-        #<!-- animate.css -->    
+        #<!-- animate.css -->
       - musica/css/animate.css
         #<!--prettyPhoto.css -->
       - musica/css/prettyPhoto.css
@@ -665,22 +665,22 @@ musica:
       - musica/js/simplemap.js
       - musica/js/sticky_navbar.js
       - musica/js/underscore.js
-      
+
 reporte:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
       - profile/profile.css
-      
+
     javascript:
       - [admin.index]
-      
-  evento: 
+
+  evento:
     title: Reporte Evento
     stylesheet:
       - signin.css
-      
+
   eventoReport:
     title: Reporte Evento
     stylesheet:
@@ -691,8 +691,8 @@ reporte:
       - reporte/js/jquery.js
       - reporte/js/bootstrap.min.js
       - reporte/js/bootstrap.js
-      
-  eventoCosto: 
+
+  eventoCosto:
     title: Reporte Categoria
     stylesheet:
       - signin.css
@@ -714,11 +714,11 @@ reporte:
       #- jqplot/plugins/jqplot.canvasAxisLabelRenderer.min.js
       - jqplot/plugins/jqplot.pieRenderer.min.js
       - jqplot/plugins/jqplot.donutRenderer.min.js
-  bitacora: 
+  bitacora:
     title: Reporte Evento
     stylesheet:
       - signin.css
-  logbookReport: 
+  logbookReport:
     title: Reporte Bitacora
     stylesheet:
       - reporte/css/bootstrap.min.css
@@ -736,14 +736,14 @@ reporte:
       - jqplot/plugins/jqplot.pieRenderer.min.js
       - jqplot/plugins/jqplot.donutRenderer.min.js
 
-      
-      
+
+
 usuario:
-  index:  
+  index:
     title: Cultura Caleña
     stylesheet:
       - [admin.index]
-      
+
     javascript:
       - [admin.index]
   insert:
@@ -753,4 +753,36 @@ usuario:
     stylesheet:
       - [admin.index]
 
-                        
+
+userActived:
+  index:
+    title: Cultura Caleña
+    stylesheet:
+      - [admin.index]
+
+    javascript:
+      - [admin.index]
+  insert:
+    stylesheet:
+      - [admin.index]
+  edit:
+    stylesheet:
+      - [admin.index]
+
+
+slider:
+  index:
+    title: Cultura Caleña
+    stylesheet:
+      - [admin.index]
+      - lightbox.css
+    javascript:
+      - [admin.index]
+      - jquery-ui.min.js
+      - lightbox.min.js
+  insert:
+    stylesheet:
+      - [admin.index]
+  edit:
+    stylesheet:
+      - [admin.index]

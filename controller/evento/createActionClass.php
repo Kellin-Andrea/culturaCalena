@@ -22,7 +22,7 @@ class createActionClass extends controllerClass implements controllerActionInter
   public function execute() {
     try {
       if (request::getInstance()->isMethod('POST')) {
-
+        
         $files = request::getInstance()->getFile(eventoTableClass::getNameField(eventoTableClass::IMAGEN, true));
         $nameEvent = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::NOMBRE, true));
         $description = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::DESCRIPCION, true));

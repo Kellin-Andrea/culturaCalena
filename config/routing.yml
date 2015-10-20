@@ -1882,3 +1882,94 @@ profile:
     - model/detallePqrsTableClass.php
     - model/base/tipoPqrsBaseTableClass.php
     - model/tipoPqrsTableClass.php    
+    
+#--------------------usurios por activar---------------#
+
+
+userActived:
+  url:    /userActived
+  param:  { module: userActived, action: index, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
+userActived_delete:
+  url:    /userActived/delete
+  param:  { module: userActived, action: delete, format: json }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+
+userActived_actived:
+  url:    /userActived/actived
+  param:  { module: userActived, action: actived, format: json }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
+userActived_deleteSelect:
+  url:    /userActived/deleteSelect
+  param:  { module: userActived, action: deleteSelect, format: html }
+  load:
+    - model/base/usuarioBaseTableClass.php
+    - model/usuarioTableClass.php
+    - model/base/datoUsuarioBaseTableClass.php
+    - model/datoUsuarioTableClass.php
+    - model/base/organizacionBaseTableClass.php
+    - model/organizacionTableClass.php
+    
+##-------------------------- USUARIO --------------------------##
+slider_index:
+  url:    /slider/index
+  param:  { module: slider, action: index, format: html }
+  load:
+    - model/base/sliderImageBaseTableClass.php
+    - model/sliderImageTableClass.php
+
+slider_insert:
+  url:    /slider/insert
+  param:  { module: slider, action: insert, format: html }
+  load:
+    - model/base/sliderImageBaseTableClass.php
+    - model/sliderImageTableClass.php
+slider_create:
+  url:    /slider/create
+  param:  { module: slider, action: create, format: html }
+  load:
+    - model/base/sliderImageBaseTableClass.php
+    - model/sliderImageTableClass.php
+
+slider_edit:
+  url:    /slider/edit
+  param:  { module: slider, action: edit, format: html }
+  load:
+    - model/base/sliderImageBaseTableClass.php
+    - model/sliderImageTableClass.php
+
+slider_update:
+  url:    /slider/update
+  param:  { module: slider, action: update, format: html }
+  load:
+    - model/base/sliderImageBaseTableClass.php
+    - model/sliderImageTableClass.php
+   #- libs/validator/slider/editUserValidatorClass.php
+
+
+slider_delete:
+  url:    /slider/eliminar
+  param:  { module: slider, action: delete, format: json }
+  load:
+    - model/base/sliderImageBaseTableClass.php
+    - model/sliderImageTableClass.php

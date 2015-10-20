@@ -1,28 +1,30 @@
 function Paginador(objeto, url) {
- window. location.href = url + '?page=' + $(objeto).val();
+  window.location.href = url + '?page=' + $(objeto).val();
 
 }
 
+function activar(id, variable, url) {
+  eliminar(id, variable, url);
+}
 
-
-function eliminar(id, variable, url ){
-    $.ajax({
-        url: url,
-        data: variable + '=' + id,
-        dataType: 'json',
-        type: 'POST',
-        success: function (data)
-        {
-         location.reload();  
-        },
+function eliminar(id, variable, url) {
+  $.ajax({
+    url: url,
+    data: variable + '=' + id,
+    dataType: 'json',
+    type: 'POST',
+    success: function (data)
+    {
+      location.reload();
+    },
 //        error: function (objeto,quepaso,otroobj){
 //            alert("Estas viendo esto porque falle ");
 //            alert("Paso lo siguiente: " +quepaso);
 //        }
-    });
+  });
 }
 
-function eliminarMasivo() {  
+function eliminarMasivo() {
   $('#myModalDeleteMasivo').modal('toggle');
 }
 
