@@ -367,7 +367,7 @@ class eventoTableClass extends eventoBaseTableClass {
               ' AND evento.usuario_id = usuario.id' .
               ' AND evento.actived = true' .
               ' AND NOW() BETWEEN fecha_inicial_publicacion AND fecha_final_publicacion AND evento.deleted_at IS NULL ' .
-              ' AND evento.deleted_at IS NULL';
+              ' AND evento.deleted_at IS NULL'. ' ORDER BY evento.created_at DESC';
 
 
       if ($limit !== null and $offset === null) {
@@ -396,8 +396,10 @@ class eventoTableClass extends eventoBaseTableClass {
               ' AND evento.actived = true' .
               ' AND evento.deleted_at IS NULL' .
                ' AND NOW() BETWEEN fecha_inicial_publicacion AND fecha_final_publicacion'.
-              ' AND evento.categoria_id = ' . $idCategoria;
+              ' AND evento.categoria_id = ' . $idCategoria . ' ORDER BY evento.created_at DESC';
 
+//      print_r($sql);
+//      exit();
    
       if ($limit !== null and $offset === null) {
         $sql = $sql . ' LIMIT ' . $limit;
