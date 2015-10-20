@@ -11,7 +11,7 @@
   </div>
     
 
-<?php view::includePartial('datoUsuario/formUser', array('objlocal'=> $objlocal, 'objtipoDocumento'=> $objtipoDocumento, 'objorganizacion'=> $objorganizacion, 'objusuarios'=> $objusuarios,'objCat'=> $objCat, 'objCategorias' => $objCategorias)) ?>
+<?php view::includePartial('datoUsuario/formUser', array('objlocal'=> $objlocal, 'objtipoDocumento'=> $objtipoDocumento, 'objorganizacion'=> $objorganizacion, 'objusuarios'=> $objusuarios,'objCat'=> $objCat, 'objCategorias' => $objCategorias, 'objdatos'=> $objdatos,)) ?>
 </div>
 
 

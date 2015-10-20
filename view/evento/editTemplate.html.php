@@ -12,7 +12,7 @@
   <div class="panel-heading">
       <h1 class="glyphicon glyphicon-star"><?php echo i18n::__('editEvent')?> <?php echo $objevento[0]->$evento ?></h1>
   </div>
-<?php view::includePartial('evento/formUser', array('objevento' => $objevento, 'evento' => $evento, 'objcategoria' => $objcategoria, 'categoria' => $categoria)) ?>
+<?php view::includePartial('evento/formEvento', array('objevento' => $objevento, 'evento' => $evento, 'objcategoria' => $objcategoria, 'categoria' => $categoria)) ?>
 </div>
 <script>
   function initialize() {

@@ -141,7 +141,7 @@ use mvc\request\requestClass as request ?>
             <select  class="form-control" id="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::ID, true) ?>"  name="<?php echo datoUsuarioTableClass::getNameField(datoUsuarioTableClass::GENERO, true) ?>">
               <option value="">---<?php echo i18n::__('gender_select') ?>---</option>
               <option value="true"><?php echo i18n::__('female') ?> </option>
-              <option value="false"><?php echo i18n::__('male') ?></option>
+              <option value="false"><?php echo i18n::__('male')?></option>
             </select>
           </div>
         </div>
@@ -179,7 +179,7 @@ use mvc\request\requestClass as request ?>
           </div>
         </div>
         <div class="form-group">
-          <div class="col-sm-offset-5 col-xs-5">
+          <div class="col-sm-offset-4 col-sm-6">
              <a href="<?php echo session::getInstance()->hasCredential('admin')? routing::getInstance()->getUrlWeb('datoUsuario', 'index'): routing::getInstance()->getUrlWeb('profile', 'index') ?>" type="button" class="btn btn-success" class="btn btn-danger btn-xlg"> <i class="fa fa-home"></i></a>
             <button type="submit" class="btn-lg btn-primary"><?php echo i18n::__('register') ?></button>
 

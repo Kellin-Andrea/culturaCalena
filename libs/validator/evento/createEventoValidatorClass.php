@@ -55,15 +55,14 @@ namespace mvc\validator {
         $flag = true;
         session::getInstance()->setFlash('inputdate', true);
         session::getInstance()->setError('La fecha  inicial del evento no puede ser menor o igual a la de hoy', 'inputdate');
-      } else if (strtotime($date) <= strtotime(date(config::getFormatTimestamp())))
-        ;
+      } 
 
 
       if (self::notBlank($date1)) {
         $flag = true;
         session::getInstance()->setFlash('inputdate1', true);
         session::getInstance()->setError('la fecha final del evento es obligatorio', 'inputdate1');
-      } else if (strtotime($date1) <= strtotime(date(config::getFormatTimestamp()))) {
+      } else if (strtotime($date) <= strtotime(date(config::getFormatTimestamp()))) {
         $flag = true;
         session::getInstance()->setFlash('inputdate1', true);
         session::getInstance()->setError('La fecha final del evento no puede ser menor o igual a la fecha inicial del evento', 'inputdate1');
