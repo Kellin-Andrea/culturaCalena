@@ -12,7 +12,7 @@
 
 <div class="container container-fluid">
   
-  <form id="formuProyect" class="form-signin" role="form" action="<?php  echo routing::getInstance()->getUrlWeb('proyecto', 'categoria') ?>" method="POST">
+  <form aling="center" id="formuProyect" class="form-signin" role="form" action="<?php  echo routing::getInstance()->getUrlWeb('proyecto', 'categoria') ?>" method="POST">
     <div class="form-group">
          
               <label> <?php echo i18n::__('category') ?></label>
@@ -27,6 +27,7 @@
                        
             </div>
     <button class="btn btn-xs btn-default btn-group-mini" type="submit">Filtrar</button>
+    <a class="btn btn-xs btn-default btn-group-mini" href="<?php echo routing::getInstance()->getUrlWeb('proyecto', 'index') ?>" type="button">Ver Sin Filtro</a>
   </form>
   
   <?php foreach ($arrayEvento as $img): ?>
@@ -35,7 +36,7 @@
       <?php foreach ($img as $imagen): ?>
         <div class="col-lg-4">
           <a href="#" data-toggle="modal" data-target="#myModalEvento<?php echo $imagen['key'] ?>">
-            <img src="<?php echo $imagen['imagen'] ?>" class="thumbnail img-responsive">
+            <img src="<?php echo $imagen['imagen'] ?>"  class="thumbnail img-responsive">
           </a>
         </div>
       <?php endforeach ?>

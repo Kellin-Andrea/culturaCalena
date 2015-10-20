@@ -13,7 +13,7 @@ use mvc\i18n\i18nClass as i18n;
  *
  * @author kelly andrea manzano <kellinandrea18@hotmail.com>
  */
-class indexActionClass extends controllerClass implements controllerActionInterface {
+class categoriaActionClass extends controllerClass implements controllerActionInterface {
 
   public function execute() {
 
@@ -21,7 +21,10 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     try {
 
 
-         $page = 0;
+      $idCategoria = request::getInstance()->getPost(eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true));
+
+
+      $page = 0;
 
 
       if (request::getInstance()->hasGet('page')) {
@@ -31,7 +34,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       }
 
 
-      $objProyecto = eventoTableClass::getEventProyect(config::getRowGridProyect(), $page);
+      $objProyecto = eventoTableClass::getEventProyectCategoria(config::getRowGridProyect(), $page, $idCategoria);
 
 
       $arrayEvento = array();
@@ -53,7 +56,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       $this->objProyecto = $objProyecto;
 
 
-      $this->defineView('index', 'proyecto', session::getInstance()->getFormatOutput());
+      $this->defineView('categoria', 'proyecto', session::getInstance()->getFormatOutput());
     } catch (PDOException $exc) {
       session::getInstance()->setFlash('exc', $exc);
       routing::getInstance()->forward('shfSecurity', 'exception');
