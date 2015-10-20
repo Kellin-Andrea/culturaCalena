@@ -22,8 +22,8 @@ class updateActionClass extends controllerClass implements controllerActionInter
       if (request::getInstance()->isMethod('POST')) {
 
         $id = request::getInstance()->getPost( sliderImageTableClass::getNameField(sliderImageTableClass::ID, true));
-        $nombre = request::getInstance()->getPost(sliderImageTableClass::getNameField(sliderImageTableClass::IMAGEN, true));
-        $files = request::getInstance()->getPost(sliderImageTableClass::getNameField(sliderImageTableClass::NOMBRE, true));
+        $files = request::getInstance()->getPost(sliderImageTableClass::getNameField(sliderImageTableClass::IMAGEN, true));
+        $nombre = request::getInstance()->getPost(sliderImageTableClass::getNameField(sliderImageTableClass::NOMBRE, true));
        
 
         $ids = array(
@@ -36,7 +36,7 @@ class updateActionClass extends controllerClass implements controllerActionInter
         sliderImageTableClass::NOMBRE=>$nombre
         );
 
-        usuarioTableClass::update($ids, $data);
+        sliderImageTableClass::update($ids, $data);
       }
 
       routing::getInstance()->redirect('slider', 'index');

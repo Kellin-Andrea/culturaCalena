@@ -776,13 +776,18 @@ slider:
     stylesheet:
       - [admin.index]
       - lightbox.css
+
     javascript:
       - [admin.index]
       - jquery-ui.min.js
       - lightbox.min.js
+      
   insert:
     stylesheet:
       - [admin.index]
   edit:
     stylesheet:
       - [admin.index]
+
+  
+  

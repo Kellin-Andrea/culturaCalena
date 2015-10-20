@@ -40,7 +40,10 @@
             <p><?php echo i18n::__('name') ?> : <?php echo $dato->nombre ?></p>
             <p> <?php echo i18n::__('description') ?> : <?php echo $dato->descripcion ?></p>
             <p><?php echo i18n::__('adress') ?> : <?php echo $dato->direccion ?></p>
+            <p><?php echo i18n::__('date')?> : <?php echo $dato->fecha_inicial_evento?></p>
             <p><?php echo i18n::__('cost') ?> :       <?php echo $dato->costo ?></p>
+            
+            
           </div>
           <div class="modal-footer">
             <button class="btn btn-default" data-dismiss="modal">Close</button>

@@ -30,7 +30,7 @@ class deleteActionClass extends controllerClass implements controllerActionInter
         );
         
       
-        usuarioTableClass::delete($ids, FALSE);
+        sliderImageTableClass::delete($ids, false);
         
         //routing::getInstance()->redirect('default', 'index');
         $this->arrayAjax = array(

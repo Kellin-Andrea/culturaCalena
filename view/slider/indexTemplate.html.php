@@ -115,7 +115,7 @@ use mvc\request\requestClass as request ?>
                               </div>
                               <div class="modal-footer">
                                 <button type="button" class="btn btn-primary" data-dismiss="modal"><?php echo i18n::__('cancel') ?></button>
-                                <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $slider->id ?>, '<?php echo sliderImageTableClass::getNameField(sliderImageTableClass::ID, true) ?>', '<?php echo routing::getInstance()->getUrlWeb('slider', 'delete') ?> ')"><?php echo i18n::__('confirm') ?></button>
+                                <button type="button" class="btn btn-danger"onclick="eliminar(<?php echo $slider->id ?>, '<?php echo sliderImageTableClass::getNameField(sliderImageTableClass::ID, false) ?>', '<?php echo routing::getInstance()->getUrlWeb('slider', 'delete') ?> ')"><?php echo i18n::__('confirm') ?></button>
                               </div>
                             </div>
                           </div>
