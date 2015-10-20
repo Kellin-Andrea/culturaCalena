@@ -21,7 +21,22 @@ class indexActionClass extends controllerClass implements controllerActionInterf
     try {
 
 
-         $page = 0;
+      $fields = array(
+          eventoTableClass::ID,
+          eventoTableClass::NOMBRE,
+          eventoTableClass::DESCRIPCION,
+          eventoTableClass::DIRECCION,
+          eventoTableClass::COSTO,
+          eventoTableClass::FECHA_INICIAL_EVENTO,
+          eventoTableClass::FECHA_FINAL_EVENTO,
+          eventoTableClass::IMAGEN
+      );
+
+      $ordeBy = array(
+          eventoTableClass::NOMBRE
+      );
+
+      $page = 0;
 
 
       if (request::getInstance()->hasGet('page')) {
@@ -31,8 +46,8 @@ class indexActionClass extends controllerClass implements controllerActionInterf
       }
 
 
-      $objProyecto = eventoTableClass::getEventProyect(config::getRowGridProyect(), $page);
-
+      $objProyecto = eventoTableClass::getAll($fields, true, $ordeBy, 'ASC', config::getRowGridProyect(), $page);
+     
 
       $arrayEvento = array();
       $x = 0;
@@ -47,7 +62,7 @@ class indexActionClass extends controllerClass implements controllerActionInterf
         }
       }
 
-      $this->objCategoria2 = eventoTableClass::getEventoCategoria();
+
       $this->cntPages = eventoTableClass::getTotalProyect(config::getRowGridProyect());
       $this->arrayEvento = $arrayEvento;
       $this->objProyecto = $objProyecto;

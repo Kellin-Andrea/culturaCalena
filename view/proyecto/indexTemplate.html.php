@@ -12,22 +12,6 @@
 
 <div class="container container-fluid">
   
-  <form id="formuProyect" class="form-signin" role="form" action="<?php  echo routing::getInstance()->getUrlWeb('proyecto', 'categoria') ?>" method="POST">
-    <div class="form-group">
-         
-              <label> <?php echo i18n::__('category') ?></label>
-              <select required class="form-control" id="<?php echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" name="<?php  echo eventoTableClass::getNameField(eventoTableClass::CATEGORIA_ID, true) ?>" >
-               <option value=""><?php echo i18n::__('category_select') ?></option>
-                <?php foreach ($objCategoria2  as $dato): ?> -->
-                  <option value="<?php  echo $dato->id ?>"><?php  echo $dato->nombre ?></option>
-                <?php  endforeach ?>
-              </select>
-              
-                <span class="glyphicon glyphicon-remove form-control-feedback" ></span> 
-                       
-            </div>
-    <button class="btn btn-xs btn-default btn-group-mini" type="submit">Filtrar</button>
-  </form>
   
   <?php foreach ($arrayEvento as $img): ?>
   <div class="hovergallery">
@@ -44,8 +28,6 @@
   <?php endforeach ?>
 
   <?php foreach ($objProyecto as $key => $dato): ?>
-  
- 
     <div class="modal" id="myModalEvento<?php echo $key ?>" role="dialog">
       <div class="modal-dialog">
         <div class="modal-content">
@@ -55,7 +37,7 @@
           </div>
           <div class="modal-body" >
 
-            <p><?php echo i18n::__('name') ?> : <?php echo $dato->evento ?></p>
+            <p><?php echo i18n::__('name') ?> : <?php echo $dato->nombre ?></p>
             <p> <?php echo i18n::__('description') ?> : <?php echo $dato->descripcion ?></p>
             <p><?php echo i18n::__('adress') ?> : <?php echo $dato->direccion ?></p>
             <p><?php echo i18n::__('date')?> : <?php echo $dato->fecha_inicial_evento?></p>

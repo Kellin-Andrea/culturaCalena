@@ -277,10 +277,6 @@ dictionary:
     enableUsers:                                                           Usuarios Por Activar
     activateUser:                                                              Activar
     
-       #--------------------------eventos activos----------------------------------#
-    enableEvent:                                                           Eventos Por Activar
-    activateEvent:                                                              Activar
-    
     #--------------------------slider----------------------------------#
     sliderManagement:                                                        Gestion Slider 
     position:                                                               Posicion

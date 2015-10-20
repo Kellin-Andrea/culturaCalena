@@ -10,32 +10,34 @@ use mvc\model\table\tableBaseClass;
  * Diana Marcela Hormiga<dianamarce0294@hotmail.com>
  * @category: Pertenece al modelo  es de la tableBase .
  */
+
 class eventoBaseTableClass extends tableBaseClass {
 
-  const ID = 'id';
-  const CREATED_AT = 'created_at';
-  const UPDATED_AT = 'update_at';
-  const DELETED_AT = 'deleted_at';
-  const IMAGEN = 'imagen';
-  const IMAGEN_LENGTH = 37;
-  const NOMBRE = 'nombre';
-  const NOMBRE_LENGTH = 45;
-  const DESCRIPCION = 'descripcion';
-  const DESCRIPCION_LENGTH = 1024;
-  const FECHA_INICIAL_EVENTO = 'fecha_inicial_evento';
-  const FECHA_FINAL_EVENTO = 'fecha_final_evento';
-  const LUGAR_LATITUD = 'lugar_latitud';
-  const LUGAR_LATITUD_LENGTH = 100;
-  const LUGAR_LONGITUD = 'lugar_longitud';
-  const LUGAR_LONGITUD_LENGTH = 100;
-  const DIRECCION = 'direccion';
-  const DIRECCION_LENGTH = 150;
-  const COSTO = 'costo';
-  const USUARIO_ID = 'usuario_id';
-  const CATEGORIA_ID = 'categoria_id';
-  const FECHA_INICIAL_PUBLICACION = 'fecha_inicial_publicacion';
-  const FECHA_FINAL_PUBLICACION = 'fecha_final_publicacion';
-  const ACTIVED = 'actived';
+    
+        const ID = 'id';
+        const CREATED_AT = 'created_at';
+        const UPDATED_AT = 'update_at';
+        const DELETED_AT = 'deleted_at';
+        const IMAGEN = 'imagen';
+        const IMAGEN_LENGTH = 37;
+        const NOMBRE  = 'nombre';    
+        const NOMBRE_LENGTH = 45;
+        const DESCRIPCION = 'descripcion';      
+        const DESCRIPCION_LENGTH = 1024;
+        const FECHA_INICIAL_EVENTO = 'fecha_inicial_evento';
+        const FECHA_FINAL_EVENTO = 'fecha_final_evento';
+        const LUGAR_LATITUD = 'lugar_latitud';
+        const LUGAR_LATITUD_LENGTH = 100;
+        const LUGAR_LONGITUD = 'lugar_longitud';
+        const LUGAR_LONGITUD_LENGTH = 100;
+        const DIRECCION = 'direccion';
+        const DIRECCION_LENGTH = 150;
+        const COSTO = 'costo';
+        const USUARIO_ID = 'usuario_id';
+        const CATEGORIA_ID = 'categoria_id';
+        const FECHA_INICIAL_PUBLICACION = 'fecha_inicial_publicacion';
+        const FECHA_FINAL_PUBLICACION = 'fecha_final_publicacion';
+    
 
   /**
    * Método para obtener el nombre del campo más la tabla ya sea en formato
@@ -48,9 +50,7 @@ class eventoBaseTableClass extends tableBaseClass {
    */
   public static function getNameField($field, $html = false, $table = null) {
     return parent::getNameField($field, self::getNameTable(), $html);
-  }
-
-//end function
+  }//end function
 
   /**
    * Obtiene el nombre de la tabla
@@ -58,9 +58,7 @@ class eventoBaseTableClass extends tableBaseClass {
    */
   public static function getNameTable() {
     return 'evento';
-  }
-
-//end function
+  }//end function
 
   /**
    * Método para borrar un registro de una tabla X en la base de datos
@@ -74,9 +72,7 @@ class eventoBaseTableClass extends tableBaseClass {
    */
   public static function delete($ids, $deletedLogical = true, $table = null) {
     return parent::delete($ids, $deletedLogical, self::getNameTable());
-  }
-
-//end function
+  }//end function
 
   /**
    * Método para insertar en una tabla usuario
@@ -88,9 +84,7 @@ class eventoBaseTableClass extends tableBaseClass {
    */
   public static function insert($data, $table = null) {
     return parent::insert(self::getNameTable(), $data);
-  }
-
-//end function
+  }//end function
 
   /**
    * Método para leer todos los registros de una tabla
@@ -111,10 +105,7 @@ class eventoBaseTableClass extends tableBaseClass {
    */
   public static function getAll($fields, $deletedLogical = true, $orderBy = null, $order = null, $limit = null, $offset = null, $where = null, $table = null) {
     return parent::getAll(self::getNameTable(), $fields, $deletedLogical, $orderBy, $order, $limit, $offset, $where);
-  
-     }
-
-//end function
+  }//end function
 
   /**
    * Método para actualizar un registro en una tabla de una base de datos
@@ -128,9 +119,6 @@ class eventoBaseTableClass extends tableBaseClass {
    */
   public static function update($ids, $data, $table = null) {
     return parent::update($ids, $data, self::getNameTable());
-  }
+  }//end function
 
-//end function
-}
-
-//end class
+}//end class

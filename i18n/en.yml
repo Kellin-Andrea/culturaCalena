@@ -268,11 +268,6 @@ dictionary:
     #--------------------------User Actived----------------------------------#
     enableUsers:                                                       Enable Users
     activateUser:                                                          Activate
-
-    #--------------------------event Actived----------------------------------#
-    enableEvent:                                                       Enable Event
-    activateEvent:                                                          Activate
-    
     
     #-----------------------------Feedback-------------------------------------#
     
