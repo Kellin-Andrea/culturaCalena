@@ -1043,9 +1043,20 @@ proyecto_index:
   url:    /proyecto/index
   param:  { module: proyecto, action: index, format: html }
   load:
-        - model/base/eventoBaseTableClass.php
-        - model/eventoTableClass.php
+      - model/base/eventoBaseTableClass.php
+      - model/eventoTableClass.php
+      - model/base/categoriaBaseTableClass.php
+      - model/categoriaTableClass.php
       
+proyecto_categoria:
+  url:    /proyecto/categoria
+  param:  { module: proyecto, action: categoria, format: html }
+  load:
+      - model/base/eventoBaseTableClass.php
+      - model/eventoTableClass.php
+      - model/base/categoriaBaseTableClass.php
+      - model/categoriaTableClass.php
+            
       
 ##-------------------------- PRIVACIDAD--------------------------##      
       
@@ -1977,3 +1988,43 @@ slider_delete:
   load:
     - model/base/sliderImageBaseTableClass.php
     - model/sliderImageTableClass.php
+    
+#--------------------eventos por activar---------------#
+
+
+eventActived:
+  url:    /eventActived
+  param:  { module: eventActived, action: index, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    
+eventActived_delete:
+  url:    /eventActived/delete
+  param:  { module: eventActived, action: delete, format: json }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+
+eventActived_actived:
+  url:    /eventActived/actived
+  param:  { module: eventActived, action: actived, format: json }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.php
+    
+eventActived_deleteSelect:
+  url:    /eventActived/deleteSelect
+  param:  { module: eventActived, action: deleteSelect, format: html }
+  load:
+    - model/base/eventoBaseTableClass.php
+    - model/eventoTableClass.php
+    - model/base/categoriaBaseTableClass.php
+    - model/categoriaTableClass.phpp
+        

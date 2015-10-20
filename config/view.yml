@@ -397,6 +397,34 @@ proyecto:
       - proyecto/js/sticky_navbar.js
       - proyecto/js/underscore.js
       - index.js
+  categoria:
+    stylesheet:
+        #<!-- animate.css -->
+      - proyecto/css/animate.css
+        #<!--prettyPhoto.css -->
+      - proyecto/css/prettyPhoto.css
+        #<!--shop css-->
+      - proyecto/css/shop.css
+        #<!--style css-->
+      - proyecto/css/style.css
+    javascript:
+      #<!-- javascripts -->
+      - proyecto/js/almond.js
+      - proyecto/js/header_carousel.js
+      - proyecto/js/imagesloaded.js
+      - proyecto/js/isotope.js
+      - proyecto/js/jquery.min.js
+      - proyecto/js/jquery.prettyPhoto.js
+      - proyecto/js/jquery.validate.min.js
+      - proyecto/js/main.js
+      - proyecto/js/main.min.js
+      - proyecto/js/modernizr.custom.24530.js
+      - proyecto/js/require.js
+      - proyecto/js/simplemap.js
+      - proyecto/js/sticky_navbar.js
+      - proyecto/js/underscore.js
+      - index.js
+      
 
 
 detallePqrs:
@@ -789,5 +817,19 @@ slider:
     stylesheet:
       - [admin.index]
 
-  
+eventActived:
+  index:
+    title: Cultura Caleña
+    stylesheet:
+      - [admin.index]
+
+    javascript:
+      - [admin.index]
+  insert:
+    stylesheet:
+      - [admin.index]
+  edit:
+    stylesheet:
+      - [admin.index]
+
   

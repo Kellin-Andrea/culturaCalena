@@ -70,11 +70,11 @@ class usuarioTableClass extends usuarioBaseTableClass {
     }//end catch
   }
 
-    public static function getTotalpagesActived($lines, $where) {
+      public static function getTotalpagesActived($lines, $where) {
     try {
       $sql = 'SELECT count (' . usuarioTableClass::ID . ') AS cantidad ' .
               'FROM ' . usuarioTableClass::getNameTable() .
-              ' WHERE  ' . usuarioTableClass::DELETED_AT . ' IS NULL'.
+              ' WHERE  ' . usuarioTableClass::DELETED_AT . ' IS NULL' .
               ' AND ' . usuarioTableClass::getNameTable() . '.' . usuarioTableClass::ACTIVED . '= false';
 
 
@@ -89,7 +89,7 @@ class usuarioTableClass extends usuarioBaseTableClass {
           }//end else
         }//end foreach
       }//end  if
-      
+
 
 
       $answer = model::getInstance()->prepare($sql);
@@ -101,7 +101,6 @@ class usuarioTableClass extends usuarioBaseTableClass {
       throw $exc;
     }//end catch
   }
-  
   public static function getCategoria($id) {
 
 
