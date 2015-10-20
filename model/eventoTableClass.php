@@ -143,25 +143,8 @@ class eventoTableClass extends eventoBaseTableClass {
     try {
       $sql = 'SELECT count(' . eventoTableClass::ID . ') AS cantidad '
               . 'FROM ' . eventoTableClass::getNameTable() .
-              ' WHERE ' . eventoTableClass::DELETED_AT . ' IS NULL';
-
-
-      $answer = model::getInstance()->prepare($sql);
-      $answer->execute();
-      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
-      return ceil($answer[0]->cantidad / $lines);
-    } catch (PDOException $exc) {
-      throw $exc;
-    }
-  }
-
-    public static function getTotalProyectCategoria($lines, $idCategoria) {
-    try {
-      $sql = 'SELECT count(' .eventoTableClass::getNameTable().'.'. eventoTableClass::ID . ') AS cantidad '
-              . 'FROM ' . eventoTableClass::getNameTable() . ', '. categoriaTableClass::getNameTable(). 
-              ' WHERE ' . eventoTableClass::getNameTable().'.'.eventoTableClass::DELETED_AT . ' IS NULL'.
-              ' AND '. categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' = '. eventoTableClass::getNameTable().'.'.eventoTableClass::CATEGORIA_ID.
-              ' AND '. categoriaTableClass::getNameTable().'.'.categoriaTableClass::ID.' = '. $idCategoria;
+              ' WHERE ' . eventoTableClass::DELETED_AT . ' IS NULL'.
+              ' AND NOW() BETWEEN fecha_inicial_publicacion AND fecha_final_publicacion' ;
 //      print_r($sql);
 //      exit();
 
@@ -173,7 +156,27 @@ class eventoTableClass extends eventoBaseTableClass {
       throw $exc;
     }
   }
-  
+
+  public static function getTotalProyectCategoria($lines, $idCategoria) {
+    try {
+      $sql = 'SELECT count(' . eventoTableClass::getNameTable() . '.' . eventoTableClass::ID . ') AS cantidad '
+              . 'FROM ' . eventoTableClass::getNameTable() . ', ' . categoriaTableClass::getNameTable() .
+              ' WHERE ' . eventoTableClass::getNameTable() . '.' . eventoTableClass::DELETED_AT . ' IS NULL' .
+              ' AND ' . categoriaTableClass::getNameTable() . '.' . categoriaTableClass::ID . ' = ' . eventoTableClass::getNameTable() . '.' . eventoTableClass::CATEGORIA_ID .
+              ' AND NOW() BETWEEN fecha_inicial_publicacion AND fecha_final_publicacion'.
+              ' AND ' . categoriaTableClass::getNameTable() . '.' . categoriaTableClass::ID . ' = ' . $idCategoria;
+//      print_r($sql);
+//      exit();
+
+      $answer = model::getInstance()->prepare($sql);
+      $answer->execute();
+      $answer = $answer->fetchAll(PDO::FETCH_OBJ);
+      return ceil($answer[0]->cantidad / $lines);
+    } catch (PDOException $exc) {
+      throw $exc;
+    }
+  }
+
   public static function getEventTotal($id) {
     try {
 
@@ -334,6 +337,7 @@ class eventoTableClass extends eventoBaseTableClass {
               ' WHERE evento.categoria_id = categoria.id ' .
               ' AND evento.usuario_id = usuario.id' .
               ' AND evento.actived = false' .
+              ' AND NOW() BETWEEN fecha_inicial_publicacion AND fecha_final_publicacion AND evento.deleted_at IS NULL ' .
               ' AND evento.deleted_at IS NULL';
 
 
@@ -362,10 +366,9 @@ class eventoTableClass extends eventoBaseTableClass {
               ' WHERE evento.categoria_id = categoria.id ' .
               ' AND evento.usuario_id = usuario.id' .
               ' AND evento.actived = true' .
+              ' AND NOW() BETWEEN fecha_inicial_publicacion AND fecha_final_publicacion AND evento.deleted_at IS NULL ' .
               ' AND evento.deleted_at IS NULL';
 
-//print_r($sql);
-//exit();
 
       if ($limit !== null and $offset === null) {
         $sql = $sql . ' LIMIT ' . $limit;
@@ -386,16 +389,16 @@ class eventoTableClass extends eventoBaseTableClass {
   public static function getEventProyectCategoria($limit, $offset, $idCategoria) {
     try {
       $sql = 'SELECT evento.id, evento.nombre as evento, descripcion, categoria.nombre as categoria, 
-              evento.direccion, evento.costo, evento.fecha_inicial_evento, evento.fecha_final_evento, evento.imagen, user_name '.
-      ' FROM evento, categoria, usuario '.
-      ' WHERE evento.categoria_id = categoria.id '.
-      ' AND evento.usuario_id = usuario.id'.
-      ' AND evento.actived = true'.
-      ' AND evento.deleted_at IS NULL'.
-      ' AND evento.categoria_id = '. $idCategoria;
+              evento.direccion, evento.costo, evento.fecha_inicial_evento, evento.fecha_final_evento, evento.imagen, user_name ' .
+              ' FROM evento, categoria, usuario ' .
+              ' WHERE evento.categoria_id = categoria.id ' .
+              ' AND evento.usuario_id = usuario.id' .
+              ' AND evento.actived = true' .
+              ' AND evento.deleted_at IS NULL' .
+               ' AND NOW() BETWEEN fecha_inicial_publicacion AND fecha_final_publicacion'.
+              ' AND evento.categoria_id = ' . $idCategoria;
 
-
-
+   
       if ($limit !== null and $offset === null) {
         $sql = $sql . ' LIMIT ' . $limit;
       }
